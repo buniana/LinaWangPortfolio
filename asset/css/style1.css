@@ -1,0 +1,176 @@
+
+body {
+    font-family: "Sunflower", sans-serif;
+    color: #5C5D6B;
+    background-color: rgba(255, 235, 244, 1);
+    /* padding-bottom: 5%; */
+    font-size: 24px;
+    overflow-x: hidden;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#logo {
+    text-decoration: none;
+    color: #454656;
+    font-size: 20px;
+    margin-left: 5%;
+    line-height: 80px;
+}
+
+header {
+    height: 80px;
+}
+
+
+nav {
+    display: inline-block;
+    float: right;
+    padding-right: 5%;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    transition: 1s ease;
+}
+
+nav a {
+    color: #826487;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 39px;
+    line-height: 80px;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width:100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+.containertop {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 100px);
+    grid-template-areas:
+    "proja proja intro intro intro projb projb"
+    "proja proja intro intro intro projb projb"
+    "proja proja intro intro intro projb projb"
+    "proja proja intro intro intro projb projb"
+    "proja proja story story story projb projb";
+    gap: 38px 25px;
+    /* max-width: 1200px; */
+    margin: 20px;
+}
+.containertop >div {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    overflow: hidden;
+    /* align-items: center;
+    justify-content: center;
+    text-align: center; */
+}
+
+.containerbottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 430px;
+    gap: 38px 25px;
+    /* max-width: 1200px; */
+    margin: 20px;
+}
+
+.containerbottom >div {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    /* flex-direction: row; */
+    overflow:hidden;
+    /* align-items: center;
+    justify-content: center;
+    text-align: center; */
+}
+
+
+.project-title {
+    font-size: 24px;
+    color: #5C5D6B;
+    /* margin-top: 20px; */
+}
+
+.box{
+    /* justify-self: flex-end; */
+    display: flex;
+    flex-direction: column;
+}
+
+.Bearhub:hover, .ChatAible:hover{
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.3);
+    transition-duration: 0.3s;
+}
+
+.Bearhub img{
+    width: 190%;
+    height: auto;
+}
+
+.ChatAible img{
+    width: 200%;
+    height: auto;
+    align-self: center;
+}
+
+.project-title{
+    font-size: 50px;
+    color: #5C5D6B;
+}
+
+.intro{
+position: relative;
+}
+
+.intro img{
+    position:relative; 
+    left: 34%;
+    width: 70%;
+    bottom: 14vh;
+}
+
+.story{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 24px;
+    color: #5C5D6B;
+}
+
+.story img{
+    width:10%;
+    height: fit-content;
+    align-self: center;
+    
+}
