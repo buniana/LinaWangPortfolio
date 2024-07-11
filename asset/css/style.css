@@ -584,9 +584,9 @@ section img:hover {
 }
 
 .contactbutton:hover{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
     transition-duration: 0.3s;
-
+    cursor: pointer;
 }
 
 .contactbutton{
@@ -597,6 +597,7 @@ section img:hover {
     display:inline-block; background-image: linear-gradient(to right, #7152A2, #F07972, #FFA047); 
     border-radius: 40px; 
     padding: 13px 27px;
+    pointer-events: all;
 }
 
 .Bearhub:hover, .ChatAible:hover{

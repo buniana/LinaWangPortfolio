@@ -14,10 +14,17 @@ window.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  window.addEventListener("contactme", function() {
+  // window.addEventListener("contactme", function() {
+  //   let contactmebutton = document.querySelector(".contactbutton");
+  //   contactmebutton.addEventListener("click", function() {
+  //     window.open('mailto:jiayuwang0815@berkeley.edu');
+
+  //   });
+  // });
+
+  document.addEventListener("DOMContentLoaded", function() {
     let contactmebutton = document.querySelector(".contactbutton");
     contactmebutton.addEventListener("click", function() {
-      window.open(String('mailto:jiayuwang0815@berkeley.edu').replace('^', '@') );
-
+      window.open('mailto:jiayuwang0815@berkeley.edu');
     });
   });
