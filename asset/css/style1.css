@@ -124,7 +124,7 @@ footer p {
     flex-direction: column;
 }
 
-.Bearhub:hover, .ChatAible:hover, .BookBridge:hover, .Gifted:hover{
+.Bearhub:hover, .ChatAible:hover, .BookBridge:hover, .Gifted:hover, .DoorDash:hover{
     box-shadow:0 0 20px rgba(0, 0, 0, 0.3);
     transition-duration: 0.3s;
 }

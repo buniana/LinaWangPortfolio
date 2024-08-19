@@ -636,6 +636,19 @@ section img:hover {
     height: 100vh;
 }
 
+.DoorDashnewfeatures{
+    border-radius: 20px; 
+    padding: 2%;
+    width: 33%;
+    height:180px;
+    background-color: rgba(162, 216, 218, 0.18);
+    border: rgba(0, 0, 0, 0.21) 3px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
 footer {
     color:#5C5D6B;
     background: rgba(255, 255, 255, 0.5);
