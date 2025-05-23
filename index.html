@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="asset/css/style1.css">
+        <link rel="stylesheet" href="asset/css/style2.0.css">
     
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,13 @@
         <script src="asset/javascript/javascript.js"></script>
         <title>Lina Wang</title>
     </head>
-<body style="background-image: linear-gradient(to bottom, #FAEFF1, #E4F1EF);">
-    <!-- <img style="position: absolute; left:400px; bottom:-700px; z-index: -1; width: 110%;opacity: 75%;" src="asset/image/Home/Vector 2.png">
-    <img style="position: absolute; right:400px; bottom:-400px; z-index: -1; width: 120%;opacity: 45%;" src="asset/image/Home/Vector 4.png"> -->
-    
-    <div class="container">
-
-    </div>
+<body>
     <header>
         <div class="content">
-          <a href="index.html" id="logo">Lina Wang
+            
+          <a href="index.html" id="logo" style="display: flex; align-items: center; float: left; gap:5px;">
+            <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height: 35px;">
+            Lina Wang
           </a>
           <nav>
             <ul>
@@ -30,65 +27,208 @@
             </ul>
           </nav>
         </div>
-      </header>
+    </header>
 
-      <div class="containertop"> 
-        <div class="box Bearhub" style="grid-area:proja;">
-            <img src="asset/image/Home/brandbird (3) 1.png" alt="Project Bearhub">
-            <div class="project-title" style="position: relative; bottom:55px; left:10px;">Project<br> Bearhub</div>
-        </div>
-        <div class="intro" style="grid-area:intro;">
-            <div style="font-size:40px;  width:58%; margin: 30px 30px 30px 30px">Hi! I’m <span style="color:rgba(124, 79, 99, 0.88)">Lina Wang.</span> A UX Designer and thinker.</div>
-            <div class="introimg"><img src="asset/image/Home/Firefly 20240615011742-edited 1.png" alt="Intro Image"></div>
-        </div>
-        <div class="story" style="grid-area:story;">
-            <div style="margin: 0px 20px 0px 20px">Know more about my<br> journey to UX design.</div>
-            <img src="asset/image/Home/Vector.png">
-        </div>
-        <div class="box ChatAible" style="grid-area:projb;">
-            <div class="project-title" style="font-size: 50px; margin: 30px 30px 12px 30px">Project<br> ChatAible</div>
-            <div style="font-size: 24px; margin: 12px 30px 80px 30px;">A UX Research Project</div>
-            <img src="asset/image/Home/brandbird (4) 1.png" alt="Project ChatAible">
-        </div>
-      </div>
-      
-        <div style="text-align: center; font-size: 30px; padding-top: 20px; padding-bottom: 10px;">Earlier Projects</div>
+    <div class="Container">
 
-        <div class="containerbottom">
-            <div class="box BookBridge" style="flex-direction: row;">
-                <div>
-                    <div class="project-title">Project BookBridge</div>
-                    <div>A UI Design Project</div>
-                </div>
-                <img style="width: 120%; height:auto;" src="asset/image/Home/brandbird (5) 1.png" alt="Project BookBridge">
+        <div class="page page1">
+            <img src="asset/image/Home/metro map static.png" alt="Homebackground" style="
+            width: 100vw;
+           height: 100vh;
+           object-fit: cover;
+           object-position: center;
+           display: block;">
+    
+            <div class="overlaytext">
+           I'm Lina Wang — every experience a destination, designed with comfort and completeness.
             </div>
-            <div class="box Gifted" style="flex-direction: column; padding:30px 30px 30px 30px;">
-                <div style="display: flex; flex-direction: row;">
-                    <div>
-                        <div class="project-title"><span style="font-size: 40px;">Project</span><br> Gifted</div>
+    
+            <div class="scrolltext">
+          scroll to the next stop
+            </div>
+    
+        </div>
+
+    
+        <div class="page ProjectSlide" id="Project ChatAible" >
+            <div class="ProjectPage">
+                <!-- <div class="LeftSide">
+                  <div class="NextStop">Next Stop</div>
+                </div> -->
+        
+                <div class="ColorBlock">
+                </div>
+              
+                <div class="RightSide">
+                    <div class="RightSideWrapper">
+                        <div class="ProjectMain">
+                            <div>
+                              <img src="asset/image/Home/StopIcon1.png" alt="Stop 1" class="ProjectTitleIcon">
+                            </div>
+                      
+                            <div class="projectintro">
+                              <div class="ProjectTitleText">ChatAible</div>
+                              <div class="projectintroimgwrapper">
+                                <a href="ChatAible.html">
+                                  <img src="asset/image/Home/ChatAible.png" class="projectintroimg" alt="ChatAible">
+                                </a>
+                              </div>
+                    
+                              <div class="ProjectTags">
+                                <div class="TagItems">User Research</div>
+                                <div class="TagItems">User Onboarding</div>
+                                <div class="TagItems">Generative AI</div>
+                              </div>
+                      
+                              <div class="projectintrotext">
+                                The project focuses on UX research for ChatAible, a generative AI tool that is designed to help enterprises with analytics. Our team used four UX research methods—competitive analysis, user interview, cognitive walkthrough, and usability testing—to help Aible figure out ways that can make the onboarding as well as UI more intuitive.
+                              </div>
+                            </div>
+                          </div>
                     </div>
-                    <img style="width: 80%;" src="asset/image/Home/image 42.png" alt="Project Gifted">
                 </div>
-                <div class="project-description">A UX project to find personalized gifts in a short time.</div>
-            </div>
+              </div>
+        </div>
+    
+        <div class="page ProjectSlide" id="Project Bearhub">
+            <div class="ProjectPage">
+                <!-- <div class="LeftSide">
+                  <div class="NextStop">Next Stop</div>
+                </div> -->
+        
+                <div class="ColorBlock" style="background: linear-gradient(to bottom, #EBC5D5, #C6B0E8,#ACC5DE);">
+                </div>
+              
+                <div class="RightSide">
+                    <div class="RightSideWrapper">
+                        <div class="ProjectMain">
+                            <div>
+                              <img src="asset/image/Home/StopIcon2.png" alt="Stop 2" class="ProjectTitleIcon">
+                            </div>
+                      
+                            <div class="projectintro">
+                              <div class="ProjectTitleText">Bearhub</div>
+
+                              <div class="projectintroimgwrapper">
+                                <a href="Bearhub.html">
+                                  <img src="asset/image/Home/Bearhub.png" alt="Bearhub" class="projectintroimg">                                </a>
+                              </div>
+                              
+                      
+                              <div class="ProjectTags">
+                                <div class="TagItems" style="background-color:#D2C1ED;">User Interface Design</div>
+                                <div class="TagItems" style="background-color:#D2C1ED;">User Research</div>
+                                <div class="TagItems" style="background-color:#D2C1ED;">Branding Design</div>
+                              </div>
+                      
+                              <div class="projectintrotext">
+                                The challenge is to design “BearHub”, a platform that addresses the diverse needs of Berkeley students by facilitating the discovery of clubs and resources tailored to their individual preferences. Our goal is to personalize and streamline the school experience, making it effortless for students to find and engage with the resources they need, thus enhancing their academic and social journey at Berkeley.
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+              </div>
         </div>
 
-        <div class="containerbottom" style="margin-top: 3%;">
-            <div class="box DoorDash" style="flex-direction: row;">
-                <div>
-                    <div class="project-title">Project DoorDash</div>
-                </div>
-                <img style="width: 120%; height:auto;" src="asset/image/DoorDash/DoorDashHome.png" alt="Project BookBridge">
+        <div class="page ProjectSlide" id="Project DoorDash">
+          <div class="ProjectPage">
+              <!-- <div class="LeftSide">
+                <div class="NextStop">Next Stop</div>
+              </div> -->
+      
+              <div class="ColorBlock" style="background: linear-gradient(to bottom, #ACC5DE, #A2D8DA, #A2D8DA, #F0DDD2);">
+              </div>
+            
+              <div class="RightSide">
+                  <div class="RightSideWrapper">
+                      <div class="ProjectMain">
+                          <div>
+                            <img src="asset/image/Home/StopIcon3.png" alt="Stop 3" class="ProjectTitleIcon">
+                          </div>
+                    
+                          <div class="projectintro">
+                            <div class="ProjectTitleText">Adobe X DoorDash Designathon</div>
+
+                            <div class="projectintroimgwrapper">
+                              <a href="DoorDash.html">
+                                <img src="asset/image/Home/DoorDash Designathon.png" alt="Doordash" class="projectintroimg">                              </a>
+                            </div>
+                    
+                            <div class="ProjectTags">
+                              <div class="TagItems" style="background-color:#A2D8DA;">User Research</div>
+                              <div class="TagItems" style="background-color:#A2D8DA;">User Onboarding</div>
+                              <div class="TagItems" style="background-color:#A2D8DA;">Generative AI</div>
+                            </div>
+                    
+                            <div class="projectintrotext">
+                              Our task was to improve how college students can make healthier meal choices while using DoorDash. We created three prototypes: enhanced filters for healthy options, health-focused banners and displays, and group discounts with rewards for nutritious choices. These solutions aim to make healthy eating more intuitive and appealing.                            </div>
+                          </div>
+                        </div>
+                  </div>
+              </div>
             </div>
-        </div>
-       
+      </div>
 
+      <div class="page ProjectSlide" id="Project Gifted">
+        <div class="ProjectPage">
+            <!-- <div class="LeftSide">
+              <div class="NextStop">Next Stop</div>
+            </div> -->
+    
+            <div class="ColorBlock" style="background: linear-gradient(to bottom,#F0DDD2, #FFC9CA);">
+            </div>
+          
+            <div class="RightSide">
+                <div class="RightSideWrapper">
+                    <div class="ProjectMain">
+                        <div>
+                          <img src="asset/image/Home/StopIcon4.png" alt="Stop 4" class="ProjectTitleIcon">
+                        </div>
+                  
+                        <div class="projectintro">
+                          <div class="ProjectTitleText">Gifted</div>
 
-    <footer>
-        <p>&copy; 2024 Lina Wang</p>
-    </footer>
+                          <div class="projectintroimgwrapper">
+                            <a href="Gifted.html">
+                              <img src="asset/image/Home/Gifted.png" alt="Gifted" class="projectintroimg">                              
+                            </a>
+                          </div>
+                  
+                          <div class="ProjectTags">
+                            <div class="TagItems" style="background-color:#FBC4C3;">User Research</div>
+                            <div class="TagItems" style="background-color:#FBC4C3;">User Onboarding</div>
+                            <div class="TagItems" style="background-color:#FBC4C3;">Generative AI</div>
+                          </div>
+                  
+                          <div class="projectintrotext">
+                            Our task was to dive deep into the problem space of how young adults choose meaningful and personalized gifts for their loved ones with the least time. Based on our research results, we came up with three prototypes: a Gift Finder Quiz, a Search Bar with Grouping Suggestions, and a Wishlist with personalized packaging.                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+    </div>
 
+        <footer class="page FooterSlide">
+            <div class="FooterContent">
+              <div class="FooterLeft">
+                <div class="FooterTitle">Last Stop</div>
+                <div class="FooterMessage">Let’s connect!</div>
+              </div>
+              <div class="FooterRight">
+                <a href="mailto:your@email.com" class="FooterLink">Email me</a>
+                <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
+                <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
+              </div>
+            </div>
+    
+            <div class="FooterCopyright">
+                <p>&copy; 2025 Lina Wang</p>
+              </div>
+          </footer>  
 
+    </div>
 
 
 </body>

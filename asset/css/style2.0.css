@@ -1,0 +1,350 @@
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #454656;
+    /* padding-bottom: 5%; */
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 80px;
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    /* overflow: hidden; */
+  }
+
+nav ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#logo {
+    text-decoration: none;
+    color: #454656;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 5%;
+    line-height: 80px;
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white; /* Ensure background doesn't overlap content */
+    z-index: 1000; /* Stay above other elements */
+}
+
+nav {
+    float: right;
+    padding-right: 5%;
+    padding-top: 0%;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    transition: 1s ease;
+}
+
+nav a {
+    color: #A1A09F;
+    font-size: 16px;
+    font-weight: medium;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 39px;
+    line-height: 80px;
+}
+
+.overlaytext{
+        position: absolute;
+        top: 35%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        /* font-size: 48px; */
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        font-weight: 500;
+        padding: 5rem 0 5rem 0;
+        /* border-radius: 8px; */
+        text-align: left;
+        color: #4D4E48;
+        max-width: 90%;
+        background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 20%,
+      rgba(255, 255, 255, 1) 80%,
+      rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.scrolltext{
+    position: absolute;
+    font-size: 16px;
+    color:black;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Scrollable Pages */
+.Container{
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.page1{
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 2;
+}
+
+.page1::after{
+      content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* make this taller for more visible fade */
+  background: linear-gradient(to bottom, transparent, #fff); /* change this if your next section isn't white */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page{
+    scroll-snap-align: start;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+    scroll-snap-stop: always;
+}
+
+
+/* Project Content */
+
+.ProjectPage, .ProjectMainWrapper, .ProjectMain, .ProjectTitleText {
+    margin: 0; /* Important! */
+  }
+
+.ProjectSlide {
+    height: 100vh;
+    display: flex;
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 1;
+}
+
+.ProjectPage {
+    display: flex;
+    gap: 80px; /* Reduce from 160px to better balance spacing */
+    align-items: stretch;
+    margin: 0 5%;
+}
+
+.LeftSide {
+    flex-shrink: 0;
+    width: 10vw; /* Adjust depending on your needs */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.RightSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+    width: 100%;
+}
+
+.RightSideWrapper{
+    padding: 4vh 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.ProjectMain {
+    display: flex;
+    gap: 3vh;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.ColorBlock {
+    width: 4vh;
+    height: 100%;
+    background: linear-gradient(to bottom, #f5d0db, #E5C2DA);
+    align-self: stretch; 
+}
+
+
+
+
+/* Project details */
+
+.ProjectTitleText{
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color:#292929;
+}
+
+.ProjectTitleIcon{
+    height: clamp(1.75rem, 4vw, 2.5rem)
+}
+
+.projectintro{
+    font-size: 16px;
+    color:black;
+    display: flex;
+    flex-direction: column;
+    gap:3vh;
+    width: 80%;
+}
+
+.projectintroimg{
+    /* width: auto; */
+    max-height: 50vh;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    /* max-height: 50%; */
+    display: block;
+    margin: auto;
+}
+
+.projectintroimgwrapper{
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.ProjectTags{
+    display: flex;
+    /* gap:27px; */
+    gap:clamp(0.5rem, 1vw, 1.125rem);
+    flex-wrap: wrap;
+}
+
+.TagItems{
+    background-color: #F7D0D5;
+    border-radius: 50px;
+    padding: 8px 20px;
+
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* min 16px, scale up slightly */
+    white-space: nowrap; /* prevent text from breaking mid-word */
+}
+
+.NextStop{
+    font-size: 40px;
+    color:#292929;
+    font-weight: 500;
+}
+
+
+/* footer */
+.FooterSlide {
+    height: 240px; /* match your slide height minus navbar */
+    background: linear-gradient(to right, #FFEEE6, #fce4ec);
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    justify-content: center;
+}
+
+.FooterContent {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FooterLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.FooterTitle {
+    /* font-size: 24px; */
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: #4D4E48;
+}
+
+.FooterMessage {
+    /* font-size: 32px; */
+    font-size: clamp(1.6rem, 4vw, 2rem);
+    font-weight: bold;
+    color: #292929;
+}
+
+.FooterRight {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: right;
+}
+
+.FooterLink {
+    text-decoration: none;
+    color: #292929;
+    font-size: 14px;
+}
+.FooterLink:hover {
+    text-decoration: underline;
+}
+
+
+.FooterCopyright{
+    text-align: left; /* Left align the text */
+    width: 80%;
+    margin: 40px auto -10px auto;
+}
+
+/* Responsive */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+/* Phones (0–600px) */
+@media (max-width: 600px) {
+    .ProjectMain {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .projectintroimg {
+      width: 100%;
+      height: auto;
+    }
+    .ProjectTitleText {
+      font-size: 28px;
+    }
+  }
+  
+  /* Tablets (601px–1024px) */
+  @media (max-width: 1024px) {
+    .ProjectMain {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .ProjectMain {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+  }
