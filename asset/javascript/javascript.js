@@ -22,9 +22,9 @@ window.addEventListener("DOMContentLoaded", function() {
   //   });
   // });
 
-  document.addEventListener("DOMContentLoaded", function() {
-    let contactmebutton = document.querySelector(".contactbutton");
-    contactmebutton.addEventListener("click", function() {
-      window.open('mailto:jiayuwang0815@berkeley.edu');
-    });
-  });
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   let contactmebutton = document.querySelector(".contactbutton");
+  //   contactmebutton.addEventListener("click", function() {
+  //     window.open('mailto:jiayuwang0815@berkeley.edu');
+  //   });
+  // });

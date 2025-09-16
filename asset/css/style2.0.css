@@ -37,8 +37,11 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white; /* Ensure background doesn't overlap content */
+    background-color:rgba(255, 255, 255, 0.35); /* Ensure background doesn't overlap content */
     z-index: 1000; /* Stay above other elements */
+    border-bottom: 1px solid rgba(218, 160, 214, 0.3); /* #DAA0D6 at 50% opacity */
+    backdrop-filter: blur(30px);                       /* blur background behind */
+    -webkit-backdrop-filter: blur(30px);               /* Safari support */
 }
 
 nav {
@@ -95,6 +98,14 @@ nav li {
     top: 92%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.Gradientcolor {
+    font-size: 55px;
+    background:
+    -webkit-linear-gradient(left, #FF5A5F, #A07CD9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Scrollable Pages */
@@ -310,6 +321,35 @@ nav li {
     text-align: left; /* Left align the text */
     width: 80%;
     margin: 40px auto -10px auto;
+}
+
+/* AgnesCollab */
+.Agnes{
+    background: transparent;
+}
+
+.hero {
+  text-align: center; /* center align */
+  margin-top: 80px;   /* space below navbar */
+}
+
+.hero-title {
+  font-size: 3rem; /* adjust for responsiveness */
+  font-weight: 700;
+  background: linear-gradient(90deg, #FF5F6D, #A64AC9); /* pink → purple */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: 0;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #000;
+  margin-top: 10px;
 }
 
 /* Responsive */
