@@ -12,7 +12,7 @@
         <title>Lina Wang</title>
     </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="content">
             
           <a href="index.html" id="logo" style="display: flex; align-items: center; float: left; gap:5px;">
@@ -27,7 +27,58 @@
             </ul>
           </nav>
         </div>
+    </header> -->
+
+        <header>
+      <div class="content">
+        <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+        <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
+        </a>
+
+        <!-- Mobile hamburger button -->
+        <button class="nav-toggle" id="navToggle"
+                aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+          <!-- hamburger -->
+          <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- close -->
+          <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav id="primary-nav">
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a></li>
+            <li><a href="/about.html">About Me</a></li>
+            <li><a href="mailto:jiayuwang0815@berkeley.edu">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
+
+    <!-- Off-canvas mobile menu overlay -->
+    <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <!-- backdrop -->
+      <div class="overlay-backdrop" data-close-overlay></div>
+
+      <!-- sliding panel -->
+      <aside class="overlay-panel" tabindex="-1">
+        <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+          <!-- close icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav class="overlay-nav">
+          <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
+          <a href="/about.html">About Me</a>
+          <a href="mailto:jiayuwang0815@berkeley.edu">Contact</a>
+        </nav>
+      </aside>
+    </div>
 
     <div class="Container">
 

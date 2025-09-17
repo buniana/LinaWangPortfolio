@@ -69,6 +69,173 @@ nav li {
     line-height: 80px;
 }
 
+/* hamburger */
+/* header inner layout (keeps your blur/border/etc.) */
+header .content {
+  height: 80px;                /* matches your fixed header height */
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* optional: nicer logo link */
+.logo { color: inherit; text-decoration: none; }
+
+/* underline color + speed */
+nav a:hover {
+  text-decoration-color: rgba(218,160,214,0.8);
+  transition: text-decoration-color .2s ease;
+}
+
+/* hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  border: transparent;
+  background: transparent;
+  border-radius: 10px;
+  padding: 8px;
+  line-height: 0;
+  cursor: pointer;
+  color: #454656;
+}
+.nav-toggle .icon-close { display: none; }
+
+/* ---------- Mobile (≤768px) ---------- */
+@media (max-width: 768px) {
+  /* show hamburger, disable float nav */
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  nav { float: none; padding-right: 0; }
+
+  /* hide menu by default and position it under the fixed header */
+  #primary-nav {
+    position: absolute;
+    left: 0; right: 0; top: 80px;          /* same as header height */
+    display: none;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-bottom: 1px solid rgba(218,160,214,0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+  }
+
+  /* opened state */
+  #primary-nav.open { display: block; }
+
+  /* stack menu items vertically */
+  #primary-nav ul {
+    list-style: none;
+    margin: 0; padding: 10px 5%;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  nav li {
+    display: block;            /* override your inline-block on mobile */
+    margin-left: 0;
+    line-height: 1.4;
+  }
+  nav a {
+    display: block;
+    padding: 10px 0;
+    color: #A1A09F;
+    text-decoration: none;
+  }
+
+  /* swap icons when menu is open */
+  .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-close { display: inline; }
+  .nav-toggle[aria-expanded="false"] .icon-open { display: inline; }
+  .nav-toggle[aria-expanded="false"] .icon-close { display: none; }
+
+  /* prevent background scroll when menu is open */
+  body.no-scroll { overflow: hidden; }
+}
+
+/* ensure header content layers above page, but below overlay */
+header { z-index: 1000; }
+.nav-toggle { z-index: 1001; }
+
+/* ---------- Overlay base ---------- */
+.overlay {
+  position: fixed; inset: 0;
+  display: none;                   /* hidden by default */
+  z-index: 1100;                   /* above header */
+}
+.overlay.open { display: block; }
+
+/* dim backdrop: 20% black + soft blur */
+.overlay-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(225, 225, 225, 0.05); /* 20% black */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.overlay-panel {
+  position: absolute; top: 0; right: 0; height: 100%;
+  width: min(82vw, 360px);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-left: 1px solid rgba(218,160,214,0.3);
+  box-shadow: -10px 0 24px rgba(0,0,0,0.08);
+
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);  /* 1s ease-out */
+}
+.overlay.open .overlay-panel {
+  transform: translateX(0);
+}
+
+.overlay {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.overlay.open {
+  opacity: 1;
+}
+
+
+/* close button aligned horizontally + vertically with hamburger */
+.overlay-close {
+  position: fixed;
+  top: calc((80px - 40px) / 2);   /* centers a 40px button inside 80px header */
+  right: 5vw;                      /* same gutter as header content */
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+
+  border: transparent;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #454656;
+  z-index: 1200;
+}
+
+/* overlay nav links */
+.overlay-nav {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 64px 20px 20px 20px;   /* space for close btn + nice padding */
+}
+.overlay-nav a {
+  display: block;
+  padding: 12px 6px;
+  color: #A1A09F;                 /* matches your nav color */
+  text-decoration: none;
+  font-size: 18px;
+}
+.overlay-nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(218,160,214,0.85);
+}
+
+/* Prevent page scroll when menu is open */
+body.no-scroll { overflow: hidden; }
+
+/* Optional: only show hamburger on small screens (you already had float desktop nav) */
+@media (min-width: 769px) {
+  /* keep your desktop layout as-is; overlay is mainly for mobile */
+}
+
 .overlaytext{
         position: absolute;
         top: 35%;
