@@ -1,11 +1,14 @@
 
 body {
     font-family: "Inter", sans-serif;
-    color: #454656;
+    color: black;
     /* padding-bottom: 5%; */
     margin: 0;
     padding: 0;
     scroll-padding-top: 80px;
+    font-weight: 200;
+    /* line-height: 24px; */
+
 
 }
 
@@ -437,6 +440,10 @@ img.page1img{
     width: 80%;
 }
 
+.projectintrotext{
+  line-height: 24px;
+}
+
 .projectintroimg{
     /* width: auto; */
     max-height: 50vh;
@@ -571,8 +578,9 @@ img.page1img{
 }
 
 .hero {
-  text-align: center; /* center align */
+  /* text-align: left; */
   margin-top: 80px;   /* space below navbar */
+  line-height: 32px;
 }
 
 .hero-title {
@@ -635,3 +643,157 @@ img.page1img{
 @media (max-width: 1023px){
   body::after{ content: "≤1023px MOBILE/TABLET"; }
 } */
+
+
+
+/* ---------- Shared left/right padding & width rail ---------- */
+.hero,
+.about,
+.details,
+.looking-for,
+.hobbies {
+  max-width: 1000px;       /* keeps a clean page width */
+  margin: 0 auto;          /* centers the block */
+  padding: 0 2rem;         /* same side padding for left alignment */
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: left;        /* left-align the text */
+  padding-top: 4rem;
+  margin-top: 80px;
+  padding-bottom: 4rem;
+}
+.hero h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.3;
+  max-width: 70ch;         /* readable line length */
+}
+
+/* ---------- About (text + image) ---------- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr minmax(340px, 40%);
+  gap: 2rem;
+  /* padding-top: 2rem;
+  padding-bottom: 2rem; */
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.about h2 {font-size:1rem; font-weight: 500; margin: 0 0 .75rem; }
+.about p { margin: 0 0 1rem;  line-height: 24px; }
+.about img {
+  background: #eee;
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* responsive rectangle */
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Details (What Drives Me / My Approach) ---------- */
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem auto;
+  padding-top: 0;
+  padding-bottom: 2rem;
+}
+.details h3 { font-size:1rem; font-weight: 500; margin: 0 0 .75rem; }
+.details p  { margin: 0;  line-height: 24px; }
+
+/* ---------- Looking For ---------- */
+.looking-for {
+  margin: 2rem auto;
+  padding-top: 0;
+  padding-bottom: 2rem;
+}
+.looking-for h3 {font-size:1rem; font-weight: 500; margin: 0 0 .75rem; }
+.looking-for p{
+ line-height: 24px;
+}
+
+/* ---------- Hobbies / Bottom image grid ---------- */
+.hobbies {
+  margin: 3rem auto;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.hobbies h3 {font-size:1.5 rem; font-weight: 500; margin: 0 0 .75rem; }
+.hobbies p  { margin: 0 0 1rem;  line-height: 24px; }
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.hobbies-grid img {
+  background: #eee;        /* placeholder look */
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* responsive rectangle */
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet and below */
+@media (max-width: 900px) {
+  /* About stacks with image above text */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .about img {
+    order: -1;              /* move image before text */
+    margin-bottom: 1rem;    /* spacing after image */
+  }
+
+  /* Details becomes single column */
+  .details {
+    grid-template-columns: 1fr;
+      padding-bottom: 0;
+  }
+
+  /* Bottom images: two columns */
+  .hobbies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .looking-for,
+  .hobbies {
+    margin-bottom: 0;
+  }
+  
+}
+
+/* Small phones */
+@media (max-width: 520px) {
+  /* tighten side padding consistently */
+  header,
+  .hero,
+  .about,
+  .details,
+  .looking-for,
+  .hobbies {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0;
+  }
+
+  .hero { padding-top: 2.25rem; padding-bottom: 2.25rem; }
+  .hero h1 { font-size: 1.5rem; }
+
+  /* Bottom images: single column */
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
