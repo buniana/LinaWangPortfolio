@@ -797,3 +797,320 @@ img.page1img{
     gap: 0.75rem;
   }
 }
+
+/* ChatAible */
+/* ===================== ChatAible (scoped, final) ====================== */
+#chataible{
+  /* Background (scoped) */
+  background: linear-gradient(to right, #F2F0F6, #F3ECEC);
+
+  /* Design tokens */
+  --ch-ink-900:#5C4066;
+  --ch-ink-700:#5C5D6B;
+  --ch-ink-600:#68616A;
+  --ch-brand:#D56E48;
+  --ch-card:#ffffff;
+  --ch-shadow:0 10px 30px rgba(0,0,0,.08);
+  --ch-radius:18px;
+  --ch-maxw:1200px;
+
+  /* Layout tokens */
+  --ch-pad-top: 80px; /* space under your header on desktop */
+  --ch-bleed: 10vw;   /* how far the hero image crops past right edge */
+
+  color: var(--ch-ink-700);
+}
+
+/* Shells */
+#chataible .ch-container{ max-width: var(--ch-maxw); margin: 0 auto; padding: 0 auto }
+#chataible .ch-section{ padding-top: 80px; } /* mobile-first */
+#chataible .ch-center{ text-align:center }
+#chataible .ch-brand{ color: var(--ch-brand) }
+
+/* --------------------- Hero --------------------- */
+#chataible .ch-hero{ position: relative } /* needed for cropping on desktop */
+#chataible .ch-hero .ch-hero-grid{
+  display:grid; gap: 32px;
+  grid-template-columns: 1fr;  /* mobile-first stack */
+  align-items: center;
+}
+#chataible .ch-hero h1{
+  color: var(--ch-ink-900);
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.05;
+  margin: 0 0 36px 0;
+  font-weight: 400;
+}
+#chataible .ch-subtitle{
+  font-size: clamp(18px, 2.6vw, 28px);
+  color: var(--ch-ink-900);
+  margin: 0 0 64px 0;
+}
+
+/* Methods card */
+#chataible .ch-methods{
+  background: var(--ch-card);
+  border-radius: var(--ch-radius);
+  box-shadow: var(--ch-shadow);
+  padding-block: 24px;                 /* vertical */
+  padding-inline: clamp(16px, 4vw, 32px); /* horizontal */
+  max-width: 560px;
+}
+#chataible .ch-methods h4{
+  margin: 0 0 12px 0;
+  font-weight: 600; color: var(--ch-brand);
+  font-size: clamp(18px,2.4vw,22px);
+}
+#chataible .ch-method-grid{
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: clamp(12px,2.4vw,24px);
+}
+#chataible .ch-method{
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  gap:10px; font-size:14px; color:var(--ch-ink-600);
+}
+#chataible .ch-method img{ width: 64px; height:auto }
+
+/* Hero artwork */
+#chataible .ch-hero-art{
+  justify-self: center;
+  width: min(640px, 100%);
+  border-radius: 12px;
+  /* box-shadow: var(--ch-shadow); */
+  overflow: hidden;
+  bac
+}
+#chataible .ch-hero-art img{ width:100%; height:auto; display:block }
+
+/* --------------------- Challenge (intro) --------------------- */
+#chataible .ch-challenge{ background:#fff }
+#chataible .ch-challenge h2{
+  font-size: clamp(24px, 4vw, 48px);
+  margin: 0 0 40px 0;
+  color: var(--ch-ink-700);
+  font-weight: 500;
+}
+#chataible .ch-challenge p{
+  font-size: clamp(16px, 2vw, 18px);
+  color: var(--ch-ink-600);
+  max-width: 100ch;
+  margin: 24px 0;
+}
+
+/* CTA row */
+#chataible .ch-pass-row{
+  display:flex; align-items:center; justify-content:center; gap:16px;
+  color: var(--ch-ink-600); font-weight:600; margin: 24px 0;
+}
+#chataible .ch-pass-row img{ width:24px; height:auto; opacity:.85 }
+
+#chataible .ch-cta{
+  display:inline-block; color:#fff;
+  padding: 12px 22px; border-radius: 999px; font-weight:600;
+  background: linear-gradient(90deg, #7152A2, #F07972, #FFA047);
+  box-shadow: 0 6px 18px rgba(213,110,72,.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+  text-decoration: none;
+}
+#chataible .ch-cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(213,110,72,.3);
+}
+
+/* --------------------- Other projects --------------------- */
+#chataible .ch-other h3{
+  font-size: clamp(22px, 3vw, 36px);
+  color: var(--ch-ink-700); margin: 0 0 18px 0; font-weight:600;
+}
+#chataible .ch-proj-card{
+  background: var(--ch-card);
+  border-radius: var(--ch-radius);
+  box-shadow: var(--ch-shadow);
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 16px; overflow:hidden;
+  padding: clamp(18px, 3vw, 24px);
+}
+#chataible .ch-proj-title{ font-size: clamp(20px, 3vw, 32px); font-weight:700; color:var(--ch-ink-900) }
+#chataible .ch-proj-img{ width: min(520px, 60%); margin-left:auto }
+
+
+/* ===================== Breakpoints ===================== */
+
+/* Desktop */
+@media (min-width: 900px){
+  /* Two-column hero */
+  #chataible .ch-hero .ch-hero-grid{ grid-template-columns: 1.1fr .9fr }
+
+  /* HERO: exact viewport height (padding included) + top padding for header */
+  #chataible .ch-hero{
+    height: 100vh;    /* fallback */
+    height: 100svh;   /* safe viewport */
+    height: 100dvh;   /* dynamic viewport */
+    padding-top: var(--ch-pad-top);
+    padding-bottom: 0;
+    overflow: hidden;          /* enables right-edge crop */
+    display: grid;
+    align-content: start;      /* respect the top padding */
+  }
+  /* Fill hero height and center content within remaining space */
+  #chataible .ch-hero > .ch-container{
+    height: 100%-80px;
+    display: grid;
+    align-items: center;
+  }
+  /* Crop the hero image off the right edge */
+  #chataible .ch-hero-art{
+    justify-self: end;
+    align-self: center;
+    width: clamp(700px, 60vw, 1200px);         /* larger than column so it crops */
+    transform: translateX(var(--ch-bleed)) translateY(-1.5vh);
+  }
+
+  /* INTRO: exact viewport height with same top padding */
+  #chataible .ch-challenge{
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+    padding-top: var(--ch-pad-top);
+    padding-bottom: 0;
+    display: grid;
+    align-items: center;       /* vertically center its content */
+  }
+}
+
+/* Mobile & tablets */
+@media (max-width: 899.98px){
+
+  
+  #chataible .ch-challenge{
+    height: auto;
+    padding-top: clamp(40px, 10svh, 80px);
+    padding-bottom: clamp(40px, 10svh, 80px);
+    overflow: visible;
+  }
+  #chataible .ch-hero-art{
+            /* remove padding */
+    padding: 0 16px;           /* gutters */
+    width: calc(100% - 32px); /* 16px + 16px */
+    box-sizing: border-box;   /* ensure it doesn’t overflow */
+  }
+  #chataible .ch-hero-art img{
+    width: 100%; height: auto; display: block;
+  }
+
+  #chataible .ch-hero-text{
+    padding: 32px 16px;
+  }
+
+#chataible .ch-hero h1{
+  margin-bottom: 12px;
+}
+
+#chataible .ch-hero .ch-subtitle{
+  margin-bottom: 32px;
+}
+
+#chataible .ch-challenge{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+}
+
+/* Compact phones */
+@media (max-width: 640px){
+  #chataible .ch-method-grid{ grid-template-columns: repeat(2,minmax(0,1fr)) }
+  #chataible .ch-proj-card{ flex-direction: column; align-items: flex-start }
+  #chataible .ch-proj-img{ width: 100%; margin: 0 }
+}
+
+/* Motion preference */
+@media (prefers-reduced-motion: reduce){
+  #chataible .ch-cta{ transition: none }
+}
+
+/* === FINAL VERTICAL-CENTER OVERRIDES (desktop) === */
+@media (min-width: 900px){
+  /* tuneables */
+  #chataible{
+    --ch-pad-top: 80px;
+    --ch-bleed: 10vw;   /* how far the hero image crops on the right */
+  }
+
+  /* HERO: exact viewport height; content centered in remaining space */
+  #chataible .ch-hero{
+    height: 100vh;     /* fallback */
+    height: 100svh;    /* safe viewport */
+    height: 100dvh;    /* dynamic viewport */
+    padding-top: var(--ch-pad-top);
+    padding-bottom: 0;
+    overflow: hidden;              /* crop the bleed */
+    display: block;                /* let the inner container control centering */
+  }
+
+  /* Let the inner container fill the hero minus the top padding,
+     then center the (text + image) pair vertically */
+  #chataible .ch-hero > .ch-container{
+    min-height: calc(100dvh - var(--ch-pad-top));
+    display: grid;
+    align-items: center;           /* vertical centering */
+  }
+
+  /* Two-column hero + right-side crop for the image */
+  #chataible .ch-hero .ch-hero-grid{
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;           /* align both columns vertically */
+  }
+  #chataible .ch-hero-art{
+    justify-self: end;
+    align-self: center;
+    width: clamp(700px, 60vw, 1200px);     /* bigger than column so it crops */
+    transform: translateX(var(--ch-bleed)) translateY(-1.5vh);
+  }
+
+  /* INTRO: exact viewport height; center its content */
+  #chataible .ch-challenge{
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+    padding-bottom: 0;
+    display: grid;
+    align-items: center;           /* vertical centering */
+  }
+}
+
+/* Mobile/tablet keeps comfy padding and stacks; no forced height/crop */
+@media (max-width: 899.98px){
+  #chataible .ch-challenge{
+    height: auto;
+    padding-top: clamp(40px, 10svh, 80px);
+    padding-bottom: clamp(40px, 10svh, 80px);
+    overflow: visible;
+  }
+
+  #chataible .ch-challenge h2{padding-bottom: 24px; margin:0}
+    #chataible .ch-challenge p{padding-bottom: 12px; margin:0}
+
+  #chataible .ch-hero-art{
+    transform: none;
+    width: min(640px, 100%);
+  }
+
+  #chataible .ch-pass-row{text-align: left;}
+
+}
+
+/* Tablet-ish range: 900px–1204px */
+@media (min-width: 900px) and (max-width: 1204px){
+  #chataible .ch-container,
+  #chataible .ch-hero-text,
+  #chataible .ch-hero-art,
+  #chataible .ch-methods,
+  #chataible .ch-challenge,
+  #chataible .ch-other {
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box; /* prevents overflow */
+  }
+}
