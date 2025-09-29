@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agnes AI Collaboration – Case Study</title>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="asset/css/style2.0.css" />
+</head>
+<body>
+  <!-- ===== Header (leave blank) ===== -->
+<header>
+      <div class="content">
+        <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+        <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
+        </a>
+
+        <!-- Mobile hamburger button -->
+        <button class="nav-toggle" id="navToggle"
+                aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+          <!-- hamburger -->
+          <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- close -->
+          <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav id="primary-nav">
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a></li>
+            <li><a href="/about.html">About Me</a></li>
+            <li><a href="mailto:jiayuwang0815@berkeley.edu">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Off-canvas mobile menu overlay -->
+    <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <!-- backdrop -->
+      <div class="overlay-backdrop" data-close-overlay></div>
+
+      <!-- sliding panel -->
+      <aside class="overlay-panel" tabindex="-1">
+        <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+          <!-- close icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav class="overlay-nav">
+          <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
+          <a href="/About.html">About Me</a>
+          <a href="mailto:jiayuwang0815@berkeley.edu">Contact</a>
+        </nav>
+      </aside>
+    </div>
+
+ <!-- ===== HERO ===== -->
+<div class="page page1">
+            <img src="asset/image/Agnes/Agnes background.png" alt="Agnes background" style="
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center;
+            display: block;">
+
+            <div class="overlaytext" style="background: transparent; top: 50%;
+        left: 50%;">
+              <div class="Gradientcolor"> Agnes AI Collaboration</div>  
+              <div style="font-size: clamp(1rem, 2.5vw, 1.2rem); padding-top: 0.75rem;">Turning Generative AI into a Shared Workspace</div>
+            </div>
+
+        </div>
+
+  <!-- ===== META / STATS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="stats">
+        <div class="stat">
+          <h3>Role</h3><p>UI/UX Designer</p>
+        </div>
+        <div class="stat">
+          <h3>Team Member</h3><p>Jiayu Wang<br/>2 Project Managers</p>
+        </div>
+        <div class="stat">
+          <h3>Project Duration</h3><p>1 week</p>
+        </div>
+        <div class="stat">
+          <h3>Skills</h3><p>Interaction Design, User Flow, Wireframing, Rapid Prototyping</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== OVERVIEW ===== -->
+<section class="section">
+  <div class="container stack-vert">   <!-- was: container grid-2 -->
+    <div>
+      <h2 class="eyebrow">Overview</h2>
+      <h3 style="font-family: Poppins;">Project Goal</h3>
+      <p>This project enhanced collaboration in the Agnes generative AI platform by making the “one-click resolve” feature more visible through an expandable floating action button and by adding a centralized comment management tab to give users intuitive control over AI-powered edits.</p>
+    </div>
+
+    <div>
+      <h3 style="font-family: Poppins;">Problem Statement</h3>
+      <p>How might we design a commenting flow that encourages users to use comments as the primary feedback tool, while giving them intuitive control to review, manage, and resolve all feedback with Agnes’s one-click assistance?</p>
+    </div>
+
+    <div>
+      <h3 style="font-family: Poppins;">My Responsibilities</h3>
+      <ul class="checklist">
+        <li>Understand current Agnes AI collaboration &amp; comment flow</li>
+        <li>Design review flow to view, triage, and manage comments</li>
+        <li>Guide users to use the “Magic Fix” to resolve comments in one click</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== BEFORE / AFTER STRIP ===== -->
+<h3 class="center smallcaps">BEFORE</h3>
+<div class="image-strip before">
+  <img src="asset/image/Agnes/before-1.png" alt="Before screen 1">
+  <img src="asset/image/Agnes/before-2.png" alt="Before screen 2">
+</div>
+
+<h3 class="center smallcaps mt-32">AFTER</h3>
+<div class="image-strip after">
+  <img src="asset/image/Agnes/after-doc.png" alt="After – AI Doc">
+  <img src="asset/image/Agnes/after-slides.png" alt="After – AI Slides">
+  <img src="asset/image/Agnes/after-design.png" alt="After – AI Design">
+</div>
+
+  <!-- ===== DESIGN PRINCIPLES (CARDS) ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="eyebrow">Ideation</h2>
+      <h3 style="font-family: Poppins;">Design Principles</h3>
+      <div class="card-grid">
+        <article class="card">
+          <h4>Seamless Integration</h4>
+          <p>Enable collaboration features to work fluidly across Agnes AI tools without context switching.</p>
+        </article>
+        <article class="card">
+          <h4>Conflict Prevention</h4>
+          <p>Proactively avoid edit conflicts and version issues before they disrupt team flow.</p>
+        </article>
+        <article class="card">
+          <h4>Intuitive AI Control</h4>
+          <p>Offer clear, user-friendly controls over AI-powered bulk edits and comment management.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== THINKING / ITERATIONS ===== -->
+<section class="section">
+  <div class="container">
+    <h3  style="font-family: Poppins;">Thinking Process &amp; Iterations</h3>
+
+    <article class="panel iteration-panel" role="region" aria-labelledby="iter-q">
+      <!-- Top: question + description -->
+      <div class="iter-head">
+        <h3  style="font-family: Poppins;">How to prevent AI from resolving comments that are not editing suggestions?</h3>
+        <p>
+          The one click function provides a very convenient way for users to leave feedback first and then collectively resolve,
+          but when it comes to collaboration, people might leave feedback that are not suggestions.
+        </p>
+      </div>
+
+      <hr class="iter-divider" />
+
+      <!-- Bottom: solution text + image placeholder -->
+      <div class="iter-body">
+        <div class="iter-solution">
+          <h3 style="font-family: Poppins;">Solution</h3>
+          <p>
+            AI pre-selects relevant comments, but users can still select or deselect comments at-will.
+          </p>
+        </div>
+
+        <!-- Image placeholder for status UI -->
+        <div class="iter-ui">
+          <img src="asset/image/Agnes/iterationQ1-solution.png" alt="Status UI placeholder" class="iter-img" />
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== CONSISTENCY / MAGIC WAND ===== -->
+<section class="section">
+  <div class="container">
+    <article class="panel consistency-panel" role="region" aria-labelledby="consistency-q">
+
+      <!-- Title + intro -->
+      <div class="cons-head">
+        <h3 style="font-family: Poppins;">
+          When the magic wand icon means different actions across features, how can we create consistency?
+        </h3>
+        <p>
+          In the current application, the magic wand icon is used to summarize group chat contents with one click.
+          However, we want to use the magic wand as the icon for our “Magic Fix” feature. How can we resolve this
+          icon conflict and ensure users have clear and easy access to both “one-click” features?
+        </p>
+      </div>
+
+      <hr class="iter-divider" />
+
+      <!-- Solution (two cards) -->
+      <section class="cons-solution" aria-labelledby="solution-title">
+        <h4 style="font-family: Poppins;">Solution</h4>
+
+        <div class="solution-grid">
+          <figure class="solution-card">
+            <!-- small mock image placeholder -->
+            <img class="mock-small" src="asset/image/Agnes/iterationQ2-solution1.png"
+                 alt="Consistent floating magic wand button placeholder">
+            <figcaption>Keep a consistent floating expandable “magic wand” button across features.</figcaption>
+          </figure>
+
+          <figure class="solution-card">
+            <img class="mock-small" src="asset/image/Agnes/iterationQ2-solution2.png"
+                 alt="Magic wand expandable only on group chat page placeholder">
+            <figcaption>Make the magic wand expandable only when users are on the group chat page to avoid confusion.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <hr class="iter-divider" />
+
+      <!-- Extra details -->
+      <section class="cons-extra" aria-labelledby="extra-title">
+        <h4 id="extra-title">Extra Details</h4>
+        <p class="cons-lead">
+          In the Agnes Slides feature, we wanted to give users the freedom to resolve comments on each slide separately.
+          In this case, the “one-click” feature could no longer work.
+        </p>
+
+        <!-- On mobile: image first, then explanation (matches your mock) -->
+        <!-- On desktop: explanation left, image right -->
+        <div class="extra-grid">
+          <p class="cons-explain">
+            To compensate for this limitation, we combined the comments for each separate page into one tab and added
+            “resolve all comments on this page” buttons to the bottom of each page’s comment section.
+          </p>
+          <img class="mock-large" src="asset/image/Agnes/consistency-details.png"
+               alt="Comments tab layout placeholder">
+        </div>
+      </section>
+
+    </article>
+  </div>
+</section>
+
+<!-- ===== FINAL DESIGN ===== -->
+<section class="section">
+  <div class="container final-design">
+
+    <!-- Title + features -->
+    <div class="fd-head">
+      <h2 class="eyebrow">Final Design</h2>
+      <h3 style="font-family: Poppins;">Features</h3>
+      <ol class="fd-features">
+        <li>Centralized comment dashboard that aggregates comments from all collaborators in a single, manageable interface</li>
+        <li>Bulk execution button prominently displayed to enable users to apply all approved changes simultaneously</li>
+        <li>Edit preview and organization tools that let users sequence and categorize pending modifications</li>
+      </ol>
+    </div>
+
+    <!-- Comment Tab demo (3 cards) -->
+    <section class="fd-comment-tab">
+      <h3 style="font-family: Poppins;">Utilize the Comment Tab as a Control Hub</h3>
+
+      <div class="fd-card-grid">
+        <figure class="fd-card">
+          <img src="asset/image/Agnes/control-hub1.png" alt="View, edit and manage comments" />
+          <figcaption>View, Edit, and Manage Comments</figcaption>
+        </figure>
+
+        <figure class="fd-card">
+          <img src="asset/image/Agnes/control-hub2.png" alt="Select which comments to resolve by AI" />
+          <figcaption>Selects which comments to resolve by AI</figcaption>
+        </figure>
+
+        <figure class="fd-card">
+          <img src="asset/image/Agnes/control-hub3.png" alt="Approve or decline AI suggestions" />
+          <figcaption>Approve or Decline AI Suggestions</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- User flow (image) -->
+    <section class="fd-userflow">
+      <h3 style="font-family: Poppins;">Final User Flow</h3>
+      <div class="fd-flow-wrap">
+        <img src="asset/image/Agnes/user-flow.png" alt="Final user flow diagram" class="fd-flow-img" />
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<!-- ===== DESIGN SYSTEM ===== -->
+<section class="section">
+  <div class="container visual-rep">
+    <h2 class="eyebrow">Visual Representation</h2>
+    <h3 style="font-family: Poppins;">Design System</h3>
+
+    <figure class="media-card">
+      <!-- Replace with your actual design-system image -->
+       <img src="asset/image/Agnes/design-system.png"alt="Agnes design system overview" />
+    </figure>
+  </div>
+</section>
+
+<!-- ===== FINAL COLLABORATION EXPERIENCE DEMO ===== -->
+<section class="section">
+  <div class="container">
+    <h3 style="font-family: Poppins;">Final Collaboration Experience Demo</h3>
+
+    <!-- Responsive Figma embed -->
+    <div class="responsive-embed">
+      <!-- Swap the URL after url= with your Figma prototype share link -->
+      <iframe
+        title="Agnes Prototype"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYOUR-FIGMA-FILE-ID%3Fpage-id%3D0%253A1"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONCLUSION ===== -->
+<section class="section">
+  <div class="container conclusion">
+    <h2 class="eyebrow">Conclusion</h2>
+    <h3 style="font-family: Poppins;">Next Steps</h3>
+
+    <ol class="next-steps">
+      <li>
+        <h4>Usability Testing &amp; Iteration</h4>
+        <p>
+          Conduct targeted tests to evaluate discoverability of the expandable floating action button
+          and the clarity of the comment management tab. Use findings to refine interaction flow.
+        </p>
+      </li>
+      <li>
+        <h4>Enhance AI Selection &amp; Transparency</h4>
+        <p>
+          Explore ways to optimize comment selection logic and explain why a comment is flagged,
+          improving user trust in AI decisions.
+        </p>
+      </li>
+      <li>
+        <h4>Conflict Resolution Features</h4>
+        <p>
+          Prototype collaboration safeguards such as version history views, conflict alerts, and role-based
+          permissions to handle larger teams.
+        </p>
+      </li>
+    </ol>
+
+    <h3 style="font-family: Poppins;">Takeaways</h3>
+    <p class="takeaways">
+      Working with a complex app reinforced that progressive disclosure and clear information hierarchy
+      keep the interface navigable while surfacing what matters first.
+    </p>
+  </div>
+</section>
+
+  <footer class="page FooterSlide">
+            <div class="FooterContent">
+              <div class="FooterLeft">
+                <div class="FooterTitle">Last Stop</div>
+                <div class="FooterMessage">Let’s connect!</div>
+              </div>
+              <div class="FooterRight">
+                <a href="mailto:your@email.com" class="FooterLink">Email me</a>
+                <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
+                <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
+              </div>
+            </div>
+    
+            <div class="FooterCopyright">
+                <p>&copy; 2025 Lina Wang</p>
+              </div>
+          </footer>  
+</body>
+</html>

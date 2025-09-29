@@ -246,8 +246,9 @@ body.no-scroll { overflow: hidden; }
         transform: translate(-50%, -50%);
         /* font-size: 48px; */
         font-size: clamp(1.5rem, 5vw, 2.5rem);
-        font-weight: 500;
+        font-weight: 400;
         padding: 5rem 0 5rem 0;
+        
         /* border-radius: 8px; */
         text-align: left;
         color: #4D4E48;
@@ -425,6 +426,8 @@ img.page1img{
 .ProjectTitleText{
     font-size: clamp(1.75rem, 4vw, 2.5rem); /* min 16px */
     color:#292929;
+    line-height: normal;
+    font-weight: 400;
 }
 
 .ProjectTitleIcon{
@@ -1114,3 +1117,558 @@ img.page1img{
     box-sizing: border-box; /* prevents overflow */
   }
 }
+
+
+/* Agnes */
+/* ===== Design Tokens ===== */
+:root{
+  --bg: #ffffff;
+  --text: #121212;
+  --muted: #6b7280;
+  --surface: #f7f7fb;
+  --card: #ffffff;
+  --border: rgba(0,0,0,.08);
+  --shadow: 0 6px 24px rgba(0,0,0,.08);
+  --radius: 16px;
+
+  /* Agnes gradient hues (soft pink → purple) */
+  --grad-1: #ff7cc2;
+  --grad-2: #9d7cff;
+  --grad-3: #b79bff;
+
+  /* Sizing + rhythm */
+  --container: 1200px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+}
+
+/* ===== Base ===== */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img{ max-width:100%; display:block; border-radius:12px; }
+h1,h2,h3,h4{ margin:0 0 var(--space-3); line-height:1.25; }
+h1{ font-size:clamp(28px, 4.2vw, 44px); font-weight:700; }
+h2{ font-size:clamp(22px, 2.6vw, 30px); font-weight:600; }
+h3{ font-size:clamp(18px, 2vw, 24px); font-weight:600; }
+h4{ font-size:clamp(16px, 1.6vw, 18px); font-weight:600; }
+p{ margin:0 0 var(--space-4); color:var(--text); }
+p.muted{ color:var(--muted); }
+
+.container{
+  width:min(100%, var(--container));
+  margin-inline:auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+/* ===== Header spacer (if you have fixed nav) ===== */
+.site-header{ height: 0; }
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  padding: clamp(56px, 9vw, 96px) 0 var(--space-7);
+  overflow:hidden;
+}
+
+.hero-inner{ position:relative; z-index: 1; }
+.hero-text{ max-width: 760px; }
+
+.gradient-title{
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-2) 50%, var(--grad-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle{
+  color:var(--muted);
+  font-size:clamp(14px, 1.6vw, 18px);
+  margin-top: var(--space-2);
+}
+
+.hero-bg{
+  position:absolute;
+  inset: -20% -10% auto -10%;
+  height: 60%;
+  background:
+     radial-gradient(40% 60% at 70% 40%, rgba(157,124,255,.35), transparent 70%),
+     radial-gradient(35% 45% at 20% 80%, rgba(255,124,194,.25), transparent 70%),
+     radial-gradient(30% 40% at 90% 10%, rgba(183,155,255,.25), transparent 70%);
+  filter: blur(40px);
+  pointer-events:none;
+}
+/* 
+.agnestitle{
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+} */
+
+/* ===== Sections ===== */
+.section{ padding: var(--space-7) 0; }
+.eyebrow{
+  font-size: 16px;
+  color: #7D7D7D; margin-bottom:4px;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.center{ text-align:center; }
+.smallcaps{ font-variant: all-small-caps; letter-spacing: .06em; }
+.mt-32{ margin-top:32px; }
+
+/* ===== Stats grid ===== */
+.stats{
+  display:grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+.stat{
+  padding-bottom: 24px;
+  /* background:var(--surface); */
+  /* border: 1px solid var(--border);
+  border-radius: var(--radius); */
+}
+.stat h3{ margin-bottom:6px; font-size:16px; color:black; font-weight:500; }
+.stat p{ margin:0; font-weight: 300; }
+
+/* ===== 2-col content ===== */
+.grid-2{
+  display:grid;
+  gap: clamp(20px, 3vw, 32px);
+  grid-template-columns: 1fr;
+  align-items:start;
+}
+
+/* ===== Checklist ===== */
+.checklist{
+  margin:0; padding-left: 1.15em;
+}
+.checklist li{
+  margin: 0 0 10px;
+}
+
+/* ===== Image strips (scroll on mobile) ===== */
+//* Base: mobile-first */
+.image-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px; /* ✅ 32px gap */
+  overflow: visible;
+}
+
+.image-strip img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  background: #eee;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .image-strip {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px; /* ✅ 32px gap on desktop too */
+    justify-content: center;   /* ✅ centers the row */
+    overflow: hidden;          /* ✅ clips only sides if wider than viewport */
+  }
+
+  .image-strip img {
+    height: 360px;    /* ✅ fixed equal height */
+    width: auto;      /* ✅ maintain aspect ratio */
+    max-width: none;  /* ✅ allow natural width */
+    object-fit: contain; /* ✅ ensures the full image is visible vertically */
+  }
+}
+/* ===== Cards (Design Principles) ===== */
+.card-grid{
+  display:grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  margin-top: var(--space-4);
+}
+.card {
+  position: relative;
+  z-index: 0;
+  border-radius: var(--radius);
+  padding: clamp(16px, 2.2vw, 20px);
+
+  /* 🌈 Gradient background */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,       /* 50% white */
+    rgba(226, 226, 226, 0.3) 100%      /* 30% #E2E2E2 */
+  );
+
+  /* ✨ Drop shadow (from your screenshot) + inner shadow */
+  box-shadow:
+    10px 10px 20px rgba(176, 163, 179, 0.25),   /* drop shadow */
+    inset -5px 5px 5px rgba(255, 255, 255, 0.8); /* inner shadow */
+
+  /* ✏️ Optional subtle outline */
+  border: 1px solid var(--border);
+}
+.card p{ color:var(--muted); }
+
+/* ===== Panel placeholder (iterations chips) ===== */
+/* Iterations panel wrapper */
+.iteration-panel{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: clamp(16px, 2.4vw, 24px);
+}
+
+/* Top area */
+.iter-head h3{
+  margin: 0 0 10px;
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 600;
+}
+.iter-head p{ margin: 0; }
+
+/* Divider */
+.iter-divider{
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin: clamp(14px, 2vw, 18px) 0;
+}
+
+/* Bottom area – stacks vertically on mobile */
+.iter-body{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2.2vw, 24px);
+  align-items: start;
+}
+
+.iter-solution h4{
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.iter-ui{
+  justify-self: start;
+}
+
+/* Placeholder image styling */
+.iter-img{
+  max-width: 160px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #f0f0f6;      /* fallback gray */
+  border: 1px dashed var(--border);
+  object-fit: cover;
+}
+
+/* Desktop: two-column layout */
+@media (min-width: 1024px){
+  .iter-body{
+    grid-template-columns: 1fr minmax(280px, 340px);
+    gap: 24px;
+  }
+  .iter-ui{ justify-self: end; }
+}
+
+/* Magic Wand */
+/* ✅ Reuse panel base style */
+.panel {
+  position: relative;
+  z-index: 0;
+  border-radius: 16px;
+  padding: clamp(24px, 4vw, 32px);
+
+  /* 🌈 Gradient background */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,       /* 50% white */
+    rgba(226, 226, 226, 0.3) 100%      /* 30% #E2E2E2 */
+  );
+
+  /* ✨ Drop shadow + inner shadow */
+  box-shadow:
+    10px 10px 20px rgba(176, 163, 179, 0.25),   /* drop shadow */
+    inset -5px 5px 5px rgba(255, 255, 255, 0.8); /* inner shadow */
+
+  /* ✏️ Optional subtle outline */
+  border: 1px solid var(--border);
+}
+
+/* ✅ Consistency section inherits panel style */
+
+
+/* Top block */
+.cons-head h3 {
+  margin: 0 0 10px;
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 600;
+}
+.cons-head p {
+  margin: 0;
+}
+
+/* Divider line */
+.iter-divider {
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin: clamp(14px, 2vw, 18px) 0;
+}
+
+/* Solution cards grid */
+.solution-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2.4vw, 24px);
+  margin-top: var(--space-4);
+}
+.solution-card {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  text-align: left;
+}
+.solution-card figcaption {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 40ch;
+}
+
+/* Mock image styling */
+.mock-small{
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.mock-large {
+  max-width: 360px;
+  height: auto;
+  display: block;
+}
+
+/* Extra details grid */
+.extra-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2.4vw, 24px);
+  align-items: start;
+}
+.cons-lead {
+  margin: 0 0 12px;
+}
+.cons-explain {
+  margin: 0;
+}
+
+/* Responsive layouts */
+@media (min-width: 700px) {
+  .solution-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .extra-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .extra-grid .mock-large {
+    justify-self: end;
+  }
+}
+
+/* ===== Final Design ===== */
+.final-design {}
+
+/* Header & feature list */
+.fd-eyebrow{
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.fd-title{
+  margin: 0 0 var(--space-3);
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: 700;
+}
+/* ===== Feature list ===== */
+.fd-features {
+  margin: 0 0 var(--space-7);
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 14px;
+  /* ❌ remove this so list spans full row */
+  /* max-width: 70ch; */
+  width: 100%;
+}
+.fd-features li{ line-height: 1.7; }
+
+/* Comment tab section */
+
+
+/* 3 demo cards */
+.fd-card-grid{
+  display: grid;
+  grid-template-columns: 1fr;            /* mobile: stack */
+  gap: clamp(16px, 2.4vw, 28px);
+  margin-bottom: var(--space-7);
+}
+.fd-card{
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+.fd-card img{
+  width: 100%;
+  max-width: 360px;                      /* keeps the compact phone mock size */
+  height: auto;
+}
+.fd-card figcaption{
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* User flow image */
+.fd-flow-wrap{
+  display: grid;
+  place-items: center;
+}
+.fd-flow-img{
+  width: 100%;
+  max-width: 680px;                      /* scale on desktop, contained on mobile */
+  height: auto;
+}
+
+/* Tablet */
+@media (min-width: 700px){
+  .fd-card-grid{
+    grid-template-columns: repeat(3, 1fr); /* three across */
+    align-items: start;
+  }
+  .fd-card{ justify-items: center; text-align: center; }
+}
+
+/* Desktop */
+@media (min-width: 1024px){
+
+  .fd-card img{ max-width: 380px; }
+}
+
+/* ===== Media card (shared visual style for big images) ===== */
+.media-card{
+  margin: var(--space-4) 0 0;
+  overflow: hidden;
+  place-items: center;
+}
+.media-card img{
+  display: block;
+  max-width: 800px;
+  width: 100%;
+  height: auto;          /* keeps image crisp, responsive */
+  object-fit: cover;     /* your diagram fills the card nicely */
+}
+
+/* ===== Responsive Figma embed ===== */
+.responsive-embed{
+  margin-top: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  /* keeps a nice video-like frame on all screens */
+  aspect-ratio: 16 / 9;
+  background: #fff;
+}
+.responsive-embed iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ===== Conclusion / Next Steps ===== */
+
+/* ===== Next Steps list ===== */
+.next-steps {
+  margin: 0 0 var(--space-7);
+  padding-left: 1.25rem;
+  display: grid;
+  gap: clamp(12px, 2vw, 18px);
+  /* ❌ remove max-width limit here too */
+  /* max-width: 70ch; */
+  width: 100%;
+}
+
+
+.next-steps li{ margin-left: .25rem; }
+.next-steps h4{
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.next-steps p{ margin: 0; }
+.takeaways{
+  margin: 0;
+  margin-bottom: 64px;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (min-width: 700px){
+  .media-card img{ object-fit: contain; }  /* show full image on wider screens */
+}
+
+@media (min-width: 1024px){
+  .responsive-embed{ aspect-ratio: 16 / 9; }
+}
+
+/* ===== Footer ===== */
+.footer{ padding: var(--space-6) 0; border-top:1px solid var(--border); }
+.footer p{ color: var(--muted); margin:0; }
+
+/* ===== Responsive Breakpoints ===== */
+/* Tablet */
+@media (min-width: 700px){
+  .stats{ grid-template-columns: repeat(2, 1fr); }
+  .grid-2{ grid-template-columns: 1.1fr .9fr; }
+  .card-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Desktop */
+@media (min-width: 1024px){
+  .hero{ padding-top: clamp(72px, 10vw, 120px); }
+  .stats{ grid-template-columns: repeat(4, 1fr); }
+  .grid-2{ grid-template-columns: 1.1fr .9fr; }
+}
+
+/* Motion-respectful blurs */
+@media (prefers-reduced-motion: reduce){
+  .hero-bg{ filter: blur(20px); }
+}
+
