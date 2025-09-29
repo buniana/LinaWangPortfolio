@@ -1327,7 +1327,27 @@ p.muted{ color:var(--muted); }
   /* ✏️ Optional subtle outline */
   border: 1px solid var(--border);
 }
-.card p{ color:var(--muted); }
+.card p{ color:var(--muted); margin-bottom: 0; }
+
+/* Heading + icon layout */
+.card h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and title */
+  font-size: clamp(16px, 1.6vw, 18px);
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+/* Phosphor icons inside card titles */
+.card h4 i {
+  font-size: 20px;  /* ✅ icon size */
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+ /* ✅ or use a fixed hex like #9d7cff */
+}
 
 /* ===== Panel placeholder (iterations chips) ===== */
 /* Iterations panel wrapper */
@@ -1340,7 +1360,11 @@ p.muted{ color:var(--muted); }
 }
 
 /* Top area */
-.iter-head h3{
+.iter-head h3,
+.iter-body h3,
+.cons-head h3,
+.cons-solution h3,
+.cons-extra h3{
   margin: 0 0 10px;
   font-size: clamp(18px, 2vw, 20px);
   font-weight: 600;

@@ -14,6 +14,13 @@
 
   <!-- Page CSS -->
   <link rel="stylesheet" href="asset/css/style2.0.css" />
+
+  <!-- phosphor icon -->
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
+    />
 </head>
 <body>
   <!-- ===== Header (leave blank) ===== -->
@@ -146,25 +153,37 @@
 
   <!-- ===== DESIGN PRINCIPLES (CARDS) ===== -->
   <section class="section">
-    <div class="container">
-      <h2 class="eyebrow">Ideation</h2>
-      <h3 style="font-family: Poppins;">Design Principles</h3>
-      <div class="card-grid">
-        <article class="card">
-          <h4>Seamless Integration</h4>
-          <p>Enable collaboration features to work fluidly across Agnes AI tools without context switching.</p>
-        </article>
-        <article class="card">
-          <h4>Conflict Prevention</h4>
-          <p>Proactively avoid edit conflicts and version issues before they disrupt team flow.</p>
-        </article>
-        <article class="card">
-          <h4>Intuitive AI Control</h4>
-          <p>Offer clear, user-friendly controls over AI-powered bulk edits and comment management.</p>
-        </article>
-      </div>
+  <div class="container">
+    <h2 class="eyebrow">Ideation</h2>
+    <h3 style="font-family: Poppins;">Design Principles</h3>
+
+    <div class="card-grid">
+      <article class="card">
+        <h4>
+          <i class="ph-duotone ph-plugs"></i>
+          Seamless Integration
+        </h4>
+        <p>Enable collaboration features to work fluidly across Agnes AI tools without context switching.</p>
+      </article>
+
+      <article class="card">
+        <h4>
+          <i class="ph-duotone ph-shield-check"></i>
+          Conflict Prevention
+        </h4>
+        <p>Proactively avoid edit conflicts and version issues before they disrupt team flow.</p>
+      </article>
+
+      <article class="card">
+        <h4>
+          <i class="ph-duotone ph-toggle-left"></i>
+          Intuitive AI Control
+        </h4>
+        <p>Offer clear, user-friendly controls over AI-powered bulk edits and comment management.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- ===== THINKING / ITERATIONS ===== -->
 <section class="section">
@@ -221,8 +240,8 @@
       <hr class="iter-divider" />
 
       <!-- Solution (two cards) -->
-      <section class="cons-solution" aria-labelledby="solution-title">
-        <h4 style="font-family: Poppins;">Solution</h4>
+      <section class="cons-solution">
+        <h3 style="font-family: Poppins;">Solution</h3>
 
         <div class="solution-grid">
           <figure class="solution-card">
@@ -244,7 +263,7 @@
 
       <!-- Extra details -->
       <section class="cons-extra" aria-labelledby="extra-title">
-        <h4 id="extra-title">Extra Details</h4>
+        <h3 style="font-family: Poppins; " id="extra-title">Extra Details</h3>
         <p class="cons-lead">
           In the Agnes Slides feature, we wanted to give users the freedom to resolve comments on each slide separately.
           In this case, the “one-click” feature could no longer work.
