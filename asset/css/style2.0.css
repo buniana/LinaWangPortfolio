@@ -1265,7 +1265,7 @@ p.muted{ color:var(--muted); }
 }
 
 /* ===== Image strips (scroll on mobile) ===== */
-//* Base: mobile-first */
+/* Base: mobile-first */
 .image-strip {
   display: grid;
   grid-template-columns: 1fr;
@@ -1442,7 +1442,50 @@ p.muted{ color:var(--muted); }
 }
 
 /* ✅ Consistency section inherits panel style */
+/* ==== Consistency panel overflow fix ==== */
 
+/* Contain any visual spill from children (images, long captions) */
+.consistency-panel {
+  overflow: hidden;
+}
+
+/* Let grid columns shrink to the container width on all screens */
+.consistency-panel .solution-grid,
+.consistency-panel .extra-grid {
+  grid-template-columns: minmax(0, 1fr); /* mobile-first */
+}
+
+/* On desktop, keep your 2-col layouts but allow shrinking */
+@media (min-width: 1024px) {
+  .consistency-panel .solution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .consistency-panel .extra-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+}
+
+/* Critical: allow children to shrink inside their grid tracks */
+.consistency-panel .solution-card,
+.consistency-panel .extra-grid > * {
+  min-width: 0;
+}
+
+/* Images must never exceed their column */
+.consistency-panel img,
+.consistency-panel .mock-small,
+.consistency-panel .mock-large {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* If a very long word/URL appears, wrap instead of pushing layout */
+.consistency-panel p,
+.consistency-panel figcaption {
+  overflow-wrap: anywhere;  /* or: break-word */
+}
 
 /* Top block */
 .cons-head h3 {
@@ -1561,13 +1604,13 @@ p.muted{ color:var(--muted); }
   display: grid;
   grid-template-columns: 1fr;            /* mobile: stack */
   gap: clamp(16px, 2.4vw, 28px);
-  margin-bottom: var(--space-7);
+  margin-bottom: var(--space-8);
 }
 .fd-card{
   margin: 0;
   display: grid;
-  gap: 12px;
-  justify-items: start;
+  gap: 0px;
+  justify-items: center;
 }
 .fd-card img{
   width: 100%;
