@@ -650,7 +650,7 @@ img.page1img{
 
 
 /* ---------- Shared left/right padding & width rail ---------- */
-.hero,
+.abouthero,
 .about,
 .details,
 .looking-for,
@@ -661,13 +661,13 @@ img.page1img{
 }
 
 /* ---------- Hero ---------- */
-.hero {
+.abouthero {
   text-align: left;        /* left-align the text */
   padding-top: 4rem;
   margin-top: 80px;
   padding-bottom: 4rem;
 }
-.hero h1 {
+.abouthero h1 {
   font-size: 1.8rem;
   font-weight: 400;
   margin: 0;
@@ -781,7 +781,7 @@ img.page1img{
 @media (max-width: 520px) {
   /* tighten side padding consistently */
   header,
-  .hero,
+  .abouthero,
   .about,
   .details,
   .looking-for,
@@ -791,8 +791,8 @@ img.page1img{
     padding-bottom: 0;
   }
 
-  .hero { padding-top: 2.25rem; padding-bottom: 2.25rem; }
-  .hero h1 { font-size: 1.5rem; }
+  .abouthero { padding-top: 2.25rem; padding-bottom: 2.25rem; }
+  .abouthero h1 { font-size: 1.5rem; }
 
   /* Bottom images: single column */
   .hobbies-grid {
@@ -1442,49 +1442,58 @@ p.muted{ color:var(--muted); }
 }
 
 /* ✅ Consistency section inherits panel style */
-/* ==== Consistency panel overflow fix ==== */
+/* ==== Consistency panel — final fix ==== */
 
-/* Contain any visual spill from children (images, long captions) */
-.consistency-panel {
-  overflow: hidden;
+/* Contain any visual spill */
+.panel.consistency-panel {
+  overflow: clip; /* fallback to 'hidden' if needed */
 }
 
-/* Let grid columns shrink to the container width on all screens */
-.consistency-panel .solution-grid,
-.consistency-panel .extra-grid {
-  grid-template-columns: minmax(0, 1fr); /* mobile-first */
+/* Let grid tracks shrink instead of pushing the panel wider */
+.panel.consistency-panel .solution-grid,
+.panel.consistency-panel .extra-grid {
+  grid-template-columns: minmax(0, 1fr);
 }
-
-/* On desktop, keep your 2-col layouts but allow shrinking */
 @media (min-width: 1024px) {
-  .consistency-panel .solution-grid {
+  .panel.consistency-panel .solution-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .consistency-panel .extra-grid {
+  .panel.consistency-panel .extra-grid {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   }
 }
 
-/* Critical: allow children to shrink inside their grid tracks */
-.consistency-panel .solution-card,
-.consistency-panel .extra-grid > * {
+/* Critical: children must be allowed to shrink inside grid tracks */
+.panel.consistency-panel .solution-card,
+.panel.consistency-panel .extra-grid > * {
   min-width: 0;
 }
 
-/* Images must never exceed their column */
-.consistency-panel img,
-.consistency-panel .mock-small,
-.consistency-panel .mock-large {
-  max-width: 100%;
-  width: 100%;
+/* Images: never overflow columns, but honor your desktop caps */
+.panel.consistency-panel img {
+  width: auto;        /* allow natural width so max-width can work */
+  max-width: 100%;    /* never exceed the column */
   height: auto;
   display: block;
 }
 
-/* If a very long word/URL appears, wrap instead of pushing layout */
-.consistency-panel p,
-.consistency-panel figcaption {
-  overflow-wrap: anywhere;  /* or: break-word */
+/* Your intended caps (desktop) */
+.panel.consistency-panel .mock-small { max-width: 200px; }
+.panel.consistency-panel .mock-large { max-width: 360px; }
+
+/* Mobile: allow images to go full width inside the column */
+@media (max-width: 700px) {
+  .panel.consistency-panel .mock-small,
+  .panel.consistency-panel .mock-large {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Long captions/words shouldn’t force overflow */
+.panel.consistency-panel p,
+.panel.consistency-panel figcaption {
+  overflow-wrap: anywhere; /* or 'break-word' */
 }
 
 /* Top block */
