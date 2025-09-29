@@ -1137,7 +1137,7 @@ img.page1img{
   --grad-3: #b79bff;
 
   /* Sizing + rhythm */
-  --container: 1200px;
+  --container: 960px;
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;
@@ -1157,6 +1157,7 @@ body{
   color:var(--text);
   background:var(--bg);
   line-height:1.6;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1167,7 +1168,7 @@ h1{ font-size:clamp(28px, 4.2vw, 44px); font-weight:700; }
 h2{ font-size:clamp(22px, 2.6vw, 30px); font-weight:600; }
 h3{ font-size:clamp(18px, 2vw, 24px); font-weight:600; }
 h4{ font-size:clamp(16px, 1.6vw, 18px); font-weight:600; }
-p{ margin:0 0 var(--space-4); color:var(--text); }
+p{ margin:0 0 var(--space-6); color:var(--text); }
 p.muted{ color:var(--muted); }
 
 .container{
@@ -1297,6 +1298,10 @@ p.muted{ color:var(--muted); }
     width: auto;      /* ✅ maintain aspect ratio */
     max-width: none;  /* ✅ allow natural width */
     object-fit: contain; /* ✅ ensures the full image is visible vertically */
+  }
+
+  .after{
+    margin-bottom: 120px;
   }
 }
 /* ===== Cards (Design Principles) ===== */
@@ -1748,3 +1753,65 @@ p.muted{ color:var(--muted); }
   .hero-bg{ filter: blur(20px); }
 }
 
+/* ===== New Experience (GIF + Text) ===== */
+.new-experience {
+  padding-bottom: var(--space-8);
+  padding-top: 0;
+}
+
+.ne-title {
+  margin-bottom: var(--space-5);
+}
+
+.ne-content {
+  display: flex;
+  align-items: center;        /* ✅ vertically align gif & text */
+  gap: clamp(20px, 4vw, 56px);
+}
+
+/* media block */
+.ne-media {
+  margin: 0;
+  flex: 0 1 320px;            /* ✅ cap size on desktop */
+  max-width: 320px;
+  width: 100%;
+}
+
+.ne-media img,
+.ne-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  background: #eee;
+}
+
+/* text block */
+.ne-text {
+  flex: 1;
+}
+.ne-text p {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.6;
+  margin: 0;
+}
+.ne-highlight {
+  font-weight: 600;
+  color: #5E57FE;
+}
+
+/* 📱 Mobile/tablet: stack so text sits UNDER the GIF */
+@media (max-width: 768px) {
+  .ne-content {
+    flex-direction: column;
+    text-align: left;      /* optional */
+  }
+  .ne-media {
+    max-width: 100%;
+  }
+  .ne-text {
+    width: 100%;
+    margin-top: 12px;
+  }
+}
