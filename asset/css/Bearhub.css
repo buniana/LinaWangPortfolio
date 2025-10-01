@@ -1,0 +1,471 @@
+/* ===================== Bearhub – scoped styles only ===================== */
+/* Safe: no header styles, no globals. Everything is under #bearhub. */
+
+:root{
+  --bh-ink-900:#2b2b2b;
+  --bh-ink-700:#454656;
+  --bh-muted:#7d7d7d;
+  --bh-brand:#A07CD9;
+  --bh-accent:#FF5A5F;
+  --bh-card:#ffffff;
+  --bh-border: rgba(0,0,0,.08);
+  --bh-shadow: 0 10px 30px rgba(0,0,0,.06);
+  --bh-radius: 16px;
+  --bh-maxw: 1000px;
+
+  --bh-header: 80px;    /* fixed header height */
+  --bh-bleed: 10vw;     /* desktop right-edge crop on hero image */
+}
+
+#bearhub, #bearhub * { box-sizing: border-box; }
+#bearhub{
+  color: var(--bh-ink-700);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+#bearhub img{ max-width:100%; height:auto; display:block; }
+
+/* Rails & rhythm */
+#bearhub .bh-container{
+  max-width: var(--bh-maxw);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+#bearhub .bh-section{ padding: clamp(24px, 1svh, 32px) 0; }
+
+/* ==================== HERO ==================== */
+/* Use min-height so short screens (e.g., Nest Hub) can grow when content needs it */
+#bearhub .bh-hero{
+  min-height: calc(100dvh - var(--bh-header));
+  margin-top: var(--bh-header);
+  overflow: hidden;  /* keeps right-bleed crop on large screens */
+  padding: 0;
+}
+/* Vertical centering by default; will relax at mid breakpoints */
+#bearhub .bh-hero > .bh-container{
+  min-height: 100%;
+  display: grid;
+  align-items: center;
+}
+#bearhub .bh-hero-grid{
+  display: grid;
+  gap: clamp(16px, 3vw, 32px);
+  grid-template-columns: 1fr; /* mobile-first stack */
+  align-items: center;
+}
+
+/* Titles */
+#bearhub .bh-title{
+font-family: Poppins;
+  margin: 0 0 32px;
+  font-weight: 500;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.05;
+  background: linear-gradient(90deg, var(--bh-accent), var(--bh-brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+#bearhub .bh-subtitle{
+  margin: 0;
+  font-size: 16px;
+  color: var(--bh-ink-700);
+}
+
+#bearhub .bh-meta{
+  display: grid;
+  gap: 16px;
+  margin-top: 32px;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+}
+#bearhub .bh-meta-eyebrow{ font-size: 16px; margin-bottom: 6px; font-weight: 400; }
+#bearhub .bh-list{ margin: 0; padding: 0; }
+
+#bearhub .bh-hero-art{
+  justify-self: center;
+  width: min(900px, 100%);
+  overflow: hidden;
+}
+#bearhub .bh-hero-art img{ width: 100%; height: auto; }
+
+/* Tablet & up */
+@media (min-width: 900px){
+  #bearhub .bh-hero-grid{
+    grid-template-columns: 1.35fr 0.65fr; /* give text more room on desktop */
+    gap: 28px;
+  }
+  #bearhub .bh-hero-art{
+    justify-self: end;
+    align-self: center;
+    width: clamp(680px, 52vw, 1000px);
+    transform: translateX(var(--bh-bleed)) translateY(-1.5vh);
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 899.98px){
+  #bearhub .bh-meta{ grid-template-columns: 1fr; }
+  #bearhub .bh-hero{ overflow: visible; }
+  #bearhub .bh-hero-art{
+    transform: none;
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+    margin-inline: 16px;
+  }
+}
+
+/* ===== Hero gutters like ChatAible (with comfy super-wide gutters) ===== */
+#bearhub .bh-hero{ --bh-hero-gutter: 16px; }
+#bearhub .bh-hero > .bh-container{
+  padding-left: var(--bh-hero-gutter);
+  padding-right: var(--bh-hero-gutter);
+}
+@media (min-width: 900px) and (max-width: 1204px){
+  #bearhub .bh-hero{ --bh-hero-gutter: 24px; }
+  /* On mid/short screens (e.g., 1024×600), favor content:
+     reduce image size/bleed and relax vertical centering */
+  #bearhub .bh-hero > .bh-container{ align-items: start; }
+  #bearhub{ --bh-bleed: 4vw; }
+  #bearhub .bh-hero-art{ width: clamp(560px, 44vw, 780px); }
+}
+@media (min-width: 1205px){
+  #bearhub .bh-hero{ --bh-hero-gutter: 32px; } /* keep some padding on ultra-wide */
+}
+
+/* ==================== RESEARCH QUESTION ==================== */
+/* === Bearhub: Research Question card uses the 'card' style with custom gradient === */
+#bearhub .bh-rq{
+  position: relative;
+  z-index: 0;
+  border-radius: var(--bh-radius);
+  padding: clamp(16px, 2.2vw, 20px);
+
+  /* 🌈 Gradient background (50% opacity on both stops) */
+  background: linear-gradient(
+    135deg,
+    rgba(246, 227, 229, 0.5) 0%,   /* #F6E3E5 @ 50% */
+    rgba(226, 213, 247, 0.5) 100%  /* #E2D5F7 @ 50% */
+  );
+
+  /* ✨ Drop + inner shadow (match .card) */
+  box-shadow:
+    10px 10px 20px rgba(176, 163, 179, 0.25),   /* drop */
+    inset -5px 5px 5px rgba(255, 255, 255, 0.5);/* inner */
+
+  /* Subtle outline */
+  border: 1px solid var(--bh-border);
+}
+#bearhub .bh-rq-eyebrow{ font-size: 16px; color: var(--bh-muted); margin-bottom: 4px; font-family: Poppins; font-weight: 500;}
+#bearhub .bh-rq h2{
+    font-family: Poppins;
+  margin: 0;
+  font-size: clamp(18px, 2.4vw, 20px);
+  font-weight: 600;
+  color: var(--bh-ink-900);
+  line-height: 28px;
+}
+
+/* ==================== METHODS (icon above text) ==================== */
+#bearhub .bh-eyebrow{ font-family:Poppins; font-size: 16px; color: var(--bh-muted); margin: 0 0 4px; font-weight: 500; }
+#bearhub .bh-h2{ margin: 0 0 16px; font-weight: 600; color: var(--bh-ink-900); font-size: 20px; font-family: Poppins; }
+#bearhub .bh-h3{ margin: 28px 0 12px; font-size: clamp(18px, 2.2vw, 22px); font-weight: 600; color: var(--bh-ink-900); }
+
+#bearhub .bh-methods{
+  display: grid;
+  gap: clamp(12px, 2.4vw, 20px);
+  grid-template-columns: 1fr;
+}
+#bearhub .bh-method{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  background: var(--bh-card);
+
+
+  box-shadow: var(--bh-shadow);
+  padding: clamp(16px, 2.6vw, 20px);
+  min-height: 140px;
+}
+
+/* === Bearhub: make .bh-method look exactly like .card === */
+#bearhub .bh-method,
+#bearhub .bh-results-card,
+#bearhub .bh-chip{
+  position: relative;
+  z-index: 0;
+  border-radius: var(--radius, var(--bh-radius));
+  padding: clamp(16px, 2.2vw, 20px);
+
+  /* same gradient as .card */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(226, 226, 226, 0.3) 100%
+  );
+
+  /* same shadows as .card (drop + inner) */
+  box-shadow:
+    10px 10px 20px rgba(176, 163, 179, 0.25),
+    inset -5px 5px 5px rgba(255, 255, 255, 0.8);
+
+  /* same subtle outline as .card */
+  border: 1px solid var(--border, var(--bh-border));
+}
+#bearhub .bh-icon{
+  --bh-icon-size: 36px;
+  width: var(--bh-icon-size);
+  height: var(--bh-icon-size);
+  place-items: center;
+  margin-bottom: 4px;
+  border-radius: 0;
+}
+#bearhub .bh-icon img, #bearhub .bh-icon svg{ width: 100%; height: 100%; border-radius: 12px; }
+#bearhub .bh-method-title{ font-size: clamp(14px, 1.8vw, 16px); color: var(--bh-ink-900); line-height: 24px; }
+#bearhub .bh-method-note{ margin: 0; font-size: 14px; color: var(--bh-muted); }
+
+@media (min-width: 640px){
+  #bearhub .bh-methods{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ==================== RESULTS (ONE big card) ==================== */
+#bearhub .bh-results-card{
+  padding: clamp(16px, 2.6vw, 24px);
+  display: grid;
+  gap: clamp(16px, 2.6vw, 24px);
+}
+#bearhub .bh-results-head h4{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--bh-ink-900);
+}
+
+/* Platforms row */
+#bearhub .bh-platforms{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(12px, 2.4vw, 20px);
+}
+@media (min-width: 900px){
+  #bearhub .bh-platforms{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+}
+#bearhub .bh-platform{
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+
+
+#bearhub .bh-platform-label{ font-size: 14px; color: var(--bh-ink-900); }
+
+/* Results bottom */
+#bearhub .bh-results-bottom{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(14px, 2.4vw, 20px);
+}
+@media (min-width: 900px){
+  #bearhub .bh-results-bottom{ grid-template-columns: 1fr 1fr; }
+}
+#bearhub .bh-col h4{ margin: 0 0 8px; font-size: 16px; font-weight: 600; color: var(--bh-ink-900); }
+#bearhub .bh-bullets{ margin: 0; padding-left: 1.15em; }
+
+/* ==================== Iterations / Flow / Phones ==================== */
+#bearhub .bh-iter-eyebrow{ font-size: 14px; color: var(--bh-muted); margin-bottom: 6px; }
+#bearhub .bh-iter-card{
+  background: var(--bh-card);
+  border: 1px solid var(--bh-border);
+  border-radius: var(--bh-radius);
+  box-shadow: var(--bh-shadow);
+  padding: clamp(16px, 2.6vw, 24px);
+}
+#bearhub .bh-iter-head{ display: grid; gap: 6px; margin-bottom: 8px; }
+#bearhub .bh-iter-meta{ font-size: 14px; color: var(--bh-muted); font-family: Poppins; font-weight: 400;}
+#bearhub .bh-iter-title{ margin: 0; font-size: clamp(18px, 2.4vw, 20px); font-weight: 600; color: var(--bh-ink-900); font-family: Poppins;}
+#bearhub .bh-iter-divider{ height: 1px; background: var(--bh-border); margin: clamp(12px, 2.2vw, 16px) 0; }
+#bearhub .bh-iter-subtitle{ margin: 0 0 16px; font-size: 16px; font-weight: 600; color: var(--bh-ink-900); font-family: Poppins;}
+#bearhub .bh-iter-text{ margin: clamp(12px, 2.2vw, 16px) 0; color: var(--bh-ink-900); line-height: 1.6; }
+
+/* Chips */
+#bearhub .bh-chips{ display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+#bearhub .bh-chip{
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
+  
+  font-size: 14px;
+  color: var(--bh-ink-700);
+}
+
+/* Flow images */
+#bearhub .bh-flow{ margin: 40px 0; }
+#bearhub .bh-flow img{
+  width: 100%;
+  height: auto;
+}
+
+/* Phone grids + figures */
+#bearhub .bh-phone-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 3vw, 28px);
+  align-items: start;
+}
+@media (min-width: 700px){  #bearhub .bh-phone-grid{ grid-template-columns: repeat(2, 1fr); } 
+}
+@media (min-width: 1024px){ #bearhub .bh-phone-grid{ grid-template-columns: repeat(4, 1fr); } }
+
+#bearhub .bh-phone{ margin: 0; display: grid; gap: 8px; justify-items: center; text-align: center; }
+#bearhub .bh-phone img{
+  width: 100%;
+  max-width: 200px; /* global cap requested */
+
+}
+
+#bearhub .phone-feature img{
+    box-shadow: var(--bh-shadow);
+}
+
+#bearhub .bh-phone-explain img{
+    box-shadow: var(--bh-shadow);
+}
+
+
+#bearhub .initial-img{margin: 0; display: grid; gap: 8px; justify-items: center; text-align: center; }
+#bearhub .initial-img {
+width: 100%;
+  max-width: 200px; /* global cap requested */
+}
+#bearhub .initial-img figcaption{ font-size: 14px; }
+
+/* Compare row, explain row (2nd iteration) */
+#bearhub .bh-phone-compare{
+   max-width: 470px;
+  gap: clamp(12px, 3vw, 28px);
+  align-items: center;
+  justify-items: center;
+  margin-top: 12px;
+  margin:auto;
+}
+#bearhub .bh-arrow .ph{ font-size: 28px; color: var(--bh-muted); }
+
+#bearhub .bh-phone-explain{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  max-width: 470px;
+  gap: clamp(12px, 3vw, 28px);
+  align-items: center;
+  margin: auto;
+  margin-top: clamp(16px, 3vw, 24px);
+  
+}
+
+@media (max-width: 767.98px){
+  #bearhub .bh-phone-compare{ grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+  #bearhub .bh-arrow .ph{ font-size: 24px; }
+  #bearhub .bh-arrow .ph::before{ transform: rotate(90deg); display: inline-block; }
+  #bearhub .bh-phone-explain{ grid-template-columns: 1fr; }
+}
+
+/* ==================== Final Design / Features / Embed ==================== */
+#bearhub .bh-feature-list{
+  display: grid;
+  gap: clamp(24px, 3vw, 36px);
+  margin-top: 8px;
+}
+#bearhub .bh-feature{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 3vw, 28px);
+  align-items: center;
+}
+
+#bearhub .bh-feature .bh-feature-text p{ margin: 0; padding: 12px 32px;}
+@media (min-width: 900px){
+  #bearhub .bh-feature{ grid-template-columns: minmax(220px, 280px) 1fr; }
+  #bearhub .bh-feature.is-reverse{ grid-template-columns: 1fr minmax(220px, 280px); }
+  #bearhub .bh-feature.is-reverse .bh-phone{ order: 2; }
+  #bearhub .bh-feature.is-reverse .bh-feature-text{ order: 1; }
+}
+
+#bearhub .bh-feature-center{ display: grid; place-items: center; margin-top: 8px; }
+
+#bearhub .bh-embed{
+  margin-top: 12px;
+  border: 1px solid var(--bh-border);
+  border-radius: 16px;
+  box-shadow: var(--bh-shadow);
+  overflow: hidden;
+  background: #fff;
+  aspect-ratio: 9 / 12;
+}
+
+@media (min-width: 900px) {
+    #bearhub .bh-embed{
+          aspect-ratio: 9 / 8;
+    }
+}
+#bearhub .bh-embed iframe{ width: 100%; height: 100%; border: 0; display: block; }
+
+/* === Hero: exactly (viewport - 80px) tall, with 80px space under the fixed header === */
+#bearhub { --bh-header: 80px; }
+
+#bearhub .bh-hero{
+  /* fill the screen under your fixed header */
+  height: calc(100vh - var(--bh-header));
+  height: calc(100svh - var(--bh-header));
+  height: calc(100dvh - var(--bh-header));
+  margin-top: var(--bh-header);   /* creates the 80px gap below the fixed header */
+  padding-top: 0;                 /* keep the content area full-height */
+  overflow: hidden;               /* preserve your right-bleed crop on desktop */
+}
+
+/* keep vertical centering inside the hero unless you override at mid breakpoints */
+#bearhub .bh-hero > .bh-container{
+  min-height: 100%;
+  display: grid;
+  align-items: center;
+}
+
+/* === Hero: ensure text column is at least 400px on desktop === */
+@media (min-width: 900px){
+  #bearhub .bh-hero-grid{
+    /* text column grows but never below 400px; image column can shrink */
+    grid-template-columns: minmax(400px);
+  }
+
+  #bearhub .bh-hero > .bh-container{
+    max-width: 1160px; /* adjust to taste (1200–1360px) */
+  }
+
+  #bearhub .bh-hero-text{
+    min-width: 400px;
+}
+}
+
+/* Guard: on very wide screens, give the hero a bit more room so 400px + image fits comfortably */
+@media (min-width: 1200px){
+  #bearhub .bh-hero > .bh-container{
+    max-width: 1160px; /* adjust to taste (1200–1360px) */
+  }
+}
+
+/* === Constrain all sections below the hero to 800px on desktop === */
+@media (min-width: 900px){
+  #bearhub .bh-section:not(.bh-hero) > .bh-container{
+    max-width: 800px;      /* cap content width */
+    margin-left: auto;     /* center horizontally */
+    margin-right: auto;
+  }
+}
+
+.phone-frame{
+  width: min(100%, 420px);    /* cap width for desktop; adjust to taste (e.g., 375–480px) */
+  aspect-ratio: 9 / 19.5;     /* tall phone proportion */
+  margin: 0 auto;             /* center */
+}
