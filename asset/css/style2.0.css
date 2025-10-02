@@ -536,13 +536,14 @@ img.page1img{
 .FooterLeft {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
 }
 
 .FooterTitle {
     /* font-size: 24px; */
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     color: #4D4E48;
+
 }
 
 .FooterMessage {
@@ -572,7 +573,7 @@ img.page1img{
 .FooterCopyright{
     text-align: left; /* Left align the text */
     width: 80%;
-    margin: 40px auto -10px auto;
+    margin: 32px auto -10px auto;
 }
 
 /* AgnesCollab */
