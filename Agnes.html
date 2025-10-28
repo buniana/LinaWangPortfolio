@@ -14,6 +14,8 @@
 
   <!-- Page CSS -->
   <link rel="stylesheet" href="asset/css/style2.0.css" />
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
 
   <!-- phosphor icon -->
   <link
@@ -22,15 +24,19 @@
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
     />
 
-    <script src="asset/javascript/javascript.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     
     <title>Lina Wang | Agnes AI</title>
 
 </head>
-<body>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+
+<body >
   <!-- ===== Header (leave blank) ===== -->
         <header>
-      <div class="content">
+      <div class="content" >
         <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
         <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
         </a>
@@ -81,7 +87,7 @@
     </div>
 
  <!-- ===== HERO ===== -->
-<div class="page page1">
+<div class="page page1" >
             <img src="asset/image/Agnes/Agnes background.png" alt="Agnes background" style="
             width: 100vw;
             height: 100vh;
@@ -98,8 +104,8 @@
         </div>
 
 <!-- ===== META / STATS ===== -->
-<section class="section">
-  <div class="container">
+<section class="section" data-aos="fade-up">
+  <div class="container" >
     <div class="stats">
       <!-- Impact -->
       <div class="stat">
@@ -157,7 +163,7 @@
   </section> -->
 
 <!-- ===== OVERVIEW ===== -->
-<section class="section" style="padding-bottom: 32px;">
+<section class="section" style="padding-bottom: 32px;" data-aos="fade-up">
   <div class="container stack-vert">   <!-- was: container grid-2 -->
     <div>
       <h2 class="eyebrow">Overview</h2>
@@ -185,7 +191,7 @@
 </section>
 
 <!-- ===== NEW EXPERIENCE (GIF + TEXT) ===== -->
-<section class="section new-experience">
+<section class="section new-experience" >
   <div class="container">
     <h3 class="ne-title" style="font-family: Poppins;">New Experience</h3>
 
@@ -207,11 +213,11 @@
 </section>
 
   <!-- ===== BEFORE / AFTER STRIP ===== -->
-<h3 class="center smallcaps">BEFORE</h3>
+<!-- <h3 class="center smallcaps">BEFORE</h3>
 <div class="image-strip before">
   <img src="asset/image/Agnes/before-1.png" alt="Before screen 1">
   <img src="asset/image/Agnes/before-2.png" alt="Before screen 2">
-</div>
+</div> -->
 
 <h3 class="center smallcaps mt-32">AFTER</h3>
 <div class="image-strip after">
@@ -221,7 +227,7 @@
 </div>
 
   <!-- ===== DESIGN PRINCIPLES (CARDS) ===== -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
   <div class="container">
     <h2 class="eyebrow">Ideation</h2>
     <h3 style="font-family: Poppins;">Design Principles</h3>
@@ -255,7 +261,7 @@
 </section>
 
 <!-- ===== THINKING / ITERATIONS ===== -->
-<section class="section">
+<section class="section" data-aos="fade-up">
   <div class="container">
     <h3  style="font-family: Poppins;">Thinking Process &amp; Iterations</h3>
 
@@ -274,7 +280,7 @@
       <hr class="iter-divider" />
 
       <!-- Bottom: solution text + image placeholder -->
-      <div class="iter-body">
+      <div class="iter-body" >
         <div class="iter-solution">
           <h3 style="font-family: Poppins;">Solution</h3>
           <p>
@@ -292,7 +298,7 @@
 </section>
 
 <!-- ===== CONSISTENCY / MAGIC WAND ===== -->
-<section class="section">
+<section class="section" data-aos="fade-up">
   <div class="container">
     <article class="panel consistency-panel" role="region" aria-labelledby="consistency-q">
 
@@ -359,11 +365,11 @@
 </section>
 
 <!-- ===== FINAL DESIGN ===== -->
-<section class="section">
+<section class="section" >
   <div class="container final-design">
 
     <!-- Title + features -->
-    <div class="fd-head">
+    <div class="fd-head" data-aos="fade-up">
       <h2 class="eyebrow">Final Design</h2>
       <h3 style="font-family: Poppins;">Features</h3>
       <ol class="fd-features">
@@ -374,7 +380,7 @@
     </div>
 
     <!-- Comment Tab demo (3 cards) -->
-    <section class="fd-comment-tab">
+    <section class="fd-comment-tab" data-aos="fade-up">
       <h3 style="font-family: Poppins;">Utilize the Comment Tab as a Control Hub</h3>
 
       <div class="fd-card-grid">
@@ -396,7 +402,7 @@
     </section>
 
     <!-- User flow (image) -->
-    <section class="fd-userflow">
+    <section class="fd-userflow" data-aos="fade-up">
       <h3 style="font-family: Poppins;">Final User Flow</h3>
       <div class="fd-flow-wrap">
         <img src="asset/image/Agnes/user-flow.png" alt="Final user flow diagram" class="fd-flow-img" />
@@ -407,7 +413,7 @@
 </section>
 
 <!-- ===== DESIGN SYSTEM ===== -->
-<section class="section">
+<section class="section" data-aos="fade-up">
   <div class="container visual-rep">
     <h2 class="eyebrow">Visual Representation</h2>
     <h3 style="font-family: Poppins;">Design System</h3>
@@ -420,7 +426,7 @@
 </section>
 
 <!-- ===== FINAL COLLABORATION EXPERIENCE DEMO ===== -->
-<section class="section">
+<section class="section" data-aos="fade-up">
   <div class="container">
     <h3 style="font-family: Poppins;">Final Collaboration Experience Demo</h3>
 
@@ -435,6 +441,7 @@
 <!-- ===== CONCLUSION ===== -->
 <section class="section">
   <div class="container conclusion">
+    <div data-aos="fade-up">
     <h2 class="eyebrow">Conclusion</h2>
     <h3 style="font-family: Poppins;">Next Steps</h3>
 
@@ -458,12 +465,16 @@
         </p>
       </li>
     </ol>
+    </div>
 
+    <div data-aos="fade-up">
     <h3 style="font-family: Poppins;">Takeaways</h3>
     <p class="takeaways">
       I learned how to work with complicated applications. I realized that the most important step is to look into all the existing features and use progressive disclosure smartly so that key information is presented first while maintaining the interface easily navigable.
     </p>
+    </div>
   </div>
+
 </section>
 
   <footer class="page FooterSlide">
@@ -484,4 +495,8 @@
               </div>
           </footer>  
 </body>
+
+<script>
+AOS.init();
+</script>
 </html>
