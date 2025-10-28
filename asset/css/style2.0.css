@@ -274,7 +274,7 @@ body.no-scroll { overflow: hidden; }
 .Gradientcolor {
     font-size: 55px;
     background:
-    -webkit-linear-gradient(left, #FF5A5F, #A07CD9);
+    -webkit-linear-gradient(left, #FF5A5F, #7946CA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
