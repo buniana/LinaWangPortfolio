@@ -1,41 +1,50 @@
-// functions/[[path]].js   (or _worker.js if you're using a single worker)
+// _worker.js  (for Cloudflare Pages)
+// Password-only Basic Auth for selected paths.
+// Requires Pages secret: BASIC_PASS
 
 const PROTECTED = [
-  /^\/Gifted(\/.*)?$/i,  // protect /Gifted and everything under it
-  // add more paths here if you want
+  /^\/Gifted(\/.*)?$/i,  // protect /Gifted and its subpaths
+  // add more patterns as needed
 ];
 
-export async function onRequest(context) {
-  const { request, env, next } = context;
-  const { pathname } = new URL(request.url);
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
 
-  // only protect selected paths
-  const isProtected = PROTECTED.some(rx => rx.test(pathname));
-  if (!isProtected) return next();
-
-  // Browser Basic Auth: "Basic base64(username:password)"
-  const auth = request.headers.get("Authorization") || "";
-
-  if (auth.startsWith("Basic ")) {
-    try {
-      const decoded = atob(auth.slice(6));
-      // Accept ANY username; only check password (everything after the first colon)
-      const pass = decoded.split(":").slice(1).join(":");
-      if (pass === env.BASIC_PASS) {
-        return next(); // ✅ allowed
-      }
-    } catch (_) {
-      // fall through to 401
+    // not protected → serve static asset
+    const isProtected = PROTECTED.some(rx => rx.test(url.pathname));
+    if (!isProtected) {
+      return env.ASSETS.fetch(request);
     }
-  }
 
-  // Prompt browser login; tell users any username works
-  return new Response("Authentication required", {
-    status: 401,
-    headers: {
-      "WWW-Authenticate":
-        'Basic realm="Enter any username; only password is checked"',
-      "Cache-Control": "no-store",
-    },
-  });
-}
+    // ensure secret exists (avoid crashes)
+    if (!env?.BASIC_PASS) {
+      return new Response("Server misconfiguration: BASIC_PASS not set", { status: 500 });
+    }
+
+    // Browser Basic Auth header: "Basic base64(username:password)"
+    const auth = request.headers.get("Authorization") || "";
+    if (auth.startsWith("Basic ")) {
+      try {
+        const decoded = atob(auth.slice(6)); // "user:pass"
+        // ignore username; check only password (everything after first colon)
+        const pass = decoded.split(":").slice(1).join(":");
+        if (pass === env.BASIC_PASS) {
+          return env.ASSETS.fetch(request); // ✅ allow
+        }
+      } catch {
+        // fall through to 401
+      }
+    }
+
+    // Prompt login (any username works)
+    return new Response("Authentication required", {
+      status: 401,
+      headers: {
+        "WWW-Authenticate":
+          'Basic realm="Enter any username; only password is checked"',
+        "Cache-Control": "no-store",
+      },
+    });
+  }
+};
