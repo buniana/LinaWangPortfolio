@@ -1,22 +1,22 @@
-// _worker.js  (Cloudflare Pages single Worker)
+// _worker.js  — Cloudflare Pages (_worker) version, password only (no username)
 
-const PROTECTED = [/^\/Gifted(\/.*)?$/i];        // paths you want to protect
+const PROTECTED = [/^\/Gifted(\/.*)?$/i];          // protect /Gifted and all descendants
 const COOKIE_NAME = "pwok";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 14;        // 14 days
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 14;          // 14 days
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // 🔐 Always catch the password POST first (so it never 405s)
+    // --- 1) Intercept the password POST first (prevents 405s) ---
     if (path === "/__pwcheck" && request.method === "POST") {
       const form = await request.formData().catch(() => null);
       const pass = form?.get("pass") ?? "";
       const returnTo = form?.get("return_to") || "/";
 
       if (typeof pass === "string" && pass === env.USER_PASS) {
-        // success → set cookie and redirect back
+        // success: set cookie and redirect back to original page
         return new Response(null, {
           status: 303,
           headers: {
@@ -32,31 +32,34 @@ export default {
         });
       }
 
-      // wrong password → redirect back with flag
+      // wrong password → bounce back with a flag
       const u = new URL(returnTo, url.origin);
       u.searchParams.set("auth", "bad");
       return new Response(null, { status: 303, headers: { Location: u.toString() } });
     }
 
-    // only gate selected paths
-    const needsAuth = PROTECTED.some(rx => rx.test(path));
-
-    if (!needsAuth) {
-      // not protected → just serve the asset
+    // --- 2) If not a protected path, pass straight through to your static assets ---
+    if (!PROTECTED.some(rx => rx.test(path))) {
       return env.ASSETS.fetch(request);
     }
 
-    // already authenticated?
+    // --- 3) If already authenticated via cookie, continue ---
     if (hasValidCookie(request.headers.get("Cookie"))) {
       return env.ASSETS.fetch(request);
     }
 
-    // otherwise show the password form
-    return htmlPasswordPage(url);
+    // --- 4) Not authenticated → show password form (GET/HEAD) ---
+    if (request.method === "GET" || request.method === "HEAD") {
+      return passwordForm(url);
+    }
+
+    // For other methods to protected paths, reject (adjust if you need)
+    return new Response("Unauthorized", { status: 401 });
   },
 };
 
-/* ---------- helpers ---------- */
+/* ---------------- helpers ---------------- */
+
 function hasValidCookie(cookieHeader) {
   if (!cookieHeader) return false;
   return cookieHeader.split(/;\s*/).some(c => c.startsWith(`${COOKIE_NAME}=`));
@@ -72,10 +75,11 @@ function serializeCookie(name, val, opts = {}) {
   return segs.join("; ");
 }
 
-function htmlPasswordPage(currentUrl) {
+function passwordForm(currentUrl) {
   const returnTo = currentUrl.pathname + currentUrl.search;
   const bad = currentUrl.searchParams.get("auth") === "bad";
-  const body = `<!doctype html>
+
+  const html = `<!doctype html>
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -83,7 +87,7 @@ function htmlPasswordPage(currentUrl) {
 <style>
   :root{ --bg:rgba(255,255,255,.7); --ring:#0F4424; --text:#1b1b1b; --muted:#6b7280;}
   *{box-sizing:border-box} html,body{height:100%}
-  body{margin:0; font:16px/1.4 Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+  body{margin:0; font:16px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
   .wrap{min-height:100%; display:grid; place-items:center; background:#f5f7f6}
   .panel{
     width:min(92vw,420px); background:var(--bg);
@@ -104,3 +108,19 @@ function htmlPasswordPage(currentUrl) {
     <h1>Enter password</h1>
     <p class="muted">This page is private.</p>
     <div class="field">
+      <label for="pass">Password</label>
+      <input id="pass" name="pass" type="password" autocomplete="current-password" required autofocus>
+    </div>
+    <input type="hidden" name="return_to" value="${escapeHtml(returnTo)}">
+    <button class="btn" type="submit">Continue</button>
+    ${bad ? `<div class="error">Incorrect password. Try again.</div>` : ``}
+  </form>
+</div>`;
+  return new Response(html, {
+    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" },
+  });
+}
+
+function escapeHtml(s){return s.replace(/[&<>"']/g, m => (
+  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]
+))}
