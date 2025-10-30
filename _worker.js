@@ -1,70 +1,64 @@
-// _worker.js  — Cloudflare Pages (_worker) version, password only (no username)
+// _worker.js — password-only gate for /Gifted (and children)
 
-const PROTECTED = [/^\/Gifted(\/.*)?$/i];          // protect /Gifted and all descendants
+const PROTECTED = [/^\/Gifted(\/.*)?$/i];
 const COOKIE_NAME = "pwok";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 14;          // 14 days
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 14; // 14 days
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // --- 1) Intercept the password POST first (prevents 405s) ---
+    // ---- resolve the configured password (supports both names) ----
+    const CONFIG_PASS = (env.USER_PASS ?? env.BASIC_PASS ?? "").toString().trim();
+
+    // Handle the password POST first
     if (path === "/__pwcheck" && request.method === "POST") {
       const form = await request.formData().catch(() => null);
-      const pass = form?.get("pass") ?? "";
+      const pass = (form?.get("pass") ?? "").toString().trim();
       const returnTo = form?.get("return_to") || "/";
 
-      if (typeof pass === "string" && pass === env.USER_PASS) {
-        // success: set cookie and redirect back to original page
+      if (CONFIG_PASS && pass === CONFIG_PASS) {
         return new Response(null, {
           status: 303,
           headers: {
             Location: returnTo,
             "Set-Cookie": serializeCookie(COOKIE_NAME, "1", {
-              path: "/",
-              httpOnly: true,
-              secure: true,
-              sameSite: "Lax",
+              path: "/", httpOnly: true, secure: true, sameSite: "Lax",
               maxAge: COOKIE_MAX_AGE,
             }),
           },
         });
       }
 
-      // wrong password → bounce back with a flag
+      // wrong or unset password -> bounce
       const u = new URL(returnTo, url.origin);
       u.searchParams.set("auth", "bad");
       return new Response(null, { status: 303, headers: { Location: u.toString() } });
     }
 
-    // --- 2) If not a protected path, pass straight through to your static assets ---
+    // Non-protected paths pass through
     if (!PROTECTED.some(rx => rx.test(path))) {
       return env.ASSETS.fetch(request);
     }
 
-    // --- 3) If already authenticated via cookie, continue ---
+    // Already authenticated?
     if (hasValidCookie(request.headers.get("Cookie"))) {
       return env.ASSETS.fetch(request);
     }
 
-    // --- 4) Not authenticated → show password form (GET/HEAD) ---
+    // Not authenticated -> show form
     if (request.method === "GET" || request.method === "HEAD") {
-      return passwordForm(url);
+      return passwordForm(new URL(request.url));
     }
 
-    // For other methods to protected paths, reject (adjust if you need)
     return new Response("Unauthorized", { status: 401 });
   },
 };
 
-/* ---------------- helpers ---------------- */
-
-function hasValidCookie(cookieHeader) {
-  if (!cookieHeader) return false;
-  return cookieHeader.split(/;\s*/).some(c => c.startsWith(`${COOKIE_NAME}=`));
+function hasValidCookie(h) {
+  return !!h && h.split(/;\s*/).some(c => c.startsWith("pwok="));
 }
-
 function serializeCookie(name, val, opts = {}) {
   const segs = [`${name}=${val}`];
   if (opts.maxAge) segs.push(`Max-Age=${opts.maxAge}`);
@@ -74,14 +68,11 @@ function serializeCookie(name, val, opts = {}) {
   if (opts.sameSite) segs.push(`SameSite=${opts.sameSite}`);
   return segs.join("; ");
 }
-
 function passwordForm(currentUrl) {
   const returnTo = currentUrl.pathname + currentUrl.search;
   const bad = currentUrl.searchParams.get("auth") === "bad";
-
   const html = `<!doctype html>
-<html lang="en">
-<meta charset="utf-8">
+<html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Protected</title>
 <style>
@@ -89,12 +80,8 @@ function passwordForm(currentUrl) {
   *{box-sizing:border-box} html,body{height:100%}
   body{margin:0; font:16px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
   .wrap{min-height:100%; display:grid; place-items:center; background:#f5f7f6}
-  .panel{
-    width:min(92vw,420px); background:var(--bg);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-  }
+  .panel{width:min(92vw,420px); background:var(--bg); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.08)}
   h1{margin:0 0 8px; font-size:20px; font-weight:600}
   p.muted{margin:0 0 16px; color:var(--muted)}
   .field{display:grid; gap:8px; margin:12px 0 16px}
@@ -116,11 +103,6 @@ function passwordForm(currentUrl) {
     ${bad ? `<div class="error">Incorrect password. Try again.</div>` : ``}
   </form>
 </div>`;
-  return new Response(html, {
-    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" },
-  });
+  return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
 }
-
-function escapeHtml(s){return s.replace(/[&<>"']/g, m => (
-  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]
-))}
+function escapeHtml(s){return s.replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
