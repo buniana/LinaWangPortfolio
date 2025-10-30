@@ -1,108 +1,233 @@
-// _worker.js — password-only gate for /Gifted (and children)
-
-const PROTECTED = [/^\/Gifted(\/.*)?$/i];
-const COOKIE_NAME = "pwok";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 14; // 14 days
+// _worker.js — Cloudflare Pages (Module Worker) with password-only lock screen
+// - Protect specific paths (edit PROTECTED)
+// - Env var: USER_PASS (required). Optional BRAND_1 / BRAND_2 for colors.
+// - Sets HttpOnly cookie so users don’t re-enter for ~30 days.
 
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(request, env) {
     const url = new URL(request.url);
-    const path = url.pathname;
+    const pathname = url.pathname;
 
-    // ---- resolve the configured password (supports both names) ----
-    const CONFIG_PASS = (env.USER_PASS ?? env.BASIC_PASS ?? "").toString().trim();
+    // 1) Choose what to protect
+    const PROTECTED = [
+      /^\/nurtur(\/.*)?$/i,
+      /^\/Gifted(\/.*)?$/i,
+      // add more: /^\/secret(\/.*)?$/i,
+    ];
 
-    // Handle the password POST first
-    if (path === "/__pwcheck" && request.method === "POST") {
-      const form = await request.formData().catch(() => null);
-      const pass = (form?.get("pass") ?? "").toString().trim();
-      const returnTo = form?.get("return_to") || "/";
+    const isProtected = PROTECTED.some(rx => rx.test(pathname));
+    const serveSite = (req) => env.ASSETS.fetch(req);
 
-      if (CONFIG_PASS && pass === CONFIG_PASS) {
-        return new Response(null, {
-          status: 303,
-          headers: {
-            Location: returnTo,
-            "Set-Cookie": serializeCookie(COOKIE_NAME, "1", {
-              path: "/", httpOnly: true, secure: true, sameSite: "Lax",
-              maxAge: COOKIE_MAX_AGE,
-            }),
-          },
-        });
+    // Special internal route for auth POST
+    const isAuthRoute = url.searchParams.has("__auth");
+    if (!isProtected || isAuthRoute) {
+      if (isAuthRoute && request.method === "POST") {
+        return handleAuth(request, env);
       }
-
-      // wrong or unset password -> bounce
-      const u = new URL(returnTo, url.origin);
-      u.searchParams.set("auth", "bad");
-      return new Response(null, { status: 303, headers: { Location: u.toString() } });
+      return serveSite(request);
     }
 
-    // Non-protected paths pass through
-    if (!PROTECTED.some(rx => rx.test(path))) {
-      return env.ASSETS.fetch(request);
-    }
+    // Protected path → check cookie
+    if (isAuthed(request)) return serveSite(request);
 
-    // Already authenticated?
-    if (hasValidCookie(request.headers.get("Cookie"))) {
-      return env.ASSETS.fetch(request);
-    }
-
-    // Not authenticated -> show form
-    if (request.method === "GET" || request.method === "HEAD") {
-      return passwordForm(new URL(request.url));
-    }
-
-    return new Response("Unauthorized", { status: 401 });
+    // Not authed → show gradient lock screen (no blur/preview)
+    return lockScreenResponse(request, env);
   },
 };
 
-function hasValidCookie(h) {
-  return !!h && h.split(/;\s*/).some(c => c.startsWith("pwok="));
+/* -------------- helpers -------------- */
+
+function isAuthed(request) {
+  const cookie = request.headers.get("Cookie") || "";
+  return /\bsite_auth=1\b/.test(cookie);
 }
-function serializeCookie(name, val, opts = {}) {
-  const segs = [`${name}=${val}`];
-  if (opts.maxAge) segs.push(`Max-Age=${opts.maxAge}`);
-  if (opts.path) segs.push(`Path=${opts.path}`);
-  if (opts.httpOnly) segs.push(`HttpOnly`);
-  if (opts.secure) segs.push(`Secure`);
-  if (opts.sameSite) segs.push(`SameSite=${opts.sameSite}`);
-  return segs.join("; ");
+
+async function handleAuth(request, env) {
+  try {
+    const data = await request.json();
+    const pass = (data?.pass || "").trim();
+    const ok = env.USER_PASS && pass === env.USER_PASS;
+
+    if (!ok) {
+      return new Response(JSON.stringify({ ok: false, error: "Incorrect password." }), {
+        status: 401,
+        headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+      });
+    }
+
+    const maxAge = 60 * 60 * 24 * 30; // 30 days
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+        "Set-Cookie": `site_auth=1; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`,
+      },
+    });
+  } catch {
+    return new Response(JSON.stringify({ ok: false, error: "Bad request." }), {
+      status: 400,
+      headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+    });
+  }
 }
-function passwordForm(currentUrl) {
-  const returnTo = currentUrl.pathname + currentUrl.search;
-  const bad = currentUrl.searchParams.get("auth") === "bad";
+
+function lockScreenResponse(request, env) {
+  // Brand colors (pink like your home page); override via env if you want
+  const BRAND_1 = env.BRAND_1 || "#FF5A5F"; // main pink
+  const BRAND_2 = env.BRAND_2 || "#FFA3B1"; // soft pink
+
   const html = `<!doctype html>
-<html lang="en"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Protected</title>
 <style>
-  :root{ --bg:rgba(255,255,255,.7); --ring:#0F4424; --text:#1b1b1b; --muted:#6b7280;}
-  *{box-sizing:border-box} html,body{height:100%}
-  body{margin:0; font:16px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
-  .wrap{min-height:100%; display:grid; place-items:center; background:#f5f7f6}
-  .panel{width:min(92vw,420px); background:var(--bg); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-    border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.08)}
-  h1{margin:0 0 8px; font-size:20px; font-weight:600}
-  p.muted{margin:0 0 16px; color:var(--muted)}
-  .field{display:grid; gap:8px; margin:12px 0 16px}
-  input[type=password]{padding:12px 14px; border-radius:10px; border:1px solid rgba(0,0,0,.12); outline:none}
-  input[type=password]:focus{border-color:var(--ring); box-shadow:0 0 0 3px rgba(15,68,36,.15)}
-  .btn{display:inline-block; background:#0F4424; color:#fff; border:0; padding:10px 16px; border-radius:999px; cursor:pointer}
-  .error{margin:8px 0 0; color:#b00020; font-size:14px}
+  :root{
+    --brand-1: ${BRAND_1};
+    --brand-2: ${BRAND_2};
+    --card-bg: rgba(255,255,255,.92);
+    --ring: color-mix(in srgb, var(--brand-1) 24%, transparent);
+  }
+  html, body { height: 100%; margin: 0; }
+  body{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    color: #222;
+    /* Gradient-only background (no blur/no preview) */
+    background:
+      radial-gradient(120% 120% at 10% 0%, color-mix(in srgb, var(--brand-2) 35%, white) 0%, transparent 58%),
+      radial-gradient(100% 100% at 90% 10%, color-mix(in srgb, var(--brand-1) 28%, white) 0%, transparent 60%),
+      linear-gradient(180deg, #fff, #fff);
+  }
+  .wrap{
+    position: fixed; inset: 0;
+    display: grid; place-items: center;
+    padding: clamp(16px, 4vw, 32px);
+  }
+  .lock-card{
+    width: min(560px, 92vw);
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,.08);
+    background: var(--card-bg);
+    box-shadow:
+      0 16px 40px rgba(0,0,0,.14),
+      inset 0 0 0 1px rgba(255,255,255,.5);
+    padding: clamp(20px, 4vw, 28px);
+  }
+  .title{
+    margin: 0 0 6px;
+    font-size: clamp(18px, 2.6vw, 22px);
+    font-weight: 600;
+  }
+  .subtitle{
+    margin: 0 0 18px;
+    color: #666; font-size: 14px;
+  }
+  form{ display: grid; gap: 12px; }
+  .pw-input{
+    width: 100%; height: 44px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: #fff; color: #1a1a1a;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .pw-input:focus{
+    border-color: var(--ring);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-1) 18%, transparent);
+  }
+  .pw-submit{
+    --shadow: 0 12px 26px color-mix(in srgb, var(--brand-1) 32%, transparent);
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; height: 44px; padding: 0 16px;
+    border: 1px solid color-mix(in srgb, var(--brand-1) 30%, white);
+    border-radius: 12px;
+    color: #fff; font-weight: 600; letter-spacing: .2px;
+    background:
+      radial-gradient(120% 140% at 80% 0%,
+        color-mix(in srgb, var(--brand-2) 22%, white) 0%, transparent 65%),
+      linear-gradient(135deg, var(--brand-1), var(--brand-2));
+    box-shadow: var(--shadow);
+    transition: transform .12s ease, box-shadow .12s ease, background-position .2s ease, filter .12s ease;
+    background-size: 200% 200%; background-position: 0% 50%;
+    cursor: pointer;
+  }
+  .pw-submit:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px color-mix(in srgb, var(--brand-1) 36%, transparent);
+    background-position: 100% 50%;
+    filter: saturate(1.04);
+  }
+  .pw-submit:active{
+    transform: translateY(0);
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--brand-1) 28%, transparent);
+    filter: brightness(.98);
+  }
+  .pw-submit[disabled]{ opacity: .65; cursor: not-allowed; filter: grayscale(.1); }
+  .error{ color:#c62828; font-size:14px; min-height:1.2em; }
+  .note{ margin-top:10px; color:#777; font-size:12px; }
 </style>
-<div class="wrap">
-  <form class="panel" method="post" action="/__pwcheck">
-    <h1>Enter password</h1>
-    <p class="muted">This page is private.</p>
-    <div class="field">
-      <label for="pass">Password</label>
-      <input id="pass" name="pass" type="password" autocomplete="current-password" required autofocus>
+</head>
+<body>
+  <div class="wrap">
+    <div class="lock-card" role="dialog" aria-modal="true" aria-labelledby="t1">
+      <h1 id="t1" class="title">This page is password-protected</h1>
+      <p class="subtitle">Please enter the password to continue.</p>
+      <form id="lockForm">
+        <input id="pw" name="pw" type="password" class="pw-input" placeholder="Password" autocomplete="current-password" required />
+        <button type="submit" class="pw-submit">Enter</button>
+        <div id="err" class="error"></div>
+      </form>
+      <p class="note">If you need access, contact Lina for the shared password.</p>
     </div>
-    <input type="hidden" name="return_to" value="${escapeHtml(returnTo)}">
-    <button class="btn" type="submit">Continue</button>
-    ${bad ? `<div class="error">Incorrect password. Try again.</div>` : ``}
-  </form>
-</div>`;
-  return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
+  </div>
+
+<script>
+  (function(){
+    const form = document.getElementById('lockForm');
+    const pw   = document.getElementById('pw');
+    const err  = document.getElementById('err');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      err.textContent = "";
+      const pass = pw.value.trim();
+      if (!pass) { err.textContent = "Password required."; return; }
+
+      try {
+        const u = new URL(location.href);
+        u.searchParams.set('__auth', '1');
+        const res = await fetch(u.toString(), {
+          method: 'POST',
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pass })
+        });
+
+        if (res.ok) {
+          // Clean any helper params and reload
+          const back = new URL(location.href);
+          back.searchParams.delete('__auth');
+          location.href = back.toString();
+          return;
+        }
+        const data = await res.json().catch(()=>({}));
+        err.textContent = data.error || "Incorrect password.";
+      } catch {
+        err.textContent = "Network error. Please try again.";
+      }
+    });
+  })();
+</script>
+</body>
+</html>`;
+
+  return new Response(html, {
+    status: 401,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+    },
+  });
 }
-function escapeHtml(s){return s.replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
