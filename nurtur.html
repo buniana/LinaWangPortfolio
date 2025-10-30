@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>nurtur health project</title>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="asset/css/style2.0.css" />
+  <link rel="stylesheet" href="asset/css/nurtur.css" />
+  <link rel="stylesheet" href="asset/css/Bearhub.css" />
+
+
+<style>
+  /* Nurtur-only override for the imported Bearhub block */
+  /* Scope to your Bearhub section on this page so you don't affect the real Bearhub page */
+  .section.bh .bh-container {
+    max-width: 1024px;
+    margin-inline: auto;
+    padding-inline: clamp(16px, 3vw, 32px);
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+ <!-- ===== Header (leave blank) ===== -->
+<header>
+      <div class="content">
+        <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+        <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
+        </a>
+
+        <!-- Mobile hamburger button -->
+        <button class="nav-toggle" id="navToggle"
+                aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+          <!-- hamburger -->
+          <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- close -->
+          <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav id="primary-nav">
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a></li>
+            <li><a href="/about.html">About Me</a></li>
+            <li><a href="mailto:jiayuwang0815@berkeley.edu">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Off-canvas mobile menu overlay -->
+    <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <!-- backdrop -->
+      <div class="overlay-backdrop" data-close-overlay></div>
+
+      <!-- sliding panel -->
+      <aside class="overlay-panel" tabindex="-1">
+        <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+          <!-- close icon -->
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav class="overlay-nav">
+          <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
+          <a href="/About.html">About Me</a>
+          <a href="mailto:jiayuwang0815@berkeley.edu">Contact</a>
+        </nav>
+      </aside>
+    </div>
+
+<!-- ===== HERO (scoped) ===== -->
+<div class="page page1 nurtur-hero" style="font-family: Poppins;">
+  <div class="page page1 nurtur-hero">
+  <picture class="hero-picture">
+    <!-- Mobile image (<= 640px) -->
+    <source media="(max-width: 640px)" srcset="asset/image/nurtur/HeroBackground-mobile.png">
+    <!-- Default/desktop image -->
+    <img class="" src="asset/image/nurtur/HeroBackground.png" alt="nurtur background">
+  </picture>
+
+  <div class="overlaytext">
+    <div class="Gradientcolornurtur">nurtur health, Inc.</div>
+    <div class="hero-sub">Mental wellness for the motherhood journey</div>
+  </div>
+</div>
+
+  <div class="overlaytext">
+    <div class="Gradientcolornurtur">nurtur health, Inc.</div>
+    <div class="hero-sub">Mental wellness for the motherhood journey</div>
+  </div>
+</div>
+
+
+        <!-- ===== META / STATS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="stats">
+        <div class="stat">
+          <h3>Role</h3><p>UI/UX Designer</p>
+        </div>
+        <div class="stat">
+          <h3>Team Member</h3><p>Jiayu Wang<br/>2 Project Managers</p>
+        </div>
+        <div class="stat">
+          <h3>Project Duration</h3><p>1 week</p>
+        </div>
+        <div class="stat">
+          <h3>Skills</h3><p>Interaction Design, User Flow, Wireframing, Rapid Prototyping</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OVERVIEW ===== -->
+<section class="section">
+  <div class="container stack-vert">   <!-- was: container grid-2 -->
+    <div>
+      <h2 class="eyebrow" style="color: #0F4424;">Overview</h2>
+      <h3 style="font-family: Poppins;">Business Goal</h3>
+      <p>nurtur is a mobile application designed to support new mothers and their care network by providing mental health support before, during, and after their pregnancy to minimize risks in postpartum depression. The app focuses on mental health awareness and prevention through mental health education sessions and professional resources.<br> 
+      Key features include chatbot sessions, mental health wellness tracking capabilities, and access to mental health resources, enabling users to receive timely psychological support during this critical life transition.</p>
+    </div>
+
+    <div>
+      <h3 style="font-family: Poppins;">Problem Statement</h3>
+      <p>How Might We design a comprehensive digital platform that empowers pregnant women and new mothers to proactively manage their mental health while providing their support networks with the tools and resources needed to offer meaningful assistance during this critical life transition?</p>
+    </div>
+
+    <div>
+      <h3 style="font-family: Poppins;">My Contributions</h3>
+      <ul class="checklist">
+        <li>Building a consistent design system from scratch</li>
+        <li>Auditing early prototypes and identifying usability issues</li>
+        <li>Designing core features across mobile and web (chatbot, crisis hotline, provider dashboard, journaling)</li>
+      </ul>
+    </div>
+
+      <div>
+      <h3 style="font-family: Poppins;">Problems Encountered</h3>
+      <ul class="checklist">
+        <li><span style="font-weight: 600;">Diverse stakeholders</span> – mothers vs. healthcare providers</li>
+        <li><span style="font-weight: 600;">Sensitive domain</span> – designing for panic and distress</li>
+        <li><span style="font-weight: 600;">Content Clarity</span> – wordy chatbot, data-heavy dashboards</li>
+        <li><span style="font-weight: 600;">Lean team</span> – balancing speed with thoughtful design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =====Chatbot Design===== -->
+<section class="section">
+<div class="container stack-vert"> 
+  <div>
+      <h2 class="eyebrow" style="color: #0F4424;">Design Highlights</h2>
+      <h3 style="font-family: Poppins;">Chatbot Design</h3>
+      <h4>Problem</h4>
+      <ul>
+          <li>Long scripts reduce user engagement</li>
+          <li>UI needs to be modernized</li>
+          <li>Original speed button had too many drop-down options</li>
+      </ul>
+  </div>
+
+  <div>
+    <h4>Solution</h4>
+    <img src="asset/image/nurtur/ChatbotMobile.png">
+    <img src="asset/image/nurtur/ChatbotWeb.png">
+  </div>
+
+  <div>
+    <h4>Impacts</h4>
+    <ul>
+      <li>Higher completion of modules</li>
+      <li>Better perceived clarity and approachability</li>
+    </ul>
+  </div>
+
+</div>
+</section>
+
+
+<section class="nh-bh nh-bh-section">
+  <div class="container">
+    <h2 class="eyebrow" style="color: #0F4424;">Design Highlights</h2>
+    <h3 style="font-family: Poppins;">Crisis Hotline</h3>
+    <h4>Problem</h4>
+    <p>When designing mental health products, we cannot only consider ordinary days—we must also prepare for the most difficult moments when users feel completely overwhelmed and broken down. It is precisely in these moments, when reaching out for help seems incredibly difficult yet is most necessary, that our built-in crisis hotline feature becomes a lifeline for users, ensuring they can access professional support directly when they need it most.
+    </p>
+
+    <h3 style="font-family: Poppins; color:#0F4424; font-size: 20px;">Three principles implemented throughout the design</h3>
+    <div class="card-grid" style="margin-bottom: 40px;">
+      <article class="card">
+        <h4>Immediate Response</h4>
+        <p>Ensure users can access assistance at the first moment they need it.</p>
+      </article>
+      <article class="card">
+        <h4>Autonomous Choice</h4>
+        <p>When users are not ready to accept help, clearly provide pathways for them to independently access support later.</p>
+      </article>
+      <article class="card">
+        <h4>Error-Tolerant Design</h4>
+        <p>All interaction designs include room for correction, allowing users to still receive help even after mis-operations during vulnerable states.</p>
+      </article>
+    </div>
+
+    <h4>Solutions</h4>
+
+
+    <div class="nh-bh-feature-list">
+      <!-- Feature 1 -->
+      <section class="nh-bh-feature">
+        <figure class="nh-bh-phone">
+          <img src="asset/image/nurtur/Alert1.png" alt="Alert page" />
+        </figure>
+        <div class="nh-bh-feature-text">
+          <h3>Alert Screen</h3>
+          <p class="nh-bh-iter-text">
+            A home page that tracks all upcoming and saved events.</p>
+          <p class="nh-bh-iter-text">Easily accessible event info and QR codes for
+            check-in, with suggested events at the bottom.
+          </p>
+
+          <!-- Tip / Principle box -->
+      <div class="nh-bh tip-box" role="note" aria-label="Design principle">
+        <span class="tip-icon" aria-hidden="true">
+          <!-- placeholder icon (swap for your Phosphor icon) -->
+          <i class="ph-lightbulb"></i>
+        </span>
+        <p class="tip-text">“During panic, a single obvious action beats many choices.”</p>
+      </div>
+
+        </div>
+      </section>
+
+      <!-- Feature 2 (reverse on desktop) -->
+      <section class="nh-bh-feature is-reverse">
+        <figure class="nh-bh-phone">
+          <img src="asset/image/nurtur/Alert2.png" alt="Hotline page" />
+        </figure>
+        <div class="nh-bh-feature-text">
+          <h3>Help Recommendation</h3>
+          <p class="nh-bh-iter-text">
+          Additional hotlines are presented with both call and text options.</p>
+          <p>A Back to Home action allows users to exit when ready.          </p>
+        </div>
+      </section>
+
+     <!-- Feature 3 (reverse on desktop) -->
+      <section class="nh-bh-feature">
+        <figure class="nh-bh-phone">
+          <img src="asset/image/nurtur/Alert3.png" alt="Additional Support Page" />
+        </figure>
+        <div class="nh-bh-feature-text">
+          <h3>Support Options</h3>
+          <p class="nh-bh-iter-text">
+            Additional hotlines are presented with both call and text options.</p>
+          <p class="nh-bh-iter-text">A Back to Home action allows users to exit when ready.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="eyebrow" style="color: #0F4424;">Design Highlights</h2>
+    <h3 style="font-family: Poppins;">Provider Dashboard</h3>
+    <p>Since the clinicians are actively involved in the process, there needs to be a dashboard that centralize all the resources and allow clinicians to view the stat’s of their patients at a glance.</p>
+    <h4>Problem</h4>
+      <ul style="margin-bottom: 32px;">
+          <li>Providers aren’t trained to parse dense quant data fast</li>
+          <li>Raw scores slow decision-making</li>
+      </ul>
+    <h4>Solution</h4>
+    <img src="asset/image/nurtur/Provider Dashboard.png" style="margin-bottom: 32px;">
+    <h3 style="font-family: Poppins; color:#0F4424; font-size: 20px;">Impacts</h3>
+    <ul>
+          <li>Faster “first-read” comprehension</li>
+          <li>Fewer clarifying clicks</li>
+          <li>Higher confidence in patient status at a glance</li>
+      </ul>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="eyebrow" style="color: #0F4424;">Outcomes & Reflection</h2>
+    <h3 style="font-family: Poppins;">What I learned</h3>
+    <ul>
+      <li>Designing for vulnerable states means privileging clarity, agency, and recoverability. 
+      <li>Collaborated closely with clinicians/engineers.</li>
+      <li>Strengthened skills in flows, information design.</li>
+    </ul>
+  </div>
+</section>
+    
+
+<footer class="page FooterSlide" style="background: linear-gradient(to right, #DCEDEF, #D8EBD7, #D5E8C1);">
+            <div class="FooterContent">
+              <div class="FooterLeft">
+                <div class="FooterTitle">Last Stop</div>
+                <div class="FooterMessage">Let’s connect!</div>
+              </div>
+              <div class="FooterRight">
+                <a href="mailto:your@email.com" class="FooterLink">Email me</a>
+                <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
+                <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
+              </div>
+            </div>
+    
+            <div class="FooterCopyright">
+                <p>&copy; 2025 Lina Wang</p>
+              </div>
+  </footer>  
+  </body>
+</html>

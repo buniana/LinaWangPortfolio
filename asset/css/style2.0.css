@@ -1818,3 +1818,185 @@ p.muted{ color:var(--muted); }
     margin-top: 12px;
   }
 }
+
+
+/* Nurtur “Bearhub-style” features — FOLLOW global .container width */
+.nh-bh,
+.nh-bh * { box-sizing: border-box; }
+
+.nh-bh .nh-bh-section { padding: clamp(24px, 1.5vh, 32px) 0; }
+
+/* Headings */
+.nh-bh .nh-bh-h2 {
+  margin: 0 0 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+  font-size: 20px;
+  font-family: Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+/* Features list */
+.nh-bh .nh-bh-feature-list {
+  display: grid;
+  gap: clamp(24px, 3vw, 36px);
+  margin-top: 8px;
+}
+
+/* Each feature row (mobile-first) */
+.nh-bh .nh-bh-feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 3vw, 28px);
+  align-items: center;
+}
+
+/* Desktop two columns */
+@media (min-width: 900px) {
+  .nh-bh .nh-bh-feature { grid-template-columns: minmax(220px, 320px) 1fr; }
+  .nh-bh .nh-bh-feature.is-reverse { grid-template-columns: 1fr minmax(220px, 320px); }
+  .nh-bh .nh-bh-feature.is-reverse .nh-bh-phone { order: 2; }
+  .nh-bh .nh-bh-feature.is-reverse .nh-bh-feature-text { order: 1; }
+}
+
+/* Phone figure + image */
+.nh-bh .nh-bh-phone { width: 320px; max-width: 100%; }
+.nh-bh .nh-bh-phone img {
+  display: block;
+  width: auto;            /* avoid stretching */
+  max-width: 100%;
+  max-height: 520px;
+  height: auto;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,.06); */
+}
+
+/* Text */
+.nh-bh figure { margin: 0; }
+.nh-bh .nh-bh-feature-text .nh-bh-iter-text {
+  margin-bottom:12px;
+  line-height: 1.6;
+  color: #2b2b2b;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+/* Optional centered feature variant */
+.nh-bh .nh-bh-feature-center { display: grid; place-items: center; margin-top: 8px; }
+
+/* ===== Nurtur: green outlined tip box (scoped) ===== */
+.nh-bh { --nh-green: #3C8358; }   /* matches your nurtur green */
+
+.nh-bh .tip-box{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 2.4px solid var(--nh-green);
+  border-radius: 20px;
+  /* fallback if color-mix() isn’t supported */
+  margin-top: 32px;
+}
+
+.nh-bh .tip-icon{
+  line-height: 0;
+  display: inline-grid;
+  place-items: center;
+  color: var(--nh-green);
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* size the placeholder icon; your Phosphor icon will inherit */
+.nh-bh .tip-icon i { font-size: 18px; }
+
+.nh-bh .tip-text{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+
+}
+
+/* Optional: a little breathing room on small screens */
+@media (max-width: 600px){
+  .nh-bh .tip-box{ padding: 12px 14px; border-radius: 12px; }
+}
+
+/* ===== Nurtur page — scoped hero rules (won’t affect other pages) ===== */
+.nurtur-hero{
+  position: relative;
+  /* margin-top: 80px; */
+  height: 100vh; height: 100svh; height: 100dvh;
+  overflow: hidden;
+}
+
+.nurtur-hero > img{
+  position: absolute; inset: 0;
+  width: 100%;                           /* avoid 100vw scrollbar issue */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;               /* change to 'left center' if needed */
+  display: block;
+}
+
+.nurtur-hero .overlaytext{
+  position: absolute;
+  top: 50%;
+  left: clamp(16px, 6vw, 80px);          /* responsive left gutter */
+  transform: translateY(-50%);
+  padding-right: clamp(16px, 4vw, 32px);
+  max-width: 70ch;
+  background: transparent;
+  color: #0F4424;
+}
+
+.nurtur-hero .Gradientcolornurtur{
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.nurtur-hero .hero-sub{
+  font-size: clamp(1.05rem, 2.2vw, 1.6rem);
+  padding-top: 0.75rem;
+  color: #0F4424;
+}
+
+/* Mobile tweak: move text down a bit */
+@media (max-width: 640px){
+  .nurtur-hero .overlaytext{
+    top: auto; bottom: 10vh; transform: none;
+  }
+}
+
+/* Make <picture> behave like the old <img> background */
+.nurtur-hero .hero-picture,
+.nurtur-hero .hero-picture > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.nurtur-hero .hero-picture > img {
+  object-fit: cover;
+  object-position: center;    /* adjust to 'left center' if you want */
+  display: block;
+}
+
+/* Mobile: keep text at the TOP */
+@media (max-width: 640px){
+  .nurtur-hero { height: 100svh; }   /* safe viewport height */
+  .nurtur-hero .overlaytext{
+    top: 80px;                           /* pin to top */
+    transform: none;
+    padding-top: clamp(16px, 8vh, 64px);    /* nice top breathing room */
+    left: clamp(16px, 6vw, 32px);           /* same left rail */
+    padding-right: clamp(16px, 5vw, 32px);
+  }
+}
+
+.Gradientcolornurtur {
+    font-size: 55px;
+    background:
+    -webkit-linear-gradient(left, #569970, #468B61, #317B4E, #569970);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
