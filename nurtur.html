@@ -16,18 +16,10 @@
   <link rel="stylesheet" href="asset/css/style2.0.css" />
   <link rel="stylesheet" href="asset/css/nurtur.css" />
   <link rel="stylesheet" href="asset/css/Bearhub.css" />
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
-<style>
-  /* Nurtur-only override for the imported Bearhub block */
-  /* Scope to your Bearhub section on this page so you don't affect the real Bearhub page */
-  .section.bh .bh-container {
-    max-width: 1024px;
-    margin-inline: auto;
-    padding-inline: clamp(16px, 3vw, 32px);
-    width: 100%;
-  }
-</style>
 </head>
 <body>
  <!-- ===== Header (leave blank) ===== -->
@@ -53,7 +45,7 @@
         <nav id="primary-nav">
           <ul>
             <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a></li>
-            <li><a href="/about.html">About Me</a></li>
+            <li><a href="/About.html">About Me</a></li>
             <li><a href="mailto:jiayuwang0815@berkeley.edu">Contact</a></li>
           </ul>
         </nav>
@@ -107,8 +99,8 @@
 
         <!-- ===== META / STATS ===== -->
   <section class="section">
-    <div class="container">
-      <div class="stats">
+    <div class="container" data-aos="fade-up">
+      <div class="stats" >
         <div class="stat">
           <h3>Role</h3><p>UI/UX Designer</p>
         </div>
@@ -128,28 +120,28 @@
   <!-- ===== OVERVIEW ===== -->
 <section class="section">
   <div class="container stack-vert">   <!-- was: container grid-2 -->
-    <div>
+    <div data-aos="fade-up">
       <h2 class="eyebrow" style="color: #0F4424;">Overview</h2>
       <h3 style="font-family: Poppins;">Business Goal</h3>
       <p>nurtur is a mobile application designed to support new mothers and their care network by providing mental health support before, during, and after their pregnancy to minimize risks in postpartum depression. The app focuses on mental health awareness and prevention through mental health education sessions and professional resources.<br> 
       Key features include chatbot sessions, mental health wellness tracking capabilities, and access to mental health resources, enabling users to receive timely psychological support during this critical life transition.</p>
     </div>
 
-    <div>
+    <div data-aos="fade-up">
       <h3 style="font-family: Poppins;">Problem Statement</h3>
       <p>How Might We design a comprehensive digital platform that empowers pregnant women and new mothers to proactively manage their mental health while providing their support networks with the tools and resources needed to offer meaningful assistance during this critical life transition?</p>
     </div>
 
-    <div>
+    <div data-aos="fade-up">
       <h3 style="font-family: Poppins;">My Contributions</h3>
-      <ul class="checklist">
+      <ul class="checklist" style="margin-bottom: 32px;">
         <li>Building a consistent design system from scratch</li>
         <li>Auditing early prototypes and identifying usability issues</li>
         <li>Designing core features across mobile and web (chatbot, crisis hotline, provider dashboard, journaling)</li>
       </ul>
     </div>
 
-      <div>
+      <div data-aos="fade-up">
       <h3 style="font-family: Poppins;">Problems Encountered</h3>
       <ul class="checklist">
         <li><span style="font-weight: 600;">Diverse stakeholders</span> – mothers vs. healthcare providers</li>
@@ -164,25 +156,25 @@
 <!-- =====Chatbot Design===== -->
 <section class="section">
 <div class="container stack-vert"> 
-  <div>
+  <div data-aos="fade-up">
       <h2 class="eyebrow" style="color: #0F4424;">Design Highlights</h2>
       <h3 style="font-family: Poppins;">Chatbot Design</h3>
       <h4>Problem</h4>
-      <ul>
+      <ul style="margin-bottom: 32px;">
           <li>Long scripts reduce user engagement</li>
           <li>UI needs to be modernized</li>
           <li>Original speed button had too many drop-down options</li>
       </ul>
   </div>
 
-  <div>
+  <div data-aos="fade-up">
     <h4>Solution</h4>
     <img src="asset/image/nurtur/ChatbotMobile.png">
     <img src="asset/image/nurtur/ChatbotWeb.png">
   </div>
 
-  <div>
-    <h4>Impacts</h4>
+  <div data-aos="fade-up">
+    <h4 style="margin-top: 32px; margin-bottom: 32px;">Impacts</h4>
     <ul>
       <li>Higher completion of modules</li>
       <li>Better perceived clarity and approachability</li>
@@ -195,12 +187,15 @@
 
 <section class="nh-bh nh-bh-section">
   <div class="container">
-    <h2 class="eyebrow" style="color: #0F4424;">Design Highlights</h2>
-    <h3 style="font-family: Poppins;">Crisis Hotline</h3>
-    <h4>Problem</h4>
-    <p>When designing mental health products, we cannot only consider ordinary days—we must also prepare for the most difficult moments when users feel completely overwhelmed and broken down. It is precisely in these moments, when reaching out for help seems incredibly difficult yet is most necessary, that our built-in crisis hotline feature becomes a lifeline for users, ensuring they can access professional support directly when they need it most.
-    </p>
+    <div data-aos="fade-up">
+      <h2 class="eyebrow" style="color: #0F4424;">Design Highlights</h2>
+      <h3 style="font-family: Poppins;">Crisis Hotline</h3>
+      <h4>Problem</h4>
+      <p>When designing mental health products, we cannot only consider ordinary days—we must also prepare for the most difficult moments when users feel completely overwhelmed and broken down. It is precisely in these moments, when reaching out for help seems incredibly difficult yet is most necessary, that our built-in crisis hotline feature becomes a lifeline for users, ensuring they can access professional support directly when they need it most.
+      </p>
+    </div>
 
+    <div data-aos="fade-up">
     <h3 style="font-family: Poppins; color:#0F4424; font-size: 20px;">Three principles implemented throughout the design</h3>
     <div class="card-grid" style="margin-bottom: 40px;">
       <article class="card">
@@ -216,13 +211,14 @@
         <p>All interaction designs include room for correction, allowing users to still receive help even after mis-operations during vulnerable states.</p>
       </article>
     </div>
+    </div>
 
-    <h4>Solutions</h4>
+    <h4 data-aos="fade-up">Solutions</h4>
 
 
     <div class="nh-bh-feature-list">
       <!-- Feature 1 -->
-      <section class="nh-bh-feature">
+      <section class="nh-bh-feature" data-aos="fade-up">
         <figure class="nh-bh-phone">
           <img src="asset/image/nurtur/Alert1.png" alt="Alert page" />
         </figure>
@@ -247,7 +243,7 @@
       </section>
 
       <!-- Feature 2 (reverse on desktop) -->
-      <section class="nh-bh-feature is-reverse">
+      <section class="nh-bh-feature is-reverse" data-aos="fade-up">
         <figure class="nh-bh-phone">
           <img src="asset/image/nurtur/Alert2.png" alt="Hotline page" />
         </figure>
@@ -260,7 +256,7 @@
       </section>
 
      <!-- Feature 3 (reverse on desktop) -->
-      <section class="nh-bh-feature">
+      <section class="nh-bh-feature" data-aos="fade-up">
         <figure class="nh-bh-phone">
           <img src="asset/image/nurtur/Alert3.png" alt="Additional Support Page" />
         </figure>
@@ -278,16 +274,23 @@
 
 <section class="section">
   <div class="container">
+    <div data-aos="fade-up">
     <h2 class="eyebrow" style="color: #0F4424;">Design Highlights</h2>
     <h3 style="font-family: Poppins;">Provider Dashboard</h3>
     <p>Since the clinicians are actively involved in the process, there needs to be a dashboard that centralize all the resources and allow clinicians to view the stat’s of their patients at a glance.</p>
+    </div>
+    <div data-aos="fade-up">
     <h4>Problem</h4>
       <ul style="margin-bottom: 32px;">
           <li>Providers aren’t trained to parse dense quant data fast</li>
           <li>Raw scores slow decision-making</li>
       </ul>
+    </div>
+    <div data-aos="fade-up">
     <h4>Solution</h4>
-    <img src="asset/image/nurtur/Provider Dashboard.png" style="margin-bottom: 32px;">
+    <img src="asset/image/nurtur/Provider Dashboard.png" style="margin-bottom: 32px;"> 
+    </div>
+    <div data-aos="fade-up">
     <h3 style="font-family: Poppins; color:#0F4424; font-size: 20px;">Impacts</h3>
     <ul>
           <li>Faster “first-read” comprehension</li>
@@ -295,9 +298,10 @@
           <li>Higher confidence in patient status at a glance</li>
       </ul>
     </div>
+    </div>
 </section>
 
-<section class="section">
+<section class="section" data-aos="fade-up">
   <div class="container">
     <h2 class="eyebrow" style="color: #0F4424;">Outcomes & Reflection</h2>
     <h3 style="font-family: Poppins;">What I learned</h3>
@@ -328,4 +332,9 @@
               </div>
   </footer>  
   </body>
+
+  <script>
+  AOS.init();
+  </script>
+
 </html>
