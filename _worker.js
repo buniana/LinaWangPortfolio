@@ -1,233 +1,245 @@
-// _worker.js — Cloudflare Pages (Module Worker) with password-only lock screen
-// - Protect specific paths (edit PROTECTED)
-// - Env var: USER_PASS (required). Optional BRAND_1 / BRAND_2 for colors.
-// - Sets HttpOnly cookie so users don’t re-enter for ~30 days.
+// Protect only these paths (edit as you like)
+const PROTECTED = [
+  /^\/Gifted(\/.*)?$/i,
+  // add more, e.g. /^\/nurtur(\/.*)?$/i
+];
 
-export default {
-  async fetch(request, env) {
-    const url = new URL(request.url);
-    const pathname = url.pathname;
+// name + settings for the session cookie
+const COOKIE_NAME = "pw_gate";
+const COOKIE_MAX_AGE = 60 * 60 * 8; // 8 hours
 
-    // 1) Choose what to protect
-    const PROTECTED = [
-      /^\/nurtur(\/.*)?$/i,
-      /^\/Gifted(\/.*)?$/i,
-      // add more: /^\/secret(\/.*)?$/i,
-    ];
+export async function onRequest(context) {
+  const { request, env, next } = context;
+  const url = new URL(request.url);
+  const { pathname } = url;
 
-    const isProtected = PROTECTED.some(rx => rx.test(pathname));
-    const serveSite = (req) => env.ASSETS.fetch(req);
+  const isProtected = PROTECTED.some(rx => rx.test(pathname));
+  if (!isProtected) return next();
 
-    // Special internal route for auth POST
-    const isAuthRoute = url.searchParams.has("__auth");
-    if (!isProtected || isAuthRoute) {
-      if (isAuthRoute && request.method === "POST") {
-        return handleAuth(request, env);
+  // already unlocked?
+  const cookies = parseCookies(request.headers.get("Cookie") || "");
+  if (cookies[COOKIE_NAME] === "ok") {
+    return next();
+  }
+
+  // Handle unlock attempts (password only)
+  if (request.method === "POST") {
+    try {
+      const ct = request.headers.get("content-type") || "";
+      let pass = "";
+      if (ct.includes("application/x-www-form-urlencoded")) {
+        const form = await request.formData();
+        pass = (form.get("pw") || "").toString();
+      } else if (ct.includes("application/json")) {
+        const data = await request.json();
+        pass = (data?.pw || "").toString();
       }
-      return serveSite(request);
-    }
 
-    // Protected path → check cookie
-    if (isAuthed(request)) return serveSite(request);
+      if (pass && env.USER_PASS && pass === env.USER_PASS) {
+        // success → set session cookie then bounce back to GET
+        const headers = new Headers({
+          "Set-Cookie": cookieHeader({
+            name: COOKIE_NAME,
+            value: "ok",
+            maxAge: COOKIE_MAX_AGE,
+            path: "/", // or narrow to a specific base path if you prefer
+            sameSite: "Lax",
+            httpOnly: true,
+            secure: true,
+          }),
+          "Cache-Control": "no-store",
+          "Location": url.pathname + url.search,
+        });
+        return new Response(null, { status: 303, headers });
+      }
 
-    // Not authed → show gradient lock screen (no blur/preview)
-    return lockScreenResponse(request, env);
-  },
-};
-
-/* -------------- helpers -------------- */
-
-function isAuthed(request) {
-  const cookie = request.headers.get("Cookie") || "";
-  return /\bsite_auth=1\b/.test(cookie);
-}
-
-async function handleAuth(request, env) {
-  try {
-    const data = await request.json();
-    const pass = (data?.pass || "").trim();
-    const ok = env.USER_PASS && pass === env.USER_PASS;
-
-    if (!ok) {
-      return new Response(JSON.stringify({ ok: false, error: "Incorrect password." }), {
+      // wrong password → show page with error
+      return new Response(LOCK_HTML({ error: true }), {
         status: 401,
-        headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Cache-Control": "no-store",
+        },
+      });
+    } catch {
+      return new Response(LOCK_HTML({ error: true }), {
+        status: 400,
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Cache-Control": "no-store",
+        },
       });
     }
+  }
 
-    const maxAge = 60 * 60 * 24 * 30; // 30 days
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-store",
-        "Set-Cookie": `site_auth=1; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`,
-      },
-    });
-  } catch {
-    return new Response(JSON.stringify({ ok: false, error: "Bad request." }), {
-      status: 400,
-      headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
-    });
-  }
-}
-
-function lockScreenResponse(request, env) {
-  // Brand colors (pink like your home page); override via env if you want
-  const BRAND_1 = env.BRAND_1 || "#FF5A5F"; // main pink
-  const BRAND_2 = env.BRAND_2 || "#FFA3B1"; // soft pink
-
-  const html = `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Protected</title>
-<style>
-  :root{
-    --brand-1: ${BRAND_1};
-    --brand-2: ${BRAND_2};
-    --card-bg: rgba(255,255,255,.92);
-    --ring: color-mix(in srgb, var(--brand-1) 24%, transparent);
-  }
-  html, body { height: 100%; margin: 0; }
-  body{
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-    color: #222;
-    /* Gradient-only background (no blur/no preview) */
-    background:
-      radial-gradient(120% 120% at 10% 0%, color-mix(in srgb, var(--brand-2) 35%, white) 0%, transparent 58%),
-      radial-gradient(100% 100% at 90% 10%, color-mix(in srgb, var(--brand-1) 28%, white) 0%, transparent 60%),
-      linear-gradient(180deg, #fff, #fff);
-  }
-  .wrap{
-    position: fixed; inset: 0;
-    display: grid; place-items: center;
-    padding: clamp(16px, 4vw, 32px);
-  }
-  .lock-card{
-    width: min(560px, 92vw);
-    border-radius: 20px;
-    border: 1px solid rgba(0,0,0,.08);
-    background: var(--card-bg);
-    box-shadow:
-      0 16px 40px rgba(0,0,0,.14),
-      inset 0 0 0 1px rgba(255,255,255,.5);
-    padding: clamp(20px, 4vw, 28px);
-  }
-  .title{
-    margin: 0 0 6px;
-    font-size: clamp(18px, 2.6vw, 22px);
-    font-weight: 600;
-  }
-  .subtitle{
-    margin: 0 0 18px;
-    color: #666; font-size: 14px;
-  }
-  form{ display: grid; gap: 12px; }
-  .pw-input{
-    width: 100%; height: 44px;
-    padding: 10px 12px;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,.12);
-    background: #fff; color: #1a1a1a;
-    outline: none;
-    transition: border-color .15s ease, box-shadow .15s ease;
-  }
-  .pw-input:focus{
-    border-color: var(--ring);
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-1) 18%, transparent);
-  }
-  .pw-submit{
-    --shadow: 0 12px 26px color-mix(in srgb, var(--brand-1) 32%, transparent);
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    width: 100%; height: 44px; padding: 0 16px;
-    border: 1px solid color-mix(in srgb, var(--brand-1) 30%, white);
-    border-radius: 12px;
-    color: #fff; font-weight: 600; letter-spacing: .2px;
-    background:
-      radial-gradient(120% 140% at 80% 0%,
-        color-mix(in srgb, var(--brand-2) 22%, white) 0%, transparent 65%),
-      linear-gradient(135deg, var(--brand-1), var(--brand-2));
-    box-shadow: var(--shadow);
-    transition: transform .12s ease, box-shadow .12s ease, background-position .2s ease, filter .12s ease;
-    background-size: 200% 200%; background-position: 0% 50%;
-    cursor: pointer;
-  }
-  .pw-submit:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 16px 34px color-mix(in srgb, var(--brand-1) 36%, transparent);
-    background-position: 100% 50%;
-    filter: saturate(1.04);
-  }
-  .pw-submit:active{
-    transform: translateY(0);
-    box-shadow: 0 10px 22px color-mix(in srgb, var(--brand-1) 28%, transparent);
-    filter: brightness(.98);
-  }
-  .pw-submit[disabled]{ opacity: .65; cursor: not-allowed; filter: grayscale(.1); }
-  .error{ color:#c62828; font-size:14px; min-height:1.2em; }
-  .note{ margin-top:10px; color:#777; font-size:12px; }
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="lock-card" role="dialog" aria-modal="true" aria-labelledby="t1">
-      <h1 id="t1" class="title">This page is password-protected</h1>
-      <p class="subtitle">Please enter the password to continue.</p>
-      <form id="lockForm">
-        <input id="pw" name="pw" type="password" class="pw-input" placeholder="Password" autocomplete="current-password" required />
-        <button type="submit" class="pw-submit">Enter</button>
-        <div id="err" class="error"></div>
-      </form>
-      <p class="note">If you need access, contact Lina for the shared password.</p>
-    </div>
-  </div>
-
-<script>
-  (function(){
-    const form = document.getElementById('lockForm');
-    const pw   = document.getElementById('pw');
-    const err  = document.getElementById('err');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      err.textContent = "";
-      const pass = pw.value.trim();
-      if (!pass) { err.textContent = "Password required."; return; }
-
-      try {
-        const u = new URL(location.href);
-        u.searchParams.set('__auth', '1');
-        const res = await fetch(u.toString(), {
-          method: 'POST',
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ pass })
-        });
-
-        if (res.ok) {
-          // Clean any helper params and reload
-          const back = new URL(location.href);
-          back.searchParams.delete('__auth');
-          location.href = back.toString();
-          return;
-        }
-        const data = await res.json().catch(()=>({}));
-        err.textContent = data.error || "Incorrect password.";
-      } catch {
-        err.textContent = "Network error. Please try again.";
-      }
-    });
-  })();
-</script>
-</body>
-</html>`;
-
-  return new Response(html, {
+  // Default: show lock screen (GET)
+  return new Response(LOCK_HTML({ error: false }), {
     status: 401,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "no-store",
     },
   });
+}
+
+/* ---------------- helpers ---------------- */
+
+function parseCookies(header) {
+  const out = {};
+  header.split(/;\s*/).forEach(kv => {
+    const idx = kv.indexOf("=");
+    if (idx > -1) {
+      const k = kv.slice(0, idx).trim();
+      const v = kv.slice(idx + 1).trim();
+      out[k] = decodeURIComponent(v);
+    }
+  });
+  return out;
+}
+
+function cookieHeader({
+  name,
+  value,
+  maxAge,
+  path = "/",
+  sameSite = "Lax",
+  httpOnly = true,
+  secure = true,
+}) {
+  const parts = [
+    `${name}=${encodeURIComponent(value)}`,
+    `Path=${path}`,
+    `Max-Age=${maxAge}`,
+    `SameSite=${sameSite}`,
+  ];
+  if (httpOnly) parts.push("HttpOnly");
+  if (secure) parts.push("Secure");
+  return parts.join("; ");
+}
+
+/* -------------- your finalized HTML/CSS -------------- */
+/* (password-only; matches your gradient + card styling) */
+
+function LOCK_HTML({ error }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lock Screen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css"
+ href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"/>
+
+<style>
+  :root{
+    --brand-1: #D6739F;
+    --brand-2: #E78A91;
+    --ink-900: #2b2b2b;
+    --muted:  #7d7d7d;
+    --card:   #ffffff;
+    --border: rgba(0,0,0,.10);
+    --shadow: 0 12px 40px rgba(0,0,0,.12);
+    --radius: 20px;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    color: var(--ink-900);
+  }
+  .lock-wrap {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 4vw, 32px);
+    background:
+      radial-gradient(70% 60% at 80% 20%, rgba(255,255,255,.35), transparent 70%),
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--brand-1) 30%, transparent),
+        color-mix(in srgb, var(--brand-2) 30%, transparent)
+      );
+  }
+  .lock-card {
+    width: clamp(300px, 70vw, 480px);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: clamp(20px, 4vw, 32px);
+    display: grid;
+    gap: 16px;
+  }
+  .lock-title {
+    margin: 0;
+    font: 600 clamp(20px, 3.2vw, 28px)/1.15 Poppins, Inter, system-ui, -apple-system;
+    background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .lock-sub {
+    margin: 4px 0 8px;
+    color: #454656;
+    font-size: clamp(14px, 1.8vw, 16px);
+  }
+  .lock-form { display: grid; gap: 12px; margin-top: 4px; }
+  .lock-label { font-size: 14px; color: var(--muted); }
+  .lock-input {
+    width: 100%; height: 44px; padding: 0 12px;
+    border-radius: 10px; border: 1px solid var(--border);
+    outline: none; font-size: 16px;
+  }
+  .lock-input:focus {
+    border-color: rgba(214, 115, 159, 0.6);
+    box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.08);
+  }
+  .lock-btn {
+    height: 44px; border: none; border-radius: 999px;
+    color: #fff; font-weight: 600; font-size: 15px; cursor: pointer;
+    background-image: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+    box-shadow: 0 8px 22px rgba(255, 90, 95, .28);
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    margin-top: 12px;
+  }
+  .lock-btn:hover { transform: translateY(-1px); }
+  .lock-btn:active { transform: translateY(0); box-shadow: 0 6px 18px rgba(255, 90, 95, .24); }
+  .lock-btn[disabled]{ opacity:.6; cursor: not-allowed; }
+  .lock-head {
+    display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px;
+  }
+  .lock-error {
+    margin: 4px 0 0;
+    font-size: 13px; color: #b00020;
+  }
+  @media (max-width: 520px){ .lock-card { padding: 18px; gap: 12px; } }
+</style>
+</head>
+<body>
+  <main class="lock-wrap">
+    <section class="lock-card" role="dialog" aria-labelledby="lockTitle" aria-describedby="lockDesc">
+      <div class="lock-head">
+        <div class="lock-icon" aria-hidden="true">
+          <i class="ph-duotone ph-lock-key" style="color:#D6739F; font-size:40px;"></i>
+        </div>
+        <div>
+          <h1 id="lockTitle" class="lock-title">This page is password-protected</h1>
+        </div>
+      </div>
+      <p id="lockDesc" class="lock-sub">Enter the password to continue</p>
+      ${error ? `<p class="lock-error">Incorrect password. Please try again.</p>` : ``}
+      <form class="lock-form" method="POST" action="">
+        <label class="lock-label" for="pw">Password</label>
+        <input id="pw" name="pw" class="lock-input" type="password" placeholder="Enter password" autocomplete="off" required />
+        <button class="lock-btn" type="submit">Unlock</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>`;
 }
