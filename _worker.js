@@ -1,32 +1,26 @@
-// Protect selected paths (case-insensitive)
-const PROTECTED = [/^\/Gifted(\/.*)?$/i]; // add more: /^\/Nurtur(\/.*)?$/i
+// _worker.js  (Cloudflare Pages single Worker)
 
-// Name of the auth cookie
+const PROTECTED = [/^\/Gifted(\/.*)?$/i];        // paths you want to protect
 const COOKIE_NAME = "pwok";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 14; // 14 days
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 14;        // 14 days
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // Only gate selected paths
-    const needsAuth = PROTECTED.some(rx => rx.test(path));
-    if (!needsAuth) {
-      return env.ASSETS.fetch(request);
-    }
-
-    // Handle POST from the password form
+    // 🔐 Always catch the password POST first (so it never 405s)
     if (path === "/__pwcheck" && request.method === "POST") {
       const form = await request.formData().catch(() => null);
       const pass = form?.get("pass") ?? "";
       const returnTo = form?.get("return_to") || "/";
+
       if (typeof pass === "string" && pass === env.USER_PASS) {
-        // Issue HttpOnly cookie and redirect back
+        // success → set cookie and redirect back
         return new Response(null, {
           status: 303,
           headers: {
-            "Location": returnTo,
+            Location: returnTo,
             "Set-Cookie": serializeCookie(COOKIE_NAME, "1", {
               path: "/",
               httpOnly: true,
@@ -37,23 +31,32 @@ export default {
           },
         });
       }
-      // Wrong password → bounce back with error flag
+
+      // wrong password → redirect back with flag
       const u = new URL(returnTo, url.origin);
       u.searchParams.set("auth", "bad");
       return new Response(null, { status: 303, headers: { Location: u.toString() } });
     }
 
-    // If user already has the cookie, allow through
+    // only gate selected paths
+    const needsAuth = PROTECTED.some(rx => rx.test(path));
+
+    if (!needsAuth) {
+      // not protected → just serve the asset
+      return env.ASSETS.fetch(request);
+    }
+
+    // already authenticated?
     if (hasValidCookie(request.headers.get("Cookie"))) {
       return env.ASSETS.fetch(request);
     }
 
-    // Otherwise, serve the password form (no username)
+    // otherwise show the password form
     return htmlPasswordPage(url);
-  }
+  },
 };
 
-// --- helpers ---
+/* ---------- helpers ---------- */
 function hasValidCookie(cookieHeader) {
   if (!cookieHeader) return false;
   return cookieHeader.split(/;\s*/).some(c => c.startsWith(`${COOKIE_NAME}=`));
@@ -80,15 +83,12 @@ function htmlPasswordPage(currentUrl) {
 <style>
   :root{ --bg:rgba(255,255,255,.7); --ring:#0F4424; --text:#1b1b1b; --muted:#6b7280;}
   *{box-sizing:border-box} html,body{height:100%}
-  body{margin:0; font:16px/1.4 Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; color:var(--text);}
+  body{margin:0; font:16px/1.4 Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
   .wrap{min-height:100%; display:grid; place-items:center; background:#f5f7f6}
   .panel{
-    width:min(92vw,420px);
-    background:var(--bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border:1px solid rgba(0,0,0,.08);
-    border-radius:16px; padding:24px;
+    width:min(92vw,420px); background:var(--bg);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:24px;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
   }
   h1{margin:0 0 8px; font-size:20px; font-weight:600}
@@ -104,21 +104,3 @@ function htmlPasswordPage(currentUrl) {
     <h1>Enter password</h1>
     <p class="muted">This page is private.</p>
     <div class="field">
-      <label for="pass">Password</label>
-      <input id="pass" name="pass" type="password" autocomplete="current-password" required autofocus>
-    </div>
-    <input type="hidden" name="return_to" value="${escapeHtml(returnTo)}">
-    <button class="btn" type="submit">Continue</button>
-    ${bad ? `<div class="error">Incorrect password. Try again.</div>` : ``}
-  </form>
-</div>`;
-  return new Response(body, {
-    status: 200,
-    headers: {
-      "Content-Type": "text/html; charset=utf-8",
-      "Cache-Control": "no-store",
-    },
-  });
-}
-
-function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
