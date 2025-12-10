@@ -214,6 +214,7 @@ p{ margin:.35rem 0 1rem; }
 .pill--nurtur{ background:#DBEDE8; color:#111318; }
 .desc--nurtur .pill{ background:#DBEDE8; color:#111318; border:none; }
 .desc--agnes .pill{ background:#F1E6FF; color:#111318; border:none; }
+.desc--HIP .pill{ background:#BFDFD8; color:#111318; border:none; }
 /* Agnes impact strip */
 .impact{ display:flex; flex-wrap:wrap; gap:48px; margin-top:12px; }
 .impact-item h4{ font-size:40px; font-weight:600; line-height:1; margin:0; }
