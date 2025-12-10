@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lina Wang | Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. YOUR DESIGN SYSTEM [Based on image_fcfd4a.png] --- */
+        :root {
+            /* The Metro Pastels */
+            --bg-base: #FFFFFF;
+            --bg-gradient-1: rgba(239, 233, 255, 0.8); /* #EFE9FF */
+            --bg-gradient-2: rgba(255, 233, 239, 0.8); /* #FFE9EF */
+            
+            /* The Metro Accent */
+            --accent-pink: #DE7E98; 
+            --accent-pink-dim: rgba(222, 126, 152, 0.15);
+            
+            /* Typography */
+            --text-main: #1A1A1A;
+            --text-sub: #555555;
+            
+            /* The Grid Columns (Visual only, usually) */
+            --col-color: rgba(222, 126, 152, 0.05); /* Faint pink columns */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            overflow-x: hidden;
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Background Gradients (The "Glass" Feel) */
+        .ambient-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 10% 20%, var(--bg-gradient-1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, var(--bg-gradient-2) 0%, transparent 50%);
+            filter: blur(60px);
+        }
+
+        /* --- 2. THE 12-COLUMN GRID LAYOUT --- */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .grid-12 {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: 20px;
+            height: 100vh; /* Full viewport height layout */
+            position: relative;
+        }
+
+        /* Visual Grid Overlay (Matches your screenshot style) */
+        .grid-visuals {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: 20px;
+            padding: 0 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .col-visual {
+            background: var(--col-color);
+            height: 100%;
+        }
+
+        /* --- 3. NAVIGATION --- */
+        nav {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            height: 100px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .brand-icon {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: #E5D9D9; /* The greyish circle from your image */
+            color: #333;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+        }
+        .nav-list a {
+            text-decoration: none;
+            color: #888;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-list a:hover { color: var(--text-main); }
+
+
+        /* --- 4. HERO CONTENT --- */
+        .hero-content {
+            grid-column: 1 / 13;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: 20px;
+            align-content: center;
+            position: relative;
+            top: -50px; /* Slight visual adjust up */
+        }
+
+        /* The Tagline (Right Aligned) */
+        .tagline-box {
+            grid-column: 8 / 13;
+            background: rgba(0,0,0,0.05); /* Subtle grey box */
+            padding: 8px 16px;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+        .tagline-text {
+            font-size: 20px;
+            color: #333;
+            font-weight: 400;
+        }
+
+        /* The Massive Name */
+        .hero-name {
+            grid-column: 6 / 13;
+            font-size: 110px; /* Big impact */
+            font-weight: 600;
+            letter-spacing: -3px;
+            line-height: 0.9;
+            text-align: right;
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        /* The Arrow (Bottom Left) */
+        .big-arrow {
+            grid-column: 1 / 2;
+            width: 60px;
+            height: 60px;
+            border-bottom: 6px solid #000;
+            border-right: 6px solid #000;
+            transform: rotate(45deg);
+            margin-top: 20px;
+        }
+
+        /* The Niche Statement (Left) */
+        .hero-statement {
+            grid-column: 1 / 8;
+            font-size: 42px;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-top: -80px; /* Pulling it up to match layout */
+        }
+
+        /* --- 5. THE INTERACTIVE METRO TRACK --- */
+        .metro-system {
+            grid-column: 1 / -1;
+            position: relative;
+            margin-top: 100px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* The Grey Lines Background */
+        .track-bg {
+            position: absolute;
+            left: -100vw; /* Extend off screen */
+            width: 300vw;
+            height: 24px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #888 0,
+                #888 2px,
+                transparent 2px,
+                transparent 6px
+            ); /* Creates the multi-line effect */
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        /* The Interactive Stops */
+        .stops-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+            z-index: 5;
+            padding: 0 10%;
+        }
+
+        .metro-stop {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .stop-marker {
+            width: 20px;
+            height: 40px;
+            background: white;
+            border: 4px solid var(--accent-pink);
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .stop-label {
+            margin-top: 16px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        /* Hover States */
+        .metro-stop:hover .stop-marker {
+            height: 50px;
+            background: var(--accent-pink);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--accent-pink);
+        }
+        
+        .metro-stop:hover .stop-label {
+            opacity: 1;
+            font-weight: 600;
+        }
+
+        /* --- 6. INTERACTIVE TEXT EFFECT (Based on Jrnl Image) --- */
+        .distortion-text {
+            display: inline-block;
+            transition: transform 0.1s;
+        }
+        
+        .hero-name:hover .distortion-text {
+            /* Simulates that liquid text feel */
+            animation: ripple 1s ease infinite;
+        }
+
+        @keyframes ripple {
+            0% { transform: skewX(0deg); opacity: 1; }
+            25% { transform: skewX(-10deg) scaleY(1.1); opacity: 0.8; }
+            50% { transform: skewX(5deg) scaleY(0.9); opacity: 1; }
+            75% { transform: skewX(-5deg); opacity: 0.9; }
+            100% { transform: skewX(0deg); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="ambient-bg"></div>
+
+    <div class="grid-visuals">
+        <div class="col-visual"></div><div class="col-visual"></div><div class="col-visual"></div>
+        <div class="col-visual"></div><div class="col-visual"></div><div class="col-visual"></div>
+        <div class="col-visual"></div><div class="col-visual"></div><div class="col-visual"></div>
+        <div class="col-visual"></div><div class="col-visual"></div><div class="col-visual"></div>
+    </div>
+
+    <div class="container grid-12">
+        
+        <nav>
+            <div class="brand">
+                <div class="brand-icon">L</div>
+                <span>Lina Wang</span>
+            </div>
+            <div class="nav-list">
+                <a href="#">Home</a>
+                <a href="#">About Me</a>
+                <a href="#">Resume</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            
+            <div class="tagline-box">
+                <div class="tagline-text">an Interaction Designer</div>
+            </div>
+
+            <h1 class="hero-name">
+                <span class="distortion-text">I'm Lina Wang</span>
+            </h1>
+
+            <div class="hero-statement">
+                Every experience a destination,<br>
+                designed with <span style="color:var(--accent-pink); font-weight:500;">comfort</span> and completeness.
+            </div>
+
+            <div class="big-arrow"></div>
+
+        </div>
+
+        <div class="metro-system">
+            <div class="track-bg"></div>
+            
+            <div class="stops-container">
+                
+                <div class="metro-stop" onclick="alert('Link to HIP Project')">
+                    <div class="stop-marker"></div>
+                    <div class="stop-label">Visual Systems</div>
+                </div>
+
+                <div class="metro-stop" onclick="alert('Link to Agnes AI')">
+                    <div class="stop-marker"></div>
+                    <div class="stop-label">Data Complexity</div>
+                </div>
+
+                <div class="metro-stop" onclick="alert('Link to Mobile Work')">
+                    <div class="stop-marker"></div>
+                    <div class="stop-label">Mobile First</div>
+                </div>
+
+                <div class="metro-stop">
+                    <div class="stop-marker" style="background:var(--text-main); border-color:var(--text-main);"></div>
+                    <div class="stop-label">Next Stop: Your Team</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Optional: Mouse tracking for the subtle text distortion
+        // This adds a slight 'liquid' feel when moving mouse over the name
+        const nameText = document.querySelector('.hero-name');
+        
+        nameText.addEventListener('mousemove', (e) => {
+            const x = (e.clientX - window.innerWidth / 2) * 0.01;
+            const y = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            nameText.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        nameText.addEventListener('mouseleave', () => {
+            nameText.style.transform = `translate(0px, 0px)`;
+        });
+    </script>
+</body>
+</html>

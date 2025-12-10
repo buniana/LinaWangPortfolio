@@ -594,3 +594,182 @@ header .content{
   .impact{ display:none; }
 }
 
+/* ===== Display fonts for C o M P l e x i t Y ===== */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Irish+Grover&family=Istok+Web:wght@400;700&family=Inspiration&display=swap');
+
+/* ===== HERO (gradient + full viewport + interactions) ===== */
+
+/* Shell */
+.hero3{
+  position: relative;
+  display: flex;                     /* vertical centering */
+  align-items: center;
+  justify-content: center;
+  min-height: max(100svh, 100vh);    /* fill viewport incl. mobile UI */
+  overflow: clip;                    /* prevent 100vw slab scroll */
+  z-index: 0;                        /* stacking for ::before */
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Full-bleed gradient background slab */
+.hero3::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100vw;                      /* true viewport width */
+  left: 50%;
+  transform: translateX(-50%);       /* center slab */
+  z-index: -1;
+  pointer-events: none;
+
+  /* soft corner gradient (desktop/tablet) */
+  background:
+    radial-gradient(1200px 800px at -10% -10%, #ffe9f1 0%, transparent 60%),
+    radial-gradient(1200px 800px at 110% -10%, #efe9ff 0%, transparent 60%);
+}
+
+/* Mobile tuning for the same gradient */
+@media (max-width: 767px){
+  .hero3::before{
+    background:
+      radial-gradient(900px 650px at -50% 10%, #ffe9f1 0%, transparent 45%),
+      radial-gradient(900px 650px at 170% 10%, #efecff 0%, transparent 60%);
+  }
+}
+
+/* Inner layout */
+.hero3__wrap{
+  margin: 0 auto;
+  text-align: center;
+  padding-block: clamp(24px, 6vh, 64px);   /* breathing room on short screens */
+}
+
+/* Title row */
+.hero3__title{
+  margin: 0 0 12px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .35ch;
+  align-items: flex-end;
+  justify-content: center;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+/* Regular words (Inter) */
+.hero3__lead{    font-weight: 500; font-size: clamp(28px, 6vw, 64px); }
+.hero3__clarity{ font-weight: 700; font-size: clamp(32px, 6.5vw, 72px); }
+
+/* Interactive word: complexity */
+.hero3__complexity{
+  display: inline-flex;
+  gap: .05ch;
+  align-items: flex-end;
+}
+
+/* Hover motion for each letter */
+.hero3 .letter{
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform .18s ease;
+  will-change: transform;
+  line-height: .9;
+  cursor: default;
+}
+.hero3 .letter:hover{ transform: translateY(-10px); }
+
+/* Per-letter fonts/sizes */
+.hero3 .c{ font-family:'Instrument Serif', serif; font-size: clamp(34px, 6vw, 75px); }
+.hero3 .o{ font-family:'Inter', sans-serif;        font-size: clamp(30px, 5.2vw, 64px); font-weight:700; }
+.hero3 .m{ font-family:'Inter', sans-serif;        font-size: clamp(30px, 5.2vw, 64px); font-style:italic; font-weight:300; }
+.hero3 .p{ font-family:'Irish Grover', cursive;    font-size: clamp(34px, 6vw, 75px); }
+.hero3 .l{ font-family:'Istok Web', sans-serif;    font-size: clamp(30px, 5.2vw, 64px); }
+.hero3 .e{ font-family:'Inter', sans-serif;        font-size: clamp(30px, 5.2vw, 64px); font-weight:800; }
+.hero3 .x{ font-family:'Inter', sans-serif;        font-size: clamp(30px, 5.2vw, 64px); font-style:italic; font-weight:300; }
+.hero3 .i{ font-family:'Inter', sans-serif;        font-size: clamp(30px, 5.2vw, 64px); }
+.hero3 .t{ font-family:'Inspiration', cursive;     font-size: clamp(44px, 8vw, 96px); }
+.hero3 .y{ font-family:'Inter', sans-serif;        font-size: clamp(30px, 5.2vw, 64px); font-weight:600; }
+
+/* Subline */
+.hero3__sub{
+  margin: 8px auto 0;
+  max-width: 80ch;
+  font-weight: 500;
+  font-size: clamp(16px, 2.1vw, 24px);
+  line-height: 1.35;
+  opacity: .95;
+}
+
+/* Arrow + “I’m Lina Wang” pinned near bottom */
+.hero3__intro{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(20px, 6vh, 96px);  /* sits nicely above bottom; adjust to taste */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;                       /* space between arrow and text */
+}
+
+/* Arrow animation (your SVG inherits these) */
+.hero3__arrow{
+  width: clamp(32px, 4.5vw, 48px);
+  height: auto;
+  animation: hero3-bounce 1.6s ease-in-out infinite;
+  color: #111318;
+}
+
+@keyframes hero3-bounce{
+  0%,100%{ transform: translateY(-4px); }
+  50%   { transform: translateY( 6px); }
+}
+
+.hero3__me{
+  padding-bottom: 24px;
+}
+
+/* Intro text */
+.me__name{ font-weight:700; font-size: clamp(20px, 3.2vw, 32px); padding-bottom: 8px;}
+.me__role{ font-weight:500; font-size: clamp(14px, 2.2vw, 24px); opacity:.85; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .hero3__arrow{ animation: none; }
+  .hero3 .letter{ transition: none; }
+}
+
+/* Periodic bob for letters (with stagger), pauses on hover */
+.hero3 .letter{
+  animation: hero3-letter-bob 2.4s ease-in-out infinite;
+  animation-delay: var(--bob-delay, 0s);
+}
+
+/* Staggered delays across letters (C o M P l e x i t Y) */
+.hero3__complexity .letter:nth-child(1){ --bob-delay: 0.00s; }
+.hero3__complexity .letter:nth-child(2){ --bob-delay: 0.12s; }
+.hero3__complexity .letter:nth-child(3){ --bob-delay: 0.24s; }
+.hero3__complexity .letter:nth-child(4){ --bob-delay: 0.36s; }
+.hero3__complexity .letter:nth-child(5){ --bob-delay: 0.48s; }
+.hero3__complexity .letter:nth-child(6){ --bob-delay: 0.60s; }
+.hero3__complexity .letter:nth-child(7){ --bob-delay: 0.72s; }
+.hero3__complexity .letter:nth-child(8){ --bob-delay: 0.84s; }
+.hero3__complexity .letter:nth-child(9){ --bob-delay: 0.96s; }
+.hero3__complexity .letter:nth-child(10){ --bob-delay: 1.08s; }
+
+/* When hovering a letter: pause bob and lift it more */
+.hero3 .letter:hover{
+  animation-play-state: paused;
+  transform: translateY(-10px);
+}
+
+/* Keyframes for the subtle bob */
+@keyframes hero3-letter-bob{
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .hero3 .letter{ animation: none; }
+}
