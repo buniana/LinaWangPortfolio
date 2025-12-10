@@ -358,7 +358,8 @@ p{ margin:.35rem 0 1rem; }
 /* Featured titles on small */
 @media (max-width: 767px){
   .desc--agnes .proj-title,
-  .desc--nurtur .proj-title{ font-size:40px; }
+  .desc--nurtur .proj-title,
+  .desc--HIP{ font-size:40px; }
 }
 
 /* Footer heading size on small screens */
