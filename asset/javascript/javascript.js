@@ -85,3 +85,22 @@ window.addEventListener("DOMContentLoaded", function() {
   //     window.open('mailto:jiayuwang0815@berkeley.edu');
   //   });
   // });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const section = document.getElementById("np");
+  if (!section) return;
+
+  const setSpotlight = (e) => {
+    const rect = section.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    section.style.setProperty("--mx", x + "%");
+    section.style.setProperty("--my", y + "%");
+  };
+
+  section.addEventListener("mouseenter", () => section.classList.add("is-active"));
+  section.addEventListener("mouseleave", () => section.classList.remove("is-active"));
+  section.addEventListener("mousemove", setSpotlight);
+});
+
