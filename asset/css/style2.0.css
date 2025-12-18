@@ -2724,90 +2724,367 @@ p.muted {
   -webkit-text-fill-color: transparent;
 }
 
+
+/* Optional centered feature variant */
+.nh-bh .nh-bh-feature-center {
+  display: grid;
+  place-items: center;
+  margin-top: 8px;
+}
+
+/* ===== Nurtur: green outlined tip box (scoped) ===== */
+.nh-bh {
+  --nh-green: #3C8358;
+}
+
+/* matches your nurtur green */
+
+.nh-bh .tip-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 2.4px solid var(--nh-green);
+  border-radius: 20px;
+  /* fallback if color-mix() isn’t supported */
+  margin-top: 32px;
+}
+
+.nh-bh .tip-icon {
+  line-height: 0;
+  display: inline-grid;
+  place-items: center;
+  color: var(--nh-green);
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* size the placeholder icon; your Phosphor icon will inherit */
+.nh-bh .tip-icon i {
+  font-size: 18px;
+}
+
+.nh-bh .tip-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+
+}
+
+/* Optional: a little breathing room on small screens */
+@media (max-width: 600px) {
+  .nh-bh .tip-box {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+}
+
+/* ===== Nurtur page — scoped hero rules (won’t affect other pages) ===== */
+.nurtur-hero {
+  position: relative;
+  /* margin-top: 80px; */
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.nurtur-hero>img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  /* avoid 100vw scrollbar issue */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* change to 'left center' if needed */
+  display: block;
+}
+
+.nurtur-hero .overlaytext {
+  position: absolute;
+  top: 50%;
+  left: clamp(16px, 6vw, 80px);
+  /* responsive left gutter */
+  transform: translateY(-50%);
+  padding-right: clamp(16px, 4vw, 32px);
+  max-width: 70ch;
+  background: transparent;
+  color: #0F4424;
+}
+
+.nurtur-hero .Gradientcolornurtur {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.nurtur-hero .hero-sub {
+  font-size: clamp(1.05rem, 2.2vw, 1.6rem);
+  padding-top: 0.75rem;
+  color: #0F4424;
+}
+
+/* Mobile tweak: move text down a bit */
+@media (max-width: 640px) {
+  .nurtur-hero .overlaytext {
+    top: auto;
+    bottom: 10vh;
+    transform: none;
+  }
+}
+
+/* Make <picture> behave like the old <img> background */
+.nurtur-hero .hero-picture,
+.nurtur-hero .hero-picture>img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nurtur-hero .hero-picture>img {
+  object-fit: cover;
+  object-position: center;
+  /* adjust to 'left center' if you want */
+  display: block;
+}
+
+/* Mobile: keep text at the TOP */
+@media (max-width: 640px) {
+  .nurtur-hero {
+    height: 100svh;
+  }
+
+  /* safe viewport height */
+  .nurtur-hero .overlaytext {
+    top: 80px;
+    /* pin to top */
+    transform: none;
+    padding-top: clamp(16px, 8vh, 64px);
+    /* nice top breathing room */
+    left: clamp(16px, 6vw, 32px);
+    /* same left rail */
+    padding-right: clamp(16px, 5vw, 32px);
+  }
+}
+
+.Gradientcolornurtur {
+  font-size: 55px;
+  background: -webkit-linear-gradient(left, #569970, #468B61, #317B4E, #569970);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Next Project spotlight (WHITE COVER + reveal hole + text masked) ===== */
 .np {
-  --img: url("../image/Home3.0/HIP.png");
+  --base-img: url("../image/Agnes/HIP Preview.png");
   --r: 150px;
-  /* spotlight radius */
   --mx: 50%;
   --my: 50%;
 
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  /* makes it full-bleed even inside centered layouts */
   min-height: 600px;
   padding: 120px 0;
   overflow: hidden;
   background: transparent;
 }
 
-/* The full-screen-width image layer */
-.np__img {
+/* Bottom image: always there */
+.np__base {
   position: absolute;
   inset: 0;
-  background-image: var(--img);
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  /* hidden when not hovering */
-  transition: opacity 140ms ease;
+  z-index: 1;
+  background: var(--base-img) center / cover no-repeat;
+}
 
-  /* Spotlight reveal (mask) */
+/* White cover: hides everything EXCEPT where the circle is */
+.np__cover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #fff;
+  pointer-events: none;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  /* transparent inside circle, opaque outside */
   -webkit-mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
-      #000 0%,
-      #000 100%,
-      transparent 100%);
+      transparent 0 var(--r),
+      #000 calc(var(--r) + 1px));
   mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
-      #000 0%,
-      #000 100%,
-      transparent 100%);
+      transparent 0 var(--r),
+      #000 calc(var(--r) + 1px));
 }
 
-/* Show image only when the section is active */
-.np.is-active .np__img {
-  opacity: 1;
+.np__cover {
+  outline: 3px solid red;
 }
 
-/* Text above the image */
+/* Text container on top of everything */
 .np__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: min(1200px, calc(100% - 48px));
   text-align: center;
   margin: 0 auto;
 }
 
+/* ------------------------------
+   BASE text style (unrevealed)
+   ------------------------------ */
 .np__title {
-  font-size: clamp(56px, 8vw, 120px);
-  line-height: 0.95;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 1.2;
   margin: 0;
   letter-spacing: -0.03em;
-  transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+
+  color: transparent;
+  /* Hide actual text */
+  -webkit-text-stroke: 0px transparent;
+    overflow: visible;
 }
 
-.np.is-active .np__title {
-  color: transparent;
-  -webkit-text-stroke: 1px #fff;
-}
 
 .np__sub {
   margin: 18px 0 0;
-  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 4vw, 24px);
+
   opacity: 0.85;
+  color: transparent;
+  /* Hide actual text */
 }
 
-/* Touch devices: you probably don’t want hover spotlight */
+/* Needed for ::before/::after overlay text */
+.np__title,
+.np__sub {
+  position: relative;
+}
+
+/* ------------------------------
+   DEFAULT text (hidden inside circle)
+   ------------------------------ */
+.np__title::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: #000;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  /* Visible outside, transparent inside */
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      transparent 0 var(--r),
+      #000 calc(var(--r) + 1px));
+  mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      transparent 0 var(--r),
+      #000 calc(var(--r) + 1px));
+
+  pointer-events: none;
+}
+
+.np__sub::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: #000;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  /* Visible outside, transparent inside */
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      transparent 0 var(--r),
+      #000 calc(var(--r) + 1px));
+  mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      transparent 0 var(--r),
+      #000 calc(var(--r) + 1px));
+
+  pointer-events: none;
+}
+
+/* ------------------------------
+   REVEALED text (only inside circle)
+   ------------------------------ */
+.np__title::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      #000 0 calc(var(--r) - 1px),
+      transparent var(--r));
+  mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      #000 0 calc(var(--r) - 1px),
+      transparent var(--r));
+
+  pointer-events: none;
+}
+
+.np__sub::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+
+  color: #F9BC60;
+  opacity: 1;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      #000 0 calc(var(--r) - 1px),
+      transparent var(--r));
+  mask-image: radial-gradient(circle var(--r) at var(--mx) var(--my),
+      #000 0 calc(var(--r) - 1px),
+      transparent var(--r));
+
+  pointer-events: none;
+}
+
+/* ------------------------------------
+   Touch devices: disable spotlight
+   ------------------------------------ */
 @media (hover: none) {
-  .np__img {
-    opacity: 1;
+  .np__cover {
     -webkit-mask-image: none;
     mask-image: none;
   }
+
+  .np__title::before,
+  .np__sub::before {
+    display: none;
+  }
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .np__img {
-    transition: none;
-  }
+/* ------------------------------------
+   DEBUG (turn on if needed)
+   Uncomment to see layers
+   ------------------------------------ */
+/*
+.np{ outline: 2px solid magenta; }
+.np__base{ outline: 2px solid lime; }
+.np__cover{ outline: 2px solid red; }
+*/
+
+.np--link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
