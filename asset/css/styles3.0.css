@@ -476,6 +476,30 @@ p {
   font-weight: 500;
 }
 
+/* Smaller pills on tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pill {
+    height: 42px;
+    line-height: 42px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+}
+
+/* Smaller pills on mobile */
+@media (max-width: 767px) {
+  .pill {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  .pills {
+    gap: 8px;
+  }
+}
+
 /* Keep existing card styles below */
 .card {
   display: flex;
@@ -877,8 +901,9 @@ p {
 
   .desc--agnes .proj-title,
   .desc--nurtur .proj-title,
-  .desc--HIP .proj-title {
-    font-size: 40px;
+  .desc--HIP .proj-title,
+  .desc--ispy .proj-title {
+    font-size: 36px;
   }
 }
 
@@ -899,10 +924,12 @@ p {
 /* Tablet breakpoints for project & section titles */
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  /* Featured project titles (Agnes, nurtur) */
+  /* Featured project titles (Agnes, nurtur, HIP, ispy) */
   .desc--agnes .proj-title,
-  .desc--nurtur .proj-title {
-    font-size: 48px;
+  .desc--nurtur .proj-title,
+  .desc--HIP .proj-title,
+  .desc--ispy .proj-title {
+    font-size: 36px;
   }
 
   /* Past Projects card titles */
@@ -1272,40 +1299,113 @@ header .content {
   justify-content: center;
   min-height: max(100svh, 100vh);
   /* fill viewport incl. mobile UI */
-  overflow: clip;
-  /* prevent 100vw slab scroll */
+  overflow: hidden;
+  /* clip gradients within hero section */
   z-index: 0;
   /* stacking for ::before */
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* Full-bleed gradient background slab */
-.hero3::before {
+/* Full-bleed gradient background - using two layers for smooth animation */
+.hero3::before,
+.hero3::after {
   content: "";
   position: absolute;
-  inset: 0;
-  width: 100vw;
-  /* true viewport width */
-  left: 50%;
-  transform: translateX(-50%);
-  /* center slab */
   z-index: -1;
   pointer-events: none;
-
-  /* soft corner gradient (desktop/tablet) */
-  background:
-    radial-gradient(1200px 800px at -10% -10%, #ffe9f1 0%, transparent 60%),
-    radial-gradient(1200px 800px at 110% -10%, #efe9ff 0%, transparent 60%);
+  border-radius: 50%;
+  filter: blur(80px);
 }
 
-/* Mobile tuning for the same gradient */
-@media (max-width: 767px) {
-  .hero3::before {
-    background:
-      radial-gradient(900px 650px at -50% 10%, #ffe9f1 0%, transparent 45%),
-      radial-gradient(900px 650px at 170% 10%, #efecff 0%, transparent 60%);
+
+
+/* Pink gradient - top left */
+.hero3::before {
+  width: 1000px;
+  height: 1500px;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, #FFE9EF 0%, transparent 50%);
+  /* animation: hero-pink-float 8s ease-in-out infinite; */
+}
+
+/* Purple gradient - bottom right */
+.hero3::after {
+  width: 1400px;
+  height: 1200px;
+  bottom: -90%;
+  right: -35%;
+  top: auto;
+  background: radial-gradient(circle, #efe9ff 0%, transparent 40%);
+  /* animation: hero-purple-float 10s ease-in-out infinite; */
+}
+
+/* Pink gradient animation - up and down */
+@keyframes hero-pink-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(25%);
   }
 }
+
+/* Purple gradient animation - up and down */
+@keyframes hero-purple-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-25%);
+  }
+}
+
+/* Tablet tuning for gradients */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero3::before {
+    width: 800px;
+    height: 1000px;
+  }
+
+  .hero3::after {
+    width: 900px;
+    height: 800px;
+  }
+}
+
+/* Mobile tuning for gradients */
+@media (max-width: 767px) {
+  .hero3::before {
+    width: 600px;
+    height: 800px;
+    top: -45%;
+    left: -50%;
+  }
+
+  .hero3::after {
+    width: 600px;
+    height: 600px;
+    bottom: -30%;
+    right: -85%;
+    top: auto;
+  }
+}
+
+/* Respect reduced motion for gradient animation */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero3::before,
+  .hero3::after {
+    animation: none;
+  }
+}
+
 
 /* Inner layout */
 .hero3__wrap {
@@ -1331,11 +1431,13 @@ header .content {
 .hero3__lead {
   font-weight: 500;
   font-size: clamp(28px, 6vw, 64px);
+  letter-spacing: -0.02em;
 }
 
 .hero3__clarity {
-  font-weight: 700;
+  font-weight: 800;
   font-size: clamp(32px, 6.5vw, 72px);
+  letter-spacing: -0.02em;
 }
 
 /* Arrow next to Clarity */
@@ -1430,12 +1532,12 @@ header .content {
 
 /* Subline */
 .hero3__sub {
-  margin: 8px auto 0;
+  margin: clamp(8px, 1.5vw, 12px) auto 0;
   max-width: 80ch;
   font-weight: 500;
   font-size: clamp(16px, 2.1vw, 24px);
   line-height: 1.35;
-  opacity: .95;
+  color: #000;
 }
 
 /* Hero metro/railway full-bleed image */
@@ -1490,15 +1592,23 @@ header .content {
 
 /* Intro text */
 .me__name {
-  font-weight: 700;
-  font-size: clamp(20px, 3.2vw, 32px);
-  padding-bottom: 8px;
+  font-weight: 600;
+  font-size: clamp(24px, 4vw, 36px);
+  letter-spacing: -0.04em;
+  padding-bottom: 0;
 }
 
 .me__role {
   font-weight: 500;
-  font-size: clamp(14px, 2.2vw, 24px);
-  opacity: .85;
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: #000;
+  margin-top: 12px;
+}
+
+@media (max-width: 767px) {
+  .me__role {
+    margin-top: 6px;
+  }
 }
 
 /* Respect reduced motion */
