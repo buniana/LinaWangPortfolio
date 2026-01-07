@@ -1,82 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="asset/css/style2.0.css">
-    
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
-        <script src="asset/javascript/javascript.js"></script>
-        <title>Lina Wang | About Me</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="asset/css/styles3.0.css">
 
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
+  <script src="asset/javascript/javascript.js"></script>
+  <title>Lina Wang | About Me</title>
 
-  gtag('config', 'G-RD4VM5JDWE');
-</script>
-    </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RD4VM5JDWE');
+  </script>
+</head>
+
 <body>
 
-        <header>
-      <div class="content">
-        <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+  <header>
+    <div class="content">
+      <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
         <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
-        </a>
+      </a>
 
-        <!-- Mobile hamburger button -->
-        <button class="nav-toggle" id="navToggle"
-                aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
-          <!-- hamburger -->
-          <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <!-- close -->
-          <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
+      <!-- Mobile hamburger button -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primary-nav" aria-expanded="false"
+        aria-label="Open menu">
+        <!-- hamburger -->
+        <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <!-- close -->
+        <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
 
-        <nav id="primary-nav">
-          <ul>
-            <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a></li>
-            <li><a href="/about.html">About Me</a></li>
-            <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Off-canvas mobile menu overlay -->
-    <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
-      <!-- backdrop -->
-      <div class="overlay-backdrop" data-close-overlay></div>
-
-      <!-- sliding panel -->
-      <aside class="overlay-panel" tabindex="-1">
-        <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
-          <!-- close icon -->
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-
-        <nav class="overlay-nav">
-          <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
-          <a href="/About.html">About Me</a>
-          <a href="mailto:linaw815@uw.edu">Contact</a>
-        </nav>
-      </aside>
+      <nav id="primary-nav">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+              target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="/about.html">About Me</a></li>
+          <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- ====== HERO INTRO ====== -->
+  <!-- Off-canvas mobile menu overlay -->
+  <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <!-- backdrop -->
+    <div class="overlay-backdrop" data-close-overlay></div>
+
+    <!-- sliding panel -->
+    <aside class="overlay-panel" tabindex="-1">
+      <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+        <!-- close icon -->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav class="overlay-nav">
+        <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
+          rel="noopener">Resume</a>
+        <a href="/About.html">About Me</a>
+        <a href="mailto:linaw815@uw.edu">Contact</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ====== HERO INTRO ====== -->
   <section class="abouthero">
     <h1>Hi there! I'm Lina👋. I design digital experiences that feel effortless and welcoming.</h1>
   </section>
@@ -86,11 +91,11 @@
     <div>
       <h2>About</h2>
       <p>
-        I’m currently pursuing my Master’s in Human Centered Design & Engineering (HCDE) 
+        I’m currently pursuing my Master’s in Human Centered Design & Engineering (HCDE)
         at the University of Washington, with a background in Chemical Biology and Nutritional Science from UC Berkeley.
       </p>
       <p>
-        Through internships at generative AI and healthcare startups, I’ve discovered my passion 
+        Through internships at generative AI and healthcare startups, I’ve discovered my passion
         for creating designs that make complex technology feel approachable and intuitive.
       </p>
     </div>
@@ -102,16 +107,16 @@
     <div>
       <h3>What Drives Me</h3>
       <p>
-        I believe the best design feels invisible—where users can accomplish their goals 
-        without friction or confusion. I’m drawn to crafting interfaces that feel natural 
+        I believe the best design feels invisible—where users can accomplish their goals
+        without friction or confusion. I’m drawn to crafting interfaces that feel natural
         and welcoming, with thoughtful details that make the experience genuinely comfortable.
       </p>
     </div>
     <div>
       <h3>My Approach</h3>
       <p>
-        I love getting into the details—iterating on wireframes, refining visual hierarchies, 
-        and polishing interactions until everything clicks. Whether I’m building design systems 
+        I love getting into the details—iterating on wireframes, refining visual hierarchies,
+        and polishing interactions until everything clicks. Whether I’m building design systems
         or mapping user flows, I focus on creating solutions that users actually enjoy using.
       </p>
     </div>
@@ -121,7 +126,7 @@
   <section class="looking-for">
     <h3>What I'm looking for</h3>
     <p>
-      I’m seeking <strong>Summer 2026 Product Design/UX internship opportunities</strong> 
+      I’m seeking <strong>Summer 2026 Product Design/UX internship opportunities</strong>
       where I can bring my detail-oriented approach and contribute to meaningful user experiences.
     </p>
   </section>
@@ -131,35 +136,69 @@
     <h3>When I'm not designing</h3>
     <p>You’ll find me singing, traveling, learning Japanese, or dancing!</p>
     <div class="hobbies-grid">
-        <img src="asset/image/About/Hobby1.jpg" alt="Placeholder 1">
-        <img src="asset/image/About/Hobby2.jpg" alt="Placeholder 2">
-        <img src="asset/image/About/Hobby3.jpg" alt="Placeholder 3">
-        <img src="asset/image/About/Hobby4.jpg" alt="Placeholder 4">
-        <img src="asset/image/About/Hobby5.jpg" alt="Placeholder 5">
-        <img src="asset/image/About/Hobby6.jpg" alt="Placeholder 6">
-        <img src="asset/image/About/Hobby7.jpg" alt="Placeholder 7">
-        <img src="asset/image/About/Hobby8.jpg" alt="Placeholder 8">
-        <img src="asset/image/About/Hobby9.jpg" alt="Placeholder 9">
+      <img src="asset/image/About/Hobby1.jpg" alt="Placeholder 1">
+      <img src="asset/image/About/Hobby2.jpg" alt="Placeholder 2">
+      <img src="asset/image/About/Hobby3.jpg" alt="Placeholder 3">
+      <img src="asset/image/About/Hobby4.jpg" alt="Placeholder 4">
+      <img src="asset/image/About/Hobby5.jpg" alt="Placeholder 5">
+      <img src="asset/image/About/Hobby6.jpg" alt="Placeholder 6">
+      <img src="asset/image/About/Hobby7.jpg" alt="Placeholder 7">
+      <img src="asset/image/About/Hobby8.jpg" alt="Placeholder 8">
+      <img src="asset/image/About/Hobby9.jpg" alt="Placeholder 9">
     </div>
   </section>
 
-          <footer class="page FooterSlide">
-            <div class="FooterContent">
-              <div class="FooterLeft">
-                <div class="FooterTitle">Last Stop</div>
-                <div class="FooterMessage">Let’s connect!</div>
-              </div>
-              <div class="FooterRight">
-                <a href="mailto:your@email.com" class="FooterLink">Email me</a>
-                <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
-                <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
-              </div>
+  <!-- FOOTER (Top+Bottom in a single gradient wrap) -->
+  <section class="footer-wrap">
+    <section class="footer-top section no-divider" id="contact">
+      <div class="container">
+        <div class="grid-12" style="row-gap:24px; align-items:start;">
+          <!-- Left column: spans 5, all content flush left; mini image sits under Last Stop -->
+          <div class="span-12 md-span-5" style="justify-self:start; text-align:left;">
+            <div class="footer-kicker">Last Stop</div>
+            <div class="bleed-left" style="margin:8px 0 16px;">
+              <img src="asset/image/Home3.0/footer metro.svg">
             </div>
-    
-            <div class="FooterCopyright">
-                <p>&copy; 2025 Lina Wang</p>
-              </div>
-          </footer>  
-    
+            <h2 class="footer-heading">Let's connect!</h2>
+          </div>
+          <!-- Right column: spans 2, flush right -->
+          <div class="span-12 md-span-2 md-col-start-11" style="justify-self:end;">
+            <ul class="footer-links">
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn"
+                  href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+                  target="_blank" rel="noopener">Resume</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn" href="/About.html">About Me</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="https://www.linkedin.com/in/lina-jiayu-wang/" target="_blank"
+                  rel="noopener">LinkedIn</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="mailto:linaw815@uw.edu">Email</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer-bottom">
+      <div class="container">
+        <div class="span-12" style="opacity:.8;">
+          <div class="FooterCopyright">
+            <p>&copy; 2025 Lina Wang</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
 </body>
+
 </html>

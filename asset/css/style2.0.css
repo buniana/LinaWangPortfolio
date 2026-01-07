@@ -2948,7 +2948,7 @@ p.muted {
   color: transparent;
   /* Hide actual text */
   -webkit-text-stroke: 0px transparent;
-    overflow: visible;
+  overflow: visible;
 }
 
 
@@ -3082,9 +3082,124 @@ p.muted {
 .np__cover{ outline: 2px solid red; }
 */
 
-.np--link{
+.np--link {
   display: block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+/* =========================================
+   12-Column Grid System (Ported from styles3.0.css)
+   ========================================= */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: var(--side-margin);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+/* Column span utilities (mobile-first = stack by default) */
+.span-12 {
+  grid-column: span 12;
+}
+
+.span-11 {
+  grid-column: span 11;
+}
+
+.span-10 {
+  grid-column: span 10;
+}
+
+.span-9 {
+  grid-column: span 9;
+}
+
+.span-8 {
+  grid-column: span 8;
+}
+
+.span-7 {
+  grid-column: span 7;
+}
+
+.span-6 {
+  grid-column: span 6;
+}
+
+.span-5 {
+  grid-column: span 5;
+}
+
+.span-4 {
+  grid-column: span 4;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-1 {
+  grid-column: span 1;
+}
+
+/* Responsive span overrides */
+@media (min-width: 768px) {
+  .md-span-12 {
+    grid-column: span 12;
+  }
+
+  .md-span-11 {
+    grid-column: span 11;
+  }
+
+  .md-span-10 {
+    grid-column: span 10;
+  }
+
+  .md-span-9 {
+    grid-column: span 9;
+  }
+
+  .md-span-8 {
+    grid-column: span 8;
+  }
+
+  .md-span-7 {
+    grid-column: span 7;
+  }
+
+  .md-span-6 {
+    grid-column: span 6;
+  }
+
+  .md-span-5 {
+    grid-column: span 5;
+  }
+
+  .md-span-4 {
+    grid-column: span 4;
+  }
+
+  .md-span-3 {
+    grid-column: span 3;
+  }
+
+  .md-span-2 {
+    grid-column: span 2;
+  }
+
+  .md-span-1 {
+    grid-column: span 1;
+  }
 }

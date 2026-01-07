@@ -2,26 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agnes AI Collaboration – Case Study</title>
-
-  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-  <!-- Page CSS -->
-  <link rel="stylesheet" href="asset/css/style2.0.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inspiration&family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700;800&family=Irish+Grover&family=Istok+Web:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/styles3.0.css">
   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-
-  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
-
-  <!-- phosphor icon -->
+  <!-- Phosphor icons (bold) -->
   <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+  <script src="asset/javascript/javascript.js"></script>
+  <title>Lina Wang | Agnes AI Case Study</title>
+  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
 
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
@@ -31,34 +26,25 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-RD4VM5JDWE');
   </script>
-  <script src="asset/javascript/javascript.js"></script>
 
-  <title>Lina Wang | Agnes AI</title>
 
 </head>
 
-
-
-
 <body>
-  <!-- ===== Header (leave blank) ===== -->
+  <!-- NAV -->
   <header>
     <div class="content">
       <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
-        <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
+        <img src="asset/image/Home3.0/logo.svg" alt="Logo" style="height:35px;">Lina Wang
       </a>
 
-      <!-- Mobile hamburger button -->
       <button class="nav-toggle" id="navToggle" aria-controls="primary-nav" aria-expanded="false"
         aria-label="Open menu">
-        <!-- hamburger -->
         <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
-        <!-- close -->
         <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
@@ -68,8 +54,8 @@
         <ul>
           <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
               target="_blank" rel="noopener">Resume</a></li>
-          <li><a href="About.html">About Me</a></li>
-          <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
+          <li><a href="/about.html">About Me</a></li>
+          <li><a href="mailto:jiayuwang0815@berkeley.edu">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -77,492 +63,594 @@
 
   <!-- Off-canvas mobile menu overlay -->
   <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
-    <!-- backdrop -->
     <div class="overlay-backdrop" data-close-overlay></div>
-
-    <!-- sliding panel -->
     <aside class="overlay-panel" tabindex="-1">
       <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
-        <!-- close icon -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
-
       <nav class="overlay-nav">
         <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
           rel="noopener">Resume</a>
-        <a href="About.html">About Me</a>
-        <a href="mailto:linaw815@uw.edu">Contact</a>
+        <a href="/About.html">About Me</a>
+        <a href="mailto:jiayuwang0815@berkeley.edu">Contact</a>
       </nav>
     </aside>
   </div>
 
-  <!-- ===== HERO ===== -->
-  <div class="page page1">
-    <img src="asset/image/Agnes/Agnes background.png" alt="Agnes background" style="
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            object-position: center;
-            display: block;">
-
-    <div class="overlaytext" style="background: transparent; top: 50%;
-        left: 50%;">
-      <div class="Gradientcolor" style="font-family: Poppins; font-weight: 500;"> Agnes AI Collaboration</div>
-      <div style="font-size: clamp(1rem, 2.5vw, 1.2rem); padding-top: 0.75rem; font-weight: 300;">Turning Generative AI
-        into a Shared Workspace</div>
-    </div>
-
-  </div>
-
-  <!-- ===== META / STATS ===== -->
-  <section class="section" data-aos="fade-up">
+  <!-- ===== HERO SECTION ===== -->
+  <section class="agnes-hero">
     <div class="container">
-      <div class="stats">
-        <!-- Impact -->
-        <div class="stat">
-          <h3>Impact</h3>
-          <p class="kpi" style="font-size: 24px; font-weight: 600;">+100% DAU</p>
-          <p class="kpi-note" style="padding-bottom: 16px;">30k to 60k growth</p>
-
-          <p class="kpi" style="font-size: 24px; font-weight: 600;">50%</p>
-          <p class="kpi-note">users use AI Design</p>
+      <div class="grid-12">
+        <div class="span-12">
+          <h1 class="agnes-hero__headline" data-aos="fade-up">
+            Optimizing Human-AI Collaboration Loops for Agnes
+          </h1>
         </div>
 
-        <!-- Team Member -->
-        <div class="stat">
-          <h3>Team Member</h3>
-          <p>UX/UI Designer (me)<br />2 Project Managers</p>
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="agnes-hero__image">
+            <img src="asset/image/Agnes/Agnes hero.png" alt="Agnes AI Dashboard showing pricing cards and AI features">
+          </div>
         </div>
 
-        <!-- Project Duration -->
-        <div class="stat">
-          <h3>Project Duration</h3>
-          <p>1 week</p>
-        </div>
-
-        <!-- Skills -->
-        <div class="stat">
-          <h3>Skills</h3>
-          Interaction Design<br>
-          User Flow<br>
-          Wireframing<br>
-          Rapid Prototyping<br>
-
+        <div class="span-12" data-aos="fade-up" data-aos-delay="200">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-card__value">+100% DAU</div>
+              <div class="stat-card__label-row">
+                <span class="stat-card__label">30k to 60k growth</span>
+                <img class="stat-card__arrow" src="asset/image/Home3.0/smallarrowupright.svg" alt="">
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">50%</div>
+              <div class="stat-card__label-row">
+                <span class="stat-card__label">User adoption of AI Design</span>
+                <img class="stat-card__arrow" src="asset/image/Home3.0/smallarrowupright.svg" alt="">
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">Shipped in 1 week</div>
+              <div class="stat-card__label-row">
+                <span class="stat-card__label">Rapid prototyping & delivery</span>
+                <img class="stat-card__arrow" src="asset/image/Home3.0/smallarrowupright.svg" alt="">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== META / STATS ===== -->
-  <!-- <section class="section">
+  <!-- ===== AGNES AI INTRO ===== -->
+  <section class="agnes-intro">
     <div class="container">
-      <div class="stats">
-        <div class="stat">
-          <h3>Role</h3><p>UI/UX Designer</p>
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="agnes-intro__rail">
+            <img src="asset/image/Agnes/Agnes rail intro.png" alt="Agnes AI Rail Introduction">
+          </div>
         </div>
-        <div class="stat">
-          <h3>Team Member</h3><p>Jiayu Wang<br/>2 Project Managers</p>
-        </div>
-        <div class="stat">
-          <h3>Project Duration</h3><p>1 week</p>
-        </div>
-        <div class="stat">
-          <h3>Skills</h3><p>Interaction Design, User Flow, Wireframing, Rapid Prototyping</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
-  <!-- ===== OVERVIEW ===== -->
-  <section class="section" style="padding-bottom: 32px;" data-aos="fade-up">
-    <div class="container stack-vert"> <!-- was: container grid-2 -->
-      <div>
-        <h2 class="eyebrow">Overview</h2>
-        <h3 style="font-family: Poppins;">Project Goal</h3>
-        <p>
-          This project enhanced the <span style="font-weight: 400; color: #5E57FE;">collaboration feature</span> in the
-          Agnes generative AI platform by making the
-          <span style="font-weight: 400; color: #5E57FE;">“one-click resolve”</span> feature more visible through an
-          expandable floating action button and by adding a
-          <span style="font-weight: 400; color: #5E57FE;">centralized comment management tab</span> to give users
-          intuitive control over AI-powered edits.
-        </p>
-      </div>
-
-      <div>
-        <h3 style="font-family: Poppins;">Problem Statement</h3>
-        <p>How might we design a commenting flow that encourages users to use comments as the primary feedback tool,
-          while giving them intuitive control to review, manage, and resolve all feedback with Agnes’s one-click
-          assistance?</p>
-      </div>
-
-      <div>
-        <h3 style="font-family: Poppins;">My Responsibilities</h3>
-        <ul class="checklist">
-          <li>Understand current Agnes AI collaboration &amp; comment flow</li>
-          <li>Design review flow to view, triage, and manage comments</li>
-          <li>Guide users to use the “Magic Fix” to resolve comments in one click</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== NEW EXPERIENCE (GIF + TEXT) ===== -->
-  <section class="section new-experience">
-    <div class="container">
-      <h3 class="ne-title" style="font-family: Poppins;">New Experience</h3>
-
-      <div class="ne-content">
-        <figure class="ne-media">
-          <img src="asset/image/Agnes/comment-demo.gif" alt="Comment hub with Magic Fix demo" loading="lazy" />
-        </figure>
-
-        <div class="ne-text">
-          <p>
-            A centralized hub for comments with
-            <span class="ne-highlight">“magic fix feature”</span>
-            that allows solving comments with Agnes AI in one click.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BEFORE / AFTER STRIP ===== -->
-  <!-- <h3 class="center smallcaps">BEFORE</h3>
-<div class="image-strip before">
-  <img src="asset/image/Agnes/before-1.png" alt="Before screen 1">
-  <img src="asset/image/Agnes/before-2.png" alt="Before screen 2">
-</div> -->
-
-
-  <div class="image-strip after">
-    <img src="asset/image/Agnes/after-doc.png" alt="After – AI Doc">
-    <!-- <img src="asset/image/Agnes/after-slides.png" alt="After – AI Slides"> -->
-    <img src="asset/image/Agnes/after-design.png" alt="After – AI Design">
-  </div>
-
-  <!-- ===== DESIGN PRINCIPLES (CARDS) ===== -->
-  <section class="section" data-aos="fade-up">
-    <div class="container">
-      <h2 class="eyebrow">Ideation</h2>
-      <h3 style="font-family: Poppins;">Design Principles</h3>
-
-      <div class="card-grid">
-        <article class="card">
-          <h4>
-            <i class="ph-duotone ph-plugs"></i>
-            Seamless Integration
-          </h4>
-          <p>Enable collaboration features to work fluidly across Agnes AI tools without context switching.</p>
-        </article>
-
-        <article class="card">
-          <h4>
-            <i class="ph-duotone ph-shield-check"></i>
-            Conflict Prevention
-          </h4>
-          <p>Proactively avoid edit conflicts and version issues before they disrupt team flow.</p>
-        </article>
-
-        <article class="card">
-          <h4>
-            <i class="ph-duotone ph-toggle-left"></i>
-            Intuitive AI Control
-          </h4>
-          <p>Offer clear, user-friendly controls over AI-powered bulk edits and comment management.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== THINKING / ITERATIONS ===== -->
-  <section class="section" data-aos="fade-up">
-    <div class="container">
-      <h3 style="font-family: Poppins;">Thinking Process &amp; Iterations</h3>
-
-      <article class="panel iteration-panel" role="region" aria-labelledby="iter-q">
-        <!-- Top: question + description -->
-        <div class="iter-head">
-          <h3 style="font-family: Poppins;">How to prevent AI from resolving comments that are not editing suggestions?
-          </h3>
-          <p>
-            The one click function provides a very convenient way for users to leave feedback first and then
-            collectively resolve,
-            but when it comes to collaboration, people
-            <span style="font-weight: 400; color: #5E57FE;">might leave feedback that are not suggestions</span>
-            .
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <p class="agnes-intro__description">
+            Agnes AI is a <span class="highlight">collaborative workspace</span> that combines document
+            editing, presentation creation, and design tools into a unified platform. The platform leverages
+            generative AI to help teams work smarter, automate repetitive tasks, and create professional
+            content faster.
           </p>
         </div>
 
-        <hr class="iter-divider" />
-
-        <!-- Bottom: solution text + image placeholder -->
-        <div class="iter-body">
-          <div class="iter-solution">
-            <h3 style="font-family: Poppins;">Solution</h3>
-            <p>
-              AI pre-selects relevant comments, but users can still select or deselect comments at-will.
-            </p>
-          </div>
-
-          <!-- Image placeholder for status UI -->
-          <div class="iter-ui">
-            <img src="asset/image/Agnes/iterationQ1-solution.png" alt="Status UI placeholder" class="iter-img" />
+        <div class="span-12" data-aos="fade-up" data-aos-delay="200">
+          <div class="meta-grid">
+            <div class="meta-item">
+              <div class="meta-item__title">My Role</div>
+              <div class="meta-item__content">Product Designer (AI Interaction Focus)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-item__title">Team</div>
+              <div class="meta-item__content">Jiayu Wang (Me)<br>3 Project Managers<br>Engineers</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-item__title">Skills Applied</div>
+              <div class="meta-item__content">Interaction Design<br>Wireframing<br>Rapid Prototyping</div>
+            </div>
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
-  <!-- ===== CONSISTENCY / MAGIC WAND ===== -->
-  <section class="section" data-aos="fade-up">
+  <!-- ===== BUSINESS GOALS ===== -->
+  <section class="business-goals">
     <div class="container">
-      <article class="panel consistency-panel" role="region" aria-labelledby="consistency-q">
-
-        <!-- Title + intro -->
-        <div class="cons-head">
-          <h3 style="font-family: Poppins;">
-            When the magic wand icon means different actions across features, how can we create consistency?
-          </h3>
-          <p>
-            In the current application, the magic wand icon is used to summarize group chat contents with one click.
-            How can we resolve
-            <span style="font-weight: 400; color: #5E57FE;">the conflict caused by the same icon being used for two
-              different “one-click” features</span>, and ensure users have clear and intuitive access to both?
-          </p>
+      <div class="grid-12" style="align-items: stretch;">
+        <!-- Title: 4 columns -->
+        <div class="span-12 md-span-4 business-goals__title-wrapper" data-aos="fade-up">
+          <h2 class="business-goals__title">Business<br>Goals</h2>
         </div>
 
-        <hr class="iter-divider" />
-
-        <!-- Solution (two cards) -->
-        <section class="cons-solution">
-          <h3 style="font-family: Poppins;">Solution</h3>
-
-          <div class="solution-grid">
-            <figure class="solution-card">
-              <!-- small mock image placeholder -->
-              <img class="mock-small" src="asset/image/Agnes/iterationQ2-solution1.png"
-                alt="Consistent floating magic wand button placeholder">
-              <figcaption>Keep a consistent
-                <span style="font-weight: 400; color: #5E57FE;">floating expandable “magic wand” button</span>
-                across features.
-              </figcaption>
-            </figure>
-
-            <figure class="solution-card">
-              <img class="mock-small" src="asset/image/Agnes/iterationQ2-solution2.png"
-                alt="Magic wand expandable only on group chat page placeholder">
-              <figcaption>Make the magic wand expandable only when users are on the group chat page to avoid confusion.
-              </figcaption>
-            </figure>
+        <!-- Timeline index: 1 column -->
+        <div class="span-12 md-span-1 business-goals__index-wrapper" data-aos="fade-up" data-aos-delay="100">
+          <div class="business-goals__index">
+            <img src="asset/image/Agnes/business goal index.png" alt="Business goals timeline">
           </div>
-        </section>
+        </div>
 
-        <hr class="iter-divider" />
-
-        <!-- Extra details -->
-        <section class="cons-extra" aria-labelledby="extra-title">
-          <h3 style="font-family: Poppins; " id="extra-title">Extra Details</h3>
-          <p class="cons-lead">
-            In the Agnes Slides feature, we wanted to give users the freedom to resolve comments on each slide
-            separately.
-            In this case, the “one-click” feature could no longer work.
-          </p>
-
-          <!-- On mobile: image first, then explanation (matches your mock) -->
-          <!-- On desktop: explanation left, image right -->
-          <div class="extra-grid">
-            <p class="cons-explain">
-              To compensate for this limitation, we combined the comments for each separate page into one tab and added
-              “resolve all comments on this page” buttons to the bottom of each page’s comment section.
-            </p>
-            <img class="mock-large" src="asset/image/Agnes/consistency-details.png"
-              alt="Comments tab layout placeholder">
+        <!-- Goal cards: 7 columns -->
+        <div class="span-12 md-span-7 business-goals__cards-wrapper" data-aos="fade-up" data-aos-delay="200">
+          <div class="goals-cards">
+            <div class="goal-card goal-card--purple">
+              <div class="goal-card__title">1. Enable seamless real-time collaboration</div>
+              <div class="goal-card__description">support co-editing, shared memory, and synchronous /
+                asynchronous teamwork within one AI-native workspace.</div>
+            </div>
+            <div class="goal-card goal-card--yellow">
+              <div class="goal-card__title">2. Automate knowledge work and creative outputs</div>
+              <div class="goal-card__description">generate reports, presentations, summaries, and
+                structured content with multi-agent AI workflows.</div>
+            </div>
+            <div class="goal-card goal-card--yellow">
+              <div class="goal-card__title">3. Unify fragmented productivity tools</div>
+              <div class="goal-card__description">replace or integrate across disparate apps (docs,
+                research, design, chats) to reduce context switching and increase workflow efficiency.
+              </div>
+            </div>
           </div>
-        </section>
-
-      </article>
-    </div>
-  </section>
-
-  <!-- ===== FINAL DESIGN ===== -->
-  <section class="section">
-    <div class="container final-design">
-
-      <!-- Title + features -->
-      <div class="fd-head" data-aos="fade-up">
-        <h2 class="eyebrow">Final Design</h2>
-        <h3 style="font-family: Poppins;">Features</h3>
-        <ol class="fd-features">
-          <li><span style="font-weight: 500;">Centralized comment dashboard</span>
-            that aggregates comments from all collaborators in a single, manageable interface</li>
-          <li><span style="font-weight: 500;">Bulk execution button</span> prominently displayed to enable users to
-            apply all approved changes simultaneously</li>
-        </ol>
+        </div>
       </div>
-
-      <!-- Comment Tab demo (3 cards) -->
-      <section class="fd-comment-tab" data-aos="fade-up">
-        <h3 style="font-family: Poppins;">Utilize the Comment Tab as a Control Hub</h3>
-
-        <div class="fd-card-grid">
-          <figure class="fd-card" style="font-size: 15px;">
-            <img src="asset/image/Agnes/control-hub1.png" alt="View, edit and manage comments" />
-            <figcaption>View, Edit, and Manage Comments</figcaption>
-          </figure>
-
-          <figure class="fd-card">
-            <img src="asset/image/Agnes/control-hub2.png" alt="Select which comments to resolve by AI" />
-            <figcaption>Selects which comments to resolve by AI</figcaption>
-          </figure>
-
-          <figure class="fd-card">
-            <img src="asset/image/Agnes/control-hub3.png" alt="Approve or decline AI suggestions" />
-            <figcaption>Approve, Decline or Regenerate AI Suggestions</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <!-- User flow (image) -->
-      <section class="fd-userflow" data-aos="fade-up">
-        <h3 style="font-family: Poppins;">Final User Flow</h3>
-        <div class="fd-flow-wrap">
-          <img src="asset/image/Agnes/user-flow.png" alt="Final user flow diagram" class="fd-flow-img" />
-        </div>
-      </section>
-
     </div>
   </section>
 
-  <!-- ===== DESIGN SYSTEM ===== -->
-  <section class="section" data-aos="fade-up">
-    <div class="container visual-rep">
-      <h2 class="eyebrow">Visual Representation</h2>
-      <h3 style="font-family: Poppins;">Design System</h3>
-
-      <figure class="media-card">
-        <!-- Replace with your actual design-system image -->
-        <img src="asset/image/Agnes/design-system.png" alt="Agnes design system overview" />
-      </figure>
-    </div>
-  </section>
-
-  <!-- ===== FINAL COLLABORATION EXPERIENCE DEMO ===== -->
-  <section class="section" data-aos="fade-up">
+  <!-- ===== OUR USERS ===== -->
+  <section class="users-section">
     <div class="container">
-      <h3 style="font-family: Poppins;">Final Collaboration Experience Demo</h3>
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="users-section__header">
+            <h2 class="users-section__title">Our Users</h2>
+            <img class="users-section__arrow" src="asset/image/Home3.0/bigarrow.svg" alt=""
+              style="transform: scaleX(-1);">
+          </div>
+        </div>
 
-      <!-- Responsive Figma embed -->
-      <div class="responsive-embed">
-        <!-- Swap the URL after url= with your Figma prototype share link -->
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
-          src="https://embed.figma.com/proto/YOdPPzNEBzn334iZjFeJuh/Lina--Agnes-design--Copy-?page-id=4004%3A204&node-id=4004-770&viewport=1473%2C730%2C0.1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=4004%3A770&embed-host=share"
-          allowfullscreen></iframe>
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="persona-grid">
+            <div class="persona-card">
+              <div class="persona-card__inner">
+                <div class="persona-card__title">Knowledge Workers</div>
+                <div class="persona-card__description">Collaborate on reports and plans daily, needing
+                  shared editing and aligned decisions.</div>
+              </div>
+            </div>
+            <div class="persona-card">
+              <div class="persona-card__inner">
+                <div class="persona-card__title">Student Teams</div>
+                <div class="persona-card__description">Work on group projects together, relying on
+                  shared documents and real-time updates.</div>
+              </div>
+            </div>
+            <div class="persona-card">
+              <div class="persona-card__inner">
+                <div class="persona-card__title">Startups & Small Business Teams</div>
+                <div class="persona-card__description">Build ideas rapidly across roles, needing
+                  centralized collaboration to stay organized.</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONCLUSION ===== -->
-  <section class="section">
-    <div class="container conclusion">
-      <div data-aos="fade-up">
-        <h2 class="eyebrow">Conclusion</h2>
-        <h3 style="font-family: Poppins;">Next Steps</h3>
-
-        <ol class="next-steps">
-          <li>
-            <h4>Usability Testing &amp; Iteration</h4>
-            <p>
-              Conduct targeted tests to evaluate discoverability of the expandable floating action button
-              and the clarity of the comment management tab. Use findings to refine interaction flow.
-            </p>
-          </li>
-          <li>
-            <h4>Enhance AI Selection &amp; Transparency</h4>
-            <p>
-              Conduct targeted usability testing with real collaborators to evaluate discoverability of the expandable
-              floating action button and the clarity of the comment management tab. Use findings to refine interaction
-              flow. </p>
-          </li>
-          <li>
-            <h4>Conflict Resolution Features</h4>
-            <p>
-              Prototype advanced collaboration safeguards such as version history views, conflict alerts, and role-based
-              permissions to handle larger teams.
-            </p>
-          </li>
-        </ol>
+  <!-- ===== THE CHALLENGE ===== -->
+  <!-- ===== THE ASK ===== -->
+  <section class="ask-section">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="ask-section__title-wrap">
+            <h2 class="ask-section__title">The Ask</h2>
+          </div>
+        </div>
       </div>
 
-      <div data-aos="fade-up">
-        <h3 style="font-family: Poppins;">Takeaways</h3>
-        <p class="takeaways">
-          I learned how to work with complicated applications. I realized that the most important step is to look into
-          all the existing features and use progressive disclosure smartly so that key information is presented first
-          while maintaining the interface easily navigable.
-        </p>
+      <!-- Row 1: Image left (1-6), text right (7-12) -->
+      <div class="grid-12 ask-row" data-aos="fade-up">
+        <div class="span-6 ask-row__image">
+          <img src="asset/image/Agnes/Ask1.png" alt="Agnes AI workspace screenshot">
+        </div>
+        <div class="span-6 ask-row__text">
+          <p>Agnes is a powerful AI workspace that instantly generates polished slides and documents.</p>
+        </div>
+      </div>
+
+      <!-- Row 2: Text left (1-6), image right (7-12) -->
+      <div class="grid-12 ask-row" data-aos="fade-up">
+        <div class="span-6 ask-row__text">
+          <h3>Yet, collaboration fell short —</h3>
+          <p>the UI discouraged commenting, feedback was scattered, and AI bulk-resolve lacked clarity.</p>
+        </div>
+        <div class="span-6 ask-row__image ask-row__image--bg">
+          <img src="asset/image/Agnes/Ask2.png" alt="No central comment view">
+          <div class="ask-row__caption">comments are scattered</div>
+        </div>
+      </div>
+
+      <!-- Row 3: Image left (1-6), text right (7-12) -->
+      <div class="grid-12 ask-row" data-aos="fade-up">
+        <div class="span-6 ask-row__image ask-row__image--bg">
+          <img src="asset/image/Agnes/Ask3.png" alt="Easy to miss button">
+          <div class="ask-row__caption">the button for users to use Agnes to resolve comments are not easy for
+            users to identify</div>
+        </div>
+        <div class="span-6 ask-row__text">
+          <p>Which risked confusion, misalignment, and reduced trust in both collaboration and AI-generated
+            work.</p>
+        </div>
+      </div>
+
+      <!-- Progress indicator -->
+      <div class="ask-progress" data-aos="fade-up">
+        <img src="asset/image/Agnes/rail stop divider.png" alt="">
       </div>
     </div>
-
   </section>
 
-  <!-- <section class="np" id="np">
+  <!-- ===== DESIGN PRINCIPLES ===== -->
+  <section class="principles-section">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="principles-section__header">
+            <img class="principles-section__arrow" src="asset/image/Home3.0/bigarrow.svg" alt="">
+            <h2 class="principles-section__title">Design Principles</h2>
+          </div>
+        </div>
 
-    <div class="np__img" aria-hidden="true"></div>
-
-    <div class="np__content">
-      <h2 class="np__title">Next project</h2>
-      <p class="np__sub">See my visual systems design work</p>
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="principles-grid">
+            <div class="principle-card">
+              <i class="ph-bold ph-plug principle-card__icon"></i>
+              <div class="principle-card__title">Seamless Integration</div>
+              <div class="principle-card__description">Enable collaboration features to work fluidly
+                across Agnes AI tools without context switching.</div>
+            </div>
+            <div class="principle-card">
+              <i class="ph-bold ph-bell-ringing principle-card__icon"></i>
+              <div class="principle-card__title">Proactive Assistance</div>
+              <div class="principle-card__description">AI anticipates next steps and surfaces relevant
+                actions before users need to ask.</div>
+            </div>
+            <div class="principle-card">
+              <i class="ph-bold ph-toggle-left principle-card__icon"></i>
+              <div class="principle-card__title">Intuitive AI Control</div>
+              <div class="principle-card__description">Provide clear, user-friendly controls over
+                AI-powered bulk editing so users can confidently manage comments.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section> -->
-<!-- 
-  <section class="np" id="np">
+  </section>
+
+  <!-- ===== THE SOLUTION ===== -->
+  <section class="solution-section">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="solution-section__title-wrap">
+            <h2 class="solution-section__title">The Solution</h2>
+          </div>
+        </div>
+
+        <div class="span-9" data-aos="fade-up">
+          <h3 class="solution-headline">"Turn Comments into Edits—AI Assists, You Control"</h3>
+        </div>
+
+        <div class="span-12" data-aos="fade-up">
+          <div class="solution-demo-box">
+            <img src="asset/image/Agnes/Agnes demo.gif" alt="Agnes demo" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-bleed Divider -->
+  <div class="divider-line"></div>
+
+  <!-- ===== KEY CHALLENGE ===== -->
+  <section class="challenge-section">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="challenge-section__title-wrap">
+            <h2 class="challenge-section__title">Key Challenge</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="challenge-content" data-aos="fade-up">
+        <div class="challenge-text">
+          <p>The hardest part of this project wasn't the UI itself — it was <strong>defining the right
+              ask</strong> and <strong>deciding what the end-to-end user flow should be</strong>.</p>
+
+          <p>There was a clear <strong>gap between users leaving comments and users actually making
+              edits</strong>, and the existing flow wasn't helping bridge it.</p>
+
+          <p>Users could leave feedback, but resolving that feedback still required writing prompts to ask AI
+            Agent to resolve each comment individually. The tool supported collaboration — but the workflow
+            didn't.</p>
+        </div>
+
+        <div class="challenge-images">
+          <img src="asset/image/Agnes/Challenge1.png" alt="Current comment flow diagram" data-aos="fade-left">
+          <img src="asset/image/Agnes/Challenge2.png" alt="AI bridging the gap" data-aos="fade-left"
+            data-aos-delay="100">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 01: CENTRALIZED COMMENT HUB ===== -->
+  <section class="feature-section">
+    <div class="container">
+      <div class="feature-section__header" data-aos="fade-up">
+        <div class="feature-section__subtitle"><span>01</span> The Centralized Comment Hub</div>
+        <h2 class="feature-section__title">From Scattered Feedback to AI-powered Centralized Control</h2>
+      </div>
+
+      <div class="feature-layout">
+        <div class="feature-bento-left" data-aos="fade-right">
+          <img src="asset/image/Agnes/control-hub1.png" alt="Centralized comment hub interface">
+          <div class="feature-bento-left__caption">All feedback is pulled into a single management tab,
+            eliminating context switching.</div>
+        </div>
+
+        <div class="feature-bento-right">
+          <div class="feature-bento-card feature-bento-card--top" data-aos="fade-left">
+            <div class="feature-bento-card__text">A clear large button that invites users to click on</div>
+            <img src="asset/image/Agnes/magic fix button.png" alt="Magic Fix button">
+          </div>
+          <div class="feature-bento-card feature-bento-card--bottom" data-aos="fade-left" data-aos-delay="100">
+            <div class="feature-bento-card__text">Filters were added to help users quickly sort through
+              comments</div>
+            <img src="asset/image/Agnes/filter drop down.png" alt="Comment filters dropdown">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 02: THE PRESELECT LOGIC ===== -->
+  <section class="feature-section" style="padding-top: 160px;">
+    <div class="container">
+      <div class="feature-section__header" data-aos="fade-up">
+        <div class="feature-section__subtitle"><span>02</span> The Preselect Logic</div>
+        <div style="display: flex; align-items: flex-start; gap: 19px;">
+          <h2 class="feature-section__title" style="margin: 0;">We taught the AI to listen before acting.</h2>
+          <img src="asset/image/Home3.0/bigarrow.svg" alt=""
+            style="transform: scaleX(-1); height: 48px; width: auto; flex-shrink: 0;">
+        </div>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 20px; color: #000; margin-top: 24px;">
+          Introducing bulk-resolve sounded powerful — but also risky. If AI edited everything at once, users
+          might lose control over their content or feel unsure what had changed.</p>
+      </div>
+
+      <div class="preselect-layout">
+        <div class="preselect-top-card" data-aos="fade-up">
+          <img src="asset/image/Agnes/user flow comparison.png" alt="User flow comparison: previous flow vs new flow">
+        </div>
+
+        <div class="preselect-bottom-layout">
+          <div class="preselect-bottom-left" data-aos="fade-right">
+            <img src="asset/image/Agnes/AI preselect demo.gif" alt="AI preselect demo">
+          </div>
+          <div class="preselect-bottom-right" data-aos="fade-left">
+            <div class="preselect-advantages">
+              <h3>Advantages</h3>
+              <div class="preselect-advantages__list">
+                <div class="preselect-advantage-item">
+                  <p><strong>Signal vs. Noise:</strong> The AI identifies comments containing specific
+                    edit instructions (e.g., "Change this to blue") and pre-selects them for
+                    resolution.</p>
+                </div>
+                <div class="preselect-advantage-item">
+                  <p><strong>Human-in-the-Loop:</strong> Subjective comments are left unselected,
+                    requiring manual user review. This built trust by proving the AI understands
+                    context.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 03: AI-ASSISTED EDITORIAL REVIEW ===== -->
+  <section class="feature-section" style="padding-top: 160px;">
+    <div class="container">
+      <div class="feature-section__header" data-aos="fade-up">
+        <div class="feature-section__subtitle"><span>03</span> AI-Assisted Editorial Review</div>
+        <h2 class="feature-section__title">Users retain control via "Approve or Reject" workflow.</h2>
+      </div>
+
+      <div class="editorial-layout">
+        <div class="editorial-card editorial-card--purple" data-aos="fade-up">
+          <div class="editorial-content">
+            <div class="editorial-text">Agnes presents all edits as reviewable suggestions</div>
+            <div class="editorial-image">
+              <img src="asset/image/Agnes/user control1.png" alt="Editorial review interface">
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-card editorial-card--yellow" data-aos="fade-up" data-aos-delay="100">
+          <div class="editorial-content">
+            <div class="editorial-text">matching user's familiar workflow from Google Docs and Word.</div>
+            <div class="editorial-image">
+              <img src="asset/image/Agnes/user control2.png" alt="Workflow comparison with Google Docs">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL USER FLOW ===== -->
+  <section class="userflow-section" style="padding-top: 160px;">
+    <div class="container">
+      <div class="final-user-flow-parent" data-aos="fade-up">
+        <h2 class="final-user-flow">The complete journey</h2>
+        <img class="image-662-icon" src="asset/image/Agnes/user-flow.png"
+          alt="Final user flow diagram showing the journey from file creation to AI-powered resolution">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISUAL DESIGN SYSTEM ===== -->
+  <section class="designsystem-section" style="padding-top: 80px;">
+    <div class="container">
+      <div class="final-user-flow-parent" data-aos="fade-up">
+        <h2 class="final-user-flow">Visual design system</h2>
+        <img class="image-662-icon" src="asset/image/Agnes/design-system.png" alt="Agnes AI Visual Design System">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== NEXT STEPS ===== -->
+  <section class="nextsteps-section" style="padding-top: 160px;">
+    <div class="container">
+      <div class="nextsteps-header" data-aos="fade-up">
+        <h2>Next Steps</h2>
+        <img src="asset/image/Agnes/right arrow.svg" alt="Right arrow">
+      </div>
+
+      <div class="nextsteps-content" data-aos="fade-up" data-aos-delay="100">
+        <div class="nextstep-cards-container">
+          <div class="nextstep-card">
+            <i class="ph-bold ph-gauge nextstep-card__icon"></i>
+            <h3 class="nextstep-card__title">1. Test the Intelligence</h3>
+            <p class="nextstep-card__description">Does AI pre-selection actually save time, or does it get
+              in the way? If the system guesses wrong too often, users will bypass it entirely.</p>
+          </div>
+          <div class="nextstep-card">
+            <i class="ph-bold ph-git-branch nextstep-card__icon"></i>
+            <h3 class="nextstep-card__title">2. Scale the System</h3>
+            <p class="nextstep-card__description">Add version history, conflict resolution, and permission
+              controls so the tool works for larger, more complex team structures.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nextstep-decorative-wrap" data-aos="fade-up">
+        <img src="asset/image/Agnes/rail stop divider2.png" alt="Decorative rail divider">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAKEAWAYS ===== -->
+  <section class="takeaways-section">
+    <div class="container">
+      <div class="takeaways-header" data-aos="fade-up">
+        <h2 class="takeaways-title">Takeaways</h2>
+      </div>
+
+      <div class="takeaways-list">
+        <div class="takeaway-card" data-aos="fade-up">
+          <h3 class="takeaway-card__title">Progressive disclosure creates clarity in complexity</h3>
+          <p class="takeaway-card__text">Progressive disclosure isn't about hiding complexity - it's about
+            building confidence. I used to think progressive disclosure meant tucking advanced features away
+            to keep interfaces clean. What I learned is that it's actually about sequencing information so
+            users build mastery gradually. Each layer they uncover should feel like a natural next step, not
+            a hidden Easter egg. The interface should grow with the user's confidence.</p>
+        </div>
+
+        <div class="takeaway-card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="takeaway-card__title">Understanding the existing system is not optional groundwork - it's
+            the actual work</h3>
+          <p class="takeaway-card__text">I learned that jumping into solutions without deeply understanding
+            how current features function and how users have adapted to them leads to designs that look good
+            but break real workflows. Spending time mapping every interaction, every edge case, and every
+            workaround users developed wasn't just research - it revealed the constraints and opportunities
+            that shaped every design decision afterward. The existing system tells you what users actually
+            need, not what they say they need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEXT PROJECT ===== -->
+  <a class="np np--link" id="np"
+    href="https://www.figma.com/proto/s5P57o6Kcb42qI79HfQ1T0/Lina-Wang--508-Project?page-id=319%3A1304&node-id=319-1305&viewport=140%2C181%2C0.06&t=iJw6bOXNsCoVqIlL-1&scaling=contain&content-scaling=fixed"
+    target="_blank" rel="noopener noreferrer">
+
     <div class="np__base" aria-hidden="true"></div>
-
     <div class="np__cover" aria-hidden="true"></div>
 
     <div class="np__content">
-      <h2 class="np__title" data-text="Next project">
-        Next project</h2>
+      <h2 class="np__title" data-text="Next project">Next project</h2>
       <p class="np__sub" data-text="See my visual systems design work">See my visual systems design work</p>
     </div>
-  </section> -->
+  </a>
 
-<a class="np np--link" id="np"
-  href="https://www.figma.com/proto/s5P57o6Kcb42qI79HfQ1T0/Lina-Wang--508-Project?page-id=319%3A1304&node-id=319-1305&viewport=140%2C181%2C0.06&t=iJw6bOXNsCoVqIlL-1&scaling=contain&content-scaling=fixed"
-  target="_blank" rel="noopener noreferrer">
-
-  <div class="np__base" aria-hidden="true"></div>
-  <div class="np__cover" aria-hidden="true"></div>
-
-  <div class="np__content">
-    <h2 class="np__title" data-text="Next project">Next project</h2>
-    <p class="np__sub" data-text="See my visual systems design work">See my visual systems design work</p>
-  </div>
-</a>
-
-  <footer class="page FooterSlide">
-    <div class="FooterContent">
-      <div class="FooterLeft">
-        <div class="FooterTitle">Last Stop</div>
-        <div class="FooterMessage">Let’s connect!</div>
+  <!-- ===== FOOTER ===== -->
+  <section class="footer-wrap">
+    <section class="footer-top section no-divider" id="contact">
+      <div class="container">
+        <div class="grid-12" style="row-gap:24px; align-items:start;">
+          <div class="span-12 md-span-5" style="justify-self:start; text-align:left;" data-aos="fade-right">
+            <div class="footer-kicker">Last Stop</div>
+            <div class="bleed-left" style="margin:8px 0 16px;">
+              <img src="asset/image/Home3.0/footer metro.svg">
+            </div>
+            <h2 class="footer-heading">Let's connect!</h2>
+          </div>
+          <div class="span-12 md-span-2 md-col-start-11" style="justify-self:end;" data-aos="fade-left">
+            <ul class="footer-links">
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn"
+                  href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+                  target="_blank" rel="noopener">Resume</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn" href="/About.html">About Me</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="https://www.linkedin.com/in/lina-jiayu-wang/" target="_blank"
+                  rel="noopener">LinkedIn</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="mailto:linaw815@uw.edu">Email</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="FooterRight">
-        <a href="mailto:your@email.com" class="FooterLink">Email me</a>
-        <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
-        <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
+    </section>
+    <section class="footer-bottom">
+      <div class="container">
+        <div class="span-12" style="opacity:.8;">
+          <div class="FooterCopyright">
+            <p>&copy; 2025 Lina Wang</p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="FooterCopyright">
-      <p>&copy; 2025 Lina Wang</p>
-    </div>
-  </footer>
+    </section>
+  </section>
 </body>
 
+<script src="asset/javascript/javascript.js"></script>
 <script>
   AOS.init();
 </script>
