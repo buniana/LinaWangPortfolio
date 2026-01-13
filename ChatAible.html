@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,73 +14,76 @@
 
   <!-- Page CSS -->
   <link rel="stylesheet" href="asset/css/style2.0.css" />
-    <script src="asset/javascript/javascript.js"></script>
+  <script src="asset/javascript/javascript.js"></script>
 
   <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-RD4VM5JDWE');
-</script>
+    gtag('config', 'G-RD4VM5JDWE');
+  </script>
 
 </head>
+
 <body>
 
-        <header>
-      <div class="content">
-        <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+  <header>
+    <div class="content">
+      <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
         <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
-        </a>
+      </a>
 
-        <!-- Mobile hamburger button -->
-        <button class="nav-toggle" id="navToggle"
-                aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
-          <!-- hamburger -->
-          <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <!-- close -->
-          <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
+      <!-- Mobile hamburger button -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primary-nav" aria-expanded="false"
+        aria-label="Open menu">
+        <!-- hamburger -->
+        <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <!-- close -->
+        <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
 
-        <nav id="primary-nav">
-          <ul>
-            <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a></li>
-            <li><a href="/about.html">About Me</a></li>
-            <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Off-canvas mobile menu overlay -->
-    <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
-      <!-- backdrop -->
-      <div class="overlay-backdrop" data-close-overlay></div>
-
-      <!-- sliding panel -->
-      <aside class="overlay-panel" tabindex="-1">
-        <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
-          <!-- close icon -->
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-
-        <nav class="overlay-nav">
-          <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
-          <a href="/About.html">About Me</a>
-          <a href="mailto:linaw815@uw.edu">Contact</a>
-        </nav>
-      </aside>
+      <nav id="primary-nav">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+              target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="About.html">About Me</a></li>
+          <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <!-- Off-canvas mobile menu overlay -->
+  <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <!-- backdrop -->
+    <div class="overlay-backdrop" data-close-overlay></div>
+
+    <!-- sliding panel -->
+    <aside class="overlay-panel" tabindex="-1">
+      <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+        <!-- close icon -->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav class="overlay-nav">
+        <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
+          rel="noopener">Resume</a>
+        <a href="About.html">About Me</a>
+        <a href="mailto:linaw815@uw.edu">Contact</a>
+      </nav>
+    </aside>
+  </div>
 
   <main id="chataible">
     <!-- Hero -->
@@ -126,8 +130,10 @@
       <div class="ch-container">
         <h2>The Challenge</h2>
         <p>
-          <strong>The project focuses on UX research for ChatAible, a generative AI tool designed to help enterprises with analytics.</strong>
-          Our team used four UX research methods—competitive analysis, user interview, cognitive walkthrough, and usability testing—to help Aible identify ways to
+          <strong>The project focuses on UX research for ChatAible, a generative AI tool designed to help enterprises
+            with analytics.</strong>
+          Our team used four UX research methods—competitive analysis, user interview, cognitive walkthrough, and
+          usability testing—to help Aible identify ways to
           <strong>make onboarding and the UI more intuitive.</strong>
         </p>
 
@@ -138,7 +144,7 @@
           </div>
 
           <a class="ch-cta" target="_blank"
-             href="https://www.figma.com/proto/B0F97OQdhDV1jyA1G77vSp/Lina--Jiayu--Wang-Portfolio?page-id=0%3A1&node-id=1-12&viewport=58%2C139%2C0.12&t=ilWGnoTiuE3mjYPM-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1%3A12">
+            href="https://www.figma.com/proto/B0F97OQdhDV1jyA1G77vSp/Lina--Jiayu--Wang-Portfolio?page-id=0%3A1&node-id=1-12&viewport=58%2C139%2C0.12&t=ilWGnoTiuE3mjYPM-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1%3A12">
             Access project with password
           </a>
         </div>
@@ -147,22 +153,23 @@
 
   </main>
 
-<footer class="page FooterSlide">
-            <div class="FooterContent">
-              <div class="FooterLeft">
-                <div class="FooterTitle">Last Stop</div>
-                <div class="FooterMessage">Let’s connect!</div>
-              </div>
-              <div class="FooterRight">
-                <a href="mailto:your@email.com" class="FooterLink">Email me</a>
-                <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
-                <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
-              </div>
-            </div>
-    
-            <div class="FooterCopyright">
-                <p>&copy; 2025 Lina Wang</p>
-              </div>
-          </footer>  
+  <footer class="page FooterSlide">
+    <div class="FooterContent">
+      <div class="FooterLeft">
+        <div class="FooterTitle">Last Stop</div>
+        <div class="FooterMessage">Let’s connect!</div>
+      </div>
+      <div class="FooterRight">
+        <a href="mailto:your@email.com" class="FooterLink">Email me</a>
+        <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
+        <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
+      </div>
+    </div>
+
+    <div class="FooterCopyright">
+      <p>&copy; 2025 Lina Wang</p>
+    </div>
+  </footer>
 </body>
+
 </html>

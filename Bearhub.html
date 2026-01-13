@@ -1,181 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-    
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <script src="asset/javascript/javascript.js"></script>
-        <link rel="stylesheet" href="asset/css/style2.0.css">
-        <link rel="stylesheet" href="asset/css/Bearhub.css">
-        <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
-        <title>Lina Wang | Bearhub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-          <!-- phosphor icon -->
-  <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css">
 
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="asset/javascript/javascript.js"></script>
+  <link rel="stylesheet" href="asset/css/style2.0.css">
+  <link rel="stylesheet" href="asset/css/Bearhub.css">
+  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
+  <title>Lina Wang | Bearhub</title>
 
-  gtag('config', 'G-RD4VM5JDWE');
-</script>
+  <!-- phosphor icon -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RD4VM5JDWE');
+  </script>
 
 </head>
 
 <body>
-            <header>
-      <div class="content">
-        <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+  <header>
+    <div class="content">
+      <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
         <img src="asset/image/Home/NewLogo.png" alt="Logo" style="height:35px;">Lina Wang
-        </a>
+      </a>
 
-        <!-- Mobile hamburger button -->
-        <button class="nav-toggle" id="navToggle"
-                aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
-          <!-- hamburger -->
-          <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <!-- close -->
-          <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
+      <!-- Mobile hamburger button -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primary-nav" aria-expanded="false"
+        aria-label="Open menu">
+        <!-- hamburger -->
+        <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <!-- close -->
+        <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
 
-        <nav id="primary-nav">
-          <ul>
-            <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a></li>
-            <li><a href="/about.html">About Me</a></li>
-            <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Off-canvas mobile menu overlay -->
-    <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
-      <!-- backdrop -->
-      <div class="overlay-backdrop" data-close-overlay></div>
-
-      <!-- sliding panel -->
-      <aside class="overlay-panel" tabindex="-1">
-        <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
-          <!-- close icon -->
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-
-        <nav class="overlay-nav">
-          <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
-          <a href="/About.html">About Me</a>
-          <a href="mailto:linaw815@uw.edu">Contact</a>
-        </nav>
-      </aside>
+      <nav id="primary-nav">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+              target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="About.html">About Me</a></li>
+          <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <main id="bearhub">
-  <!-- HERO -->
-  <section class="bh-section bh-hero">
-  <div class="bh-container">
-    <div class="bh-hero-grid">
-      <div class="bh-hero-text">
-        <h1 class="bh-title">Bearhub</h1>
-        <p class="bh-subtitle">
-          The challenge is to design "BearHub", a platform that addresses the diverse needs of Berkeley students by 
-          <span style="font-weight: 700;">facilitating the discovery of clubs and resources tailored to their individual preferences</span>. Our goal is to personalize and streamline the school experience, making it effortless for students to find and engage with the resources they need, thus enhancing their academic and social journey at Berkeley.
-        </p>
+  <!-- Off-canvas mobile menu overlay -->
+  <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <!-- backdrop -->
+    <div class="overlay-backdrop" data-close-overlay></div>
 
-        <div class="bh-meta">
-          <div>
-            <div class="bh-meta-eyebrow">Team Members</div>
-            <ul class="bh-list">
-              Jiayu Wang<br>Jennifer Zhu<br>Meghana<br>Jecy Liu
-            </ul>
+    <!-- sliding panel -->
+    <aside class="overlay-panel" tabindex="-1">
+      <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+        <!-- close icon -->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav class="overlay-nav">
+        <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
+          rel="noopener">Resume</a>
+        <a href="About.html">About Me</a>
+        <a href="mailto:linaw815@uw.edu">Contact</a>
+      </nav>
+    </aside>
+  </div>
+
+  <main id="bearhub">
+    <!-- HERO -->
+    <section class="bh-section bh-hero">
+      <div class="bh-container">
+        <div class="bh-hero-grid">
+          <div class="bh-hero-text">
+            <h1 class="bh-title">Bearhub</h1>
+            <p class="bh-subtitle">
+              The challenge is to design "BearHub", a platform that addresses the diverse needs of Berkeley students by
+              <span style="font-weight: 700;">facilitating the discovery of clubs and resources tailored to their
+                individual preferences</span>. Our goal is to personalize and streamline the school experience, making
+              it effortless for students to find and engage with the resources they need, thus enhancing their academic
+              and social journey at Berkeley.
+            </p>
+
+            <div class="bh-meta">
+              <div>
+                <div class="bh-meta-eyebrow">Team Members</div>
+                <ul class="bh-list">
+                  Jiayu Wang<br>Jennifer Zhu<br>Meghana<br>Jecy Liu
+                </ul>
+              </div>
+              <div>
+                <div class="bh-meta-eyebrow">Project Duration</div>
+                <div>15 weeks (Spring 2024)</div>
+              </div>
+            </div>
           </div>
-          <div>
-            <div class="bh-meta-eyebrow">Project Duration</div>
-            <div>15 weeks (Spring 2024)</div>
+
+          <!-- Right: single composite image -->
+          <div class="bh-hero-art">
+            <img src="asset/image/Bearhub/Bearhub main pic.png" alt="Bearhub mobile screens composite" loading="lazy"
+              decoding="async" />
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Right: single composite image -->
-      <div class="bh-hero-art">
-        <img
-          src="asset/image/Bearhub/Bearhub main pic.png"
-          alt="Bearhub mobile screens composite"
-          loading="lazy"
-          decoding="async"
-        />
+    <!-- Research Question -->
+    <section class="bh-section">
+      <div class="bh-container">
+        <div class="bh-rq" role="note" aria-labelledby="rq-title">
+          <div class="bh-rq-eyebrow">Research Question</div>
+          <h2 id="rq-title">How Might We...<br> make club/event resources more accessible and convenient for students?
+          </h2>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <!-- Research Question -->
-  <section class="bh-section">
-    <div class="bh-container">
-      <div class="bh-rq" role="note" aria-labelledby="rq-title">
-        <div class="bh-rq-eyebrow">Research Question</div>
-        <h2 id="rq-title">How Might We...<br> make club/event resources more accessible and convenient for students?</h2>
+    <!-- Methods -->
+    <section class="bh-section">
+      <div class="bh-container">
+        <h3 class="bh-eyebrow">User Research</h3>
+        <h2 class="bh-h2">Methods</h2>
+
+        <div class="bh-methods">
+          <!-- 1) Competitive Analysis -->
+          <article class="bh-method">
+            <figure class="bh-icon" aria-hidden="true">
+              <!-- Placeholder SVG — replace this <svg> with your <img src="..."> when ready -->
+              <img src="asset/image/Bearhub/competitive-analysis.png">
+            </figure>
+            <div class="bh-method-title">Competitive Analysis</div>
+            <!-- optional short line -->
+            <!-- <p class="bh-method-note">Map the landscape, find gaps.</p> -->
+          </article>
+
+          <!-- 2) User Interview -->
+          <article class="bh-method">
+            <figure class="bh-icon" aria-hidden="true">
+              <img src="asset/image/Bearhub/user-interview.png">
+            </figure>
+            <div class="bh-method-title">User Interview</div>
+            <!-- <p class="bh-method-note">Understand motivations and pain points.</p> -->
+          </article>
+
+          <!-- 3) User Survey -->
+          <article class="bh-method">
+            <figure class="bh-icon" aria-hidden="true">
+              <img src="asset/image/Bearhub/user-survey.png">
+            </figure>
+            <div class="bh-method-title">User Survey</div>
+            <!-- <p class="bh-method-note">Quantify patterns at scale.</p> -->
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Methods -->
-  <section class="bh-section">
-  <div class="bh-container">
-    <h3 class="bh-eyebrow">User Research</h3>
-    <h2 class="bh-h2">Methods</h2>
-
-    <div class="bh-methods">
-      <!-- 1) Competitive Analysis -->
-      <article class="bh-method">
-        <figure class="bh-icon" aria-hidden="true">
-          <!-- Placeholder SVG — replace this <svg> with your <img src="..."> when ready -->
-          <img src="asset/image/Bearhub/competitive-analysis.png">
-        </figure>
-        <div class="bh-method-title">Competitive Analysis</div>
-        <!-- optional short line -->
-        <!-- <p class="bh-method-note">Map the landscape, find gaps.</p> -->
-      </article>
-
-      <!-- 2) User Interview -->
-      <article class="bh-method">
-        <figure class="bh-icon" aria-hidden="true">
-          <img src="asset/image/Bearhub/user-interview.png">
-        </figure>
-        <div class="bh-method-title">User Interview</div>
-        <!-- <p class="bh-method-note">Understand motivations and pain points.</p> -->
-      </article>
-
-      <!-- 3) User Survey -->
-      <article class="bh-method">
-        <figure class="bh-icon" aria-hidden="true">
-          <img src="asset/image/Bearhub/user-survey.png">
-        </figure>
-        <div class="bh-method-title">User Survey</div>
-        <!-- <p class="bh-method-note">Quantify patterns at scale.</p> -->
-      </article>
-    </div>
-  </div>
-</section>
+    </section>
 
 
-<!-- ===== Results (wrapped in section + container so rails/padding apply) ===== -->
+    <!-- ===== Results (wrapped in section + container so rails/padding apply) ===== -->
     <section class="bh-section">
       <div class="bh-container">
         <h2 class="bh-h2">Results</h2>
@@ -247,256 +249,262 @@
     </section>
 
     <!-- ===== First Iteration ===== -->
-<section class="bh-section" style="margin-top: clamp(32px, 4vh, 64px);">
-  <div class="bh-container">
+    <section class="bh-section" style="margin-top: clamp(32px, 4vh, 64px);">
+      <div class="bh-container">
 
-    <!-- Eyebrow -->
-    <div class="bh-eyebrow">First Iteration</div>
-    <h2 class="bh-h2">Thinking Process &amp; Iterations</h2>
+        <!-- Eyebrow -->
+        <div class="bh-eyebrow">First Iteration</div>
+        <h2 class="bh-h2">Thinking Process &amp; Iterations</h2>
 
-    <!-- Card: Design thinking problem -->
-    <article class="bh-iter-card" aria-labelledby="iter-q">
-      <div class="bh-iter-head">
-        <div class="bh-iter-meta">Design Thinking • I</div>
-        <h3 id="iter-q" class="bh-iter-title">How to arrange the navigation bar?</h3>
-      </div>
+        <!-- Card: Design thinking problem -->
+        <article class="bh-iter-card" aria-labelledby="iter-q">
+          <div class="bh-iter-head">
+            <div class="bh-iter-meta">Design Thinking • I</div>
+            <h3 id="iter-q" class="bh-iter-title">How to arrange the navigation bar?</h3>
+          </div>
 
-            <div class="bh-iter-divider" role="separator"></div>
+          <div class="bh-iter-divider" role="separator"></div>
 
-      <div class="bh-iter-block">
-        <h4 class="bh-iter-subtitle">Features to include</h4>
-        <div class="bh-chips">
-          <span class="bh-chip">Search</span>
-          <span class="bh-chip">Events</span>
-          <span class="bh-chip">Clubs</span>
-          <span class="bh-chip">Messaging</span>
-          <span class="bh-chip">Profile</span>
-          <span class="bh-chip">Saved</span>
-        </div>
-      </div>
-
-
-
-      <div class="bh-iter-block">
-        <h4 class="bh-iter-subtitle">Solution</h4>
-        <p class="bh-iter-text">
-          Progressive Disclosure: Remove “Club” from the primary navigation bar to shift the app’s main focus to “Events.”
-        </p>
-      </div>
-    </article>
-
-    <!-- ===== Initial User Flow (image swaps for mobile/desktop) ===== -->
-    <h3 class="bh-h2" style="margin-top: 40px;">Initial User Flow</h3>
-<figure class="bh-flow">
-  <picture>
-    <!-- Mobile image -->
-    <source media="(max-width: 767.98px)" srcset="asset/image/Bearhub/userflow-mobile.png" />
-    <!-- Desktop / Tablet default -->
-    <img src="asset/image/Bearhub/userflow-desktop.png"
-         alt="User flow from onboarding to navigation bar, then search, messaging, events, and profile." />
-  </picture>
-</figure>
-
-    <!-- ===== Initial Mid-fi Prototype ===== -->
-    <h3 class="bh-h2">Initial Mid-fi Prototype</h3>
-    <div class="bh-phone-grid">
-      <figure class="bh-phone">
-        <img src="asset/image/Bearhub/image 8.png" alt="Search page mockup" />
-        <figcaption>Search page</figcaption>
-      </figure>
-
-      <figure class="bh-phone">
-        <img src="asset/image/Bearhub/image 9.png" alt="Messaging mockup" />
-        <figcaption>Messaging</figcaption>
-      </figure>
-
-      <figure class="bh-phone">
-        <img src="asset/image/Bearhub/image 10.png" alt="Campus events mockup" />
-        <figcaption>Campus Events</figcaption>
-      </figure>
-
-      <figure class="bh-phone">
-        <img src="asset/image/Bearhub/image 11.png" alt="Profile page mockup" />
-        <figcaption>Profile Page</figcaption>
-      </figure>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== Second Iteration ===== -->
-<section class="bh-section" style="margin-top: clamp(32px, 4vh, 64px);">
-  <div class="bh-container">
-
-    <div class="bh-eyebrow">Second Iteration</div>
-    <h2 class="bh-h2">Defining a Home Page</h2>
-
-    <!-- Card -->
-    <article class="bh-iter-card" aria-labelledby="iter2-q">
-      <div class="bh-iter-head">
-        <div class="bh-iter-meta">Design Thinking • II</div>
-        <h3 id="iter2-q" class="bh-iter-title">How to make better use of the homepage?</h3>
-      </div>
-
-                  <div class="bh-iter-divider" role="separator"></div>
-
-      <p class="bh-iter-text">
-        Initially, the idea was to make discovery page the home page. However, this results in an extra
-        step for users if they want to check their upcoming events.
-      </p>
-
-
-      <h4 class="bh-iter-subtitle">Solution</h4>
-      <p class="bh-iter-text">
-        Make <em>“my upcoming events”</em> the home page, and add suggested events on the page to make it
-        useful for checking upcoming events as well as discovering new ones.
-      </p>
-
-      <!-- Compare phones: left → right (stack on mobile) -->
-      <div class="bh-phone-compare">
-        <img src="asset/image/Bearhub/new-home.png">
-      </div>
-
-      <!-- Keep search as 2nd tab -->
-      <div class="bh-phone-explain" style="margin-bottom: 24px;">
-        <p class="bh-iter-text">
-          Keep the search page as the second tab for quick searches with filtering options.
-        </p>
-        <figure class="bh-phone">
-          <img style="width: 200px;" src="asset/image/Bearhub/new-search.png" alt="Search tab with filters" />
-        </figure>
-      </div>
-    </article>
-
-    <!-- Palette -->
-    <h3 class="bh-h2" style="margin-top: clamp(32px, 2vh, 64px);">Expanding the Color Palette</h3>
-    <p class="bh-iter-text">
-      Based on the bright coral color, a spectrum was chosen to give the app an overall vibrant and fun feel.
-    </p>
-    <img style="border-radius: 0;" src="asset/image/Bearhub/color-palette.png">
-
-  </div>
-</section>
-
-<!-- ===== Final Design ===== -->
-<section class="bh-section" style="margin-top: clamp(32px, 4vh, 64px);">
-  <div class="bh-container">
-
-    <!-- Final User Flow -->
-    <div class="bh-eyebrow">Final Design</div>
-    <h2 class="bh-h2">Final User Flow</h2>
-    <figure class="bh-flow">
-      <picture>
-        <!-- Mobile flow image -->
-        <!-- <source media="(max-width: 767.98px)" srcset="asset/image/Bearhub/final/userflow-mobile.png" /> -->
-        <!-- Desktop/Tablet flow image -->
-        <img src="asset/image/Bearhub/final-userflow.png"
-             alt="Final user flow from onboarding through navigation and core screens." />
-      </picture>
-    </figure>
-
-    <!-- Features -->
-    <h3 class="bh-h2">Features</h3>
-    <div class="bh-feature-list">
-
-      <!-- Feature 1 -->
-      <section class="bh-feature">
-        <figure class="bh-phone phone-feature">
-          <!-- GIF phone (200px max via CSS) -->
-          <img src="asset/image/Bearhub/giphy-home-demo.gif" alt="Home page with upcoming & suggested events" />
-        </figure>
-        <div class="bh-feature-text">
-          <p class="bh-iter-text">
-            A home page that tracks all upcoming and saved events. Easily accessible event info and QR codes for
-            check-in, with suggested events at the bottom.
-          </p>
-        </div>
-      </section>
-
-      <!-- Feature 2 (reverse on desktop for variety) -->
-      <section class="bh-feature is-reverse">
-        <figure class="bh-phone phone-feature">
-          <img src="asset/image/Bearhub/giphy-onboarding-demo.gif" alt="Onboarding flow GIF" />
-        </figure>
-        <div class="bh-feature-text">
-          <p class="bh-iter-text">
-            Onboarding that verifies school information, collects personal info, interests, and enrolled classes.
-          </p>
-        </div>
-      </section>
-
-      <!-- Feature 3 -->
-      <section class="bh-feature">
-        <figure class="bh-phone phone-feature">
-          <img src="asset/image/Bearhub/giphy-search-demo.gif" alt="Personalized search page with filters" />
-        </figure>
-        <div class="bh-feature-text">
-          <p class="bh-iter-text">
-            A personalized search page with filters that simplifies discovering campus events and shows info about
-            host clubs/organizations.
-          </p>
-        </div>
-      </section>
-
-      <!-- Feature 4 (reverse on desktop) -->
-      <section class="bh-feature is-reverse">
-        <figure class="bh-phone phone-feature">
-          <img src="asset/image/Bearhub/giphy-profile-demo.gif" alt="Detailed profile page with interests and classes" />
-        </figure>
-        <div class="bh-feature-text">
-          <p class="bh-iter-text">
-            A detailed profile page where users can update interests any time and view classes and experiences.
-          </p>
-        </div>
-      </section>
-
-            <!-- Feature 5 -->
-      <section class="bh-feature">
-        <figure class="bh-phone phone-feature">
-          <img src="asset/image/Bearhub/giphy-darkmode-demo.gif" alt="Personalized search page with filters" />
-        </figure>
-        <div class="bh-feature-text">
-          <p class="bh-iter-text" style="text-align: center;">
-            Dark Mode
-          </p>
-        </div>
-      </section>
-
-    </div>
-
-    
-    <!-- Final Collaboration Experience Demo (Figma embed) -->
-    <h3 class="bh-h2" style="margin-top: clamp(64px, 5vh, 80px);">Final Collaboration Experience Demo</h2>
-    <div class="bh-embed" style="margin-bottom: clamp(64px, 5vh, 80px);">
-      <!-- Replace the src with your real Figma embed URL -->
-                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="1200px" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FP8QZkdHjwfJdydu6YQMRj6%2FBearhub-Branding-%2526-Low-fi-(Copy)%3Fpage-id%3D494%253A1954%26node-id%3D494-2190%26viewport%3D614%252C309%252C0.07%26t%3Dqf7Vn07Ma8IbP9ys-1%26scaling%3Dscale-down%26starting-point-node-id%3D494%253A2190%26content-scaling%3Dfixed" allowfullscreen></iframe>                    </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-
-</main>
-
-<footer class="page FooterSlide">
-            <div class="FooterContent">
-              <div class="FooterLeft">
-                <div class="FooterTitle">Last Stop</div>
-                <div class="FooterMessage">Let’s connect!</div>
-              </div>
-              <div class="FooterRight">
-                <a href="mailto:your@email.com" class="FooterLink">Email me</a>
-                <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
-                <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
-              </div>
+          <div class="bh-iter-block">
+            <h4 class="bh-iter-subtitle">Features to include</h4>
+            <div class="bh-chips">
+              <span class="bh-chip">Search</span>
+              <span class="bh-chip">Events</span>
+              <span class="bh-chip">Clubs</span>
+              <span class="bh-chip">Messaging</span>
+              <span class="bh-chip">Profile</span>
+              <span class="bh-chip">Saved</span>
             </div>
-    
-            <div class="FooterCopyright">
-                <p>&copy; 2025 Lina Wang</p>
-              </div>
-          </footer>  
-    
+          </div>
+
+
+
+          <div class="bh-iter-block">
+            <h4 class="bh-iter-subtitle">Solution</h4>
+            <p class="bh-iter-text">
+              Progressive Disclosure: Remove “Club” from the primary navigation bar to shift the app’s main focus to
+              “Events.”
+            </p>
+          </div>
+        </article>
+
+        <!-- ===== Initial User Flow (image swaps for mobile/desktop) ===== -->
+        <h3 class="bh-h2" style="margin-top: 40px;">Initial User Flow</h3>
+        <figure class="bh-flow">
+          <picture>
+            <!-- Mobile image -->
+            <source media="(max-width: 767.98px)" srcset="asset/image/Bearhub/userflow-mobile.png" />
+            <!-- Desktop / Tablet default -->
+            <img src="asset/image/Bearhub/userflow-desktop.png"
+              alt="User flow from onboarding to navigation bar, then search, messaging, events, and profile." />
+          </picture>
+        </figure>
+
+        <!-- ===== Initial Mid-fi Prototype ===== -->
+        <h3 class="bh-h2">Initial Mid-fi Prototype</h3>
+        <div class="bh-phone-grid">
+          <figure class="bh-phone">
+            <img src="asset/image/Bearhub/image 8.png" alt="Search page mockup" />
+            <figcaption>Search page</figcaption>
+          </figure>
+
+          <figure class="bh-phone">
+            <img src="asset/image/Bearhub/image 9.png" alt="Messaging mockup" />
+            <figcaption>Messaging</figcaption>
+          </figure>
+
+          <figure class="bh-phone">
+            <img src="asset/image/Bearhub/image 10.png" alt="Campus events mockup" />
+            <figcaption>Campus Events</figcaption>
+          </figure>
+
+          <figure class="bh-phone">
+            <img src="asset/image/Bearhub/image 11.png" alt="Profile page mockup" />
+            <figcaption>Profile Page</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Second Iteration ===== -->
+    <section class="bh-section" style="margin-top: clamp(32px, 4vh, 64px);">
+      <div class="bh-container">
+
+        <div class="bh-eyebrow">Second Iteration</div>
+        <h2 class="bh-h2">Defining a Home Page</h2>
+
+        <!-- Card -->
+        <article class="bh-iter-card" aria-labelledby="iter2-q">
+          <div class="bh-iter-head">
+            <div class="bh-iter-meta">Design Thinking • II</div>
+            <h3 id="iter2-q" class="bh-iter-title">How to make better use of the homepage?</h3>
+          </div>
+
+          <div class="bh-iter-divider" role="separator"></div>
+
+          <p class="bh-iter-text">
+            Initially, the idea was to make discovery page the home page. However, this results in an extra
+            step for users if they want to check their upcoming events.
+          </p>
+
+
+          <h4 class="bh-iter-subtitle">Solution</h4>
+          <p class="bh-iter-text">
+            Make <em>“my upcoming events”</em> the home page, and add suggested events on the page to make it
+            useful for checking upcoming events as well as discovering new ones.
+          </p>
+
+          <!-- Compare phones: left → right (stack on mobile) -->
+          <div class="bh-phone-compare">
+            <img src="asset/image/Bearhub/new-home.png">
+          </div>
+
+          <!-- Keep search as 2nd tab -->
+          <div class="bh-phone-explain" style="margin-bottom: 24px;">
+            <p class="bh-iter-text">
+              Keep the search page as the second tab for quick searches with filtering options.
+            </p>
+            <figure class="bh-phone">
+              <img style="width: 200px;" src="asset/image/Bearhub/new-search.png" alt="Search tab with filters" />
+            </figure>
+          </div>
+        </article>
+
+        <!-- Palette -->
+        <h3 class="bh-h2" style="margin-top: clamp(32px, 2vh, 64px);">Expanding the Color Palette</h3>
+        <p class="bh-iter-text">
+          Based on the bright coral color, a spectrum was chosen to give the app an overall vibrant and fun feel.
+        </p>
+        <img style="border-radius: 0;" src="asset/image/Bearhub/color-palette.png">
+
+      </div>
+    </section>
+
+    <!-- ===== Final Design ===== -->
+    <section class="bh-section" style="margin-top: clamp(32px, 4vh, 64px);">
+      <div class="bh-container">
+
+        <!-- Final User Flow -->
+        <div class="bh-eyebrow">Final Design</div>
+        <h2 class="bh-h2">Final User Flow</h2>
+        <figure class="bh-flow">
+          <picture>
+            <!-- Mobile flow image -->
+            <!-- <source media="(max-width: 767.98px)" srcset="asset/image/Bearhub/final/userflow-mobile.png" /> -->
+            <!-- Desktop/Tablet flow image -->
+            <img src="asset/image/Bearhub/final-userflow.png"
+              alt="Final user flow from onboarding through navigation and core screens." />
+          </picture>
+        </figure>
+
+        <!-- Features -->
+        <h3 class="bh-h2">Features</h3>
+        <div class="bh-feature-list">
+
+          <!-- Feature 1 -->
+          <section class="bh-feature">
+            <figure class="bh-phone phone-feature">
+              <!-- GIF phone (200px max via CSS) -->
+              <img src="asset/image/Bearhub/giphy-home-demo.gif" alt="Home page with upcoming & suggested events" />
+            </figure>
+            <div class="bh-feature-text">
+              <p class="bh-iter-text">
+                A home page that tracks all upcoming and saved events. Easily accessible event info and QR codes for
+                check-in, with suggested events at the bottom.
+              </p>
+            </div>
+          </section>
+
+          <!-- Feature 2 (reverse on desktop for variety) -->
+          <section class="bh-feature is-reverse">
+            <figure class="bh-phone phone-feature">
+              <img src="asset/image/Bearhub/giphy-onboarding-demo.gif" alt="Onboarding flow GIF" />
+            </figure>
+            <div class="bh-feature-text">
+              <p class="bh-iter-text">
+                Onboarding that verifies school information, collects personal info, interests, and enrolled classes.
+              </p>
+            </div>
+          </section>
+
+          <!-- Feature 3 -->
+          <section class="bh-feature">
+            <figure class="bh-phone phone-feature">
+              <img src="asset/image/Bearhub/giphy-search-demo.gif" alt="Personalized search page with filters" />
+            </figure>
+            <div class="bh-feature-text">
+              <p class="bh-iter-text">
+                A personalized search page with filters that simplifies discovering campus events and shows info about
+                host clubs/organizations.
+              </p>
+            </div>
+          </section>
+
+          <!-- Feature 4 (reverse on desktop) -->
+          <section class="bh-feature is-reverse">
+            <figure class="bh-phone phone-feature">
+              <img src="asset/image/Bearhub/giphy-profile-demo.gif"
+                alt="Detailed profile page with interests and classes" />
+            </figure>
+            <div class="bh-feature-text">
+              <p class="bh-iter-text">
+                A detailed profile page where users can update interests any time and view classes and experiences.
+              </p>
+            </div>
+          </section>
+
+          <!-- Feature 5 -->
+          <section class="bh-feature">
+            <figure class="bh-phone phone-feature">
+              <img src="asset/image/Bearhub/giphy-darkmode-demo.gif" alt="Personalized search page with filters" />
+            </figure>
+            <div class="bh-feature-text">
+              <p class="bh-iter-text" style="text-align: center;">
+                Dark Mode
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- Final Collaboration Experience Demo (Figma embed) -->
+        <h3 class="bh-h2" style="margin-top: clamp(64px, 5vh, 80px);">Final Collaboration Experience Demo</h2>
+          <div class="bh-embed" style="margin-bottom: clamp(64px, 5vh, 80px);">
+            <!-- Replace the src with your real Figma embed URL -->
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="1200px"
+              src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FP8QZkdHjwfJdydu6YQMRj6%2FBearhub-Branding-%2526-Low-fi-(Copy)%3Fpage-id%3D494%253A1954%26node-id%3D494-2190%26viewport%3D614%252C309%252C0.07%26t%3Dqf7Vn07Ma8IbP9ys-1%26scaling%3Dscale-down%26starting-point-node-id%3D494%253A2190%26content-scaling%3Dfixed"
+              allowfullscreen></iframe>
+          </div>
+
+      </div>
+
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer class="page FooterSlide">
+    <div class="FooterContent">
+      <div class="FooterLeft">
+        <div class="FooterTitle">Last Stop</div>
+        <div class="FooterMessage">Let’s connect!</div>
+      </div>
+      <div class="FooterRight">
+        <a href="mailto:your@email.com" class="FooterLink">Email me</a>
+        <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
+        <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
+      </div>
+    </div>
+
+    <div class="FooterCopyright">
+      <p>&copy; 2025 Lina Wang</p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
