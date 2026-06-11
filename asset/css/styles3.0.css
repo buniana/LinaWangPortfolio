@@ -1460,9 +1460,10 @@ header .content {
 /* Interactive word: complexity */
 .hero3__complexity {
   display: inline-flex;
-  gap: 0.03ch;
+  gap: 0;
   align-items: flex-end;
 }
+
 
 /* Hover motion for each letter */
 .hero3 .letter {
@@ -1478,64 +1479,32 @@ header .content {
   transform: translateY(-10px);
 }
 
-/* Per-letter fonts/sizes */
-.hero3 .c {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(34px, 6vw, 75px);
-  font-style: italic;
-}
-
-.hero3 .o {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(30px, 5.2vw, 64px);
-  font-weight: 600;
-}
-
-.hero3 .m {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(30px, 5.2vw, 64px);
-  font-style: italic;
-  font-weight: 300;
-}
-
-.hero3 .p {
-  font-family: 'Irish Grover', cursive;
-  font-size: clamp(30px, 5.2vw, 64px);
-}
-
-.hero3 .l {
-  font-family: 'Istok Web', sans-serif;
-  font-size: clamp(30px, 5.2vw, 64px);
-  font-weight: 700;
-}
-
-.hero3 .e {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(30px, 5.2vw, 64px);
-  font-weight: 800;
-}
-
-.hero3 .x {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(30px, 5.2vw, 64px);
-  font-style: italic;
-  font-weight: 300;
-}
-
-.hero3 .i {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(30px, 5.2vw, 64px);
-}
-
-.hero3 .t {
-  font-family: 'Inspiration', cursive;
-  font-size: clamp(44px, 8vw, 96px);
-}
-
+/* Per-letter fonts/sizes — all Instrument Serif italic */
+.hero3 .c,
+.hero3 .o,
+.hero3 .m,
+.hero3 .p,
+.hero3 .l,
+.hero3 .e,
+.hero3 .x,
+.hero3 .i,
+.hero3 .t,
 .hero3 .y {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(30px, 5.2vw, 64px);
-  font-weight: 600;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(28px, 8vw, 75px);
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+/* Simple complexity word (replaces per-letter animation) */
+.hero3__complexity-word {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(34px, 6vw, 75px);
+  line-height: .9;
 }
 
 /* Subline */
@@ -1547,6 +1516,70 @@ header .content {
   line-height: 1.35;
   color: #000;
 }
+
+/* Microsoft intern badge */
+.hero3__intern-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 45px;
+  margin-top: clamp(16px, 2.5vw, 24px);
+  padding: 8px 20px;
+  border: 1px solid #000;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #F7F1FF 0%, #FEF5F7 100%);
+  font-size: clamp(13px, 1.8vw, 20px);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #000;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .hero3__intern-badge {
+    height: auto;
+    font-size: 11px;
+    padding: 6px 12px;
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  .hero3__intern-badge .ms-logo {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero3__intern-badge .ms-logo__sq {
+    width: 6px;
+    height: 6px;
+  }
+
+  .hero3__intern-badge .ms-logo__sq--red    { left: 1px; top: 1px; }
+  .hero3__intern-badge .ms-logo__sq--green  { left: 8px; top: 1px; }
+  .hero3__intern-badge .ms-logo__sq--blue   { left: 1px; top: 8px; }
+  .hero3__intern-badge .ms-logo__sq--yellow { left: 8px; top: 8px; }
+}
+
+/* CSS Microsoft logo (4-square grid) */
+.ms-logo {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  background: #F3F3F3;
+  overflow: hidden;
+}
+
+.ms-logo__sq {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+.ms-logo__sq--red    { background: #F35325; left: 1px; top: 1px; }
+.ms-logo__sq--green  { background: #81BC06; left: 12px; top: 1px; }
+.ms-logo__sq--blue   { background: #05A6F0; left: 1px; top: 12px; }
+.ms-logo__sq--yellow { background: #FFBA08; left: 12px; top: 12px; }
 
 /* Hero metro/railway full-bleed image */
 .hero3__metro {
@@ -1703,12 +1736,87 @@ header .content {
   }
 }
 
-/* Override background for Under Construction placeholder */
-.uc .uc-ispy .media {
-  background: var(--bg);
+/* ===== UC section: metro wrap gap ===== */
+.uc-metro-wrap {
+  margin-bottom: 36px;
 }
 
-/* Override pill colors for iSPY project */
+@media (max-width: 767px) {
+  .uc-metro-wrap {
+    margin-bottom: 24px;
+  }
+}
+
+/* ===== Microsoft internship card ===== */
+.uc .uc-microsoft h3 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  min-height: 0;
+}
+
+.uc-ms-card {
+  position: relative;
+  width: 100%;
+  height: 327px;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+/* Blur blobs — percentage positions so they scale with card width */
+.uc-ms-blob {
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.uc-ms-blob--green  { width: 60%; height: 55%; right: -5%;  top: -35%;    background: #98CC2B; filter: blur(139px); }
+.uc-ms-blob--red    { width: 60%; height: 45%; left: -15%;  top: -25%;    background: #EA5932; filter: blur(130px); }
+.uc-ms-blob--yellow { width: 50%; height: 55%; right: -5%;  bottom: -25%; background: #FBBE23; filter: blur(139px); }
+.uc-ms-blob--blue   { width: 50%; height: 55%; left: -5%;   bottom: -25%; background: #25AEF1; filter: blur(130px); }
+
+/* Logo: percentage-based squares so they scale with any logo size */
+.uc-ms-logo {
+  position: absolute;
+  width: 175px;
+  height: 175px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  overflow: hidden;
+}
+
+.uc-ms-logo__sq {
+  position: absolute;
+  width: 43.48%;  /* 76.09 / 175 */
+  height: 43.48%;
+}
+
+.uc-ms-logo__sq--red    { background: #F35325; left: 4.35%; top: 4.35%; }
+.uc-ms-logo__sq--green  { background: #81BC06; left: 52.17%; top: 4.35%; }
+.uc-ms-logo__sq--blue   { background: #05A6F0; left: 4.35%; top: 52.17%; }
+.uc-ms-logo__sq--yellow { background: #FFBA08; left: 52.17%; top: 52.17%; }
+
+.uc-ms-desc {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .uc-ms-card {
+    height: 220px;
+  }
+
+  .uc-ms-logo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* SafeBook (ispy) pill colors */
 .desc--ispy .pill {
   background: #008236;
   color: #fff;
