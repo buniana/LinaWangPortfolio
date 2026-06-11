@@ -1762,6 +1762,7 @@ header .content {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 18px;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 /* Blur blobs — percentage positions so they scale with card width */
