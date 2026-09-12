@@ -200,6 +200,24 @@
   <!-- FEATURED PROJECTS -->
   <section id="projects" class="section">
     <div class="container">
+      <!-- Project 0: Image right, text left -->
+      <div class="project grid-12" style="row-gap:24px; align-items:start;">
+        <!-- Media on right at md+, but first in DOM so it stacks above on small -->
+        <a class="span-12 md-span-6 media md-order-3" href="/Microsoft.html" data-aos="fade-left">
+          <img src="asset/image/Home3.0/Teams.png" alt="Microsoft Teams feature redesign cover" loading="lazy" />
+        </a>
+        <div class="span-1 hide-sm md-order-2"></div>
+        <div class="span-12 md-span-5 md-order-1 desc desc--teams">
+          <a href="/Microsoft.html"><h3 class="proj-title" data-aos="fade-up">Teams Feature, Reimagined with AI</h3></a>
+          <div class="pills" data-aos="fade-up">
+            <span class="pill">Enterprise Scale</span>
+            <span class="pill">Interaction Design</span>
+            <span class="pill">AI-infused design</span>
+          </div>
+          <p data-aos="fade-up">Improving discoverability and usability for a core Teams feature reaching 100M+
+            users, adding "bulk select" to cut repetitive clicks and mapping an AI-infused future roadmap.</p>
+        </div>
+      </div>
       <!-- Project 1: Image left, text right -->
       <div class="project grid-12" style="row-gap:24px; align-items:start;">
         <!-- LEFT COLUMN: image + impact stacked (6 cols) -->
@@ -347,7 +365,7 @@
     </div>
   </section>
 
-  <!-- UNDER CONSTRUCTION (metro full-bleed + two 5-col projects) -->
+  <!-- UNDER CONSTRUCTION (metro full-bleed + placeholder card) -->
   <section class="section no-divider uc">
     <div class="container">
       <div class="span-12" style="text-align:right;">
@@ -355,8 +373,8 @@
         <!-- Full-bleed metro illustration placeholder -->
         <div class="full-bleed uc-metro-wrap" style="margin-top:8px;" data-aos="fade-up">
           <picture>
-            <source media="(max-width: 767px)" srcset="asset/image/Home3.0/underconstructionmetromicrosoftmobile.png">
-            <img src="asset/image/Home3.0/underconstructionmetromicrosoft.png" alt="Under construction illustration" loading="lazy" decoding="async">
+            <source media="(max-width: 767px)" srcset="asset/image/Home3.0/underconstructionmetromobile.png">
+            <img src="asset/image/Home3.0/underconstructionmetro.png" alt="Under construction illustration" loading="lazy" decoding="async">
           </picture>
         </div>
       </div>
@@ -364,38 +382,11 @@
 
     <div class="container">
       <div class="grid-12" style="row-gap:32px; align-items:start;">
-        <!-- Left project (5 cols) -->
-        <!-- <article class="span-12 md-span-5 uc-hip">
-          <h3 data-aos="fade-up">Hunger Intervention<br/>Project</h3>
-          <a class="media" data-aos="fade-up" href="https://www.figma.com/proto/s5P57o6Kcb42qI79HfQ1T0/Lina-Wang--508-Project?page-id=319%3A1304&node-id=319-1305&viewport=140%2C181%2C0.06&t=iJw6bOXNsCoVqIlL-1&scaling=contain&content-scaling=fixed" target="_blank">
-            <img src="asset/image/Home3.0/HIP.png">
-          </a>
-          <div data-aos="fade-up">
-          <div class="pills">
-            <span class="pill">Web Design</span>
-            <span class="pill">Design System</span>
-            <span class="pill">Visual</span>
+        <!-- More projects placeholder card -->
+        <article class="span-12 md-span-5 uc-more">
+          <div class="uc-more-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="asset/image/Home3.0/More projects.png" alt="More projects to come">
           </div>
-          <p>A comprehensive website redesign for the Hunger Intervention Program, thoughtfully crafting a cohesive design system and high-fidelity prototype that authentically reflects the organization's mission and resonates with its diverse audiences.</p>
-          </div>
-        </article> -->
-
-        <!-- Microsoft internship card -->
-        <article class="span-12 md-span-5 uc-microsoft">
-          <h3 data-aos="fade-up">Microsoft</h3>
-          <div class="uc-ms-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="uc-ms-blob uc-ms-blob--green"></div>
-            <div class="uc-ms-blob uc-ms-blob--red"></div>
-            <div class="uc-ms-blob uc-ms-blob--yellow"></div>
-            <div class="uc-ms-blob uc-ms-blob--blue"></div>
-            <div class="uc-ms-logo">
-              <div class="uc-ms-logo__sq uc-ms-logo__sq--red"></div>
-              <div class="uc-ms-logo__sq uc-ms-logo__sq--green"></div>
-              <div class="uc-ms-logo__sq uc-ms-logo__sq--blue"></div>
-              <div class="uc-ms-logo__sq uc-ms-logo__sq--yellow"></div>
-            </div>
-          </div>
-          <p class="uc-ms-desc" data-aos="fade-up" data-aos-delay="200">I will be joining Microsoft Teams as a Design intern this summer.</p>
         </article>
       </div>
     </div>

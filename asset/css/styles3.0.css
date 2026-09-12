@@ -600,6 +600,12 @@ p {
   border: none;
 }
 
+.desc--teams .pill {
+  background: #E8EBFA;
+  color: #111318;
+  border: none;
+}
+
 /* Agnes impact strip */
 .impact {
   display: flex;
@@ -910,7 +916,8 @@ p {
   .desc--agnes .proj-title,
   .desc--nurtur .proj-title,
   .desc--HIP .proj-title,
-  .desc--ispy .proj-title {
+  .desc--ispy .proj-title,
+  .desc--teams .proj-title {
     font-size: 36px;
   }
 }
@@ -932,11 +939,12 @@ p {
 /* Tablet breakpoints for project & section titles */
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  /* Featured project titles (Agnes, nurtur, HIP, ispy) */
+  /* Featured project titles (Agnes, nurtur, HIP, ispy, teams) */
   .desc--agnes .proj-title,
   .desc--nurtur .proj-title,
   .desc--HIP .proj-title,
-  .desc--ispy .proj-title {
+  .desc--ispy .proj-title,
+  .desc--teams .proj-title {
     font-size: 36px;
   }
 
@@ -1747,73 +1755,24 @@ header .content {
   }
 }
 
-/* ===== Microsoft internship card ===== */
-.uc .uc-microsoft h3 {
-  font-weight: 700;
-  margin-bottom: 20px;
-  min-height: 0;
-}
-
-.uc-ms-card {
-  position: relative;
+/* More projects placeholder card */
+.uc-more-card {
   width: 100%;
   height: 327px;
-  background: #fff;
   border-radius: 30px;
   overflow: hidden;
-  margin-bottom: 18px;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-/* Blur blobs — percentage positions so they scale with card width */
-.uc-ms-blob {
-  position: absolute;
-  border-radius: 9999px;
-}
-
-.uc-ms-blob--green  { width: 60%; height: 55%; right: -5%;  top: -35%;    background: #98CC2B; filter: blur(139px); }
-.uc-ms-blob--red    { width: 60%; height: 45%; left: -15%;  top: -25%;    background: #EA5932; filter: blur(130px); }
-.uc-ms-blob--yellow { width: 50%; height: 55%; right: -5%;  bottom: -25%; background: #FBBE23; filter: blur(139px); }
-.uc-ms-blob--blue   { width: 50%; height: 55%; left: -5%;   bottom: -25%; background: #25AEF1; filter: blur(130px); }
-
-/* Logo: percentage-based squares so they scale with any logo size */
-.uc-ms-logo {
-  position: absolute;
-  width: 175px;
-  height: 175px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  overflow: hidden;
-}
-
-.uc-ms-logo__sq {
-  position: absolute;
-  width: 43.48%;  /* 76.09 / 175 */
-  height: 43.48%;
-}
-
-.uc-ms-logo__sq--red    { background: #F35325; left: 4.35%; top: 4.35%; }
-.uc-ms-logo__sq--green  { background: #81BC06; left: 52.17%; top: 4.35%; }
-.uc-ms-logo__sq--blue   { background: #05A6F0; left: 4.35%; top: 52.17%; }
-.uc-ms-logo__sq--yellow { background: #FFBA08; left: 52.17%; top: 52.17%; }
-
-.uc-ms-desc {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 24px;
-  color: #000;
+.uc-more-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 767px) {
-  .uc-ms-card {
+  .uc-more-card {
     height: 220px;
-  }
-
-  .uc-ms-logo {
-    width: 120px;
-    height: 120px;
   }
 }
 
@@ -3348,6 +3307,15 @@ header .content {
   cursor: pointer;
 }
 
+/* Microsoft page: black stroke + purple sub instead of Agnes's white/yellow */
+.np--ms .np__title::before {
+  -webkit-text-stroke: 2px #000;
+}
+
+.np--ms .np__sub::before {
+  color: #866BD7;
+}
+
 /* Next Steps Section (alternate) */
 .nextsteps-list {
   display: flex;
@@ -3552,4 +3520,324 @@ header .content {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
+}
+
+/* ===== Microsoft Case Study Page Styles ===== */
+
+/* Microsoft hero stat cards use a lighter blue-lavender than Agnes's */
+.ms-hero .stat-card {
+  background: #E8EBFA;
+}
+
+/* Centered variant for stat cards with no label row */
+.stat-card--center {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card--center .stat-card__value {
+  text-align: center;
+}
+
+/* Wider meta columns so "AI-infused product design" fits on one line */
+.ms-meta .meta-item {
+  max-width: 340px;
+}
+
+/* Summary/Impact tag badges use the same blue-lavender as the stat cards */
+.ms-meta .challenge-section__title-wrap,
+.ms-impact .challenge-section__title-wrap {
+  background: #E8EBFA;
+}
+
+.ms-summary-headline {
+  font-weight: 500;
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+
+/* NDA notice box */
+.ms-nda {
+  background: url("../image/Microsoft/Microsoft NDA background.png") center / cover no-repeat;
+  border-radius: 30px;
+  padding: clamp(32px, 5vw, 56px) 32px;
+  text-align: center;
+  margin: 64px 0;
+}
+
+.ms-nda__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 32px);
+  color: #000;
+  margin: 0;
+}
+
+.ms-nda__title i {
+  font-size: 0.85em;
+}
+
+.ms-nda__sub {
+  margin: 16px 0 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+
+.ms-nda__sub a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Summary: image + text layout */
+.ms-summary-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 48px;
+  align-items: stretch;
+  margin-top: 48px;
+}
+
+.ms-summary-layout__image {
+  grid-column: span 5;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  display: block;
+}
+
+.ms-summary-layout__text {
+  grid-column: span 7;
+}
+
+.ms-summary-layout__text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000;
+  margin: 0 0 20px;
+}
+
+.ms-summary-layout__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .ms-summary-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ms-summary-layout__image {
+    grid-column: auto;
+    height: auto;
+    aspect-ratio: 16/9;
+    max-width: 400px;
+  }
+
+  .ms-summary-layout__text {
+    grid-column: auto;
+  }
+}
+
+/* Three highlight cards (approach / process) */
+.ms-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 64px 0;
+}
+
+@media (max-width: 900px) {
+  .ms-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ms-highlight-card {
+  background: #E8EBFA;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ms-highlight-card__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  line-height: 1.4;
+}
+
+.ms-highlight-card__desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Impact section */
+.ms-impact-lead {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin: 48px 0 12px;
+}
+
+.ms-impact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .ms-impact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ms-impact-card {
+  background: #fff;
+  border: 1px solid #ECECEC;
+  border-radius: 20px;
+  padding: 70px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ms-impact-card__icon {
+  font-size: 32px;
+  color: #000;
+}
+
+.ms-impact-card__label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #000;
+  line-height: 1.4;
+}
+
+/* Reflection section */
+.ms-reflection-section {
+  padding: clamp(64px, 9vw, 160px) 0 80px;
+  background: #fff;
+}
+
+.ms-reflection-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(40px, 6vw, 64px);
+  color: #000;
+  margin: 0 0 48px;
+}
+
+.ms-reflection-title img {
+  height: clamp(36px, 5vw, 56px);
+  width: auto;
+  flex-shrink: 0;
+}
+
+.ms-reflection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 767px) {
+  .ms-reflection-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ms-reflection-card {
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ms-reflection-card--pink {
+  background: #FBEAEA;
+}
+
+.ms-reflection-card--green {
+  background: #EAF3E3;
+}
+
+.ms-reflection-card--blue {
+  background: #E6EFF8;
+}
+
+.ms-reflection-card--yellow {
+  background: #FBF1DC;
+}
+
+.ms-reflection-card__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #000;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.ms-reflection-card__text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Thank you section */
+.ms-thankyou-section {
+  padding: clamp(48px, 8vw, 96px) 0 clamp(64px, 10vw, 120px);
+  background: #fff;
+}
+
+.ms-thankyou-kicker {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 8px;
+}
+
+.ms-thankyou-headline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #000;
+  line-height: 1.4;
+  margin: 0 0 48px;
+}
+
+.ms-thankyou-layout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ms-thankyou-layout img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 512px;
+  border-radius: 24px;
 }
