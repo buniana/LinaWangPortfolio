@@ -10,10 +10,12 @@
     href="https://fonts.googleapis.com/css2?family=Inspiration&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Irish+Grover&family=Istok+Web:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="asset/css/styles3.0.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@900&display=swap">
+  <link rel="stylesheet" href="asset/css/window-seat.css">
   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
   <script src="asset/javascript/javascript.js"></script>
   <title>Lina Wang | Home</title>
-  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="asset/image/Home3.0/favicon.svg">
 
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
@@ -88,72 +90,106 @@
   </div>
 
   <!-- ===== HERO (interactive letters + bouncing arrow) ===== -->
-  <section class="hero3">
-    <div class="hero3__bg"></div>
-
-    <div class="container grid-12 hero3__wrap">
-      <div class="span-12">
-        <h1 class="hero3__title">
-          <span class="hero3__lead" data-aos="fade-up" data-aos-duration="500">I design</span>
-
-          <!-- interactive word -->
-          <span class="hero3__complexity" aria-label="complexity" data-aos="zoom-in-up" data-aos-duration="1000">
-            <span class="c letter">C</span>
-            <span class="o letter">o</span>
-            <span class="m letter">m</span>
-            <span class="p letter">p</span>
-            <span class="l letter">l</span>
-            <span class="e letter">e</span>
-            <span class="x letter">x</span>
-            <span class="i letter">i</span>
-            <span class="t letter">t</span>
-            <span class="y letter">y</span>
-          </span>
-
-          <span class="hero3__lead" data-aos="fade-up" data-aos-duration="1500">into</span>
-          <span class="hero3__clarity" data-aos="zoom-in-up" data-aos-duration="2000">Clarity</span>
-          <img class="hero3__title-arrow" src="asset/image/Home3.0/bigarrow.svg" alt="" aria-hidden="true"
-            data-aos="fade-left" data-aos-duration="2000" style="transform: scaleX(-1);">
-        </h1>
-
-        <p class="hero3__sub">
-          Building intuitive interfaces and interactions for AI products and enterprise tools
-        </p>
-
-        <div class="hero3__intern-badge" data-aos="fade-up" data-aos-duration="2000">
-          <span>Prev. Product Design Intern @ <strong>Microsoft</strong></span>
-          <div class="ms-logo" aria-label="Microsoft logo">
-            <div class="ms-logo__sq ms-logo__sq--red"></div>
-            <div class="ms-logo__sq ms-logo__sq--green"></div>
-            <div class="ms-logo__sq ms-logo__sq--blue"></div>
-            <div class="ms-logo__sq ms-logo__sq--yellow"></div>
-          </div>
-        </div>
+  <!-- WINDOW SEAT INTRO (replaces the old hero3 section) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="lglass" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <feImage id="lgmap" href="" x="0" y="0" width="10" height="10" preserveAspectRatio="none" result="map"/>
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="40" xChannelSelector="R" yChannelSelector="G" result="dR"/>
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="46" xChannelSelector="R" yChannelSelector="G" result="dG"/>
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="52" xChannelSelector="R" yChannelSelector="G" result="dB"/>
+    <feColorMatrix in="dR" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+    <feColorMatrix in="dG" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+    <feColorMatrix in="dB" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+    <feComposite in="r" in2="g" operator="arithmetic" k2="1" k3="1" result="rg"/>
+    <feComposite in="rg" in2="b" operator="arithmetic" k2="1" k3="1"/>
+  </filter>
+</svg>
+  <section class="ride" id="ride" aria-label="Intro ride">
+  <div class="stage" id="stage">
+    <nav class="fnav ws-hidden-nav" id="fnav" aria-hidden="true" hidden>
+  <span class="fsel" id="fsel" aria-hidden="true"></span>
+  <a class="logo" href="https://lina-wang.com/index.html"><span class="mark">L</span><span class="lname">Lina Wang</span></a>
+  <div class="flinks" id="flinks">
+    <a href="#work">Work</a>
+    <a href="https://lina-wang.com/About.html">About</a>
+    <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link">Resume</a>
+  </div>
+  <button type="button" class="fmenu" id="fmenu" aria-expanded="false">Menu</button>
+  <a class="fcta" href="#contact">Contact</a>
+</nav>
+    <div class="behind" aria-hidden="true"><div class="ws-clone" id="wsClone"></div></div>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <section class="gallery" id="gal" aria-label="Previous stops">
+      <div class="g-spot" id="gspot" aria-hidden="true"></div>
+      <div class="g-rail" id="grail"></div>
+      <div class="g-a" id="gA">
+        <div class="hero" id="heroA"><p class="hh">I'm Lina Wang,</p><p class="hr">a product designer</p><p class="hs">Building intuitive interfaces and interactions for AI products and enterprise tools</p><span class="hp">Prev. Product Design Intern @ Microsoft</span></div>
+        <div class="g-trk" id="gtrk" aria-hidden="true"><i></i><i></i><i></i><i></i><div class="dots"><b></b><b></b><b></b><b></b></div><div class="cap" id="gcap"></div></div>
       </div>
-
-      <!-- Full-bleed hero metro/railway image -->
-      <div class="span-12 hero3__metro full-bleed" data-aos="fade-up" data-aos-duration="1500">
-        <picture>
-          <source media="(max-width: 767px)" srcset="asset/image/Home3.0/herometromobile.png">
-          <img src="asset/image/Home3.0/herometro.svg" alt="Metro line illustration" loading="lazy" decoding="async">
-        </picture>
+      <div class="g-track" id="gtrack">
+        <article class="poster g-sign" id="gSign"><i class="w1"></i><i class="w2"></i><div class="light"></div><div class="board"><div class="bin"><div class="badge"><small>LW</small><span>00</span></div><div><p class="nm">Lina Wang</p><p class="rl">a product designer</p><p class="sb">Building intuitive interfaces and interactions for AI products and enterprise tools</p><span class="mp">Prev. Product Design Intern @ Microsoft</span></div></div><div class="band"><span>← Intro</span><span>Previous stops →</span></div></div></article>
+        <div class="g-intro"><div class="eb">Previous stops</div><h2>The line<br>so far</h2><p>Where I've worked and studied, one poster per stop.</p></div>
+        <article class="poster"><i class="w1"></i><i class="w2"></i><div class="light"></div><div class="pcard p1"><div class="ptop"><span>Stop 05</span><span>Big tech</span></div><div class="pgfx"><div class="grid9"><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i></div></div><div><h3 class="porg">Microsoft</h3><p class="prole">Product Design Intern</p><p class="pdesc">Reimagined a core Teams feature used by 100M+ people, with an AI-infused roadmap.</p></div><i class="pstripe"></i></div></article>
+        <article class="poster"><i class="w1"></i><i class="w2"></i><div class="light"></div><div class="pcard p2"><div class="ptop"><span>Stop 04</span><span>Gen AI startup</span></div><div class="pgfx"><div class="spark"></div><div class="spark2"></div></div><div><h3 class="porg">Agnes AI</h3><p class="prole">Product design</p><p class="pdesc">Designed Magic Click for AI workspace collaboration. DAU doubled from 30k to 60k.</p></div><i class="pstripe"></i></div></article>
+        <article class="poster"><i class="w1"></i><i class="w2"></i><div class="light"></div><div class="pcard p3"><div class="ptop"><span>Stop 03</span><span>Healthcare startup</span></div><div class="pgfx"><div class="rings"></div></div><div><h3 class="porg serif">nurtur</h3><p class="prole">Product design</p><p class="pdesc">Built the design system, a provider dashboard and a crisis hotline for mental health care.</p></div><i class="pstripe"></i></div></article>
+        <article class="poster"><i class="w1"></i><i class="w2"></i><div class="light"></div><div class="pcard p4"><div class="ptop"><span>Stop 02</span><span>Now</span></div><div class="pgfx"><div class="lines"></div></div><div><h3 class="porg">University of Washington</h3><p class="prole">M.S. Human Centered Design &amp; Engineering</p><p class="pdesc">Studying how people and systems meet.</p></div><i class="pstripe"></i></div></article>
+        <article class="poster"><i class="w1"></i><i class="w2"></i><div class="light"></div><div class="pcard p5"><div class="ptop"><span>Stop 01</span><span>Where it began</span></div><div class="pgfx"><div class="mol" id="mol"></div></div><div><h3 class="porg serif">UC Berkeley</h3><p class="prole">Chemical Biology &amp; Nutritional Science</p><p class="pdesc">A science background before design.</p></div><i class="pstripe"></i></div></article>
       </div>
+    </section>
+    <div class="grain" aria-hidden="true"></div>
 
-      <!-- scroll cue -->
-      <div class="span-12 hero3__intro">
-        <!-- swap this src for your final SVG if you prefer using <img> -->
-        <svg class="hero3__arrow" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 4v14M12 18l-6-6M12 18l6-6" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+    <div class="topbar" id="bar" hidden></div>
 
-        <div class="hero3__me" data-aos="fade-up" data-aos-duration="2000">
-          <div class="me__name">I'm Lina Wang</div>
-          <div class="me__role">a product designer</div>
-        </div>
+    <div class="led" id="led" aria-live="polite"><span class="dot"></span><span id="ledText">Seattle · Waterfront line</span></div>
+
+    <div class="glass">
+      <div class="layer" id="sw">
+        <h1 class="slogan" id="slogan"><span class="w">I design</span> <span class="w cx d1">Complexity</span> <span class="w d2">into</span> <strong class="w d3">Clarity</strong></h1>
+      </div>
+      <div class="layer" id="iw" style="opacity:0">
+        <p class="hello glow">I'm Lina Wang,</p>
+        <p class="role glow">a product designer</p>
+        <p class="sub glow">Building intuitive interfaces and interactions for AI products and enterprise tools</p>
+        <span class="pill">Prev. Product Design Intern @ Microsoft</span>
       </div>
     </div>
-  </section>
+    <div class="tk-wrap" id="tkWrap">
+      <div class="tk" id="tkEl">
+        <div class="tk-main">
+          <div class="tk-row"><span>LW Line · Window seat</span><span>Admit one · No. 2026</span></div>
+          <div class="tk-hero">
+            <h1>I design <em>Complexity</em> into <b>Clarity</b></h1>
+            <p class="tk-sub">Building intuitive interfaces and interactions for AI products and enterprise tools</p>
+            <span class="tk-pill">Prev. Product Design Intern @ Microsoft</span>
+          </div>
+          <div>
+            <div class="tk-track" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+            <div class="tk-grid">
+              <div><span>Passenger</span><strong>Lina Wang</strong></div>
+              <div><span>Class</span><strong>Product designer</strong></div>
+              <div><span>Route</span><strong><em>Complexity</em> → Clarity</strong></div>
+              <div><span>Next stop</span><strong>Selected work</strong></div>
+            </div>
+          </div>
+          <i class="tk-stripe"></i>
+        </div>
+        <div class="tk-stub" aria-hidden="true"><small>Stop</small><div class="n">01</div><div class="tk-bars"></div><small>Selected<br>work</small></div>
+      </div>
+      <div class="tk-flap" id="tkFlap"></div>
+    </div>
+    <div class="hint right" id="hint"><svg class="cue filled" id="cueArrow" viewBox="0 0 68 59" aria-hidden="true"><path id="cuePath" d="M0 29.4561L0 25.4561L64 25.4561V29.4561V33.4561L0 33.4561L0 29.4561ZM66.8284 26.6276C68.3905 28.1897 68.3905 30.7224 66.8284 32.2845L41.3726 57.7403C39.8105 59.3024 37.2778 59.3024 35.7157 57.7403C34.1536 56.1782 34.1536 53.6456 35.7157 52.0835L58.3431 29.4561L35.7157 6.82864C34.1536 5.26654 34.1536 2.73388 35.7157 1.17178C37.2778 -0.390314 39.8105 -0.390314 41.3726 1.17178L66.8284 26.6276Z"/></svg><span id="hintText">scroll to continue</span></div>
+
+    <div class="progress" id="prog" aria-hidden="true"><div class="pfill" id="pfill"></div></div>
+    <div class="controls" id="ctl">
+      <div class="ctl-left">
+      </div>
+      <div class="ctl-right">
+        <button type="button" class="ghost" id="skip">Skip intro</button>
+        <button type="button" class="ghost" id="replay">Replay ride</button>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- HERO -->
   <!-- TOP HERO (gradient) -->
@@ -203,12 +239,12 @@
       <!-- Project 0: Image right, text left -->
       <div class="project grid-12" style="row-gap:24px; align-items:start;">
         <!-- Media on right at md+, but first in DOM so it stacks above on small -->
-        <a class="span-12 md-span-6 media md-order-3" href="/Microsoft.html" data-aos="fade-left">
+        <a class="span-12 md-span-6 media md-order-3" href="Microsoft.html" data-aos="fade-left">
           <img src="asset/image/Home3.0/Teams.png" alt="Microsoft Teams feature redesign cover" loading="lazy" />
         </a>
         <div class="span-1 hide-sm md-order-2"></div>
         <div class="span-12 md-span-5 md-order-1 desc desc--teams">
-          <a href="/Microsoft.html"><h3 class="proj-title" data-aos="fade-up">Teams Feature, Reimagined with AI</h3></a>
+          <a href="Microsoft.html"><h3 class="proj-title" data-aos="fade-up">Teams Feature, Reimagined with AI</h3></a>
           <div class="pills" data-aos="fade-up">
             <span class="pill">Enterprise Scale</span>
             <span class="pill">Interaction Design</span>
@@ -222,7 +258,7 @@
       <div class="project grid-12" style="row-gap:24px; align-items:start;">
         <!-- LEFT COLUMN: image + impact stacked (6 cols) -->
         <div class="span-12 md-span-6 md-order-1">
-          <a class="media" href="/Agnes.html" data-aos="fade-right">
+          <a class="media" href="Agnes.html" data-aos="fade-right">
             <img src="asset/image/Home3.0/Agnes.png" alt="Agnes AI Collaboration cover" loading="lazy" />
           </a>
           <div class="impact" data-aos="fade-right">
@@ -241,7 +277,7 @@
         <!-- RIGHT COLUMN: description (5 cols) -->
         <div class="span-12 md-span-5 md-order-3 desc desc--agnes">
           <!-- <img src="asset/image/Home3.0/Agnes dots.png" data-aos="fade-up"> -->
-          <a href="/Agnes.html"><h3 class="proj-title" data-aos="fade-up">AI Workspace Collaboration</h3></a>
+          <a href="Agnes.html"><h3 class="proj-title" data-aos="fade-up">AI Workspace Collaboration</h3></a>
           <div class="pills" data-aos="fade-up">
             <span class="pill">Interaction Design</span>
             <span class="pill">Gen AI</span>
@@ -277,7 +313,7 @@
       <div class="project grid-12" style="row-gap:24px; align-items:start;">
         <!-- LEFT COLUMN: image + impact stacked (6 cols) -->
         <div class="span-12 md-span-6 md-order-1">
-          <a class="media" href="/nurtur.html" data-aos="fade-right">
+          <a class="media" href="nurtur.html" data-aos="fade-right">
             <img src="asset/image/Home3.0/nurtur.png" alt="nurtur project cover" loading="lazy" />
           </a>
 
@@ -287,7 +323,7 @@
         <!-- RIGHT COLUMN: description (5 cols) -->
         <div class="span-12 md-span-5 md-order-3 desc desc--nurtur">
           <!-- <img src="asset/image/Home3.0/nurtur dots.png"> -->
-          <a href="/nurtur.html"><h3 class="proj-title" data-aos="fade-up">Redesigning Mental Health Care</h3></a>
+          <a href="nurtur.html"><h3 class="proj-title" data-aos="fade-up">Redesigning Mental Health Care</h3></a>
           <div class="pills" data-aos="fade-up">
             <span class="pill">UI design</span>
             <span class="pill">Mental Health</span>
@@ -444,6 +480,7 @@
   </section>
 </body>
 
+<script src="asset/javascript/window-seat.js"></script>
 <script>
   AOS.init();
 </script>

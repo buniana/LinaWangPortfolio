@@ -21,23 +21,64 @@
   gtag('config', 'G-RD4VM5JDWE');
 </script>
 
+  <link rel="stylesheet" href="asset/css/nav-glass.css">
 </head>
 
 <body>
     
-    <header>
-        <div class="content">
-          <a style="color:#313131;" href="index.html" id="logo">Lina Wang
-          </a>
-          <nav>
-            <ul>
-              <li><a style="color:rgba(0, 0, 0, 0.59);" href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank" id="nav-item">Resume</a></li>
-              <li><a style="color:rgba(0, 0, 0, 0.59);" href="About.html" id="nav-item">About Me</a></li>
-              <li><a style="color:rgba(0, 0, 0, 0.59);" href="mailto:linaw815@uw.edu" id="nav-item">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+    <header class="glass-nav">
+    <div class="content">
+      <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+        <img src="asset/image/Home3.0/logo.svg" alt="Logo" style="height:35px;">Lina Wang
+      </a>
+
+      <!-- Mobile hamburger button -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primary-nav" aria-expanded="false"
+        aria-label="Open menu">
+        <!-- hamburger -->
+        <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <!-- close -->
+        <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav id="primary-nav">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+              target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="About.html">About Me</a></li>
+          <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <!-- backdrop -->
+    <div class="overlay-backdrop" data-close-overlay></div>
+
+    <!-- sliding panel -->
+    <aside class="overlay-panel" tabindex="-1">
+      <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+        <!-- close icon -->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav class="overlay-nav">
+        <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
+          rel="noopener">Resume</a>
+        <a href="About.html">About Me</a>
+        <a href="mailto:linaw815@uw.edu">Contact</a>
+      </nav>
+    </aside>
+  </div>
+  <div class="glass-nav-spacer" aria-hidden="true"></div>
 
 
       <div class="ChatAibleintro" style="position:relative; height:85vh; padding-bottom: 5%;">

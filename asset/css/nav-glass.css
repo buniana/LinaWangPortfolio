@@ -1,0 +1,146 @@
+/* Floating liquid-glass nav, shared by every page (matches the homepage).
+   Selectors use header.glass-nav so they win over each page's older header styles. */
+header.glass-nav{position:fixed;z-index:1000;top:16px;left:24px;right:24px;width:auto;height:70px;margin:0;border:0;border-radius:999px;
+  background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.38));
+  -webkit-backdrop-filter:blur(4px) saturate(1.6);backdrop-filter:blur(4px) saturate(1.6);
+  box-shadow:inset .75px .75px 0 rgba(255,255,255,.7),inset -1px -1px 0 rgba(255,255,255,.3),inset 0 0 18px rgba(255,255,255,.18),0 6px 24px rgba(17,19,24,.08);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;box-sizing:border-box}
+header.glass-nav *{box-sizing:border-box}
+header.glass-nav .content{height:70px;max-width:none;margin:0;padding:0 48px 0 30px;display:flex;align-items:center;justify-content:space-between}
+header.glass-nav #logo{margin:0;display:flex;align-items:center;gap:12px!important;line-height:70px;font-size:20px;font-weight:600;color:#111318;text-decoration:none;font-family:inherit}
+header.glass-nav #logo img{height:40px!important;width:40px;display:block}
+header.glass-nav nav{float:none;display:block;padding:0;margin:0}
+header.glass-nav nav ul{list-style:none;margin:0;padding:0}
+header.glass-nav nav li{display:inline-block;margin:0 0 0 40px;line-height:70px}
+header.glass-nav nav a{color:#111318;font-size:16px;font-weight:500;text-decoration:none;font-family:inherit}
+header.glass-nav nav a:hover{text-decoration:underline;text-decoration-color:rgba(222,126,152,.8);text-underline-offset:4px}
+header.glass-nav .nav-toggle{display:none;border:none;background:transparent;padding:8px;border-radius:10px;line-height:0;cursor:pointer;color:#111318}
+header.glass-nav .nav-toggle .icon-close{display:none}
+.glass-nav-spacer{height:102px}
+@media (max-width:768px){
+  header.glass-nav{top:12px;left:12px;right:12px;height:60px}
+  header.glass-nav .content{height:60px;padding:0 10px 0 14px}
+  header.glass-nav #logo{line-height:60px;font-size:18px}
+  header.glass-nav #logo img{height:34px!important;width:34px}
+  header.glass-nav nav{display:none}
+  header.glass-nav .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
+  .glass-nav-spacer{height:84px}
+  #mobileOverlay .overlay-close{top:22px!important;right:22px!important}
+}
+body.no-scroll{overflow:hidden}
+
+/* ---------- Off-canvas overlay (mobile) ---------- */
+#mobileOverlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  opacity: 0;
+  z-index: 1100;
+  transition: opacity 1s ease-out;
+}
+
+#mobileOverlay.open {
+  display: block;
+  opacity: 1;
+}
+
+#mobileOverlay .overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(225, 225, 225, 0.05);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* sliding panel */
+#mobileOverlay .overlay-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(82vw, 360px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-left: 1px solid rgba(218, 160, 214, 0.3);
+  box-shadow: -10px 0 24px rgba(0, 0, 0, 0.08);
+
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mobileOverlay.open .overlay-panel {
+  transform: translateX(0);
+}
+
+/* close button aligns with header */
+#mobileOverlay .overlay-close {
+  position: fixed;
+  top: calc((80px - 40px)/2);
+  right: 5vw;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #454656;
+  z-index: 1200;
+}
+
+/* overlay links */
+#mobileOverlay .overlay-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 64px 20px 20px 20px;
+}
+
+#mobileOverlay .overlay-nav a {
+  display: block;
+  padding: 12px 6px;
+  color: #A1A09F;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#mobileOverlay .overlay-nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(218, 160, 214, 0.85);
+}
+
+
+
+/* ---------- Phone menu: a glass card that grows out of the nav (replaces the side drawer) ---------- */
+#mobileOverlay{transition:none;opacity:1}
+#mobileOverlay .overlay-backdrop{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;touch-action:none}
+/* keep the page exactly as it is behind the menu: no scroll lock (that's what made content vanish in some browsers) */
+html body.no-scroll{overflow:visible!important;overflow-x:clip!important}
+#mobileOverlay .overlay-panel{top:calc(12px + env(safe-area-inset-top,0px));right:12px;left:auto;bottom:auto;height:auto;width:min(272px,calc(100vw - 24px));
+  padding:10px;border-radius:30px;border:0;transform:none;transition:none;transform-origin:calc(100% - 30px) 30px;
+  background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(255,255,255,.58));
+  -webkit-backdrop-filter:blur(26px) saturate(1.8);backdrop-filter:blur(26px) saturate(1.8);
+  box-shadow:inset .75px .75px 0 rgba(255,255,255,.8),inset -1px -1px 0 rgba(255,255,255,.35),0 18px 50px rgba(17,19,24,.22)}
+#mobileOverlay.open .overlay-panel{transform:none;animation:wsMenuIn .42s cubic-bezier(.2,1.2,.35,1) both}
+#mobileOverlay .overlay-close{display:none}
+#mobileOverlay .overlay-nav{display:flex;flex-direction:column;gap:2px;padding:0}
+#mobileOverlay .overlay-nav a{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:20px;color:#111318;font:500 17px/1.2 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}
+#mobileOverlay .overlay-nav a+a{position:relative}
+#mobileOverlay .overlay-nav a:hover{text-decoration:none;background:rgba(17,19,24,.07)}
+#mobileOverlay .overlay-nav a:focus{outline:none}
+#mobileOverlay .overlay-nav a:focus-visible{box-shadow:inset 0 0 0 1.5px rgba(222,126,152,.55)}
+#mobileOverlay .overlay-nav a:active{background:rgba(17,19,24,.12)}
+#mobileOverlay .overlay-nav a::before{content:"";flex:0 0 22px;width:22px;height:22px;background:currentColor;-webkit-mask:var(--ico) center/contain no-repeat;mask:var(--ico) center/contain no-repeat}
+#mobileOverlay .overlay-nav a:nth-child(1){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 3v5h5M9 13h6M9 17h6'/%3E%3C/svg%3E")}
+#mobileOverlay .overlay-nav a:nth-child(2){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21c0-4 3.6-7 8-7s8 3 8 7'/%3E%3C/svg%3E")}
+#mobileOverlay .overlay-nav a:nth-child(3){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='M3 7l9 6 9-6'/%3E%3C/svg%3E")}
+#mobileOverlay .overlay-nav a+a::after{content:"";position:absolute;left:54px;right:16px;top:-1px;height:1px;background:rgba(17,19,24,.08)}
+/* the nav steps aside while the menu is open, and comes back when it closes */
+header{transform-origin:calc(100% - 40px) 50%}
+body.no-scroll header{opacity:0!important;transform:scale(.94)!important;pointer-events:none}
+@keyframes wsMenuIn{from{opacity:0;transform:scale(.35)}to{opacity:1;transform:none}}
+@keyframes wsFadeIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){#mobileOverlay.open .overlay-panel,#mobileOverlay .overlay-backdrop{animation:none}}
