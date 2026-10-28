@@ -43,14 +43,15 @@
 #ride .hint .cue path:not(.ws-clone *){fill:none;stroke:#fff;stroke-width:8;stroke-linecap:square;stroke-linejoin:miter;vector-effect:non-scaling-stroke}
 #ride .hint .cue path:not(.ws-clone *){stroke-width:max(3px,calc(var(--k,1) * 8px))}
 #ride .hint .cue.filled path:not(.ws-clone *){fill:#fff;stroke:none}
-#ride .hint.right .cue:not(.ws-clone *){animation:nudgeX 1.6s ease-in-out infinite}
+#ride .hint.right .cue:not(.ws-clone *){animation:nudgeX 2.8s cubic-bezier(.45,0,.55,1) infinite}
+#ride #hint:not(.ws-clone *){transition:opacity .7s ease}
 #ride .hint.right:not(.ws-clone *){text-shadow:0 0 12px rgba(26,12,40,.32)}
 #ride .hint.right .cue:not(.ws-clone *){filter:drop-shadow(0 0 6px rgba(26,12,40,.32))}
 #ride .hint.down:not(.ws-clone *){left:50%!important;right:auto!important;top:auto!important;bottom:clamp(20px,6vh,96px);transform:translateX(-50%);align-items:center;gap:12px;padding-bottom:24px;font-weight:600;font-size:clamp(18px,2.2vw,24px);letter-spacing:-0.03em;color:#fff}
-#ride .hint.down .cue:not(.ws-clone *){width:clamp(28px,2.8vw,36px);height:clamp(28px,2.8vw,36px);animation:wsBounce 1.6s ease-in-out infinite}
+#ride .hint.down .cue:not(.ws-clone *){width:clamp(28px,2.8vw,36px);height:clamp(28px,2.8vw,36px);animation:wsBounce 2.8s cubic-bezier(.45,0,.55,1) infinite}
 #ride .hint.down .cue path:not(.ws-clone *){stroke-width:2px;stroke-linecap:round;stroke-linejoin:round;vector-effect:none}
-@keyframes wsBounce{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
-@keyframes nudgeX{0%,100%{transform:translateX(0)}50%{transform:translateX(calc(var(--k,1) * 10px))}}
+@keyframes wsBounce{0%,20%,100%{transform:translateY(0)}60%{transform:translateY(5px)}}
+@keyframes nudgeX{0%,20%,100%{transform:translateX(0)}60%{transform:translateX(calc(var(--k,1) * 5px))}}
 @keyframes nudgeY{0%,100%{transform:translateY(0)}50%{transform:translateY(calc(var(--k,1) * 10px))}}
 @media (prefers-reduced-motion: reduce){#ride .hint .cue:not(.ws-clone *){animation:none!important}}
 @keyframes bob{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}

@@ -31,6 +31,8 @@ let view='seattle', prevView=null, xf=1;
 view='seattle';
 let D=0,t=0,ti=reduce?99:0,s=reduce?0:1.3,slogShown=false,introDone=reduce;
 let seatReadyAt=-1, seatGo=false;
+const WALL_HOLD=1.4;   // seconds the intro must be fully on screen before the page moves on
+let lastAnyFwd=-1;    // last forward scroll of any kind (including a continuous trackpad swipe)
 let mode='cruise',arrA=0,depD=0,s0=1,pfX=null,pfL=0,stopT=0,cp=0,introVis=0;
 let z=1,cx=0,cy=0,plat=null,gap=null;
 const occ=[];
@@ -882,10 +884,10 @@ function updateDOM(p,rawP){
   iw.style.opacity=introVis.toFixed(3); iw.style.transform=`translate3d(${(-px*6).toFixed(1)}px,${((1-introVis)*16).toFixed(1)}px,0)`;
   const u1=seg(cp,.38,.45);
   let ht='',ho=0,cueMode='';
-  if(!panel&&!GAL()&&mode==='stopped'&&introVis>.9&&!rideReleased){ho=clamp((wallSeenT-.5)/.5);cueMode='down';}
+  if(!panel&&!GAL()&&mode==='stopped'&&introVis>.9&&!rideReleased){ho=clamp((wallSeenT-(WALL_HOLD-.35))/.35);cueMode='down';}
   else if(mode==='stopped'&&slogShown&&t-slogStart>4.8&&(panel?cp<.15:!seatGo)&&!GAL()){ho=1;cueMode='right';}
   else if(GAL()&&galV>.16&&galV<.3){ho=1;cueMode='right';}
-  else if(mode==='stopped'&&stopT>1.2&&galEx<.02&&((GAL()&&galV>=.999)||(layoutMode==='pan'&&!GAL()&&p>.26)||(layoutMode==='ticket'&&peelV>=.95&&p>.26))){ho=GAL()?1-u1:clamp((wallSeenT-.5)/.5)*(rideReleased?0:1);cueMode=GAL()?'right':'down';}
+  else if(mode==='stopped'&&stopT>1.2&&galEx<.02&&((GAL()&&galV>=.999)||(layoutMode==='pan'&&!GAL()&&p>.26)||(layoutMode==='ticket'&&peelV>=.95&&p>.26))){ho=GAL()?1-u1:clamp((wallSeenT-(WALL_HOLD-.35))/.35)*(rideReleased?0:1);cueMode=GAL()?'right':'down';}
   if(!slogShown&&!introVis&&!panV) ho=0;
   hint.style.opacity=ho;
   if(cueMode&&cueMode!==hintState){ hintState=cueMode; hint.classList.toggle('right',cueMode==='right'); hint.classList.toggle('down',cueMode==='down');
@@ -966,9 +968,9 @@ function gateOn(){ return !reduce&&!rideReleased; }
 addEventListener('wheel',e=>{ if(gateOn()&&e.deltaY>0&&scrollY>=gateY()-2) e.preventDefault(); },{passive:false});
 addEventListener('scroll',()=>{ if(gateOn()&&exitT<0&&scrollY>gateY()+1) scrollTo({top:gateY(),behavior:'instant'}); },{passive:true});
 // a new gesture = the first wheel event after a short pause, so momentum from an earlier fling doesn't count
-let lastWheelT=0; addEventListener('wheel',e=>{ const n=performance.now(); if(e.deltaY>0&&n-lastWheelT>350) markFwd(); lastWheelT=n; },{passive:true});
+let lastWheelT=0; addEventListener('wheel',e=>{ const n=performance.now(); if(e.deltaY>0){ lastAnyFwd=n; if(n-lastWheelT>250) markFwd(); } lastWheelT=n; },{passive:true});
 let touchY0=null; addEventListener('touchstart',e=>{ touchY0=e.touches[0].clientY; },{passive:true});
-addEventListener('touchmove',e=>{ if(touchY0!=null&&e.touches[0].clientY<touchY0-6){ markFwd(); touchY0=null; } },{passive:true});
+addEventListener('touchmove',e=>{ if(touchY0!=null&&e.touches[0].clientY<touchY0-6){ markFwd(); lastAnyFwd=performance.now(); touchY0=null; } },{passive:true});
 addEventListener('keydown',e=>{ if(['ArrowDown','PageDown',' ','Space','End'].includes(e.key)) markFwd(); });
 const exitEase=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
 function exitLocked(){ return exitT>=0; }
@@ -977,21 +979,21 @@ addEventListener('touchmove',e=>{ if(exitLocked()) e.preventDefault(); },{passiv
 addEventListener('keydown',e=>{ if(exitLocked()&&['ArrowDown','ArrowUp','PageDown','PageUp','Space',' ','End','Home'].includes(e.key)) e.preventDefault(); });
 // Magnet: between the wall and the projects there's no in-between. One scroll glides the page until the bottom
 // of the ride docks at the top of the screen (or, going up, back onto the wall). The rest of that gesture is absorbed.
-let magnetActive=false, magnetGesture=false, mWheelT=0, mInputT=0, mTouchY=null, mTouchDir=0;
+let magnetActive=false, magnetGesture=false, magnetEnd=0, mWheelT=0, mInputT=0, mTouchY=null, mTouchDir=0;
 function endY(){ return ride.offsetTop+ride.offsetHeight; }
 function magnetTo(y){
   if(magnetActive) return; const y0=scrollY, d=y-y0; if(Math.abs(d)<2) return;
   magnetActive=true; magnetGesture=true;
-  const dur=reduce?0:Math.min(950,480+Math.abs(d)*.3), t0=performance.now();
+  const dur=reduce?0:Math.min(700,380+Math.abs(d)*.22), t0=performance.now();
   const step=n=>{ const k=dur?Math.min(1,(n-t0)/dur):1, e=1-Math.pow(1-k,3);
     scrollTo({top:Math.round(y0+d*e),behavior:'instant'});
-    if(k<1) requestAnimationFrame(step); else magnetActive=false; };
+    if(k<1) requestAnimationFrame(step); else { magnetActive=false; magnetEnd=performance.now(); } };
   requestAnimationFrame(step);
 }
 function mZone(dir){ const g=gateY(), en=endY(); return dir>0?(scrollY>=g-3&&scrollY<en-3):(scrollY>g+3&&scrollY<=en+3); }
 addEventListener('wheel',e=>{
   const n=performance.now(), fresh=n-mWheelT>300; mWheelT=n; mInputT=n;
-  if(magnetActive||(magnetGesture&&!fresh)){ e.preventDefault(); return; }
+  if(magnetActive||(magnetGesture&&!fresh&&n-magnetEnd<350)){ e.preventDefault(); return; }
   magnetGesture=false;
   if(!rideReleased||reduce||Math.abs(e.deltaY)<1) return;
   const dir=e.deltaY>0?1:-1;
@@ -1043,7 +1045,7 @@ function frame(now){
   const wallVis=panel?panV:introVis;
   if(!GAL()&&mode==='stopped'&&wallVis>.9) wallSeenT+=dt;
   if(mode!=='stopped'||(panel?cp<.05:introVis<.1)) wallSeenT=0;
-  const HOLD=2.4; const hold=!GAL()&&!reduce&&wallSeenT<HOLD;   // with the fade-in, the intro is readable for about 3s
+  const HOLD=WALL_HOLD; const hold=!GAL()&&!reduce&&wallSeenT<HOLD;   // with the fade-in, the intro is readable for about 3s
   let camT=(mode==='stopped'&&stopT>.4)?p:Math.min(p,GAL()?.38:.14);
   if(hold&&mode==='stopped') camT=Math.min(camT,.3);
   // keep the camera on the seat until the slogan has played and had a moment on screen
@@ -1059,11 +1061,11 @@ function frame(now){
   if(introDoneHere){ if(introReadyAt<0) introReadyAt=performance.now(); } else if(cp<.15) introReadyAt=-1;
   if(rideReleased&&rawP<.01&&cp<.05){ rideReleased=false; wallSeenT=0; introReadyAt=-1; }
   // full stop: only a fresh forward scroll that starts after the intro is fully shown moves on
-  if(!reduce&&!rideReleased&&introDoneHere&&introReadyAt>0&&lastFwdInput>introReadyAt+120&&performance.now()-lastFwdInput<600){ rideReleased=true; magnetTo(endY()); }   // no exit animation: one glide down to the projects
+  if(!reduce&&!rideReleased&&introDoneHere&&introReadyAt>0&&((lastFwdInput>introReadyAt+120&&performance.now()-lastFwdInput<600)||(performance.now()-introReadyAt>450&&performance.now()-lastAnyFwd<160))){ rideReleased=true; magnetTo(endY()); }   // no exit animation: one glide down to the projects
   if(exitT>=0){
     exitT+=dt; const k=clamp(exitT/EXIT_DUR); cp=exitCurve(k,exitFrom);
     if(k>=1){ exitT=-1; cp=1; rideReleased=true; introReadyAt=-1; wallSeenT=0; const end=document.getElementById('projects').getBoundingClientRect().top+scrollY; markProjectsShown(); scrollTo({top:end,behavior:'instant'}); }
-  } else cp=approach(cp,camT,dt,camT<cp?6:3.5,reduce?99:(camT<cp?.7:.08));   // going back rewinds quickly; going forward stays paced
+  } else cp=approach(cp,camT,dt,camT<cp?6:3.5,reduce?99:(camT<cp?.7:.14));   // going back rewinds quickly; going forward stays paced (seat to wall in about a second)
   const sDone=slogShown&&(reduce||t-slogStart>4.8);
   const it=mode==='stopped'?(panel?ease(clamp((stopT-.15)/.7)):(sDone&&seatGo?1:0))*(1-seg(cp,.34,.38)):0;
   introVis+=(it-introVis)*Math.min(1,dt*(reduce?60:6));
