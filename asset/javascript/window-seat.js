@@ -884,10 +884,12 @@ function updateDOM(p,rawP){
   iw.style.opacity=introVis.toFixed(3); iw.style.transform=`translate3d(${(-px*6).toFixed(1)}px,${((1-introVis)*16).toFixed(1)}px,0)`;
   const u1=seg(cp,.38,.45);
   let ht='',ho=0,cueMode='';
-  if(!panel&&!GAL()&&mode==='stopped'&&introVis>.9&&!rideReleased){ho=clamp((wallSeenT-(WALL_HOLD-.35))/.35);cueMode='down';}
+  // on the wall the arrow shows once the intro has had its moment, and again whenever someone comes back up to it
+  const onWall=!rideReleased||scrollY<=gateY()+3, wallCue=rideReleased?1:clamp((wallSeenT-(WALL_HOLD-.35))/.35);
+  if(!panel&&!GAL()&&mode==='stopped'&&introVis>.9&&onWall){ho=wallCue;cueMode='down';}
   else if(mode==='stopped'&&slogShown&&t-slogStart>4.8&&(panel?cp<.15:!seatGo)&&!GAL()){ho=1;cueMode='right';}
   else if(GAL()&&galV>.16&&galV<.3){ho=1;cueMode='right';}
-  else if(mode==='stopped'&&stopT>1.2&&galEx<.02&&((GAL()&&galV>=.999)||(layoutMode==='pan'&&!GAL()&&p>.26)||(layoutMode==='ticket'&&peelV>=.95&&p>.26))){ho=GAL()?1-u1:clamp((wallSeenT-(WALL_HOLD-.35))/.35)*(rideReleased?0:1);cueMode=GAL()?'right':'down';}
+  else if(mode==='stopped'&&stopT>1.2&&galEx<.02&&((GAL()&&galV>=.999)||(layoutMode==='pan'&&!GAL()&&p>.26)||(layoutMode==='ticket'&&peelV>=.95&&p>.26))){ho=GAL()?1-u1:wallCue*(onWall?1:0);cueMode=GAL()?'right':'down';}
   if(!slogShown&&!introVis&&!panV) ho=0;
   hint.style.opacity=ho;
   if(cueMode&&cueMode!==hintState){ hintState=cueMode; hint.classList.toggle('right',cueMode==='right'); hint.classList.toggle('down',cueMode==='down');
