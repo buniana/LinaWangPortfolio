@@ -410,7 +410,7 @@
         <div class="full-bleed uc-metro-wrap" style="margin-top:8px;" data-aos="fade-up">
           <picture>
             <source media="(max-width: 767px)" srcset="asset/image/Home3.0/underconstructionmetromobile.png">
-            <img src="asset/image/Home3.0/underconstructionmetro.png" alt="Under construction illustration" loading="lazy" decoding="async">
+            <img src="asset/image/Home3.0/underconstructionmetro.png" alt="Under construction illustration" decoding="async">
           </picture>
         </div>
       </div>
@@ -483,6 +483,14 @@
 <script src="asset/javascript/window-seat.js"></script>
 <script>
   AOS.init();
+  // The Window Seat intro sets its own height after load, which shifts everything below it.
+  // Re-measure AOS trigger points whenever the page height changes so fade-ins fire in the right place.
+  (function () {
+    var t;
+    function refresh() { clearTimeout(t); t = setTimeout(function () { AOS.refresh(); }, 120); }
+    window.addEventListener('load', refresh);
+    if ('ResizeObserver' in window) new ResizeObserver(refresh).observe(document.body);
+  })();
 </script>
 
 </html>
