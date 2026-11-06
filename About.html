@@ -25,6 +25,8 @@
     gtag('config', 'G-RD4VM5JDWE');
   </script>
   <link rel="stylesheet" href="asset/css/nav-glass.css">
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -52,7 +54,8 @@
         <ul>
           <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
               target="_blank" rel="noopener">Resume</a></li>
-          <li><a href="About.html">About Me</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="play.html">Play</a></li>
           <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
         </ul>
       </nav>
@@ -76,7 +79,8 @@
       <nav class="overlay-nav">
         <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
           rel="noopener">Resume</a>
-        <a href="About.html">About Me</a>
+        <a href="About.html">About</a>
+        <a href="play.html">Play</a>
         <a href="mailto:linaw815@uw.edu">Contact</a>
       </nav>
     </aside>
@@ -160,7 +164,7 @@
       <div class="container">
         <div class="grid-12" style="row-gap:24px; align-items:start;">
           <!-- Left column: spans 5, all content flush left; mini image sits under Last Stop -->
-          <div class="span-12 md-span-5" style="justify-self:start; text-align:left;">
+          <div class="span-12 md-span-5" style="justify-self:start; text-align:left;" data-aos="fade-right">
             <div class="footer-kicker">Last Stop</div>
             <div class="bleed-left" style="margin:8px 0 16px;">
               <img src="asset/image/Home3.0/footer metro.svg">
@@ -168,7 +172,7 @@
             <h2 class="footer-heading">Let's connect!</h2>
           </div>
           <!-- Right column: spans 2, flush right -->
-          <div class="span-12 md-span-2 md-col-start-11" style="justify-self:end;">
+          <div class="span-12 md-span-2 md-col-start-11" style="justify-self:end;" data-aos="fade-left">
             <ul class="footer-links">
               <li>
                 <img src="asset/image/Home3.0/smallarrowup.svg">
@@ -205,6 +209,16 @@
     </section>
   </section>
 
+  <script>
+    // footer fade-ins, same as the homepage (left column from the left, links from the right)
+    AOS.init();
+    (function () {
+      var t;
+      function refresh() { clearTimeout(t); t = setTimeout(function () { AOS.refresh(); }, 120); }
+      window.addEventListener('load', refresh);
+      if ('ResizeObserver' in window) new ResizeObserver(refresh).observe(document.body);
+    })();
+  </script>
 </body>
 
 </html>

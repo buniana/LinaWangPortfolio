@@ -13,7 +13,7 @@ header.glass-nav nav{float:none;display:block;padding:0;margin:0}
 header.glass-nav nav ul{list-style:none;margin:0;padding:0}
 header.glass-nav nav li{display:inline-block;margin:0 0 0 40px;line-height:70px}
 header.glass-nav nav a{color:#111318;font-size:16px;font-weight:500;text-decoration:none;font-family:inherit}
-header.glass-nav nav a:hover{text-decoration:underline;text-decoration-color:rgba(222,126,152,.8);text-underline-offset:4px}
+header.glass-nav nav a:hover{text-decoration:none}
 header.glass-nav .nav-toggle{display:none;border:none;background:transparent;padding:8px;border-radius:10px;line-height:0;cursor:pointer;color:#111318}
 header.glass-nav .nav-toggle .icon-close{display:none}
 .glass-nav-spacer{height:102px}
@@ -134,9 +134,10 @@ html body.no-scroll{overflow:visible!important;overflow-x:clip!important}
 #mobileOverlay .overlay-nav a:focus-visible{box-shadow:inset 0 0 0 1.5px rgba(222,126,152,.55)}
 #mobileOverlay .overlay-nav a:active{background:rgba(17,19,24,.12)}
 #mobileOverlay .overlay-nav a::before{content:"";flex:0 0 22px;width:22px;height:22px;background:currentColor;-webkit-mask:var(--ico) center/contain no-repeat;mask:var(--ico) center/contain no-repeat}
-#mobileOverlay .overlay-nav a:nth-child(1){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 3v5h5M9 13h6M9 17h6'/%3E%3C/svg%3E")}
-#mobileOverlay .overlay-nav a:nth-child(2){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21c0-4 3.6-7 8-7s8 3 8 7'/%3E%3C/svg%3E")}
-#mobileOverlay .overlay-nav a:nth-child(3){--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='M3 7l9 6 9-6'/%3E%3C/svg%3E")}
+#mobileOverlay .overlay-nav a[href*="drive.google"]{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 3v5h5M9 13h6M9 17h6'/%3E%3C/svg%3E")}
+#mobileOverlay .overlay-nav a[href*="About"]{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21c0-4 3.6-7 8-7s8 3 8 7'/%3E%3C/svg%3E")}
+#mobileOverlay .overlay-nav a[href^="mailto"]{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='M3 7l9 6 9-6'/%3E%3C/svg%3E")}
+#mobileOverlay .overlay-nav a[href*="play"]{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z'/%3E%3Cpath d='M18.5 16v4M16.5 18h4'/%3E%3C/svg%3E")}
 #mobileOverlay .overlay-nav a+a::after{content:"";position:absolute;left:54px;right:16px;top:-1px;height:1px;background:rgba(17,19,24,.08)}
 /* the nav steps aside while the menu is open, and comes back when it closes */
 header{transform-origin:calc(100% - 40px) 50%}
@@ -144,3 +145,11 @@ body.no-scroll header{opacity:0!important;transform:scale(.94)!important;pointer
 @keyframes wsMenuIn{from{opacity:0;transform:scale(.35)}to{opacity:1;transform:none}}
 @keyframes wsFadeIn{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion: reduce){#mobileOverlay.open .overlay-panel,#mobileOverlay .overlay-backdrop{animation:none}}
+
+/* nav hover: a pink line draws in from the left, and slides off to the right on leave (logo excluded) */
+header nav#primary-nav a{text-decoration:none!important;padding-bottom:2px;
+  background-image:linear-gradient(rgba(222,126,152,.85),rgba(222,126,152,.85));background-repeat:no-repeat;
+  background-size:0% 3px;background-position:right 0 bottom 0;
+  transition:background-size .35s cubic-bezier(.65,0,.25,1),color .4s ease}
+header nav#primary-nav a:hover,header nav#primary-nav a:focus-visible{background-size:100% 3px;background-position:left 0 bottom 0}
+@media (prefers-reduced-motion:reduce){header nav#primary-nav a{transition:color .4s ease}}

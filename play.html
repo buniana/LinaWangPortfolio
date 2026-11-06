@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="asset/css/styles3.0.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
+  <script src="asset/javascript/javascript.js"></script>
+  <title>Lina Wang | Play</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RD4VM5JDWE');
+  </script>
+  <link rel="stylesheet" href="asset/css/nav-glass.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <style id="lina-wang-design-system">:root{--paper:#FDFCFB;--surface:#FFFFFF;--ink:#111318;--ink-muted:#44484F;--subtle:#6B6F76;--hairline:#EFEFF2;--night:#16131B;--led-bg:#121015;--plum:#3A2F45;--on-dark:#FFF6F1;--on-dark-muted:#C9C0CF;--violet:#5E57FE;--violet-deep:#463ED9;--pink:#DE7E98;--pink-deep:#8A3550;--pink-light:#F7B6C8;--green-deep:#00662A;--lav:#F1E6FF;--periwinkle-tint:#E8EBFA;--lilac:#ECE6FF;--violet-tint:#E5DAFB;--mint:#BFDFD8;--mint-tint:#DBEDE8;--peach:#FEEECE;--cream:#FFF9EE;--blush:#FBEAEA;--sage:#EAF3E3;--sky:#E6EFF8;--butter:#FBF1DC;--wall:#F3EEE7;--ticket:#F4EBDB;--pink-tint:#FADBE4;--apricot-tint:#FFE1C7;--glow-pink:#FFE9F1;--glow-lav:#EFE9FF;--rail:#4D4C4C;--stop-ring:#3D3D3D;--line-teams:#5B5FC7;--line-agnes:#866BD7;--line-teal:#3C7B6E;--line-indigo:#332A86;--rail-soft:#918F8F;--ring-lilac:#9A84D9;--rail-dark:#5D5664;--train-dark:#141118;--shadow-glass:0 6px 24px rgba(17,19,24,0.08);--shadow-glass-edge:inset 0.75px 0.75px 0 rgba(255,255,255,0.7), inset -1px -1px 0 rgba(255,255,255,0.3), inset 0 0 18px rgba(255,255,255,0.18);--shadow-panel:0 18px 50px rgba(17,19,24,0.22);--shadow-float:0 30px 60px rgba(17,19,24,0.22);--shadow-sticker:0 6px 16px rgba(17,19,24,0.18);--radius-sm:16px;--radius-md:20px;--radius-lg:24px;--radius-xl:30px;--radius-pill:999px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-10:40px;--space-15:60px;--font-sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;--font-case:"Poppins", "Inter", system-ui, sans-serif;--font-display:"Instrument Serif", Georgia, "Times New Roman", serif;--font-led:"DotGothic16", ui-monospace, Menlo, Consolas, monospace;}
+/* Lina Wang Portfolio — component styles.
+   Plain CSS classes for plain HTML pages. Reads the tokens from tokens.css
+   (--ink, --paper, --radius-pill, --shadow-glass, --font-sans …). */
+
+/* ---------- Glass nav ---------- */
+.lw-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px;padding:0 48px 0 30px;box-sizing:border-box;border-radius:var(--radius-pill);background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.38));-webkit-backdrop-filter:blur(4px) saturate(1.6);backdrop-filter:blur(4px) saturate(1.6);box-shadow:var(--shadow-glass-edge),var(--shadow-glass);font-family:var(--font-sans);color:var(--ink)}
+.lw-nav__logo{display:inline-flex;align-items:center;gap:10px;font-size:20px;font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lw-nav__logo img{width:40px;height:40px;display:block}
+.lw-nav__links{display:flex;flex-wrap:wrap;align-items:center;gap:32px}
+.lw-nav__links a{font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;padding:12px 0;text-underline-offset:6px;text-decoration-thickness:2px}
+.lw-nav__links a:hover,.lw-nav__links a[aria-current="page"]{text-decoration-line:underline;text-decoration-color:var(--pink)}
+.lw-nav a:focus-visible{outline:3px solid var(--violet-deep);outline-offset:3px;border-radius:8px}
+@media (max-width:768px){.lw-nav{padding:0 14px 0 10px;min-height:60px}.lw-nav__logo{font-size:20px}.lw-nav__logo img{width:34px;height:34px}.lw-nav__links{gap:16px}.lw-nav__links a{font-size:14px}}
+
+/* ---------- Tag ---------- */
+.lw-tags{display:flex;flex-wrap:wrap;gap:12px}
+.lw-tag{display:inline-flex;align-items:center;height:51px;padding:0 20px;box-sizing:border-box;border-radius:var(--radius-pill);background:var(--periwinkle-tint);color:var(--ink);font:500 16px/1 var(--font-sans);white-space:nowrap}
+.lw-tag--lav{background:var(--lav)}
+.lw-tag--lilac{background:var(--lilac)}
+.lw-tag--mint{background:var(--mint)}
+.lw-tag--mint-tint{background:var(--mint-tint)}
+.lw-tag--peach{background:var(--peach)}
+.lw-tag--blush{background:var(--blush)}
+.lw-tag--sage{background:var(--sage)}
+.lw-tag--sky{background:var(--sky)}
+.lw-tag--butter{background:var(--butter)}
+.lw-tag--dark{background:var(--green-deep);color:#FFFFFF}
+.lw-tag--sm{height:36px;padding:0 14px;font-size:14px}
+
+/* ---------- Button ---------- */
+.lw-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;box-sizing:border-box;border:0;border-radius:var(--radius-pill);background:var(--ink);color:#FFFFFF;font:600 16px/1 var(--font-sans);text-decoration:none;cursor:pointer;transition:transform .2s ease}
+.lw-btn:hover{transform:translateY(-1px)}
+.lw-btn:focus-visible{outline:3px solid var(--violet-deep);outline-offset:3px}
+.lw-btn svg,.lw-btn img{width:18px;height:18px;flex:none}
+.lw-btn--secondary{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.lw-btn--on-dark{background:var(--pink-tint);color:var(--ink)}
+.lw-btn--on-dark:focus-visible{outline-color:var(--pink-light)}
+.lw-btn--chip{min-height:44px;padding:12px 20px 12px 12px;border-radius:0;background:var(--surface);color:var(--ink);font-weight:500}
+.lw-btn[disabled],.lw-btn[aria-disabled="true"]{background:#E4E4E7;color:var(--ink-muted);box-shadow:none;cursor:not-allowed;transform:none}
+@media (prefers-reduced-motion:reduce){.lw-btn{transition:none}.lw-btn:hover{transform:none}}
+
+/* ---------- Section heading ---------- */
+.lw-heading{display:flex;flex-direction:column;gap:12px;color:var(--ink);font-family:var(--font-sans)}
+.lw-heading__eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1.3 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--pink-deep)}
+.lw-heading__eyebrow::before{content:"";width:16px;height:26px;box-sizing:border-box;border-radius:8px;border:3px solid var(--pink);background:var(--ticket);flex:none}
+.lw-heading__title{margin:0;font-size:48px;line-height:1.2;font-weight:600;letter-spacing:-.01em}
+.lw-heading__lede{margin:0;max-width:56ch;font-size:20px;line-height:1.5;font-weight:400;color:var(--ink-muted)}
+.lw-heading--case .lw-heading__title,.lw-heading--case .lw-heading__lede{font-family:var(--font-case)}
+.lw-heading--on-dark{color:var(--on-dark)}
+.lw-heading--on-dark .lw-heading__eyebrow{color:var(--pink-light)}
+.lw-heading--on-dark .lw-heading__lede{color:var(--on-dark-muted)}
+/* The one serif accent per page. Max 1–2 per page; never on cards or small text. */
+.lw-accent{font-family:var(--font-display);font-style:italic;font-weight:400;letter-spacing:-.01em}
+@media (max-width:768px){.lw-heading__title{font-size:40px}.lw-heading__lede{font-size:16px}}
+
+/* ---------- Footer ---------- */
+.lw-footer{position:relative;padding:96px 60px 32px;background:radial-gradient(1200px 800px at -10% 110%,var(--glow-pink) 0%,rgba(255,233,241,0) 60%),radial-gradient(1200px 800px at 110% 110%,var(--glow-lav) 0%,rgba(239,233,255,0) 60%),var(--paper);color:var(--ink);font-family:var(--font-sans)}
+.lw-footer__grid{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:40px}
+.lw-footer__kicker{font-size:32px;font-weight:500;line-height:1.2}
+.lw-footer__metro{display:block;margin:8px 0 16px -60px;width:214px;height:50px}
+.lw-footer__heading{margin:0;font-size:64px;line-height:1.2;font-weight:700}
+.lw-footer__links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.lw-footer__links li{display:flex;align-items:center;gap:12px}
+.lw-footer__links li img{width:22px;height:22px}
+.lw-footer__legal{margin:64px 0 0;font-size:14px;font-weight:400;color:var(--ink-muted)}
+@media (max-width:768px){.lw-footer{padding:64px 24px 24px}.lw-footer__metro{margin-left:-24px}.lw-footer__heading{font-size:40px}}
+
+/* ---------- Project card ---------- */
+.lw-project{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:clamp(24px,6vw,96px);row-gap:24px;align-items:start;color:var(--ink);font-family:var(--font-sans)}
+.lw-project--reverse .lw-project__media{order:-1}
+.lw-project__title{margin:16px 0;font-size:56px;line-height:1.2;font-weight:600}
+.lw-project__title a{color:inherit;text-decoration:none}
+.lw-project__title a:hover{text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:3px;text-underline-offset:8px}
+.lw-project .lw-tags{margin:8px 0 16px}
+.lw-project__desc{margin:0 0 24px;font-size:16px;line-height:1.5;font-weight:400}
+.lw-project__stats{display:flex;flex-wrap:wrap;gap:40px}
+.lw-stat__num{font-size:40px;line-height:1;font-weight:600}
+.lw-stat__label{margin-top:8px;font-size:20px;line-height:1.2;font-weight:400}
+.lw-project__media{display:block;border-radius:var(--radius-lg);overflow:hidden}
+.lw-project__media img{display:block;width:100%;height:auto;border-radius:var(--radius-lg);transition:transform .4s ease}
+.lw-project__media:hover img{transform:scale(1.02)}
+.lw-project__media:focus-visible{outline:3px solid var(--violet-deep);outline-offset:4px}
+@media (max-width:768px){.lw-project{grid-template-columns:1fr}.lw-project__media{order:-1}.lw-project__title{font-size:40px}}
+@media (prefers-reduced-motion:reduce){.lw-project__media img{transition:none}.lw-project__media:hover img{transform:none}}
+
+/* ================= Metro pieces ================= */
+
+/* ---------- MetroIntro: rail + station sign (case study openers) ---------- */
+.lw-metro{position:relative;display:flex;align-items:center;height:115px;--line:var(--line-teams)}
+.lw-metro--agnes{--line:var(--line-agnes)}
+.lw-metro__rail{position:absolute;left:0;right:0;top:50%;height:51px;margin-top:-25.5px;background:repeating-linear-gradient(to bottom,var(--rail) 0 12px,transparent 12px 13px)}
+.lw-metro__sign{position:relative;margin-left:50px;display:inline-flex;align-items:center;height:113px;padding:0 56px;box-sizing:border-box;border:16px solid var(--line);border-radius:var(--radius-pill);background:var(--surface);font:600 40px/1 var(--font-case);color:var(--ink);white-space:nowrap}
+@media (max-width:768px){.lw-metro{height:72px}.lw-metro__rail{height:31px;margin-top:-15.5px;background:repeating-linear-gradient(to bottom,var(--rail) 0 7px,transparent 7px 8px)}.lw-metro__sign{height:68px;margin-left:24px;padding:0 28px;border-width:10px;font-size:24px}}
+
+/* ---------- RailStops: the four-track rail with ringed stops ---------- */
+.lw-rail{position:relative;height:51px;background:repeating-linear-gradient(to bottom,var(--rail) 0 12px,transparent 12px 13px)}
+.lw-rail{margin:19px 0}
+.lw-rail__stop{position:absolute;top:50%;left:var(--at,10%);width:50px;height:89px;margin:-44.5px 0 0 -25px;box-sizing:border-box;border:12px solid var(--stop,var(--line-teal));border-radius:25px;background:var(--surface)}
+.lw-rail__dots{position:absolute;top:2.5px;left:var(--at,35%);margin-left:-3.5px;display:flex;flex-direction:column;gap:6px}
+.lw-rail__dots i{width:7px;height:7px;border-radius:50%;background:var(--surface)}
+@media (max-width:768px){.lw-rail{margin:10px 0;height:31px;background:repeating-linear-gradient(to bottom,var(--rail) 0 7px,transparent 7px 8px)}.lw-rail__stop{left:var(--at-sm,var(--at,10%));width:28px;height:50px;margin:-25px 0 0 -14px;border-width:7px;border-radius:14px}.lw-rail__dots{left:var(--at-sm,var(--at,35%));top:1px;gap:3px;margin-left:-2.5px}.lw-rail__dots i{width:5px;height:5px}.lw-rail .lw-hide-sm{display:none}}
+
+/* ---------- StopDivider: section divider, ring + colored bar ---------- */
+.lw-stop-divider{display:flex;align-items:center;height:79px;width:min(100%,var(--len,420px));--line:var(--line-teams)}
+.lw-stop-divider--agnes{--line:var(--line-agnes)}
+.lw-stop-divider__ring{position:relative;z-index:1;width:79px;height:79px;flex:none;box-sizing:border-box;border:20px solid var(--stop-ring);border-radius:50%;background:var(--surface)}
+.lw-stop-divider__bar{flex:1;height:27px;margin-left:-39.5px;background:var(--line)}
+.lw-stop-divider--end .lw-stop-divider__bar{margin-left:0;margin-right:-39.5px}
+.lw-stop-divider--end .lw-stop-divider__bar{background:var(--line-tint,var(--violet-tint))}
+@media (max-width:768px){.lw-stop-divider{height:48px}.lw-stop-divider__ring{width:48px;height:48px;border-width:12px}.lw-stop-divider__bar{height:16px;margin-left:-24px}.lw-stop-divider--end .lw-stop-divider__bar{margin-left:0;margin-right:-24px}}
+
+/* ---------- StopIndex: vertical line of stops beside a list ---------- */
+.lw-stops{list-style:none;margin:0;padding:0;position:relative;font-family:var(--font-case);color:var(--ink)}
+.lw-stops::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:27px;background:var(--rail-soft)}
+.lw-stops li{position:relative;display:grid;grid-template-columns:55px minmax(0,1fr);column-gap:28px;align-items:center;padding:28px 0}
+.lw-stops li::before{content:"";grid-column:1;width:54px;height:54px;box-sizing:border-box;border:10px solid var(--ring-lilac);border-radius:50%;background:var(--surface)}
+.lw-stops__title{font-size:24px;font-weight:600;line-height:1.3}
+.lw-stops__body{margin-top:6px;font-size:16px;line-height:1.6;font-weight:400}
+
+/* ---------- TrainTrack: the four-track rail with the pink train capsule riding on it ---------- */
+.lw-track{position:relative;height:51px;margin:19px 0;background:repeating-linear-gradient(to bottom,var(--rail) 0 12px,transparent 12px 13px)}
+.lw-track b{position:absolute;top:50%;left:var(--at,68%);width:50px;height:89px;margin:-44.5px 0 0 -25px;box-sizing:border-box;border:12px solid var(--pink);border-radius:25px;background:var(--surface);transition:left .6s cubic-bezier(.2,1.2,.35,1)}
+.lw-track--on-dark{background:repeating-linear-gradient(to bottom,var(--rail-dark) 0 12px,transparent 12px 13px)}
+@media (max-width:768px){.lw-track{height:31px;margin:10px 0;background:repeating-linear-gradient(to bottom,var(--rail) 0 7px,transparent 7px 8px)}.lw-track--on-dark{background:repeating-linear-gradient(to bottom,var(--rail-dark) 0 7px,transparent 7px 8px)}.lw-track b{width:28px;height:50px;margin:-25px 0 0 -14px;border-width:7px;border-radius:14px}}
+@media (prefers-reduced-motion:reduce){.lw-track b{transition:none}}
+
+
+/* ---------- ScrollCue: the bouncing down arrow + text ---------- */
+.lw-scroll-cue{display:inline-flex;flex-direction:column;align-items:center;gap:12px;font:600 clamp(20px,2.2vw,24px)/1.2 var(--font-sans);letter-spacing:-.03em;color:var(--ink);text-decoration:none}
+.lw-scroll-cue svg{width:clamp(28px,2.8vw,36px);height:clamp(28px,2.8vw,36px);overflow:visible;animation:lw-cue-bounce 2.8s cubic-bezier(.45,0,.55,1) infinite}
+.lw-scroll-cue svg path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lw-scroll-cue--on-dark{color:#FFFFFF}
+.lw-scroll-cue--on-dark svg{filter:drop-shadow(0 0 6px rgba(26,12,40,.32))}
+a.lw-scroll-cue:focus-visible{outline:3px solid var(--violet-deep);outline-offset:6px;border-radius:8px}
+@keyframes lw-cue-bounce{0%,20%,100%{transform:translateY(0)}60%{transform:translateY(5px)}}
+@media (prefers-reduced-motion:reduce){.lw-scroll-cue svg{animation:none}}
+
+
+/* ---------- SectionHeading: the case study headings (Poppins 600, ink) ---------- */
+.lw-sh{display:flex;align-items:flex-start;gap:8px;margin:0 0 36px;font-family:var(--font-case);color:var(--ink);--sh-accent:var(--violet)}
+.lw-sh__title{margin:0;font-family:var(--font-case);font-size:48px;line-height:1.2;font-weight:600;color:var(--ink)}
+.lw-sh--chapter .lw-sh__title{font-size:64px;line-height:1.25}
+.lw-sh__arrow{width:60px;height:60px;margin-top:10px;flex:none;color:var(--ink)}
+.lw-sh--arrow-after .lw-sh__arrow{transform:scaleX(-1)}
+.lw-sh--arrow-before{gap:33px}
+.lw-sh--block{display:inline-flex;padding:16px 24px;margin-bottom:48px;background:var(--peach)}
+.lw-sh--block.lw-sh--lilac{background:var(--violet-tint)}
+.lw-sh--numbered{display:block;margin-bottom:24px}
+.lw-sh__kicker{display:block;margin:0 0 8px;font-size:32px;line-height:1.3;font-weight:400}
+.lw-sh__num{font-weight:600;color:var(--sh-accent)}
+.lw-sh--teams{--sh-accent:var(--line-teams)}
+.lw-sh--xl{align-items:center;gap:24px;margin-bottom:64px}
+.lw-sh--xl .lw-sh__title{font-size:96px;line-height:1.1}
+.lw-sh--xl .lw-sh__arrow{width:98px;height:96px;margin:0}
+@media (max-width:768px){.lw-sh__title{font-size:32px}.lw-sh--chapter .lw-sh__title{font-size:40px}.lw-sh--xl .lw-sh__title{font-size:56px}.lw-sh__kicker{font-size:20px}.lw-sh__arrow{width:36px;height:36px;margin-top:4px}.lw-sh--arrow-before{gap:16px}.lw-sh--xl .lw-sh__arrow{width:56px;height:55px}.lw-sh--block{padding:12px 18px}}
+</style>
+  <style>
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+/* ---------- first-load intro: title letters arrive (style picked in the Curve lab), text fades up, wallet pops from below ---------- */
+.hero-title .ch{display:inline-block;position:relative;white-space:pre}
+.intro .hero-title .ch{animation-delay:calc(.15s + var(--i) * 48ms);animation-fill-mode:both}
+/* 1 · jump + pink flash: letters jump up in pink, then cool to ink */
+.intro[data-intro="pink"] .hero-title .ch{animation-name:chJump,chPink;animation-duration:.72s,1.3s;animation-timing-function:cubic-bezier(.25,1.45,.5,1),ease-in}
+/* 2 · jump + shadow: letters jump up casting a soft drop shadow that fades as they land */
+.intro[data-intro="shadow"] .hero-title .ch{animation-name:chJump,chShadow;animation-duration:.72s,1.2s;animation-timing-function:cubic-bezier(.25,1.45,.5,1),ease-out}
+/* 3 · swoop: letters curve in from the left, each drawing a short arc that fades */
+.intro[data-intro="swoop"] .hero-title .ch{animation-name:chSwoop;animation-duration:.85s;animation-timing-function:cubic-bezier(.3,1.25,.5,1)}
+.intro[data-intro="swoop"] .hero-title .ch:not(.sp)::after{content:"";position:absolute;right:62%;top:-8%;width:1.5em;height:1.1em;border:.055em solid transparent;border-top-color:var(--pink,#DE7E98);
+  border-radius:50%;transform:rotate(-24deg);transform-origin:100% 50%;pointer-events:none;
+  animation:chArc .85s ease-out both;animation-delay:calc(.15s + var(--i) * 48ms)}
+/* 4 · swoop, no arc */
+.intro[data-intro="swoop-clean"] .hero-title .ch{animation-name:chSwoop,chPink;animation-duration:.85s,1.3s;animation-timing-function:cubic-bezier(.3,1.25,.5,1),ease-in}
+@keyframes chJump{0%{opacity:0;transform:translateY(1.3em) rotate(calc(var(--r) * 1deg))}35%{opacity:1}62%{transform:translateY(-.14em) rotate(calc(var(--r) * -.4deg))}100%{opacity:1;transform:none}}
+@keyframes chPink{0%,45%{color:var(--pink,#DE7E98)}100%{color:inherit}}
+@keyframes chShadow{0%{text-shadow:0 .5em .35em rgba(17,19,24,0)}40%{text-shadow:0 .22em .2em rgba(17,19,24,.28)}100%{text-shadow:0 0 0 rgba(17,19,24,0)}}
+@keyframes chSwoop{0%{opacity:0;transform:translate(-2.4em,.9em) rotate(-28deg)}30%{opacity:1}55%{transform:translate(-.5em,-.35em) rotate(10deg)}100%{opacity:1;transform:none}}
+@keyframes chArc{0%{opacity:0;transform:rotate(-24deg) scaleX(.2)}35%{opacity:1;transform:rotate(-24deg) scaleX(1)}100%{opacity:0;transform:rotate(-10deg) scaleX(.6)}}
+.intro .lede-intro{animation:introUp .7s cubic-bezier(.2,.8,.2,1) .85s both}
+.intro .hint{animation:introUp .7s cubic-bezier(.2,.8,.2,1) 1.05s both}
+@keyframes introUp{from{opacity:0;transform:translate(var(--tx,0),14px)}to{opacity:1;transform:translate(var(--tx,0),0)}}
+.lede-intro{--tx:-50%}
+/* idle: once the intro has settled, the hint gently bobs to invite a click */
+.stage:not(.intro):not(.is-open) .hint{animation:hintBob 2.6s ease-in-out infinite}
+@keyframes hintBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.stage .hint{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.intro .hero-title .ch,.intro .hero-title .ch::after,.intro .lede-intro,.intro .hint{animation:none}}
+/* ---------- Ride: sticky stage ---------- */
+.ride{position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hero-title{position:absolute;z-index:30;margin:0;top:var(--title-top,150px);left:50%;transform:translateX(-50%);
+  font-weight:600;font-size:clamp(48px,6.4vw,80px);line-height:.9;letter-spacing:-.045em;white-space:nowrap;
+  transition:left .9s cubic-bezier(.65,0,.25,1),transform .9s cubic-bezier(.65,0,.25,1),top .9s cubic-bezier(.65,0,.25,1)}
+.is-open .hero-title{left:var(--side);transform:translateX(0);top:var(--title-top-open,124px)}
+.lede{position:absolute;z-index:30;left:var(--side);top:calc(var(--title-top-open,124px) + clamp(48px,6.4vw,80px) * .9 + clamp(24px,2.4vw,32px));max-width:36ch;margin:0;
+  font-size:20px;line-height:1.45;font-weight:500;color:var(--ink);opacity:0;transform:translateY(14px);transition:opacity .6s .55s,transform .6s .55s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.is-open .lede{opacity:1;transform:none}
+/* invisible liquid glass behind the hero text: no pane, no rim. Only what passes under it gets a light blur + gentle ripple
+   (ripple in Chromium; Safari gets the blur). Edges feathered so there is no shape to see. */
+.hero-glass{position:absolute;z-index:32;left:0;top:0;width:0;height:0;pointer-events:none;opacity:0;transition:opacity .6s .5s;
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:url(#lgWarp) blur(2.5px);
+  -webkit-mask-image:radial-gradient(closest-side,#000 50%,transparent 88%);mask-image:radial-gradient(closest-side,#000 50%,transparent 88%)}
+/* option (Curve lab): frosted ellipse modelled on ybouane/liquidglass: frost + a lens ring with a slight RGB split (lens is Chromium only) */
+.stage[data-glass="frost"] .hero-glass{border-radius:50%;-webkit-backdrop-filter:blur(5px) saturate(1.15);backdrop-filter:blur(5px) saturate(1.15);
+  -webkit-mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.6) 78%,transparent 100%);mask-image:radial-gradient(closest-side,#000 58%,rgba(0,0,0,.6) 78%,transparent 100%)}
+.stage[data-glass="frost"] .hero-glass.lens{backdrop-filter:url(#lgLens)}
+.is-open .hero-glass{opacity:1}
+.stage .hero-title,.stage .lede-intro{z-index:34}
+.hint{position:absolute;z-index:30;left:0;right:0;top:var(--hint-top,250px);line-height:30px;text-align:center;margin:0;
+  font-size:20px;font-weight:500;color:var(--ink-muted);transition:opacity .3s}
+.hint b{font-weight:600;color:var(--ink)}
+.lede-intro{position:absolute;z-index:30;left:50%;top:var(--intro-top,220px);width:var(--intro-w,min(40ch,calc(100% - 2 * var(--side,24px))));transform:translateX(-50%);margin:0;text-align:left;text-wrap:pretty;
+  font-size:20px;line-height:1.45;font-weight:500;color:var(--ink);transition:opacity .3s,transform .5s cubic-bezier(.65,0,.25,1)}
+.is-open .lede-intro{left:var(--side);transform:translateX(0);top:calc(var(--title-top-open,124px) + clamp(48px,6.4vw,80px) * .9 + clamp(24px,2.4vw,32px));z-index:34}
+@media (max-width:768px){.lede-intro{font-size:16px}}
+.is-open .hint{opacity:0}
+/* open state: a quiet reminder that scrolling back up tucks the cards away */
+.collapse-hint{position:absolute;z-index:31;left:var(--side);bottom:28px;margin:0;display:inline-flex;align-items:center;gap:2px;
+  font:500 14px/1 var(--font-sans);color:var(--ink-muted);opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s;pointer-events:none}
+.collapse-hint svg{width:16px;height:16px}
+.is-open .collapse-hint{opacity:1;transform:none;transition:opacity .5s 1.4s,transform .5s 1.4s cubic-bezier(.2,.8,.2,1)}
+.collapse-hint .touch{display:none}
+@media (hover:none) and (pointer:coarse){.collapse-hint .mouse{display:none}.collapse-hint .touch{display:inline}}
+@media (max-width:768px){.collapse-hint{z-index:36;bottom:12px;font-size:13px;padding:8px 12px;border-radius:999px;background:rgba(253,252,251,.92);box-shadow:0 4px 14px rgba(17,19,24,.12)}}
+/* closing: drop the open-state text and the glass instantly, then bring the landing text back once the title has slid home */
+.lede{transition:opacity .15s,transform .15s}
+.is-open .lede{transition:opacity .6s .55s,transform .6s .55s cubic-bezier(.2,.8,.2,1)}
+.hero-glass{transition:opacity .1s}
+.is-open .hero-glass{transition:opacity .6s .5s}
+.lede-intro{transition:left .9s cubic-bezier(.65,0,.25,1),transform .9s cubic-bezier(.65,0,.25,1),top .9s cubic-bezier(.65,0,.25,1)}
+.hint{transition:opacity .45s .85s}
+.is-open .hint{transition:opacity .2s}
+.metro{position:absolute;z-index:5;right:0;left:calc(var(--side) + (100vw - 2 * var(--side)) * 10 / 12);top:calc(var(--title-top-open,124px) + 8px);display:flex;align-items:center;
+  transform:translateX(110%);transition:transform 1s .35s cubic-bezier(.2,.9,.2,1)}
+.metro i{width:50px;height:50px;border-radius:50%;border:12px solid var(--stop-ring);background:var(--surface);position:relative;z-index:1}
+.metro b{flex:1;height:20px;background:var(--pink);margin-left:-25px}
+.is-open .metro{transform:none}
+@media (max-width:768px){.metro{display:none}.lede{max-width:none;right:var(--side);font-size:16px}}
+
+/* holder pieces + cards share one flat stacking context */
+.hp{position:absolute;left:0;top:0;pointer-events:none}
+.hp-back{z-index:1;border-radius:var(--hr);background:var(--lb);box-shadow:0 30px 60px rgba(17,19,24,.2);transition:box-shadow .35s ease}
+.hold-hover:not(.is-open) .hp-back{box-shadow:0 38px 72px rgba(17,19,24,.27),0 10px 22px rgba(17,19,24,.1)}
+/* back stitching drawn exactly like the front pocket: 1.5px stroke, 6 on / 5 off */
+.hp-back .stitch{position:absolute;left:calc(var(--hs) * 12);top:calc(var(--hs) * 12);width:calc(100% - var(--hs) * 24);height:calc(100% - var(--hs) * 24);overflow:visible;pointer-events:none}
+.hp-back .stitch rect{x:.75px;y:.75px;width:calc(100% - 1.5px);height:calc(100% - 1.5px);rx:calc(var(--hr) - var(--hs) * 8);fill:none;stroke:var(--ls);stroke-width:1.5px;stroke-dasharray:6 5}
+.hp-slot{border-radius:calc(var(--hs) * 6) calc(var(--hs) * 6) var(--hr) var(--hr);box-shadow:0 -3px 8px rgba(17,19,24,.2),inset 0 1.5px 0 rgba(255,255,255,.22)}
+.hp-s1{z-index:3;background:var(--l1)}.hp-s2{z-index:5;background:var(--l2)}
+.hp-front{z-index:7;filter:drop-shadow(0 -3px 5px rgba(17,19,24,.18))}
+.hp-front svg{display:block;width:100%;height:100%;overflow:visible}
+.hp-front .mono{position:absolute;right:9%;bottom:12%;font-weight:600;font-size:calc(var(--hs) * 24);letter-spacing:.08em;color:var(--lm);text-shadow:0 1px 0 rgba(255,255,255,.25)}
+.holder-hit{position:absolute;z-index:40;border:0;padding:0;background:transparent;cursor:pointer;border-radius:var(--hr)}
+.holder-hit:focus-visible{outline:3px solid var(--violet-deep);outline-offset:6px}
+.is-open .holder-hit{display:none}
+.stage{--lb:#E8C6CF;--l1:#EBCBD3;--l2:#EED0D7;--lf:#F1D5DC;--ls:#CEA7B2;--lm:#C99AA7}
+.stage[data-leather="plum"]{--lb:#3A2F45;--l1:#413450;--l2:#463A55;--lf:#4A3C58;--ls:#8C7A9E;--lm:#6B5A7D}
+.stage[data-leather="pink"]{--lb:#D98FA5;--l1:#DD95AA;--l2:#E29CB0;--lf:#E7A3B6;--ls:#FFF1F5;--lm:#C77791}
+.stage[data-leather="white"]{--lb:#E6E0D8;--l1:#ECE7E0;--l2:#F1EDE7;--lf:#F6F2ED;--ls:#C9BFB3;--lm:#D6CCC1}
+.stage[data-leather="silver"]{--lb:#AEB2BA;--l1:#B8BBC3;--l2:#C0C3CA;--lf:#C9CCD2;--ls:#F2F3F5;--lm:#9DA1AA}
+.holder-hit:hover ~ .card.tucked{translate:0 -10px}
+
+/* cards */
+.card{position:absolute;left:0;top:0;width:var(--cw);height:calc(var(--cw) * .6204);transform-style:preserve-3d;will-change:transform;cursor:pointer;transition:translate .35s cubic-bezier(.2,1.2,.4,1)}
+.card .flip{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,1.25,.4,1)}
+.card.flipped .flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:calc(var(--cw) * .0407);overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 18px 40px rgba(17,19,24,.18)}
+.face svg{display:block;width:100%;height:100%}
+.face.back{transform:rotateY(180deg);display:flex;flex-direction:column;font-family:"DM Sans",var(--font-sans);container-type:inline-size}
+.back .strip{flex:none;margin-top:7.5cqw;height:8cqw;min-height:26px;display:flex;align-items:center;padding:0 3.4cqw;font:500 clamp(12px,2.4cqw,12px)/1 var(--font-sans);letter-spacing:.04em}
+.back .body{flex:1;display:flex;gap:3.6cqw;padding:3.4cqw 3.6cqw 3.6cqw;min-height:0}
+.back .shot{flex:0 0 33%;border-radius:3.2cqw;display:grid;place-items:center;font:500 12px/1.3 var(--font-sans);text-align:center;padding:8px}
+.back .info{flex:1;display:flex;flex-direction:column;gap:.6cqw;min-width:0;min-height:0}
+.back h4{margin:0;font-size:clamp(12px,2.8cqw,13px);line-height:1.2;font-weight:700}
+.back p{margin:0 0 1.2cqw;font-size:clamp(12px,3.05cqw,14px);line-height:1.38;font-weight:500}
+.back .try{margin-top:auto;flex:none;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:clamp(30px,8.4cqw,40px);padding:0 clamp(12px,3.6cqw,18px);border-radius:999px;font:700 clamp(12px,3cqw,14px)/1 "DM Sans",var(--font-sans);text-decoration:none}
+.back .try svg{width:clamp(13px,3.4cqw,16px);height:clamp(13px,3.4cqw,16px)}
+/* narrow cards: drop the image, give the words the whole width */
+@container (max-width:400px){.back .shot{display:none}.back .strip{margin-top:5.5cqw}.back p{margin-bottom:.6cqw}}
+@container (max-width:340px){.back p{line-height:1.3;margin-bottom:0}.back .info{gap:2px}.back .strip{margin-top:4.5cqw;min-height:22px;height:7cqw}.back .body{padding:2.8cqw 4cqw 3.4cqw}.back .try{min-height:30px}}
+@container (max-width:280px){.back p{font-size:11px;line-height:1.25}.back h4{font-size:11px}.back .strip{margin-top:3.5cqw;min-height:20px}.back .body{padding:2.2cqw 4cqw 3cqw}.back .try{min-height:28px;font-size:12px}}
+.bk-pomi{background:#F6F1EC;color:#2A2342}.bk-pomi .strip{background:#44484F;color:#fff}.bk-pomi h4{color:#5B5375}.bk-pomi .try{background:#A9BAEA;color:#2A2342}.bk-pomi .shot{background:#E9E3DC;color:#5B5375}
+.bk-idea{background:#EBA45D;color:#3D1702}.bk-idea .strip{background:#FAEDE1;color:#353535}.bk-idea h4{color:#3D1702}.bk-idea .try{background:#FAEDE1;color:#2A2342}.bk-idea .shot{background:#F4C58F;color:#3D1702}
+.bk-tiktok{background:#000;color:#fff}.bk-tiktok .strip{background:#fff;color:#000}.bk-tiktok h4{color:#fff}.bk-tiktok .try{background:#FE2C55;color:#fff}.bk-tiktok .shot{background:#000;color:#A1A1A6;box-shadow:0 0 0 1px #2A2A2E inset}
+.back .shot.has-img{padding:0;background-size:contain;background-position:center;background-repeat:no-repeat}
+.bk-coffee{background:#634C34;color:#fff}.bk-coffee .strip{background:#D9CABA;color:#3D2D0A}.bk-coffee .try{background:#D9CABA;color:#2A2342}.bk-coffee .shot{background:#7A6149;color:#F2DFCC}
+
+/* glass flip pill under the active card */
+.flip-pill{position:absolute;left:0;top:0;z-index:35;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.8);background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,255,255,.38));
+  -webkit-backdrop-filter:blur(16px) saturate(1.6);backdrop-filter:blur(16px) saturate(1.6);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.7),inset 0 0 18px rgba(255,255,255,.25),0 6px 24px rgba(17,19,24,.1);
+  font:600 16px/1 "DM Sans",var(--font-sans);color:var(--ink);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s}
+.flip-pill svg{width:18px;height:18px}
+.flip-pill.show{opacity:1;pointer-events:auto}
+.flip-pill:focus-visible{outline:3px solid var(--violet-deep);outline-offset:3px}
+
+/* ---------- Curve lab ---------- */
+.lab{position:fixed;right:16px;bottom:16px;z-index:70;width:300px;max-width:calc(100vw - 32px);border-radius:22px;padding:14px 16px 16px;
+  background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(255,255,255,.62));-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);
+  border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 50px rgba(17,19,24,.18);font-size:14px;color:var(--ink)}
+.lab header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.lab h2{margin:0;font-size:16px;font-weight:600}
+.lab .x{border:0;background:var(--surface);border-radius:999px;min-height:32px;padding:0 12px;font:600 13px/1 var(--font-sans);cursor:pointer;box-shadow:0 0 0 1px var(--hairline) inset}
+.lab.min .content{display:none}
+.lab .content{margin-top:10px;display:grid;gap:10px}
+.lab .lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{border:0;min-height:32px;padding:0 12px;border-radius:999px;background:var(--surface);box-shadow:0 0 0 1px var(--hairline) inset;font:500 13px/1 var(--font-sans);color:var(--ink);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:none}
+.chips .sw{display:inline-flex;align-items:center;gap:6px;padding:0 10px 0 6px}
+.chips .sw i{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(17,19,24,.15)}
+.sl{display:grid;grid-template-columns:72px 1fr 44px;align-items:center;gap:8px;font-size:13px}
+.sl input{width:100%;accent-color:var(--ink)}
+.sl output{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-muted)}
+.lab .row{display:flex;gap:8px}
+.lab .row button{flex:1}
+.lab code{display:block;font:12px/1.45 ui-monospace,Menlo,monospace;background:var(--surface);border-radius:12px;padding:8px 10px;box-shadow:0 0 0 1px var(--hairline) inset;white-space:pre-wrap;word-break:break-word;color:var(--ink-muted)}
+.lab .note{margin:0;font-size:13px;color:var(--ink-muted)}
+
+/* ---------- Toolbox ---------- */
+.toolbox{padding:120px 24px 140px}
+.toolbox .lw-sh{justify-content:center;margin-bottom:56px}
+.toolbox .lw-sh__title{font-family:var(--font-sans);font-weight:600;letter-spacing:-.04em;color:#111318}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,384px));justify-content:center;column-gap:clamp(20px,2.6vw,37px);row-gap:clamp(32px,3vw,42px);list-style:none;margin:0 auto;padding:0;max-width:1225px}
+.tools li{display:flex;flex-direction:column;gap:24px;text-align:left;color:#000}
+.tools .tile{aspect-ratio:384/203;border-radius:32px;display:grid;place-items:center;transition:transform .35s cubic-bezier(.2,1.2,.4,1)}
+.tools li:hover .tile{transform:translateY(-4px)}
+.tools .tile svg{display:block;width:62%;height:auto;overflow:visible}
+.tools h3{margin:0 0 8px;font:700 32px/1.15 var(--font-sans);letter-spacing:-.02em;color:#000}
+.tools p{margin:0;font:500 16px/1.4 var(--font-sans);color:#000}
+.tools .spark{transform-box:fill-box;transform-origin:center}
+.tools li:hover .spark,.tools li:focus-within .spark{animation:sparkle 1.1s cubic-bezier(.3,1.4,.5,1) infinite}
+@keyframes sparkle{0%{transform:rotate(0) scale(1)}35%{transform:rotate(90deg) scale(1.35)}60%{transform:rotate(180deg) scale(.85)}100%{transform:rotate(180deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){.tools li:hover .spark{animation:none}}
+.tools .ball,.tools .whoosh{transform-box:fill-box;transform-origin:50% 100%}
+.tools .shadow{transform-box:fill-box;transform-origin:center}
+.tools li:hover .ball,.tools li:focus-within .ball{animation:ballArc 1.6s linear infinite}
+.tools li:hover .shadow,.tools li:focus-within .shadow{animation:ballShadow 1.6s ease-in-out infinite}
+.tools li:hover .whoosh,.tools li:focus-within .whoosh{animation:whoosh 1.6s ease-out infinite}
+.tools li:hover .ghost,.tools li:focus-within .ghost{animation:ghost 1.6s linear infinite}
+@keyframes ballArc{0%{opacity:0;transform:translate(-132.2px,13.2px) scale(.82)}6.2%{opacity:1;transform:translate(-122.6px,-13.3px) scale(.82)}12.4%{transform:translate(-111.4px,-34.2px) scale(.82)}18.6%{transform:translate(-99.0px,-49.5px) scale(.82)}24.8%{transform:translate(-85.8px,-59.3px) scale(.82)}31.0%{transform:translate(-72.1px,-63.8px) scale(.82)}37.2%{transform:translate(-58.2px,-62.9px) scale(.82)}43.4%{transform:translate(-44.4px,-56.8px) scale(.82)}49.6%{transform:translate(-31.3px,-45.6px) scale(.82)}55.8%{transform:translate(-19.0px,-29.3px) scale(.82)}62.0%{transform:translate(0.0px,0.0px) scale(.82)}68%{transform:translate(0,4px) scale(1.18,.78)}76%{transform:translate(0,-6px) scale(.94,1.06)}84%,100%{transform:none}}
+@keyframes ballShadow{0%{transform:scale(.3);opacity:0}45%{transform:scale(.4);opacity:.05}62%{transform:scale(1);opacity:.2}68%{transform:scale(1.15,1);opacity:.25}84%,100%{transform:scale(1);opacity:.2}}
+@keyframes whoosh{0%,60%{opacity:0;transform:translateX(-6px)}70%,100%{opacity:1;transform:none}}
+@keyframes ghost{0%,62%{opacity:0}85%,100%{opacity:.6}}
+@media (prefers-reduced-motion:reduce){.tools li:hover .ball,.tools li:hover .shadow,.tools li:hover .whoosh,.tools li:hover .ghost{animation:none}}
+.tools .pop{transform-box:fill-box;transform-origin:center}
+.tools li:hover .pop,.tools li:focus-within .pop{animation:popIn .5s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(var(--i) * 90ms)}
+@keyframes popIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.tools li:hover .pop{animation:none}}
+.tools .up{transform-box:fill-box;transform-origin:50% 100%}
+.tools .chk{transform-origin:center}
+.tools li:hover .up,.tools li:focus-within .up{animation:popUp .5s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(var(--i) * 140ms)}
+.tools li:hover .chk,.tools li:focus-within .chk{animation-name:popIn;animation-delay:680ms}
+@keyframes popUp{0%{transform:translateY(18px) scale(.5);opacity:0}100%{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.tools li:hover .up{animation:none}}
+.tools .cf,.tools .chat>*{opacity:0}
+.tools .cb,.tools .proto,.tools .cur{transform-box:fill-box}
+.tools .cb{transform-origin:0 50%}
+.tools .cb:first-child{transform-origin:100% 50%}
+.tools .proto{transform-origin:50% 60%}
+.tools .cur{transform-origin:0 0}
+.tools li:hover .cf,.tools li:focus-within .cf,.tools li:hover .cin,.tools li:focus-within .cin{animation:fadeIn .3s ease-out .15s both}
+.tools li:hover .cb,.tools li:focus-within .cb{animation:bubble .35s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(.35s + var(--i) * 220ms)}
+.tools li:hover .proto,.tools li:focus-within .proto{animation:protoSwap 2.4s cubic-bezier(.3,1.3,.5,1) both}
+.tools li:hover .cur,.tools li:focus-within .cur{animation:curIn 2.4s ease-out both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes bubble{0%{opacity:0;transform:scaleX(0)}100%{opacity:1;transform:none}}
+@keyframes protoSwap{0%{opacity:1;transform:none}8%,62%{opacity:0;transform:translateY(10px) scale(.6)}76%{opacity:1;transform:scale(1.04)}84%,100%{opacity:1;transform:none}}
+@keyframes curIn{0%{opacity:1}6%,74%{opacity:0;transform:translate(16px,16px)}86%{opacity:1;transform:none}91%{transform:scale(.82)}96%,100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tools li:hover .proto,.tools li:hover .cur,.tools li:hover .cb,.tools li:hover .cf,.tools li:hover .cin{animation:none}}
+.tools h3{display:inline-block;transform-origin:0 70%;transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+.tools li:hover h3,.tools li:focus-within h3{transform:scale(1.08)}
+@media (prefers-reduced-motion:reduce){.tools h3{transition:none}}
+@media (max-width:1100px){.tools{grid-template-columns:repeat(2,minmax(0,384px))}.tools h3{font-size:28px}}
+@media (max-width:640px){.toolbox{padding:88px 20px 100px}.tools{grid-template-columns:minmax(0,420px);row-gap:36px}.tools li{gap:18px}.tools .tile{border-radius:24px}.tools h3{font-size:24px;margin-bottom:6px}}
+
+@media (prefers-reduced-motion:reduce){.hero-title,.lede-intro,.metro,.card .flip,.card{transition:none!important}}
+
+/* ---- living inside the portfolio: undo the site-wide .card / .hero-title / body rules for this page's pieces ---- */
+html,body{overflow-x:clip}   /* the site's overflow-x:hidden turns body into a scroller, which breaks the sticky stage */
+.ride,.toolbox{font-weight:400;line-height:normal}
+.stage .card{display:block;gap:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+.stage .hero-title{margin:0;font-size:clamp(48px,6.4vw,80px)}
+.stage p,.toolbox p{margin:0}
+.lab{display:none!important}
+</style>
+</head>
+
+<body>
+
+  <header class="glass-nav">
+    <div class="content">
+      <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+        <img src="asset/image/Home3.0/logo.svg" alt="Logo" style="height:35px;">Lina Wang
+      </a>
+
+      <!-- Mobile hamburger button -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primary-nav" aria-expanded="false"
+        aria-label="Open menu">
+        <!-- hamburger -->
+        <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <!-- close -->
+        <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav id="primary-nav">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+              target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Off-canvas mobile menu overlay -->
+  <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <!-- backdrop -->
+    <div class="overlay-backdrop" data-close-overlay></div>
+
+    <!-- sliding panel -->
+    <aside class="overlay-panel" tabindex="-1">
+      <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+        <!-- close icon -->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav class="overlay-nav">
+        <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
+          rel="noopener">Resume</a>
+        <a href="About.html">About</a>
+        <a href="play.html">Play</a>
+        <a href="mailto:linaw815@uw.edu">Contact</a>
+      </nav>
+    </aside>
+  </div>
+
+<main id="top">
+  <section class="ride" id="ride" aria-label="AI Playground prototypes">
+    <div class="stage" id="stage" data-leather="blush" data-intro="pink" data-glass="ripple">
+      <h1 class="hero-title" aria-label="AI Playground">AI Playground</h1>
+      <p class="hint" id="hint">Try clicking the <b>card holder</b></p>
+      <p class="collapse-hint" aria-hidden="true"><span class="mouse">Scroll up to collapse</span><span class="touch">Swipe down to collapse</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></p>
+      <p class="lede-intro">Welcome to my digital wallet. Each card is a project I prototyped with AI.</p>
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <filter id="lgWarp" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+          <feFlood flood-color="#FDFCFB" result="paper"/>
+          <feMerge result="src"><feMergeNode in="paper"/><feMergeNode in="SourceGraphic"/></feMerge>
+          <feTurbulence type="fractalNoise" baseFrequency="0.007 0.011" numOctaves="2" seed="11" result="noise"/>
+          <feGaussianBlur in="noise" stdDeviation="3" result="soft"/>
+          <feDisplacementMap in="src" in2="soft" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <filter id="lgLens" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+          <feFlood flood-color="#FDFCFB" result="paper"/>
+          <feMerge result="src"><feMergeNode in="paper"/><feMergeNode in="SourceGraphic"/></feMerge>
+          <feGaussianBlur in="src" stdDeviation="5" result="frost"/>
+          <feImage id="lgLensMap" href="" x="0" y="0" width="10" height="10" preserveAspectRatio="none" result="map"/>
+          <feDisplacementMap in="frost" in2="map" scale="44" xChannelSelector="R" yChannelSelector="G" result="dR"/>
+          <feDisplacementMap in="frost" in2="map" scale="50" xChannelSelector="R" yChannelSelector="G" result="dG"/>
+          <feDisplacementMap in="frost" in2="map" scale="56" xChannelSelector="R" yChannelSelector="G" result="dB"/>
+          <feColorMatrix in="dR" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+          <feColorMatrix in="dG" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+          <feColorMatrix in="dB" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+          <feComposite in="r" in2="g" operator="arithmetic" k2="1" k3="1" result="rg"/>
+          <feComposite in="rg" in2="b" operator="arithmetic" k2="1" k3="1" result="lens"/>
+          <feColorMatrix in="lens" type="saturate" values="1.15"/>
+        </filter>
+      </svg>
+      <div class="hero-glass" id="heroGlass" aria-hidden="true"></div>
+      <div class="metro" aria-hidden="true"><i></i><b></b></div>
+
+      <div class="hp hp-back" id="hpBack"><svg class="stitch" aria-hidden="true"><rect/></svg></div>
+
+      <article class="card tucked" data-i="3" aria-label="TikTok Plan">
+        <div class="flip">
+          <div class="face front"><svg width="540" height="335" viewBox="0 0 540 335" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_120_1917)">
+<rect width="540" height="335" rx="22" fill="black"/>
+<rect x="449" y="18" width="273" height="300" fill="white"/>
+<path d="M51.6 295.4C49.4933 295.4 47.8933 294.893 46.8 293.88C45.7067 292.867 45.16 291.387 45.16 289.44V269.6L51.08 267.08V288.16C51.08 288.907 51.2533 289.453 51.6 289.8C51.9733 290.147 52.5067 290.32 53.2 290.32C53.4667 290.32 53.7333 290.293 54 290.24C54.2933 290.187 54.6 290.107 54.92 290V294.88C54.3333 295.067 53.7733 295.2 53.24 295.28C52.7067 295.36 52.16 295.4 51.6 295.4ZM41.64 278.72V274.12H55.12V278.72H41.64ZM57.6847 295V274.12H63.6047V295H57.6847ZM60.6447 272.04C59.658 272.04 58.8314 271.707 58.1647 271.04C57.5247 270.373 57.2047 269.573 57.2047 268.64C57.2047 267.68 57.5247 266.88 58.1647 266.24C58.8314 265.573 59.658 265.24 60.6447 265.24C61.658 265.24 62.4847 265.573 63.1247 266.24C63.7914 266.88 64.1247 267.68 64.1247 268.64C64.1247 269.573 63.7914 270.373 63.1247 271.04C62.4847 271.707 61.658 272.04 60.6447 272.04ZM71.8522 289.48V280.96H73.2922L80.2122 274.12H87.6122L78.6122 282.84L77.9322 283.52L71.8522 289.48ZM67.3722 295V266.8H73.2922V295H67.3722ZM81.1722 295L75.0122 283.16L78.4922 278.04L88.0122 295H81.1722ZM98.9828 295.4C96.8761 295.4 95.2761 294.893 94.1828 293.88C93.0895 292.867 92.5428 291.387 92.5428 289.44V269.6L98.4628 267.08V288.16C98.4628 288.907 98.6361 289.453 98.9828 289.8C99.3561 290.147 99.8895 290.32 100.583 290.32C100.849 290.32 101.116 290.293 101.383 290.24C101.676 290.187 101.983 290.107 102.303 290V294.88C101.716 295.067 101.156 295.2 100.623 295.28C100.089 295.36 99.5428 295.4 98.9828 295.4ZM89.0228 278.72V274.12H102.503V278.72H89.0228ZM115.228 295.48C113.121 295.48 111.241 295.04 109.588 294.16C107.961 293.253 106.681 291.987 105.748 290.36C104.814 288.733 104.348 286.8 104.348 284.56C104.348 282.32 104.814 280.387 105.748 278.76C106.681 277.133 107.961 275.88 109.588 275C111.241 274.093 113.121 273.64 115.228 273.64C117.361 273.64 119.241 274.093 120.868 275C122.521 275.88 123.814 277.133 124.748 278.76C125.681 280.387 126.148 282.32 126.148 284.56C126.148 286.8 125.681 288.733 124.748 290.36C123.814 291.987 122.521 293.253 120.868 294.16C119.241 295.04 117.361 295.48 115.228 295.48ZM115.228 290.52C116.188 290.52 117.028 290.293 117.748 289.84C118.468 289.387 119.028 288.72 119.428 287.84C119.854 286.933 120.068 285.84 120.068 284.56C120.068 283.253 119.854 282.16 119.428 281.28C119.028 280.4 118.468 279.733 117.748 279.28C117.028 278.8 116.188 278.56 115.228 278.56C114.294 278.56 113.454 278.8 112.708 279.28C111.988 279.733 111.428 280.4 111.028 281.28C110.628 282.16 110.428 283.253 110.428 284.56C110.428 285.84 110.628 286.933 111.028 287.84C111.428 288.72 111.988 289.387 112.708 289.84C113.454 290.293 114.294 290.52 115.228 290.52ZM133.649 289.48V280.96H135.089L142.009 274.12H149.409L140.409 282.84L139.729 283.52L133.649 289.48ZM129.169 295V266.8H135.089V295H129.169ZM142.969 295L136.809 283.16L140.289 278.04L149.809 295H142.969Z" fill="white"/>
+<path d="M168.32 295V266.8H180.44C182.6 266.8 184.427 267.147 185.92 267.84C187.413 268.507 188.547 269.467 189.32 270.72C190.12 271.973 190.52 273.467 190.52 275.2C190.52 276.907 190.12 278.4 189.32 279.68C188.547 280.933 187.413 281.907 185.92 282.6C184.427 283.267 182.6 283.6 180.44 283.6H172.88V278.56H180.2C181.533 278.56 182.56 278.28 183.28 277.72C184.027 277.16 184.4 276.32 184.4 275.2C184.4 274.053 184.027 273.213 183.28 272.68C182.56 272.12 181.533 271.84 180.2 271.84H173.08L174.56 270.36V295H168.32ZM193.711 295V266.8H199.951V293.32L195.751 289.36H211.391V295H193.711ZM212.806 295L221.046 266.8H231.326L239.606 295H233.126L226.206 269.84L219.246 295H212.806ZM219.646 286.44V281.4H232.726V286.44H219.646ZM242.343 295V266.8H252.783L260.703 290.6V266.8H266.663V295H256.223L248.303 271.28V295H242.343Z" fill="white"/>
+<circle cx="455" cy="168" r="150" fill="url(#paint0_linear_120_1917)"/>
+<circle cx="58.5" cy="57.5" r="27.5" fill="url(#paint1_linear_120_1917)"/>
+<circle cx="92.5" cy="57.5" r="27.5" fill="url(#paint2_linear_120_1917)"/>
+<path d="M475.667 128C475.667 113.272 463.728 101.333 449 101.333C434.272 101.333 422.333 113.272 422.333 128V168C422.333 182.728 434.272 194.667 449 194.667C463.728 194.667 475.667 182.728 475.667 168V128Z" stroke="black" stroke-width="12" stroke-linejoin="round"/>
+<path d="M402.333 158V168C402.333 193.773 423.227 214.667 449 214.667C474.773 214.667 495.667 193.773 495.667 168V158" stroke="black" stroke-width="12" stroke-linejoin="round"/>
+<path d="M449 214.667V234.667" stroke="black" stroke-width="12"/>
+<path d="M422.333 234.667H475.667" stroke="black" stroke-width="12" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_120_1917" x1="455" y1="18" x2="455" y2="318" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint1_linear_120_1917" x1="37.4286" y1="37.5" x2="58.5" y2="85" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00D0D5"/>
+</linearGradient>
+<linearGradient id="paint2_linear_120_1917" x1="71.4286" y1="37.5" x2="92.5" y2="85" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FE2C55"/>
+</linearGradient>
+<clipPath id="clip0_120_1917">
+<rect width="540" height="335" rx="22" fill="white"/>
+</clipPath>
+</defs>
+</svg></div>
+          <div class="face back bk-tiktok">
+            <div class="strip">NO. 0004</div>
+            <div class="body">
+              <div class="shot has-img" role="img" aria-label="Plan prototype: the user describes a beach video by voice while the AI listens" style="background-image:url(asset/image/Play/plan-shot.webp)"></div>
+              <div class="info">
+                <h4>What I did</h4>
+                <p>Built Plan in 7 days: talk to AI, get a shot plan, then film in segments.</p>
+                <h4>What I learned</h4>
+                <p>Prototyping in code surfaced interaction details static screens never would.</p>
+                <a class="try" href="https://tiktok-online-assessment-prototype.vercel.app/" target="_blank" rel="noopener">Try the prototype <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="card tucked" data-i="2" aria-label="Morning Pour">
+        <div class="flip">
+          <div class="face front"><svg width="540" height="335" viewBox="0 0 540 335" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="540" height="335" rx="22" fill="#634C34"/>
+<path d="M247.657 212.378C246.207 227.569 255.474 236.478 250.966 246.205C250.077 248.124 248.213 249.401 246.136 249.796C216.232 255.475 197.194 204.911 192.3 179.612C189.066 160.532 197.098 102.313 223.519 84.3249C258.718 57.3845 269.625 79.8673 267.795 103.931C267.063 113.556 251.544 128.003 255.271 152.146C260.457 185.736 249.64 191.591 247.657 212.378Z" fill="#F2DFCC" fill-opacity="0.62"/>
+<path d="M262.233 207.771C254.566 221.105 256.253 235.702 260.956 247.538C261.737 249.503 263.209 251.142 265.153 251.974C293.215 263.97 321.701 222.635 331.692 198.882C338.778 180.874 342.886 122.247 320.727 99.2115C291.818 65.6107 277.361 68.1122 274.206 92.0384C272.943 101.608 277.685 107.375 269.075 130.236C257.095 162.042 275.346 184.966 262.233 207.771Z" fill="#F2DFCC" fill-opacity="0.62"/>
+<path d="M141.43 143.828L139.273 178.234L128.586 178.703L128.68 160.562L123.852 175.188H119.727L116.023 162.109L115.977 177.297L105.148 177.625L105.617 145.234L117.664 144.766L122.445 160.281L128.82 143.828H141.43ZM171.898 160.047C171.898 161.469 171.734 162.844 171.406 164.172C171.078 165.484 170.602 166.719 169.977 167.875C169.367 169.031 168.617 170.094 167.727 171.062C166.852 172.016 165.859 172.836 164.75 173.523C163.656 174.211 162.461 174.75 161.164 175.141C159.867 175.516 158.492 175.703 157.039 175.703C155.633 175.703 154.289 175.523 153.008 175.164C151.742 174.805 150.555 174.305 149.445 173.664C148.336 173.008 147.328 172.227 146.422 171.32C145.531 170.398 144.766 169.383 144.125 168.273C143.5 167.148 143.008 165.945 142.648 164.664C142.305 163.383 142.133 162.047 142.133 160.656C142.133 159.297 142.297 157.969 142.625 156.672C142.953 155.359 143.422 154.125 144.031 152.969C144.656 151.812 145.406 150.75 146.281 149.781C147.156 148.812 148.133 147.977 149.211 147.273C150.305 146.57 151.484 146.023 152.75 145.633C154.016 145.242 155.352 145.047 156.758 145.047C159.023 145.047 161.086 145.398 162.945 146.102C164.82 146.805 166.414 147.812 167.727 149.125C169.055 150.422 170.078 152 170.797 153.859C171.531 155.703 171.898 157.766 171.898 160.047ZM161.492 160.656C161.492 159.984 161.391 159.336 161.188 158.711C161 158.07 160.719 157.508 160.344 157.023C159.969 156.523 159.5 156.125 158.938 155.828C158.391 155.516 157.758 155.359 157.039 155.359C156.305 155.359 155.648 155.492 155.07 155.758C154.492 156.023 153.992 156.391 153.57 156.859C153.164 157.312 152.852 157.852 152.633 158.477C152.414 159.086 152.305 159.734 152.305 160.422C152.305 161.078 152.398 161.734 152.586 162.391C152.773 163.047 153.055 163.641 153.43 164.172C153.805 164.703 154.266 165.133 154.812 165.461C155.375 165.789 156.023 165.953 156.758 165.953C157.492 165.953 158.148 165.812 158.727 165.531C159.32 165.234 159.82 164.844 160.227 164.359C160.633 163.859 160.945 163.289 161.164 162.648C161.383 162.008 161.492 161.344 161.492 160.656ZM201.008 155.406C201.008 156.625 200.898 157.734 200.68 158.734C200.477 159.719 200.148 160.625 199.695 161.453C199.242 162.281 198.656 163.047 197.938 163.75C197.219 164.453 196.352 165.125 195.336 165.766L200.914 175.703L190.367 177.766L186.758 167.781L183.852 167.875L183.43 177.625H173.352C173.43 174.062 173.5 170.516 173.562 166.984C173.641 163.453 173.727 159.906 173.82 156.344C173.852 154.547 173.883 152.766 173.914 151C173.945 149.234 174.008 147.453 174.102 145.656C175.195 145.25 176.273 144.914 177.336 144.648C178.398 144.383 179.461 144.18 180.523 144.039C181.602 143.883 182.688 143.781 183.781 143.734C184.891 143.672 186.023 143.641 187.18 143.641C188.961 143.641 190.68 143.891 192.336 144.391C194.008 144.875 195.484 145.609 196.766 146.594C198.047 147.578 199.07 148.805 199.836 150.273C200.617 151.742 201.008 153.453 201.008 155.406ZM190.508 156.156C190.508 155.5 190.414 154.898 190.227 154.352C190.055 153.805 189.789 153.336 189.43 152.945C189.086 152.539 188.648 152.227 188.117 152.008C187.602 151.773 186.992 151.656 186.289 151.656C185.977 151.656 185.672 151.68 185.375 151.727C185.078 151.758 184.789 151.812 184.508 151.891L184.133 160.609H184.695C185.367 160.609 186.047 160.523 186.734 160.352C187.438 160.18 188.062 159.914 188.609 159.555C189.172 159.195 189.625 158.734 189.969 158.172C190.328 157.609 190.508 156.938 190.508 156.156ZM231.734 166.141C231.734 167.906 231.711 169.656 231.664 171.391C231.633 173.109 231.578 174.844 231.5 176.594L218 176.359C218.469 173.594 218.875 170.836 219.219 168.086C219.562 165.32 219.734 162.531 219.734 159.719C219.734 159.516 219.727 159.188 219.711 158.734C219.695 158.281 219.664 157.773 219.617 157.211C219.57 156.633 219.5 156.047 219.406 155.453C219.328 154.844 219.211 154.289 219.055 153.789C218.914 153.289 218.734 152.883 218.516 152.57C218.312 152.242 218.062 152.078 217.766 152.078C217.234 152.078 216.781 152.234 216.406 152.547C216.047 152.859 215.742 153.266 215.492 153.766C215.258 154.25 215.07 154.797 214.93 155.406C214.789 156.016 214.68 156.625 214.602 157.234C214.539 157.844 214.492 158.422 214.461 158.969C214.445 159.5 214.438 159.938 214.438 160.281C214.359 163.047 214.297 165.797 214.25 168.531C214.203 171.25 214.141 174 214.062 176.781L202.109 177.297C202.422 171.781 202.719 166.297 203 160.844C203.297 155.391 203.531 149.906 203.703 144.391L214.766 143.828L214.672 147.578C215.109 147.047 215.578 146.547 216.078 146.078C216.594 145.609 217.141 145.211 217.719 144.883C218.297 144.539 218.906 144.273 219.547 144.086C220.203 143.883 220.891 143.781 221.609 143.781C222.938 143.781 224.102 144 225.102 144.438C226.102 144.875 226.961 145.469 227.68 146.219C228.398 146.969 229 147.859 229.484 148.891C229.969 149.906 230.359 150.992 230.656 152.148C230.953 153.305 231.18 154.516 231.336 155.781C231.492 157.031 231.594 158.266 231.641 159.484C231.703 160.703 231.734 161.883 231.734 163.023C231.734 164.164 231.734 165.203 231.734 166.141ZM246.195 145L244.555 176.922L234.664 177.438L233.727 145.656L246.195 145ZM277.203 166.141C277.203 167.906 277.18 169.656 277.133 171.391C277.102 173.109 277.047 174.844 276.969 176.594L263.469 176.359C263.938 173.594 264.344 170.836 264.688 168.086C265.031 165.32 265.203 162.531 265.203 159.719C265.203 159.516 265.195 159.188 265.18 158.734C265.164 158.281 265.133 157.773 265.086 157.211C265.039 156.633 264.969 156.047 264.875 155.453C264.797 154.844 264.68 154.289 264.523 153.789C264.383 153.289 264.203 152.883 263.984 152.57C263.781 152.242 263.531 152.078 263.234 152.078C262.703 152.078 262.25 152.234 261.875 152.547C261.516 152.859 261.211 153.266 260.961 153.766C260.727 154.25 260.539 154.797 260.398 155.406C260.258 156.016 260.148 156.625 260.07 157.234C260.008 157.844 259.961 158.422 259.93 158.969C259.914 159.5 259.906 159.938 259.906 160.281C259.828 163.047 259.766 165.797 259.719 168.531C259.672 171.25 259.609 174 259.531 176.781L247.578 177.297C247.891 171.781 248.188 166.297 248.469 160.844C248.766 155.391 249 149.906 249.172 144.391L260.234 143.828L260.141 147.578C260.578 147.047 261.047 146.547 261.547 146.078C262.062 145.609 262.609 145.211 263.188 144.883C263.766 144.539 264.375 144.273 265.016 144.086C265.672 143.883 266.359 143.781 267.078 143.781C268.406 143.781 269.57 144 270.57 144.438C271.57 144.875 272.43 145.469 273.148 146.219C273.867 146.969 274.469 147.859 274.953 148.891C275.438 149.906 275.828 150.992 276.125 152.148C276.422 153.305 276.648 154.516 276.805 155.781C276.961 157.031 277.062 158.266 277.109 159.484C277.172 160.703 277.203 161.883 277.203 163.023C277.203 164.164 277.203 165.203 277.203 166.141ZM307.766 172.75C307.031 173.672 306.125 174.477 305.047 175.164C303.969 175.852 302.812 176.422 301.578 176.875C300.344 177.328 299.078 177.672 297.781 177.906C296.484 178.125 295.25 178.234 294.078 178.234C291.812 178.234 289.727 177.852 287.82 177.086C285.914 176.32 284.266 175.258 282.875 173.898C281.5 172.523 280.422 170.891 279.641 169C278.859 167.109 278.469 165.047 278.469 162.812C278.469 161.109 278.664 159.453 279.055 157.844C279.445 156.234 280 154.727 280.719 153.32C281.453 151.914 282.344 150.625 283.391 149.453C284.438 148.281 285.625 147.273 286.953 146.43C288.281 145.586 289.734 144.938 291.312 144.484C292.906 144.016 294.594 143.781 296.375 143.781C297.047 143.781 297.766 143.812 298.531 143.875C299.297 143.922 300.055 144.016 300.805 144.156C301.57 144.281 302.312 144.461 303.031 144.695C303.75 144.93 304.406 145.219 305 145.562L304.344 154.516C303.469 154.188 302.562 153.969 301.625 153.859C300.703 153.734 299.797 153.672 298.906 153.672C297.656 153.672 296.484 153.844 295.391 154.188C294.312 154.516 293.367 155.008 292.555 155.664C291.758 156.32 291.125 157.141 290.656 158.125C290.188 159.109 289.953 160.25 289.953 161.547C289.953 162.359 290.062 163.148 290.281 163.914C290.5 164.664 290.828 165.336 291.266 165.93C291.719 166.508 292.273 166.977 292.93 167.336C293.602 167.695 294.375 167.875 295.25 167.875C295.844 167.875 296.453 167.797 297.078 167.641C297.719 167.484 298.266 167.219 298.719 166.844L298.812 165.016L293.188 164.922L293.469 157.891C295.797 157.812 298.125 157.75 300.453 157.703C302.781 157.641 305.125 157.562 307.484 157.469L307.766 172.75ZM346.25 156.391C346.25 157.906 346.023 159.25 345.57 160.422C345.117 161.594 344.492 162.625 343.695 163.516C342.914 164.391 341.992 165.133 340.93 165.742C339.867 166.336 338.727 166.828 337.508 167.219C336.305 167.594 335.055 167.875 333.758 168.062C332.461 168.234 331.188 168.328 329.938 168.344V178.328H319.016C319.016 176.547 319.016 174.812 319.016 173.125C319.031 171.438 319.039 169.766 319.039 168.109C319.055 166.438 319.062 164.758 319.062 163.07C319.078 161.383 319.094 159.641 319.109 157.844C319.141 155.938 319.148 154.031 319.133 152.125C319.117 150.219 319.156 148.297 319.25 146.359C321.25 145.766 323.25 145.32 325.25 145.023C327.25 144.727 329.312 144.578 331.438 144.578C332.641 144.578 333.844 144.68 335.047 144.883C336.25 145.07 337.398 145.375 338.492 145.797C339.602 146.219 340.625 146.75 341.562 147.391C342.516 148.016 343.336 148.766 344.023 149.641C344.711 150.516 345.25 151.516 345.641 152.641C346.047 153.766 346.25 155.016 346.25 156.391ZM335.844 157.188C335.844 156.172 335.531 155.383 334.906 154.82C334.297 154.242 333.5 153.953 332.516 153.953C332.188 153.953 331.844 153.984 331.484 154.047C331.141 154.094 330.812 154.156 330.5 154.234L330.219 161.078C330.438 161.109 330.648 161.125 330.852 161.125C331.055 161.125 331.266 161.125 331.484 161.125C332.047 161.125 332.586 161.031 333.102 160.844C333.633 160.656 334.102 160.391 334.508 160.047C334.914 159.688 335.234 159.273 335.469 158.805C335.719 158.32 335.844 157.781 335.844 157.188ZM376.555 160.047C376.555 161.469 376.391 162.844 376.062 164.172C375.734 165.484 375.258 166.719 374.633 167.875C374.023 169.031 373.273 170.094 372.383 171.062C371.508 172.016 370.516 172.836 369.406 173.523C368.312 174.211 367.117 174.75 365.82 175.141C364.523 175.516 363.148 175.703 361.695 175.703C360.289 175.703 358.945 175.523 357.664 175.164C356.398 174.805 355.211 174.305 354.102 173.664C352.992 173.008 351.984 172.227 351.078 171.32C350.188 170.398 349.422 169.383 348.781 168.273C348.156 167.148 347.664 165.945 347.305 164.664C346.961 163.383 346.789 162.047 346.789 160.656C346.789 159.297 346.953 157.969 347.281 156.672C347.609 155.359 348.078 154.125 348.688 152.969C349.312 151.812 350.062 150.75 350.938 149.781C351.812 148.812 352.789 147.977 353.867 147.273C354.961 146.57 356.141 146.023 357.406 145.633C358.672 145.242 360.008 145.047 361.414 145.047C363.68 145.047 365.742 145.398 367.602 146.102C369.477 146.805 371.07 147.812 372.383 149.125C373.711 150.422 374.734 152 375.453 153.859C376.188 155.703 376.555 157.766 376.555 160.047ZM366.148 160.656C366.148 159.984 366.047 159.336 365.844 158.711C365.656 158.07 365.375 157.508 365 157.023C364.625 156.523 364.156 156.125 363.594 155.828C363.047 155.516 362.414 155.359 361.695 155.359C360.961 155.359 360.305 155.492 359.727 155.758C359.148 156.023 358.648 156.391 358.227 156.859C357.82 157.312 357.508 157.852 357.289 158.477C357.07 159.086 356.961 159.734 356.961 160.422C356.961 161.078 357.055 161.734 357.242 162.391C357.43 163.047 357.711 163.641 358.086 164.172C358.461 164.703 358.922 165.133 359.469 165.461C360.031 165.789 360.68 165.953 361.414 165.953C362.148 165.953 362.805 165.812 363.383 165.531C363.977 165.234 364.477 164.844 364.883 164.359C365.289 163.859 365.602 163.289 365.82 162.648C366.039 162.008 366.148 161.344 366.148 160.656ZM406.133 145C405.43 150.5 404.828 155.977 404.328 161.43C403.828 166.867 403.352 172.344 402.898 177.859L393.289 178.562L393.711 174.953C393.398 175.312 393.031 175.625 392.609 175.891C392.203 176.156 391.766 176.375 391.297 176.547C390.828 176.703 390.344 176.82 389.844 176.898C389.344 176.961 388.867 176.984 388.414 176.969C387.352 176.953 386.352 176.75 385.414 176.359C384.477 175.953 383.617 175.422 382.836 174.766C382.055 174.094 381.352 173.32 380.727 172.445C380.102 171.555 379.57 170.625 379.133 169.656C378.711 168.672 378.383 167.672 378.148 166.656C377.93 165.641 377.82 164.656 377.82 163.703C377.82 162.297 377.844 160.844 377.891 159.344C377.953 157.828 378.055 156.312 378.195 154.797C378.336 153.281 378.516 151.781 378.734 150.297C378.969 148.812 379.258 147.391 379.602 146.031C381.508 146.125 383.422 146.211 385.344 146.289C387.266 146.367 389.18 146.391 391.086 146.359C390.727 147.719 390.367 149.086 390.008 150.461C389.664 151.82 389.352 153.195 389.07 154.586C388.789 155.961 388.562 157.344 388.391 158.734C388.219 160.125 388.133 161.531 388.133 162.953C388.133 163.281 388.148 163.75 388.18 164.359C388.211 164.969 388.289 165.57 388.414 166.164C388.555 166.758 388.758 167.281 389.023 167.734C389.305 168.172 389.695 168.391 390.195 168.391C390.789 168.391 391.32 168.141 391.789 167.641C392.258 167.125 392.672 166.438 393.031 165.578C393.391 164.719 393.695 163.727 393.945 162.602C394.211 161.477 394.43 160.305 394.602 159.086C394.789 157.852 394.938 156.609 395.047 155.359C395.156 154.109 395.234 152.938 395.281 151.844C395.344 150.734 395.383 149.742 395.398 148.867C395.43 147.992 395.445 147.312 395.445 146.828C395.445 146.516 395.438 146.211 395.422 145.914C395.406 145.617 395.383 145.312 395.352 145C396.367 145.031 397.375 145.055 398.375 145.07C399.375 145.086 400.383 145.094 401.398 145.094C402.18 145.094 402.961 145.094 403.742 145.094C404.539 145.078 405.336 145.047 406.133 145ZM435.008 155.406C435.008 156.625 434.898 157.734 434.68 158.734C434.477 159.719 434.148 160.625 433.695 161.453C433.242 162.281 432.656 163.047 431.938 163.75C431.219 164.453 430.352 165.125 429.336 165.766L434.914 175.703L424.367 177.766L420.758 167.781L417.852 167.875L417.43 177.625H407.352C407.43 174.062 407.5 170.516 407.562 166.984C407.641 163.453 407.727 159.906 407.82 156.344C407.852 154.547 407.883 152.766 407.914 151C407.945 149.234 408.008 147.453 408.102 145.656C409.195 145.25 410.273 144.914 411.336 144.648C412.398 144.383 413.461 144.18 414.523 144.039C415.602 143.883 416.688 143.781 417.781 143.734C418.891 143.672 420.023 143.641 421.18 143.641C422.961 143.641 424.68 143.891 426.336 144.391C428.008 144.875 429.484 145.609 430.766 146.594C432.047 147.578 433.07 148.805 433.836 150.273C434.617 151.742 435.008 153.453 435.008 155.406ZM424.508 156.156C424.508 155.5 424.414 154.898 424.227 154.352C424.055 153.805 423.789 153.336 423.43 152.945C423.086 152.539 422.648 152.227 422.117 152.008C421.602 151.773 420.992 151.656 420.289 151.656C419.977 151.656 419.672 151.68 419.375 151.727C419.078 151.758 418.789 151.812 418.508 151.891L418.133 160.609H418.695C419.367 160.609 420.047 160.523 420.734 160.352C421.438 160.18 422.062 159.914 422.609 159.555C423.172 159.195 423.625 158.734 423.969 158.172C424.328 157.609 424.508 156.938 424.508 156.156Z" fill="white"/>
+</svg></div>
+          <div class="face back bk-coffee">
+            <div class="strip">NO. 0003</div>
+            <div class="body">
+              <div class="shot has-img" role="img" aria-label="Morning Pour prototype: a sunlit 3D coffee counter with an espresso machine, milk jug and an empty glass" style="background-image:url(asset/image/Play/coffee-shot.webp);background-size:cover"></div>
+              <div class="info">
+                <h4>What I did</h4>
+                <p>Built a 3D morning coffee corner with Claude: pour, add ice, watch it fog up.</p>
+                <h4>What I learned</h4>
+                <p>With AI, I can quickly turn a small idea into a fun, interactive game.</p>
+                <a class="try" href="https://claude.ai/artifact/JJN7M7z3tB7pEXpRM3dAfp" target="_blank" rel="noopener">Try the prototype <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="hp hp-slot hp-s1" id="hpS1"></div>
+
+      <article class="card tucked" data-i="1" aria-label="IdeaFlow">
+        <div class="flip">
+          <div class="face front"><svg viewBox="0 0 540 335" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clipIF)"><rect width="540" height="335" rx="22" fill="#EBA45D"/><path d="M-18 310.73L471.474 -8L482 0.664495L53.7105 372L-18 310.73Z" fill="#E8DAF6"/><path d="M97.4725 384.887L506.344 -27.4544L518.505 -21.1652L180.804 429.924L97.4725 384.887Z" fill="#C4EDC2"/><path d="M227.693 465.485L514.492 -35.3285L527.899 -32.2909L320.079 488.175L227.693 465.485Z" fill="#BDE8EF"/><path d="M54.8516 55L52.2734 86.9219L42.3828 87.4375V55.6562L54.8516 55ZM83.0469 69.3906C83.0469 71.5781 82.7656 73.5547 82.2031 75.3203C81.6406 77.0703 80.8516 78.6328 79.8359 80.0078C78.8359 81.3672 77.6406 82.5391 76.25 83.5234C74.8594 84.5078 73.3359 85.3203 71.6797 85.9609C70.0234 86.5859 68.2578 87.0547 66.3828 87.3672C64.5234 87.6641 62.6094 87.8125 60.6406 87.8125C59.9062 87.8125 59.1875 87.7969 58.4844 87.7656C57.7812 87.7188 57.0625 87.6562 56.3281 87.5781L56.9844 56.125C58.7031 55.5781 60.4688 55.1953 62.2812 54.9766C64.1094 54.7422 65.9219 54.625 67.7188 54.625C69.9531 54.625 72.0078 54.9609 73.8828 55.6328C75.7578 56.3047 77.375 57.2734 78.7344 58.5391C80.0938 59.8047 81.1484 61.3516 81.8984 63.1797C82.6641 65.0078 83.0469 67.0781 83.0469 69.3906ZM73.4375 70.8906C73.4531 70.0469 73.3594 69.2344 73.1562 68.4531C72.9688 67.6719 72.6484 66.9844 72.1953 66.3906C71.7578 65.7812 71.1953 65.2969 70.5078 64.9375C69.8203 64.5625 69 64.3594 68.0469 64.3281L67.1094 78.8594C68.0469 78.7188 68.8984 78.4141 69.6641 77.9453C70.4297 77.4609 71.0859 76.875 71.6328 76.1875C72.1953 75.4844 72.625 74.7109 72.9219 73.8672C73.2344 73.0078 73.4062 72.125 73.4375 71.2188V70.8906ZM106.672 54.2031C106.578 55.6719 106.492 57.125 106.414 58.5625C106.336 60 106.234 61.4531 106.109 62.9219L96.1719 63.4375L95.9375 66.3906H102.922L102.406 73.6562L95.375 73.8906L95.1406 77.3125H100.953H105.078C104.984 79.0312 104.883 80.7422 104.773 82.4453C104.68 84.1328 104.594 85.8281 104.516 87.5312L84.3125 88L85.0625 54.2031H106.672ZM137.047 85.9844L125.422 87.4844L124.016 82.1875H118.672L117.5 87.4844L105.547 86.3125L114.875 55.0938L127.906 54.4375L137.047 85.9844ZM123.172 75.0156L121.391 66.8594L119.656 75.0156H123.172ZM159.734 54.2031C159.641 55.6719 159.555 57.125 159.477 58.5625C159.398 60 159.297 61.4531 159.172 62.9219L149.234 63.4375V66.3906H157.859L157.391 73.6562L149.188 73.8906L149.234 87.7656L137.375 88L138.125 54.2031H159.734ZM181.531 74.6406L180.547 85.0469L160.812 86.5938C160.906 81.1406 161.008 75.7188 161.117 70.3281C161.242 64.9375 161.391 59.5156 161.562 54.0625H173.75C173.391 57.4844 173.047 60.9062 172.719 64.3281C172.391 67.7344 172.156 71.1719 172.016 74.6406C172.75 74.6719 173.477 74.6875 174.195 74.6875C174.914 74.6875 175.641 74.6875 176.375 74.6875C177.25 74.6875 178.109 74.6797 178.953 74.6641C179.797 74.6484 180.656 74.6406 181.531 74.6406ZM211.602 71.4531C211.602 72.875 211.438 74.25 211.109 75.5781C210.781 76.8906 210.305 78.125 209.68 79.2812C209.07 80.4375 208.32 81.5 207.43 82.4688C206.555 83.4219 205.562 84.2422 204.453 84.9297C203.359 85.6172 202.164 86.1562 200.867 86.5469C199.57 86.9219 198.195 87.1094 196.742 87.1094C195.336 87.1094 193.992 86.9297 192.711 86.5703C191.445 86.2109 190.258 85.7109 189.148 85.0703C188.039 84.4141 187.031 83.6328 186.125 82.7266C185.234 81.8047 184.469 80.7891 183.828 79.6797C183.203 78.5547 182.711 77.3516 182.352 76.0703C182.008 74.7891 181.836 73.4531 181.836 72.0625C181.836 70.7031 182 69.375 182.328 68.0781C182.656 66.7656 183.125 65.5312 183.734 64.375C184.359 63.2188 185.109 62.1562 185.984 61.1875C186.859 60.2188 187.836 59.3828 188.914 58.6797C190.008 57.9766 191.188 57.4297 192.453 57.0391C193.719 56.6484 195.055 56.4531 196.461 56.4531C198.727 56.4531 200.789 56.8047 202.648 57.5078C204.523 58.2109 206.117 59.2188 207.43 60.5312C208.758 61.8281 209.781 63.4062 210.5 65.2656C211.234 67.1094 211.602 69.1719 211.602 71.4531ZM201.195 72.0625C201.195 71.3906 201.094 70.7422 200.891 70.1172C200.703 69.4766 200.422 68.9141 200.047 68.4297C199.672 67.9297 199.203 67.5312 198.641 67.2344C198.094 66.9219 197.461 66.7656 196.742 66.7656C196.008 66.7656 195.352 66.8984 194.773 67.1641C194.195 67.4297 193.695 67.7969 193.273 68.2656C192.867 68.7188 192.555 69.2578 192.336 69.8828C192.117 70.4922 192.008 71.1406 192.008 71.8281C192.008 72.4844 192.102 73.1406 192.289 73.7969C192.477 74.4531 192.758 75.0469 193.133 75.5781C193.508 76.1094 193.969 76.5391 194.516 76.8672C195.078 77.1953 195.727 77.3594 196.461 77.3594C197.195 77.3594 197.852 77.2188 198.43 76.9375C199.023 76.6406 199.523 76.25 199.93 75.7656C200.336 75.2656 200.648 74.6953 200.867 74.0547C201.086 73.4141 201.195 72.75 201.195 72.0625ZM254.727 55.4688L249.242 87.9531L235.93 88.2344L233.07 71.4062L230.211 87.0156L216.898 87.4844L211.367 55.4688L222.992 54.4375L225.336 73.8906L228.477 54.4375H237.617L241.273 74.125L243.148 54.4375L254.727 55.4688Z" fill="white"/></g><defs><clipPath id="clipIF"><rect width="540" height="335" rx="22" fill="white"/></clipPath></defs></svg></div>
+          <div class="face back bk-idea">
+            <div class="strip">NO. 0002</div>
+            <div class="body">
+              <div class="shot has-img" role="img" aria-label="IdeaFlow prototype: a Crazy 8s round with a timer, an idea box, Hint and AI suggest" style="background-image:url(asset/image/Play/idea-shot.webp);background-color:#FEFCF7"></div>
+              <div class="info">
+                <h4>What I did</h4>
+                <p>Built a Crazy 8s tool in Bolt + Claude API: a timer, hints and AI sketches.</p>
+                <h4>What I learned</h4>
+                <p>Leverage the power of AI to build tools that make the design process easier.</p>
+                <a class="try" href="https://mini-project-web-app-zppa.bolt.host" target="_blank" rel="noopener">Try the prototype <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="hp hp-slot hp-s2" id="hpS2"></div>
+
+      <article class="card tucked" data-i="0" aria-label="Pomi">
+        <div class="flip">
+          <div class="face front"><svg viewBox="0 0 540 335" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="540" height="335" rx="22" fill="#F6F1EC"/><path d="M24 291V59.2111C24 51.144 28.8673 43.7981 36.4209 40.966C117.737 10.4778 167.742 26.8876 193.324 45.036C199.249 49.2396 206.747 50.9918 213.735 49.007C297.826 25.1246 342.334 51.1695 356.731 87.8001C359.911 95.8919 366.666 102.319 374.977 104.871C407.3 114.795 422.24 141.857 427.266 163.899C429.97 175.761 439.97 186.335 451.98 188.285C513.751 198.315 519.966 255.089 514.39 295.388C513.115 304.607 504.926 311 495.619 311H44C32.9543 311 24 302.046 24 291Z" fill="#A9BAEA"/><path d="M490 38L490 39.5L516 39.5L516 38L516 36.5L490 36.5L490 38ZM517.061 39.0607C517.646 38.4749 517.646 37.5251 517.061 36.9393L507.515 27.3934C506.929 26.8076 505.979 26.8076 505.393 27.3934C504.808 27.9792 504.808 28.9289 505.393 29.5147L513.879 38L505.393 46.4853C504.808 47.0711 504.808 48.0208 505.393 48.6066C505.979 49.1924 506.929 49.1924 507.515 48.6066L517.061 39.0607Z" fill="black"/><path d="M66.048 258.776V251.352H74.944C77.9307 251.352 80.1707 250.776 81.664 249.624C83.1573 248.429 83.904 246.445 83.904 243.672C83.904 241.155 83.2213 239.277 81.856 238.04C80.4907 236.76 78.3787 236.12 75.52 236.12H66.048V228.76H76.032C78.5493 228.76 80.8533 229.059 82.944 229.656C85.0773 230.253 86.912 231.171 88.448 232.408C90.0267 233.645 91.2213 235.203 92.032 237.08C92.8853 238.957 93.312 241.176 93.312 243.736C93.312 247.021 92.5653 249.795 91.072 252.056C89.6213 254.275 87.4667 255.96 84.608 257.112C81.7493 258.221 78.208 258.776 73.984 258.776H66.048ZM59.52 271V228.76H68.736V271H59.52ZM111.782 271.896C108.496 271.896 105.595 271.235 103.078 269.912C100.56 268.589 98.5762 266.627 97.1255 264.024C95.7175 261.379 95.0135 258.093 95.0135 254.168C95.0135 250.157 95.7388 246.851 97.1895 244.248C98.6828 241.645 100.688 239.704 103.206 238.424C105.723 237.144 108.582 236.504 111.782 236.504C115.067 236.504 117.968 237.165 120.486 238.488C123.003 239.811 124.966 241.773 126.374 244.376C127.824 246.979 128.55 250.264 128.55 254.232C128.55 258.285 127.803 261.613 126.31 264.216C124.859 266.819 122.854 268.76 120.294 270.04C117.776 271.277 114.939 271.896 111.782 271.896ZM111.974 264.984C113.552 264.984 114.875 264.6 115.942 263.832C117.008 263.021 117.819 261.848 118.374 260.312C118.928 258.776 119.206 256.92 119.206 254.744C119.206 252.397 118.907 250.413 118.31 248.792C117.712 247.171 116.838 245.933 115.686 245.08C114.576 244.184 113.19 243.736 111.526 243.736C110.032 243.736 108.731 244.141 107.622 244.952C106.555 245.72 105.744 246.893 105.19 248.472C104.635 250.008 104.358 251.885 104.358 254.104C104.358 257.56 105.019 260.248 106.342 262.168C107.707 264.045 109.584 264.984 111.974 264.984ZM132.328 271V251.8L132.264 237.4H140.008L139.816 250.008H140.648C141.074 246.808 141.736 244.227 142.632 242.264C143.528 240.301 144.701 238.851 146.152 237.912C147.645 236.973 149.373 236.504 151.336 236.504C153.469 236.504 155.197 237.016 156.52 238.04C157.842 239.021 158.824 240.515 159.464 242.52C160.146 244.483 160.488 246.979 160.488 250.008H161.256C161.682 246.808 162.386 244.227 163.368 242.264C164.349 240.301 165.608 238.851 167.144 237.912C168.68 236.973 170.45 236.504 172.456 236.504C174.248 236.504 175.805 236.845 177.128 237.528C178.45 238.211 179.56 239.235 180.456 240.6C181.352 241.923 182.013 243.608 182.44 245.656C182.909 247.661 183.144 250.008 183.144 252.696V271H173.928V253.656C173.928 251.608 173.757 249.923 173.416 248.6C173.074 247.235 172.541 246.232 171.816 245.592C171.133 244.909 170.237 244.568 169.128 244.568C167.805 244.568 166.61 245.101 165.544 246.168C164.52 247.192 163.709 248.707 163.112 250.712C162.514 252.675 162.216 255.064 162.216 257.88V271H153.192V253.592C153.192 251.544 153 249.859 152.616 248.536C152.274 247.213 151.741 246.232 151.016 245.592C150.333 244.909 149.458 244.568 148.392 244.568C147.069 244.568 145.896 245.059 144.872 246.04C143.848 247.021 143.037 248.515 142.44 250.52C141.842 252.483 141.544 254.936 141.544 257.88V271H132.328ZM187.798 271V237.4H197.014V271H187.798ZM192.342 233.688C190.55 233.688 189.184 233.304 188.246 232.536C187.307 231.768 186.838 230.68 186.838 229.272C186.838 227.779 187.307 226.669 188.246 225.944C189.227 225.176 190.592 224.792 192.342 224.792C194.176 224.792 195.563 225.176 196.502 225.944C197.483 226.712 197.974 227.821 197.974 229.272C197.974 230.68 197.483 231.768 196.502 232.536C195.563 233.304 194.176 233.688 192.342 233.688Z" fill="white"/></svg></div>
+          <div class="face back bk-pomi">
+            <div class="strip">NO. 0001</div>
+            <div class="body">
+              <div class="shot has-img" role="img" aria-label="Pomi prototype: a weekly attention receipt printing from the puff print printer" style="background-image:url(asset/image/Play/pomi-shot.webp);background-color:#F6F1EC"></div>
+              <div class="info">
+                <h4>What I did</h4>
+                <p>My team vibe-coded Pomi from a design system I wrote with Claude.</p>
+                <h4>What I learned</h4>
+                <p>AI helped build a reusable design system, so I could focus on making the idea good.</p>
+                <a class="try" href="https://pomi-demo-final.vercel.app/" target="_blank" rel="noopener">Try the prototype <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="hp hp-front" id="hpFront">
+        <svg viewBox="0 0 560 180" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 8Q0 0 8 0L110 0C190 0 210 30 280 30C350 30 370 0 450 0L552 0Q560 0 560 8L560 150Q560 180 530 180L30 180Q0 180 0 150Z" fill="var(--lf)"/>
+          <path d="M12 40L12 146Q12 168 34 168L526 168Q548 168 548 146L548 40" fill="none" stroke="var(--ls)" stroke-width="1.5" stroke-dasharray="6 5" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <span class="mono" aria-hidden="true">LW</span>
+      </div>
+      <button class="holder-hit" id="holderHit" type="button" aria-label="Open the card holder to see my AI prototypes"></button>
+
+      <button class="flip-pill" id="flipPill" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg><span>Flip</span></button>
+    </div>
+  </section>
+
+  <section class="toolbox" aria-labelledby="tb">
+    <div class="lw-sh lw-sh--chapter lw-sh--arrow-after"><h2 class="lw-sh__title" id="tb">How I Use AI</h2><svg class="lw-sh__arrow" viewBox="0 0 71 71" aria-hidden="true"><path fill="currentColor" d="M64.2426 70.2422C67.5564 70.2422 70.2426 67.5559 70.2426 64.2422V10.2422C70.2426 6.92848 67.5564 4.24219 64.2426 4.24219C60.9289 4.24219 58.2426 6.92848 58.2426 10.2422V58.2422H10.2426C6.92894 58.2422 4.24265 60.9285 4.24265 64.2422C4.24265 67.5559 6.92894 70.2422 10.2426 70.2422H64.2426ZM4.24265 4.24219L4.64916e-06 8.48483L60 68.4848L64.2426 64.2422L68.4853 59.9995L8.48529 -0.000453115L4.24265 4.24219Z"/></svg></div>
+    <ul class="tools">
+      <li><div class="tile" style="background:#FFE6B3"><svg viewBox="0 0 248 139" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path class="cf" d="M125.547 18.5333H38.9286C31.2403 18.5333 25.0078 24.7566 25.0078 32.4333V91.1222C25.0078 98.799 31.2403 105.022 38.9286 105.022H125.547C133.235 105.022 139.467 98.799 139.467 91.1222V32.4333C139.467 24.7566 133.235 18.5333 125.547 18.5333Z" fill="white"/>
+<path d="M125.547 18.5333H38.9286C31.2403 18.5333 25.0078 24.7566 25.0078 32.4333V91.1222C25.0078 98.799 31.2403 105.022 38.9286 105.022H125.547C133.235 105.022 139.467 98.799 139.467 91.1222V32.4333C139.467 24.7566 133.235 18.5333 125.547 18.5333Z" stroke="#DE7E98" stroke-width="3.96667"/>
+<g class="chat">
+<rect class="cb" style="--i:0" x="80" y="27" width="50" height="10" rx="5" fill="#DE7E98"/>
+<rect class="cb" style="--i:1" x="34" y="44" width="58" height="9" rx="4.5" fill="black"/>
+<rect class="cb" style="--i:2" x="34" y="57" width="40" height="9" rx="4.5" fill="black"/>
+<rect class="cb" style="--i:3" x="34" y="70" width="50" height="9" rx="4.5" fill="black"/>
+<rect class="cin" x="33" y="87" width="98" height="12" rx="6" fill="white" stroke="black" stroke-width="2"/>
+<circle class="cin" cx="124" cy="93" r="3.5" fill="#DE7E98"/>
+</g>
+<g class="proto"><path d="M193.604 33.9778H103.892C94.4955 33.9778 86.8779 41.584 86.8779 50.9667V106.567C86.8779 115.949 94.4955 123.556 103.892 123.556H193.604C203 123.556 210.618 115.949 210.618 106.567V50.9667C210.618 41.584 203 33.9778 193.604 33.9778Z" fill="black"/><path d="M167.309 54.0555H111.626C108.209 54.0555 105.439 56.8214 105.439 60.2333C105.439 63.6452 108.209 66.4111 111.626 66.4111H167.309C170.726 66.4111 173.496 63.6452 173.496 60.2333C173.496 56.8214 170.726 54.0555 167.309 54.0555Z" fill="white"/><path d="M141.788 77.2222H115.493C109.941 77.2222 105.439 81.7168 105.439 87.2611C105.439 92.8054 109.941 97.3 115.493 97.3H141.788C147.341 97.3 151.842 92.8054 151.842 87.2611C151.842 81.7168 147.341 77.2222 141.788 77.2222Z" fill="#DE7E98"/></g>
+<g class="cur"><path d="M144.107 86.4889V120.467L153.388 111.2L160.348 125.872L167.309 122.474L160.348 108.111H173.496L144.107 86.4889Z" fill="white" stroke="black" stroke-width="2.11556" stroke-linejoin="round"/></g>
+</svg></div><div><h3>Prototype Fast</h3><p>Figma flows into clickable builds</p></div></li>
+      <li><div class="tile" style="background:#D3DDF7"><svg viewBox="0 0 248 139" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g class="up" style="--i:0"><path d="M102.307 26.51L50.8666 37.4277C43.3463 39.0238 38.5458 46.4049 40.1443 53.9139L54.9373 123.406C56.5358 130.915 63.9279 135.708 71.4482 134.112L122.888 123.195C130.409 121.598 135.209 114.217 133.611 106.708L118.818 37.2163C117.219 29.7073 109.827 24.914 102.307 26.51Z" fill="white"/></g>
+<g class="up" style="--i:2"><path d="M197.133 37.4277L145.693 26.51C138.173 24.9139 130.78 29.7073 129.182 37.2163L114.389 106.708C112.79 114.217 117.591 121.598 125.111 123.194L176.551 134.112C184.072 135.708 191.464 130.915 193.062 123.406L207.855 53.9139C209.454 46.4049 204.653 39.0238 197.133 37.4277Z" fill="white"/></g>
+<g class="up" style="--i:1"><path d="M150.294 15.4445H97.7049C90.0167 15.4445 83.7842 21.6677 83.7842 29.3445V106.567C83.7842 114.243 90.0167 120.467 97.7049 120.467H150.294C157.983 120.467 164.215 114.243 164.215 106.567V29.3445C164.215 21.6677 157.983 15.4445 150.294 15.4445Z" fill="white"/></g>
+<g class="up real" style="--i:3"><path d="M150.294 15.4445H97.7049C90.0167 15.4445 83.7842 21.6677 83.7842 29.3445V106.567C83.7842 114.243 90.0167 120.467 97.7049 120.467H150.294C157.983 120.467 164.215 114.243 164.215 106.567V29.3445C164.215 21.6677 157.983 15.4445 150.294 15.4445Z" fill="black"/><path d="M137.92 33.9778H100.798C98.2357 33.9778 96.1582 36.0522 96.1582 38.6111C96.1582 41.17 98.2357 43.2444 100.798 43.2444H137.92C140.483 43.2444 142.561 41.17 142.561 38.6111C142.561 36.0522 140.483 33.9778 137.92 33.9778Z" fill="white"/><path opacity="0.85" d="M144.107 52.5111H103.892C99.6207 52.5111 96.1582 55.9685 96.1582 60.2333V78.7667C96.1582 83.0315 99.6207 86.4889 103.892 86.4889H144.107C148.379 86.4889 151.841 83.0315 151.841 78.7667V60.2333C151.841 55.9685 148.379 52.5111 144.107 52.5111Z" fill="white"/><path d="M120.906 95.7556H102.345C98.9282 95.7556 96.1582 98.5214 96.1582 101.933C96.1582 105.345 98.9282 108.111 102.345 108.111H120.906C124.323 108.111 127.093 105.345 127.093 101.933C127.093 98.5214 124.323 95.7556 120.906 95.7556Z" fill="#DE7E98"/></g>
+<g class="up chk" style="--i:4"><path d="M164.216 33.9778C172.758 33.9778 179.683 27.0631 179.683 18.5333C179.683 10.0036 172.758 3.0889 164.216 3.0889C155.673 3.0889 148.748 10.0036 148.748 18.5333C148.748 27.0631 155.673 33.9778 164.216 33.9778Z" fill="#DE7E98"/><path d="M156.791 18.8422L161.895 23.7844L171.176 13.9" stroke="white" stroke-width="3.43778" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg></div><div><h3>Explore Options</h3><p>Many directions, then weigh tradeoffs</p></div></li>
+      <li><div class="tile" style="background:#BBE0D6"><svg viewBox="0 0 220 123" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path class="pop" style="--i:0" d="M44.1384 54.6667C54.7475 54.6667 63.348 46.1004 63.348 35.5333C63.348 24.9663 54.7475 16.4 44.1384 16.4C33.5292 16.4 24.9287 24.9663 24.9287 35.5333C24.9287 46.1004 33.5292 54.6667 44.1384 54.6667Z" fill="#DE7E98"/>
+<path class="pop" style="--i:1" d="M105.884 16.4H86.6742C81.3696 16.4 77.0693 20.6831 77.0693 25.9667V45.1C77.0693 50.3835 81.3696 54.6667 86.6742 54.6667H105.884C111.188 54.6667 115.489 50.3835 115.489 45.1V25.9667C115.489 20.6831 111.188 16.4 105.884 16.4Z" fill="white"/>
+<path class="pop" style="--i:2" d="M185.467 23.2333H141.559C134.739 23.2333 129.21 28.7402 129.21 35.5333C129.21 42.3264 134.739 47.8333 141.559 47.8333H185.467C192.287 47.8333 197.816 42.3264 197.816 35.5333C197.816 28.7402 192.287 23.2333 185.467 23.2333Z" fill="black"/>
+<path class="pop" style="--i:3" d="M81.1855 73.8H37.2778C30.4576 73.8 24.9287 79.3069 24.9287 86.1C24.9287 92.8931 30.4576 98.4 37.2778 98.4H81.1855C88.0057 98.4 93.5346 92.8931 93.5346 86.1C93.5346 79.3069 88.0057 73.8 81.1855 73.8Z" fill="black"/>
+<path class="pop" style="--i:4" d="M125.093 102.5C134.187 102.5 141.559 95.1575 141.559 86.1C141.559 77.0425 134.187 69.7 125.093 69.7C116 69.7 108.628 77.0425 108.628 86.1C108.628 95.1575 116 102.5 125.093 102.5Z" stroke="#DE7E98" stroke-width="7.27222"/>
+<g class="pop" style="--i:5"><path d="M185.467 66.9667H166.257C160.953 66.9667 156.652 71.2498 156.652 76.5333V95.6667C156.652 100.95 160.953 105.233 166.257 105.233H185.467C190.771 105.233 195.072 100.95 195.072 95.6667V76.5333C195.072 71.2498 190.771 66.9667 185.467 66.9667Z" fill="black"/>
+<path d="M167.629 86.1H184.094M175.862 77.9V94.3" stroke="white" stroke-width="3.96667" stroke-linecap="round"/></g>
+</svg></div><div><h3>Write Systems</h3><p>Design specs AI can build from</p></div></li>
+      <li><div class="tile" style="background:#E5DAFB"><svg viewBox="0 0 245 137" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M55.2663 15.2222H30.8177C25.7542 15.2222 21.6494 19.3114 21.6494 24.3556V54.8C21.6494 59.8442 25.7542 63.9333 30.8177 63.9333H55.2663C60.3298 63.9333 64.4345 59.8442 64.4345 54.8V24.3556C64.4345 19.3114 60.3298 15.2222 55.2663 15.2222Z" fill="white"/>
+<path d="M107.219 15.2222H82.7708C77.7073 15.2222 73.6025 19.3114 73.6025 24.3556V54.8C73.6025 59.8442 77.7073 63.9333 82.7708 63.9333H107.219C112.283 63.9333 116.388 59.8442 116.388 54.8V24.3556C116.388 19.3114 112.283 15.2222 107.219 15.2222Z" fill="white"/>
+<path d="M211.127 15.2222H186.678C181.615 15.2222 177.51 19.3114 177.51 24.3556V54.8C177.51 59.8442 181.615 63.9333 186.678 63.9333H211.127C216.19 63.9333 220.295 59.8442 220.295 54.8V24.3556C220.295 19.3114 216.19 15.2222 211.127 15.2222Z" fill="white"/>
+<path d="M55.2663 73.0667H30.8177C25.7542 73.0667 21.6494 77.1558 21.6494 82.2V112.644C21.6494 117.689 25.7542 121.778 30.8177 121.778H55.2663C60.3298 121.778 64.4345 117.689 64.4345 112.644V82.2C64.4345 77.1558 60.3298 73.0667 55.2663 73.0667Z" fill="white"/>
+<path d="M107.219 73.0667H82.7708C77.7073 73.0667 73.6025 77.1558 73.6025 82.2V112.644C73.6025 117.689 77.7073 121.778 82.7708 121.778H107.219C112.283 121.778 116.388 117.689 116.388 112.644V82.2C116.388 77.1558 112.283 73.0667 107.219 73.0667Z" fill="white"/>
+<path d="M159.173 73.0667H134.724C129.66 73.0667 125.556 77.1558 125.556 82.2V112.644C125.556 117.689 129.66 121.778 134.724 121.778H159.173C164.236 121.778 168.341 117.689 168.341 112.644V82.2C168.341 77.1558 164.236 73.0667 159.173 73.0667Z" fill="white"/>
+<path d="M211.127 73.0667H186.678C181.615 73.0667 177.51 77.1558 177.51 82.2V112.644C177.51 117.689 181.615 121.778 186.678 121.778H211.127C216.19 121.778 220.295 117.689 220.295 112.644V82.2C220.295 77.1558 216.19 73.0667 211.127 73.0667Z" fill="white"/>
+<g opacity="0.55">
+<path d="M32.3457 45.6667C38.4579 33.4889 46.0981 48.7111 53.7383 36.5333" stroke="black" stroke-width="3.17333" stroke-linecap="round"/>
+<path d="M84.2988 33.4889H105.691M84.2988 45.6667H98.0512" stroke="black" stroke-width="3.17333" stroke-linecap="round"/>
+<path d="M198.902 48.7111C203.965 48.7111 208.07 44.622 208.07 39.5778C208.07 34.5336 203.965 30.4444 198.902 30.4444C193.838 30.4444 189.733 34.5336 189.733 39.5778C189.733 44.622 193.838 48.7111 198.902 48.7111Z" stroke="black" stroke-width="3.17333" stroke-linecap="round"/>
+<path d="M32.3457 97.4222H53.7383" stroke="black" stroke-width="3.17333" stroke-linecap="round"/>
+<path d="M136.252 88.2889L157.645 106.556M157.645 88.2889L136.252 106.556" stroke="black" stroke-width="3.17333" stroke-linecap="round"/>
+<path d="M188.206 106.556C192.79 91.3333 200.43 91.3333 209.599 106.556" stroke="black" stroke-width="3.17333" stroke-linecap="round"/>
+</g>
+<path d="M159.173 15.2222H134.724C129.66 15.2222 125.556 19.3114 125.556 24.3556V54.8C125.556 59.8442 129.66 63.9333 134.724 63.9333H159.173C164.236 63.9333 168.341 59.8442 168.341 54.8V24.3556C168.341 19.3114 164.236 15.2222 159.173 15.2222Z" fill="#DE7E98"/>
+<path class="spark" d="M145.834 31.4324C146.34 30.1832 148.109 30.1832 148.615 31.4324L150.499 36.0858C150.652 36.4634 150.952 36.7625 151.33 36.9144L155.986 38.786C157.24 39.2901 157.24 41.0654 155.986 41.5695L151.33 43.4411C150.952 43.5931 150.652 43.8922 150.499 44.2698L148.615 48.9232C148.109 50.1724 146.34 50.1724 145.834 48.9232L143.949 44.2698C143.796 43.8922 143.496 43.5931 143.118 43.4411L138.462 41.5695C137.208 41.0654 137.208 39.2901 138.462 38.786L143.118 36.9144C143.496 36.7625 143.796 36.4634 143.949 36.0858L145.834 31.4324Z" fill="white"/>
+</svg></div><div><h3>Spark Ideas</h3><p>A partner for Crazy 8s</p></div></li>
+      <li><div class="tile" style="background:#FADBE4"><svg viewBox="0 0 212 119" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M18.7334 103.133C47.8223 5.28889 108.645 2.64444 143.022 81.9778" stroke="black" stroke-width="3.96667" stroke-linecap="round" stroke-dasharray="1.32 10.58"/>
+<path class="ghost" opacity="0.45" d="M34.6004 67.4333C38.2516 67.4333 41.2115 64.4734 41.2115 60.8222C41.2115 57.171 38.2516 54.2111 34.6004 54.2111C30.9492 54.2111 27.9893 57.171 27.9893 60.8222C27.9893 64.4734 30.9492 67.4333 34.6004 67.4333Z" fill="#DE7E98"/>
+<path class="ghost" opacity="0.7" d="M63.6891 40.9889C68.8009 40.9889 72.9447 36.845 72.9447 31.7333C72.9447 26.6216 68.8009 22.4778 63.6891 22.4778C58.5774 22.4778 54.4336 26.6216 54.4336 31.7333C54.4336 36.845 58.5774 40.9889 63.6891 40.9889Z" fill="#DE7E98"/>
+<path class="ghost" d="M100.712 35.7C107.284 35.7 112.612 30.3722 112.612 23.8C112.612 17.2278 107.284 11.9 100.712 11.9C94.1393 11.9 88.8115 17.2278 88.8115 23.8C88.8115 30.3722 94.1393 35.7 100.712 35.7Z" fill="#DE7E98"/>
+<path class="shadow" opacity="0.2" d="M150.955 114.372C165.56 114.372 177.4 112.3 177.4 109.744C177.4 107.189 165.56 105.117 150.955 105.117C136.35 105.117 124.511 107.189 124.511 109.744C124.511 112.3 136.35 114.372 150.955 114.372Z" fill="black"/>
+<path class="ball" d="M150.955 107.1C161.909 107.1 170.789 99.4043 170.789 89.9111C170.789 80.4179 161.909 72.7222 150.955 72.7222C140.002 72.7222 131.122 80.4179 131.122 89.9111C131.122 99.4043 140.002 107.1 150.955 107.1Z" fill="#DE7E98"/>
+<path class="whoosh" d="M174.756 68.7556L187.978 60.8222M177.4 81.9778L193.267 79.3333" stroke="black" stroke-width="3.96667" stroke-linecap="round"/>
+</svg></div><div><h3>Craft Motions</h3><p>3D and interactions beyond Figma</p></div></li>
+    </ul>
+  </section>
+</main>
+
+<aside class="lab" id="lab" hidden aria-label="Curve lab">
+  <header><h2>Curve lab</h2><button class="x" id="labMin" type="button" aria-expanded="true">Hide</button></header>
+  <div class="content">
+    <p class="note" id="labNote">Open the holder, then scroll to ride the cards.</p>
+    <div class="lbl">Curve</div>
+    <div class="chips" id="curves"></div>
+    <label class="sl">Spacing<input type="range" id="gap" min="0.3" max="1.6" step="0.02"><output></output></label>
+    <label class="sl">Bend<input type="range" id="bend" min="0" max="1" step="0.02"><output></output></label>
+    <label class="sl">Tilt<input type="range" id="tilt" min="0" max="30" step="1"><output></output></label>
+    <label class="sl">Depth<input type="range" id="depth" min="0" max="600" step="10"><output></output></label>
+    <label class="sl">Fade<input type="range" id="fade" min="0" max="0.8" step="0.02"><output></output></label>
+    <div class="lbl">Leather</div>
+    <div class="chips" id="leathers">
+      <button class="sw" data-l="blush" aria-pressed="true"><i style="background:#E8C6CF"></i>Blush</button>
+      <button class="sw" data-l="plum" aria-pressed="false"><i style="background:#3A2F45"></i>Plum</button>
+      <button class="sw" data-l="pink" aria-pressed="false"><i style="background:#D98FA5"></i>Pink</button>
+      <button class="sw" data-l="white" aria-pressed="false"><i style="background:#F6F2ED"></i>White</button>
+      <button class="sw" data-l="silver" aria-pressed="false"><i style="background:#C0C3CA"></i>Silver</button>
+    </div>
+    <div class="lbl">Title intro</div>
+    <div class="chips" id="intros">
+      <button type="button" data-v="pink">Jump · pink flash</button>
+      <button type="button" data-v="shadow">Jump · shadow</button>
+      <button type="button" data-v="swoop">Swoop · arcs</button>
+      <button type="button" data-v="swoop-clean">Swoop · pink flash</button>
+      <button type="button" id="replayIntro">Replay intro</button>
+    </div>
+    <div class="lbl">Glass under the title</div>
+    <div class="chips" id="glasses">
+      <button type="button" data-g="ripple" aria-pressed="true">Ripple (original)</button>
+      <button type="button" data-g="frost" aria-pressed="false">Frosted ellipse</button>
+    </div>
+    <div class="row chips"><button id="replay" type="button">Replay open</button><button id="copy" type="button">Copy settings</button></div>
+    <code id="out"></code>
+  </div>
+</aside>
+
+  <!-- FOOTER (Top+Bottom in a single gradient wrap) -->
+  <section class="footer-wrap">
+    <section class="footer-top section no-divider" id="contact">
+      <div class="container">
+        <div class="grid-12" style="row-gap:24px; align-items:start;">
+          <!-- Left column: spans 5, all content flush left; mini image sits under Last Stop -->
+          <div class="span-12 md-span-5" style="justify-self:start; text-align:left;">
+            <div class="footer-kicker">Last Stop</div>
+            <div class="bleed-left" style="margin:8px 0 16px;">
+              <img src="asset/image/Home3.0/footer metro.svg">
+            </div>
+            <h2 class="footer-heading">Let's connect!</h2>
+          </div>
+          <!-- Right column: spans 2, flush right -->
+          <div class="span-12 md-span-2 md-col-start-11" style="justify-self:end;">
+            <ul class="footer-links">
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn"
+                  href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+                  target="_blank" rel="noopener">Resume</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn" href="About.html">About Me</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="https://www.linkedin.com/in/lina-jiayu-wang/" target="_blank"
+                  rel="noopener">LinkedIn</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="mailto:linaw815@uw.edu">Email</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer-bottom">
+      <div class="container">
+        <div class="span-12" style="opacity:.8;">
+          <div class="FooterCopyright">
+            <p>&copy; 2026 Lina Wang</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+<script>
+(() => {
+  const stage = document.getElementById('stage');
+  const ride = document.getElementById('ride');
+  const cards = [...stage.querySelectorAll('.card')].sort((a, b) => a.dataset.i - b.dataset.i); // 0 Pomi, 1 IdeaFlow, 2 Coffee
+  const N = cards.length;
+  const P = { back: hpBack, s1: hpS1, s2: hpS2, front: hpFront };
+  const pill = document.getElementById('flipPill');
+  const titleEl = stage.querySelector('.hero-title'), ledeEl = stage.querySelector('.lede-intro');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // split the title into letters for the intro jump (screen readers get the aria-label)
+  {
+    const txt = titleEl.textContent; titleEl.textContent = '';
+    [...txt].forEach((ch, i) => {
+      const s = document.createElement('span'); s.className = 'ch' + (ch === ' ' ? ' sp' : ''); s.textContent = ch;
+      s.setAttribute('aria-hidden', 'true'); s.style.setProperty('--i', i); s.style.setProperty('--r', (i % 2 ? 1 : -1) * (8 + (i * 7) % 10));
+      titleEl.appendChild(s);
+    });
+  }
+  let introStart = null, introTimer = 0;   // wallet pop-up clock
+  function playIntro(){
+    if (reduce) return;
+    stage.classList.remove('intro'); void stage.offsetWidth;   // restart the CSS animations
+    stage.classList.add('intro'); introStart = null;
+    clearTimeout(introTimer); introTimer = setTimeout(() => stage.classList.remove('intro'), 2400);
+  }
+  playIntro();
+
+  // ---- curve presets (all sizes are in card-widths / card-heights so they scale) ----
+  const CURVES = {
+    'fan':        { label: 'Design fan',   gap: 1.38, bend: .24, tilt: 7, depth: 120, fade: .8 },
+    'fan-center': { label: 'Fan · center', gap: 1.34, bend: .36, tilt: 6, depth: 200, fade: .42 },
+    'arc-right': { label: 'Arc )',     gap: .82, bend: .38, tilt: 11, depth: 420, fade: .12 },
+    'arc-left':  { label: 'Arc (',     gap: 1.22, bend: .32, tilt: 8,  depth: 200, fade: .3 },
+    'wheel':     { label: 'Wheel',     gap: 1.2,  bend: .5,  tilt: 0,  depth: 0,   fade: .35 },
+    'wave':      { label: 'S-wave',    gap: 1.22,  bend: .3,  tilt: 6,  depth: 160, fade: .3 },
+    'diagonal':  { label: 'Diagonal',  gap: 1.1,  bend: .42, tilt: 0,  depth: 240, fade: .25 },
+    'stack':     { label: 'Deck',      gap: .4, bend: 0,   tilt: 0,  depth: 340, fade: .2 },
+    'ring':      { label: 'Ring (v1)', gap: 1.14, bend: .64, tilt: 3,  depth: 100, fade: .44 },
+  };
+  let curve = 'wave';
+  const S = Object.assign({}, CURVES[curve]);
+
+  const clamp = (v, a = 0, b = 1) => Math.min(Math.max(v, a), b);
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeOutBack = t => 1 + 2.2 * Math.pow(t - 1, 3) + 1.2 * Math.pow(t - 1, 2);
+
+  let W, H, CW, CH, hs, side, hx, hyClosed, hyOpen, HW, HH;
+  let closing = false, upPull = 0, atEnd = false, endShown = false, rideLen = 1, passShown = -1;
+  let open = 0, opening = false, opened = false, cur = 0, target = 0, last = performance.now(), active = -1;
+  // card top inside the holder (holder px): each card sits 12px under the top of its own band
+  const CARD_TOP = [168, 84, 12, 12];   // 0 Pomi (front pocket band), 1 IdeaFlow, 2 Morning Pour, 3 TikTok (hidden behind Coffee, never shown in the wallet)
+  const IN_WALLET = 3;              // cards 0-2 sit in the wallet; later cards only appear once it opens
+
+  const side0 = () => innerWidth < 768 ? 24 : Math.max(32, innerWidth * .058);
+  function layout(){
+    // cap at the screen height so a viewer that grows the frame to fit the page can't make the ride grow forever
+    W = innerWidth; H = Math.min(innerHeight, Math.max(screen.height || innerHeight, 600));
+    stage.style.height = H + 'px';
+    // landing group = title + hint + holder, centred vertically below the nav
+    const fs = clamp(W * .064, 48, 80), titleH = fs * .9;
+    const gap1 = W < 768 ? 32 : 48;          // title -> hint (roomier than before)
+    const hintH = 30, gap2 = W < 768 ? 14 : 18;  // hint -> holder
+    const navSpace = 100;
+    const introEl = stage.querySelector('.lede-intro');
+    const gap0 = W < 768 ? 16 : 24;          // title -> intro text
+    // intro text spans exactly the title's width, so both share a left edge
+    stage.style.setProperty('--intro-w', Math.min(W - 2 * side0(), titleEl.offsetWidth) + 'px');
+    const introH = introEl.offsetHeight || 58;
+    const fixedH = titleH + gap0 + introH + gap1 + hintH + gap2;
+    CW = Math.round(clamp(Math.min(460, W * (W < 480 ? .86 : .8), (H - navSpace - fixedH - 90) / .972), 220, 460));
+    // fan: shrink cards to fit on tablets/laptops, but never below 300px so the backs stay readable (phones let the side cards run off-screen)
+    if (curve.startsWith('fan') && W >= 640) CW = Math.round(Math.max(300, Math.min(CW, (W - 2 * side0()) / 2.25)));
+    CH = CW * .6204;
+    // holder hugs the cards: ~14px of leather each side; vertical geometry keeps the 420-tall slot layout
+    hs = CW / 432; HW = CW + 28 * hs; HH = 420 * hs;
+    side = side0();
+    const groupH = fixedH + HH;
+    // centre in the space under the nav (nav ends ~80px down), but never tuck under it
+    const titleTop = Math.max(navSpace, 40 + (H - groupH) / 2);
+    stage.style.setProperty('--cw', CW + 'px');
+    stage.style.setProperty('--hr', 30 * hs + 'px');
+    stage.style.setProperty('--hs', hs + 'px');
+    stage.style.setProperty('--side', side + 'px');
+    stage.style.setProperty('--title-top', titleTop + 'px');
+    stage.style.setProperty('--intro-top', titleTop + titleH + gap0 + 'px');
+    stage.style.setProperty('--hint-top', titleTop + titleH + gap0 + introH + gap1 + 'px');
+    // open state: hero text block sits ~10% of the window lower (4% on phones, where the cards sit right under it)
+    stage.style.setProperty('--title-top-open', Math.max(100, H * (W < 768 ? .12 : .18)) + 'px');
+    hx = W / 2 - HW / 2;
+    hyClosed = titleTop + fixedH;
+    hyOpen = H - HH - (W < 768 ? 36 : 56);   // open: the whole holder stays on screen, with a little air above the section's bottom edge
+    rideLen = (N - 1) * H * 1.2 + H * .3;   // the stretch where the cards move (1.2 screens of scroll per card keeps the ride unhurried)
+    ride.style.height = (H + rideLen) + 'px';
+    const r = holderHit.style; r.left = hx + 'px'; r.top = hyClosed + 'px'; r.width = HW + 'px'; r.height = HH + 'px';
+  }
+  function placeHolder(y){
+    const set = (el, top, h) => { el.style.width = HW + 'px'; el.style.height = h + 'px'; el.style.transform = `translate(${hx}px,${y + top}px)`; };
+    set(P.back, 0, HH);
+    set(P.s1, 72 * hs, HH - 72 * hs);
+    set(P.s2, 156 * hs, HH - 156 * hs);
+    set(P.front, 240 * hs, HH - 240 * hs);
+  }
+
+  // where card i sits on the curve, given its offset d from the active card
+  function onCurve(d){
+    const g = S.gap * CH, b = S.bend * CW, ad = Math.abs(d);
+    const cx = W < 768 ? W / 2 : W * .56, cy = W < 768 ? H * .56 : H * .54;
+    let x = 0, y = 0, z = -ad * S.depth, rx = 0, ry = 0, rz = 0, zi = -ad, o = clamp(1 - ad * S.fade, 0, 1), ox = cx, oy = cy;
+    switch (curve){
+      case 'fan': case 'fan-center': {
+        // fitted to the Figma fan: Pomi front-left (-12deg), IdeaFlow middle, Coffee back-right (+7deg)
+        const s = curve === 'fan' ? d - 1 : d, fs = curve === 'fan' ? s + 1 : s;
+        x = (0.5905 * s + 0.0255 * s * s) * CW * S.gap;
+        y = (-0.1075 * s + 0.0335 * s * s) * CW * S.gap * (S.bend / .3);
+        // the card you're on sits flat; neighbours ease into their tilt
+        rz = (9.5 * s - 2.5 * s * s) * (S.tilt / 12) * clamp(Math.abs(fs));
+        if (fs < 0){
+          // leaving: slide down-left and BACK; once it's clearly on its way out it tucks under the card taking its place
+          z = fs * S.depth * .6;
+          zi = fs < -.18 ? -3 + fs : 0;
+        } else { z = -fs * S.depth; zi = -fs; }
+        o = fs < -.12 ? clamp(1 + (fs + .12) * S.fade * 3) : clamp(1 - Math.max(0, fs - 1.6) * .8);
+        if (W < 640){   // phones: centre the active card, the rest peek out to the right
+          ox = W / 2 + (curve === 'fan' ? 0.565 * CW * S.gap : 0);
+          oy = H * .55 - (curve === 'fan' ? 0.141 * CW * S.gap * (S.bend / .3) : 0);
+        } else { ox = W < 1100 ? W / 2 + (curve === 'fan' ? CW * .3 : 0) : W * .533; oy = H * .55; }
+        break; }
+      case 'arc-right': y = d * g; x = -b * d * d; rz = -d * S.tilt; break;
+      case 'arc-left':  y = d * g; x =  b * d * d; rz =  d * S.tilt; break;
+      case 'wave':      y = d * g; x = b * Math.sin(d * 1.5); rz = S.tilt * Math.cos(d * 1.5) * Math.sign(d || 1) * -1; break;
+      case 'diagonal':  y = d * g; x = d * b; rz = S.tilt * d; break;
+      case 'stack':     y = d * g; x = d * b; z = -ad * S.depth; rz = d * S.tilt; break;
+      case 'wheel': {   // vertical drum: cards roll over the top
+        const step = 18 + S.bend * 30, a = d * step * Math.PI / 180, R = g / (step * Math.PI / 180);
+        y = Math.sin(a) * R; z = (Math.cos(a) - 1) * R - ad * S.depth; rx = -d * step; rz = d * S.tilt; break; }
+      case 'ring': {    // the original horizontal ring
+        const step = 18 + S.bend * 30, a = d * step * Math.PI / 180, R = (S.gap * CW) / (step * Math.PI / 180);
+        x = Math.sin(a) * R; z = (Math.cos(a) - 1) * R - ad * S.depth; ry = d * step; rz = d * S.tilt; break; }
+    }
+    if (!curve.startsWith('fan')) o = clamp(1 - ad * S.fade, 0, 1);
+    return { x: (curve.startsWith('fan') ? ox : cx) + x, y: (curve.startsWith('fan') ? oy : cy) + y, z, rx, ry, rz, o, zi };
+  }
+  function tucked(i, holderY){
+    return { x: W / 2, y: holderY + CARD_TOP[i] * hs + CH / 2, z: 0, rx: 0, ry: 0, rz: 0, o: 1 };
+  }
+
+  function readScroll(){
+    if (manual && cantScroll()) return;
+    const r = ride.getBoundingClientRect();
+    const t = clamp(-r.top / rideLen);
+    target = t * (N - 1) * 1.08 - .04;
+    atEnd = target > N - 1 - .02;          // the last card has arrived          // scrolled into the short tail after the last card
+    target = clamp(target, 0, N - 1);
+    if (!opened && !opening && userIntent && -r.top > 40) openHolder();
+  }
+  function sizeGlass(){
+    if (!stage.classList.contains('is-open')) return;
+    const sr = stage.getBoundingClientRect(), tr = titleEl.getBoundingClientRect(), lr = ledeEl.getBoundingClientRect();
+    const frost = stage.dataset.glass === 'frost';
+    const padX = frost ? 150 : 90, padY = frost ? 110 : 70;   // frost: a big ellipse; ripple: the original soft glow
+    const l = Math.min(tr.left, lr.left) - padX, tp = tr.top - sr.top - padY;
+    const w = Math.max(tr.right, lr.right) + padX - l, h = lr.bottom - tr.top + padY * 2;
+    const g = heroGlass.style; g.transform = `translate(${l}px,${tp}px)`; g.width = w + 'px'; g.height = h + 'px';
+    if (frost) buildLens(Math.round(w), Math.round(h));
+  }
+  // lens map for the glass: a rounded-rect "pillow" whose rim bends the backdrop inward (Chromium only: SVG backdrop filters)
+  const lensOK = !!window.chrome && CSS.supports('backdrop-filter', 'blur(1px)');
+  const lensMap = document.getElementById('lgLensMap'), lensCv = document.createElement('canvas'), lensCx = lensCv.getContext('2d');
+  let lensW = 0, lensH = 0;
+  function buildLens(w, h){
+    if (!lensOK || !w || !h || (w === lensW && h === lensH)) return;
+    lensW = w; lensH = h; lensCv.width = w; lensCv.height = h;
+    const img = lensCx.createImageData(w, h), d = img.data, a = w / 2, b = h / 2;
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++){
+      const px = x + .5 - a, py = y + .5 - b, r = Math.hypot(px / a, py / b);
+      let dx = 0, dy = 0;
+      if (r > .5 && r > 0){
+        // outward normal of the ellipse at this point, eased in from r=.5 to the rim
+        let nx = px / (a * a), ny = py / (b * b); const L = Math.hypot(nx, ny) || 1; nx /= L; ny /= L;
+        const k = Math.min(1, (r - .5) / .42), m = k * k * (3 - 2 * k); dx = nx * m; dy = ny * m;
+      }
+      const i = (y * w + x) * 4; d[i] = 128 - dx * 127; d[i + 1] = 128 - dy * 127; d[i + 2] = 128; d[i + 3] = 255;
+    }
+    lensCx.putImageData(img, 0, 0);
+    lensMap.setAttribute('href', lensCv.toDataURL()); lensMap.setAttribute('width', w); lensMap.setAttribute('height', h);
+    heroGlass.classList.add('lens');
+  }
+  function openHolder(){
+    if (opened || opening) return;
+    const resume = closing; closing = false;
+    opening = true; open = reduce ? 1 : (resume ? open : 0);
+    stage.classList.remove('intro');
+    stage.classList.add('is-open');
+    setTimeout(sizeGlass, 1000); setTimeout(sizeGlass, 1600);
+    labNote.textContent = 'Scroll to ride the cards. Tap the front card or the Flip pill to see its back.';
+  }
+  // scrolling back up past the first card tucks every card back into the wallet (the open animation in reverse)
+  function closeHolder(){
+    if (!opened || closing) return;
+    opened = false; opening = false; closing = true; upPull = 0; active = -1; atEnd = false; endShown = false; passShown = -1;
+    cur = target = 0;
+    cards.forEach(c => c.classList.remove('flipped'));
+    stage.classList.remove('is-open');
+    labNote.textContent = 'Open the holder, then scroll to ride the cards.';
+  }
+  const atTop = () => (manual && cantScroll()) ? target <= .02 : scrollY <= ride.offsetTop + 4 && cur < .2;
+  function pullUp(amount){                 // amount > 0 = the visitor is pushing upward at the top
+    if (!opened || closing) return;
+    if (!atTop()){ upPull = 0; return; }
+    upPull += amount;
+    if (upPull > 140) closeHolder();
+  }
+  addEventListener('wheel', e => { if (e.deltaY < 0) pullUp(-e.deltaY); else upPull = 0; }, { passive: true });
+  let pullY = null;
+  addEventListener('touchstart', e => { pullY = e.touches[0].clientY; }, { passive: true });
+  addEventListener('touchmove', e => { if (pullY == null) return; const y = e.touches[0].clientY; if (y > pullY) pullUp((y - pullY) * 1.6); else upPull = 0; pullY = y; }, { passive: true });
+  function resetToLanding(){
+    closing = false;
+    scrollTo({ top: ride.offsetTop, behavior: 'auto' });
+    opened = false; opening = false; open = 0; cur = target = 0;
+    cards.forEach(c => { c.classList.remove('flipped'); c.classList.add('tucked'); });
+    stage.classList.remove('is-open');
+    labNote.textContent = 'Open the holder, then scroll to ride the cards.';
+  }
+  function replay(){
+    scrollTo({ top: ride.offsetTop, behavior: 'auto' });
+    opened = false; opening = false; open = 0; cur = target = 0;
+    cards.forEach(c => { c.classList.remove('flipped'); c.classList.add('tucked'); });
+    stage.classList.remove('is-open');
+    labNote.textContent = 'Open the holder, then scroll to ride the cards.';
+    setTimeout(openHolder, 500);
+  }
+
+  function render(now){
+    const dt = Math.min(64, now - last) / 1000; last = now;
+    if (opening){ open = reduce ? 1 : Math.min(1, open + dt / 1.6); if (open >= 1){ opening = false; opened = true; } }
+    if (closing){ open = reduce ? 0 : Math.max(0, open - dt / 1.2); if (open <= 0){ closing = false; } }
+    cur += reduce ? (target - cur) : (target - cur) * .12;
+
+    if (introStart === null) introStart = now;
+    const ik = reduce ? 1 : clamp((now - introStart - 650) / 900);   // wallet rises from below the fold, with a little overshoot
+    const rise = (1 - easeOutBack(ik)) * (H - hyClosed + 60);
+    const hy = lerp(hyClosed, hyOpen, easeIO(clamp((open - .25) / .75))) + rise;
+    placeHolder(hy);
+
+    cards.forEach((c, i) => {
+      // pop out of the slot: front card first, then the next slot back
+      const e = clamp((open - .1 - Math.min(i, IN_WALLET - 1) * .14 - (i >= IN_WALLET ? .06 : 0)) / .56);
+      const k = reduce ? (open > 0 ? 1 : 0) : e;
+      const a = tucked(i, hy), b = onCurve(i - cur);
+      const ease = easeOutBack(k), lin = easeIO(k);
+      const pop = Math.sin(lin * Math.PI) * CH * .55;              // the lift out of the pocket
+      const x = lerp(a.x, b.x, lin), y = lerp(a.y, b.y, ease) - pop;
+      const z = lerp(a.z, b.z, lin), rx = lerp(0, b.rx, lin), ry = lerp(0, b.ry, lin);
+      const rz = lerp(0, b.rz, lin) + Math.sin(lin * Math.PI) * (i % 2 ? -5 : 5);
+      c.style.transform = `translate3d(${x - CW / 2}px,${y - CH / 2}px,0) perspective(1600px) translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg)`;
+      c.style.opacity = (lerp(1, b.o, lin) * (i >= IN_WALLET ? lin : 1)).toFixed(3);
+      const out = k > .3;
+      c.classList.toggle('tucked', !out);
+      // inside the holder: clip at the holder's bottom edge and keep the slot stacking
+      if (!out){
+        const cut = Math.max(0, (y + CH / 2) - (hy + HH - 6));
+        c.style.clipPath = `inset(0 0 ${cut}px 0 round ${CW * .0407}px)`;
+        c.style.zIndex = String(Math.max(0, 2 + (2 - i) * 2));
+        if (i >= IN_WALLET) c.style.opacity = '0';
+      } else {
+        c.style.clipPath = 'none';
+        c.style.zIndex = String(closing ? Math.min(33, 30 + Math.round(b.zi * 3)) : 30 + Math.round(b.zi * 3));
+      }
+      c.style.pointerEvents = opened && Math.abs(i - cur) < 2.5 ? 'auto' : 'none';
+      c.querySelectorAll('a').forEach(el => el.tabIndex = (opened && Math.round(cur) === i && c.classList.contains('flipped')) ? 0 : -1);
+    });
+
+    const a = Math.round(cur);
+    // riding on: every card you've passed turns over to show its back; the current and upcoming cards face front
+    // the last card has nothing after it, so it turns over once you scroll into the tail of the ride
+    const end = opened && a === N - 1 && atEnd;
+    // a card turns over once the ride is ~30% of the way to the next one (not halfway), so the flip reads early
+    const passed = Math.max(0, Math.min(N - 1, Math.floor(cur + .7)));
+    if (opened && (passed !== passShown || end !== endShown)){ passShown = passed; endShown = end; cards.forEach((c, i) => c.classList.toggle('flipped', i < passed || (end && i === N - 1))); }
+    if (opened && a !== active) active = a;
+    if (opened){
+      const p = onCurve(a - cur);
+      pill.style.transform = `translate(${p.x - pill.offsetWidth / 2}px,${p.y + CH / 2 + 18}px)`;
+      pill.classList.toggle('show', Math.abs(a - cur) < .2);
+      pill.querySelector('span').textContent = cards[a].classList.contains('flipped') ? 'Flip back' : 'Flip';
+      pill.setAttribute('aria-label', (cards[a].classList.contains('flipped') ? 'Flip back ' : 'Flip ') + cards[a].getAttribute('aria-label') + ' card');
+    } else pill.classList.remove('show');
+    requestAnimationFrame(render);
+  }
+
+  function goTo(i){
+    if (cantScroll()){ target = i; return; }
+    const t = clamp((i + .04) / ((N - 1) * 1.08));
+    scrollTo({ top: ride.offsetTop + t * rideLen, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  holderHit.addEventListener('click', openHolder);
+  cards.forEach((c, i) => c.addEventListener('click', e => {
+    if (!opened || e.target.closest('a')) return;
+    if (Math.round(cur) !== i){ goTo(i); return; }
+    c.classList.toggle('flipped');
+  }));
+  pill.addEventListener('click', () => cards[Math.round(cur)].classList.toggle('flipped'));
+  addEventListener('keydown', e => {
+    if (!opened) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight'){ const n = Math.min(N - 1, Math.round(cur) + 1); if (n !== Math.round(cur)){ e.preventDefault(); goTo(n); } }
+    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft'){ const n = Math.max(0, Math.round(cur) - 1); if (n !== Math.round(cur)){ e.preventDefault(); goTo(n); } else if (e.key === 'ArrowUp'){ e.preventDefault(); closeHolder(); } }
+  });
+  // Only a real visitor gesture may open the holder. Scroll events fired by the page loading
+  // (restored scroll position, iframe resizing, fonts shifting layout) never count.
+  let userIntent = false;
+  const markIntent = () => { userIntent = true; };
+  ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(ev => addEventListener(ev, markIntent, { passive: true, capture: true }));
+  addEventListener('scroll', readScroll, { passive: true });
+  const cantScroll = () => document.scrollingElement.scrollHeight <= innerHeight + 4 || ride.offsetHeight <= innerHeight + 4;
+  let manual = false;
+  const nudge = dy => { manual = true; if (closing) return; if (!opened && !opening){ if (dy > 0) openHolder(); return; } if (target >= N - 1 - 1e-3) atEnd = dy > 0 ? true : (dy < 0 ? false : atEnd); target = clamp(target + dy, 0, N - 1); };
+  stage.addEventListener('wheel', e => { if (!cantScroll()) return; e.preventDefault(); nudge(e.deltaY / 700); }, { passive: false });
+  let ty = null;
+  stage.addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener('touchmove', e => { if (ty == null || !cantScroll()) return; const y = e.touches[0].clientY; nudge((ty - y) / 300); ty = y; }, { passive: true });
+  addEventListener('resize', () => { layout(); readScroll(); setTimeout(sizeGlass, 950); });
+
+  // ---- Curve lab UI ----
+  const curvesEl = document.getElementById('curves');
+  Object.entries(CURVES).forEach(([k, v]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = v.label; b.dataset.k = k;
+    b.addEventListener('click', () => { curve = k; Object.assign(S, CURVES[k]); layout(); sync(); });
+    curvesEl.appendChild(b);
+  });
+  const keys = ['gap', 'bend', 'tilt', 'depth', 'fade'];
+  const fmt = { gap: v => (+v).toFixed(2), bend: v => (+v).toFixed(2), tilt: v => v + '°', depth: v => v, fade: v => (+v).toFixed(2) };
+  keys.forEach(k => document.getElementById(k).addEventListener('input', e => { S[k] = +e.target.value; sync(false); }));
+  function sync(setInputs = true){
+    [...curvesEl.children].forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === curve)));
+    keys.forEach(k => { const el = document.getElementById(k); if (setInputs) el.value = S[k]; el.nextElementSibling.textContent = fmt[k](S[k]); });
+    out.textContent = `curve: ${curve}\ngap: ${S.gap.toFixed(2)} × card height\nbend: ${S.bend.toFixed(2)} × card width\ntilt: ${S.tilt}°  depth: ${S.depth}px  fade: ${S.fade.toFixed(2)}`;
+    try { localStorage.setItem('curveLab6', JSON.stringify({ curve, S })); } catch (e) {}
+  }
+  document.getElementById('copy').addEventListener('click', async e => {
+    try { await navigator.clipboard.writeText(out.textContent); e.target.textContent = 'Copied'; } catch (err) { e.target.textContent = 'Select the text below'; }
+    setTimeout(() => e.target.textContent = 'Copy settings', 1400);
+  });
+  document.getElementById('replay').addEventListener('click', replay);
+  const lab = document.getElementById('lab');
+  labMin.addEventListener('click', () => { const m = lab.classList.toggle('min'); labMin.textContent = m ? 'Show' : 'Hide'; labMin.setAttribute('aria-expanded', String(!m)); });
+  if (innerWidth < 640){ lab.classList.add('min'); labMin.textContent = 'Show'; labMin.setAttribute('aria-expanded', 'false'); }
+  const lsw = [...document.querySelectorAll('#leathers .sw')];
+  lsw.forEach(b => b.addEventListener('click', () => { stage.dataset.leather = b.dataset.l; lsw.forEach(x => x.setAttribute('aria-pressed', String(x === b))); }));
+
+  const gsw = [...document.querySelectorAll('#glasses button')];
+  gsw.forEach(b => b.addEventListener('click', () => {
+    stage.dataset.glass = b.dataset.g; gsw.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    lensW = lensH = 0; heroGlass.classList.remove('lens'); sizeGlass();
+  }));
+  const isw = [...document.querySelectorAll('#intros [data-v]')];
+  const markIntro = () => isw.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.v === stage.dataset.intro)));
+  isw.forEach(b => b.addEventListener('click', () => {
+    stage.dataset.intro = b.dataset.v; markIntro();
+    try { localStorage.setItem('introStyle', b.dataset.v); } catch (e) {}
+    resetToLanding(); playIntro();
+  }));
+  document.getElementById('replayIntro').addEventListener('click', () => { resetToLanding(); playIntro(); });
+  markIntro();
+
+  // hovering the closed wallet deepens its shadow a touch
+  holderHit.addEventListener('pointerenter', () => stage.classList.add('hold-hover'));
+  holderHit.addEventListener('pointerleave', () => stage.classList.remove('hold-hover'));
+  holderHit.addEventListener('focus', () => stage.classList.add('hold-hover'));
+  holderHit.addEventListener('blur', () => stage.classList.remove('hold-hover'));
+
+  try { history.scrollRestoration = 'manual'; } catch (e) {}
+  if (scrollY > 0) scrollTo(0, 0);
+  layout(); sync(); readScroll(); cur = target;
+  requestAnimationFrame(t => { last = t; render(t); });
+})();
+</script>
+</body>
+
+</html>
