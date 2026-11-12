@@ -3316,6 +3316,10 @@ header .content {
   color: #866BD7;
 }
 
+.np--nurtur .np__sub::before {
+  color: #1F5C49;
+}
+
 /* Next Steps Section (alternate) */
 .nextsteps-list {
   display: flex;
@@ -3841,3 +3845,4 @@ header .content {
   max-height: 512px;
   border-radius: 24px;
 }
+

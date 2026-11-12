@@ -2,28 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>nurtur health project</title>
-
-  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-  <!-- Page CSS -->
-  <link rel="stylesheet" href="asset/css/style2.0.css" />
-  <link rel="stylesheet" href="asset/css/nurtur.css" />
-  <link rel="stylesheet" href="asset/css/Bearhub.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inspiration&family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700;800&family=Irish+Grover&family=Istok+Web:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/styles3.0.css">
   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-
-  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
-
-  <!-- phosphor icon -->
+  <!-- Phosphor icons (bold) -->
   <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+  <script src="asset/javascript/javascript.js"></script>
+  <title>Lina Wang | nurtur Case Study</title>
+  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
 
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
@@ -33,15 +26,16 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-RD4VM5JDWE');
   </script>
 
+
   <link rel="stylesheet" href="asset/css/nav-glass.css">
+  <link rel="stylesheet" href="asset/css/nurtur-page.css">
 </head>
 
 <body>
-  <!-- ===== Header (leave blank) ===== -->
+  <!-- NAV -->
   <header class="glass-nav">
     <div class="content">
       <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
@@ -75,18 +69,13 @@
 
   <!-- Off-canvas mobile menu overlay -->
   <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
-    <!-- backdrop -->
     <div class="overlay-backdrop" data-close-overlay></div>
-
-    <!-- sliding panel -->
     <aside class="overlay-panel" tabindex="-1">
       <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
-        <!-- close icon -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
-
       <nav class="overlay-nav">
         <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
           rel="noopener">Resume</a>
@@ -97,301 +86,500 @@
     </aside>
   </div>
 
-  <!-- ===== HERO (scoped) ===== -->
-  <div class="page page1 nurtur-hero" style="font-family: Poppins;">
-    <div class="page page1 nurtur-hero">
-      <picture class="hero-picture">
-        <!-- Mobile image (<= 640px) -->
-        <source media="(max-width: 640px)" srcset="asset/image/nurtur/HeroBackground-mobile.png">
-        <!-- Default/desktop image -->
-        <img class="" src="asset/image/nurtur/HeroBackground.png" alt="nurtur background">
-      </picture>
+  <main class="nt">
 
-      <div class="overlaytext">
-        <div class="Gradientcolornurtur">nurtur health, Inc.</div>
-        <div class="hero-sub">Mental wellness for the motherhood journey</div>
-      </div>
-    </div>
-
-    <div class="overlaytext">
-      <div class="Gradientcolornurtur">nurtur health, Inc.</div>
-      <div class="hero-sub">Mental wellness for the motherhood journey</div>
-    </div>
-  </div>
-
-
-  <!-- ===== META / STATS ===== -->
-  <section class="section">
-    <div class="container" data-aos="fade-up">
-      <div class="stats">
-        <div class="stat">
-          <h3>Role</h3>
-          <p>UI/UX Designer</p>
-        </div>
-        <div class="stat">
-          <h3>Team Member</h3>
-          <p>2 UX/UI Designers<br>2 Project Managers</p>
-        </div>
-        <div class="stat">
-          <h3>Project Duration</h3>
-          <p>7 months</p>
-        </div>
-        <div class="stat">
-          <h3>Skills</h3>
-          <p>UI Redesign<br>
-            Design System<br>
-            User Flow Design<br>
-            Information Architecture<br>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== OVERVIEW ===== -->
-  <section class="section">
-    <div class="container stack-vert"> <!-- was: container grid-2 -->
-      <div data-aos="fade-up">
-        <h2 class="eyebrow" style="color: #20633B;">Overview</h2>
-        <h3 style="font-family: Poppins;">Business Goal</h3>
-        <p>nurtur is a mobile application designed to support new mothers and their care network by providing mental
-          health support before, during, and after their pregnancy to minimize risks in postpartum depression. The app
-          focuses on mental health awareness and prevention through mental health education sessions and professional
-          resources.<br>
-          Key features include chatbot sessions, mental health wellness tracking capabilities, and access to mental
-          health resources, enabling users to receive timely psychological support during this critical life transition.
-        </p>
-      </div>
-
-      <div data-aos="fade-up">
-        <h3 style="font-family: Poppins;">Problem Statement</h3>
-        <p>How Might We design a comprehensive digital platform that empowers pregnant women and new mothers to
-          proactively manage their mental health while providing their support networks with the tools and resources
-          needed to offer meaningful assistance during this critical life transition?</p>
-      </div>
-
-      <div data-aos="fade-up">
-        <h3 style="font-family: Poppins;">My Contributions</h3>
-        <ul class="checklist" style="margin-bottom: 32px;">
-          <li>Building a consistent design system from scratch</li>
-          <li>Auditing early prototypes and identifying usability issues</li>
-          <li>Designing core features across mobile and web (chatbot, crisis hotline, provider dashboard, journaling)
-          </li>
-        </ul>
-      </div>
-
-      <div data-aos="fade-up">
-        <h3 style="font-family: Poppins;">Problems Encountered</h3>
-        <ul class="checklist">
-          <li><span style="font-weight: 600;">Diverse stakeholders</span> – mothers vs. healthcare providers</li>
-          <li><span style="font-weight: 600;">Sensitive domain</span> – designing for panic and distress</li>
-          <li><span style="font-weight: 600;">Content Clarity</span> – wordy chatbot, data-heavy dashboards</li>
-          <li><span style="font-weight: 600;">Lean team</span> – balancing speed with thoughtful design</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- =====Chatbot Design===== -->
-  <section class="section">
-    <div class="container stack-vert">
-      <div data-aos="fade-up">
-        <h2 class="eyebrow" style="color: #20633B;">Design Highlights</h2>
-        <h3 style="font-family: Poppins;">Chatbot Design</h3>
-        <h4>Problem</h4>
-        <ul style="margin-bottom: 32px;">
-          <li>Long scripts reduce user engagement</li>
-          <li>UI needs to be modernized</li>
-          <li>Original speed button had too many drop-down options</li>
-        </ul>
-      </div>
-
-      <div>
-        <div data-aos="fade-up">
-          <h4>Solution</h4>
-          <img src="asset/image/nurtur/ChatbotMobile.png">
-        </div>
-        <img data-aos="fade-up" src="asset/image/nurtur/ChatbotWeb.png">
-      </div>
-
-      <div data-aos="fade-up">
-        <h4 style="margin-top: 32px; margin-bottom: 32px;">Impacts</h4>
-        <ul>
-          <li>Higher completion of modules</li>
-          <li>Better perceived clarity and approachability</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="nh-bh nh-bh-section">
-    <div class="container">
-      <div data-aos="fade-up">
-        <h2 class="eyebrow" style="color: #20633B;">Design Highlights</h2>
-        <h3 style="font-family: Poppins;">Crisis Hotline</h3>
-        <h4>Problem</h4>
-        <p>When designing mental health products, we cannot only consider ordinary days—we must also prepare for the
-          most difficult moments when users feel completely overwhelmed and broken down. It is precisely in these
-          moments, when reaching out for help seems incredibly difficult yet is most necessary, that our built-in crisis
-          hotline feature becomes a lifeline for users, ensuring they can access professional support directly when they
-          need it most.
-        </p>
-      </div>
-
-      <div data-aos="fade-up">
-        <h3 style="font-family: Poppins; color:#20633B; font-size: 20px;">Three principles implemented throughout the
-          design</h3>
-        <div class="card-grid" style="margin-bottom: 40px;">
-          <article class="card">
-            <h4>
-              <i class="ph-duotone ph-alarm"></i>
-              Immediate Response
-            </h4>
-            <p>Ensure users can access assistance at the first moment they need it.</p>
-          </article>
-          <article class="card">
-            <h4>
-              <i class="ph-duotone ph-arrows-split"></i>
-              Autonomous Choice
-            </h4>
-            <p>When users are not ready to accept help, clearly provide pathways for them to independently access
-              support later.</p>
-          </article>
-          <article class="card">
-            <h4>
-              <i class="ph-duotone ph-shield-warning"></i>
-              Error-Tolerant Design
-            </h4>
-            <p>All interaction designs include room for correction, allowing users to still receive help even after
-              mis-operations during vulnerable states.</p>
-          </article>
-        </div>
-      </div>
-
-      <h4 data-aos="fade-up">Solutions</h4>
-
-
-      <div class="nh-bh-feature-list">
-        <!-- Feature 1 -->
-        <section class="nh-bh-feature" data-aos="fade-up">
-          <figure class="nh-bh-phone">
-            <img src="asset/image/nurtur/Alert1.png" alt="Alert page" />
-          </figure>
-          <div class="nh-bh-feature-text">
-            <h3>Alert Screen</h3>
-            <p class="nh-bh-iter-text">
-              A home page that tracks all upcoming and saved events.</p>
-            <p class="nh-bh-iter-text">Easily accessible event info and QR codes for
-              check-in, with suggested events at the bottom.
-            </p>
-
-            <!-- Tip / Principle box -->
-            <div class="nh-bh tip-box" role="note" aria-label="Design principle">
-              <span class="tip-icon" aria-hidden="true">
-                <!-- placeholder icon (swap for your Phosphor icon) -->
-                <i class="ph-duotone ph-lightbulb" style="color:#144F2B; font-size: 24px;"></i>
-              </span>
-              <p class="tip-text">“During panic, a single obvious action beats many choices.”</p>
+    <!-- ===== HERO ===== -->
+    <section class="agnes-hero">
+      <div class="container">
+        <div class="grid-12">
+          <div class="span-12">
+            <h1 class="agnes-hero__headline" data-aos="fade-up">Mental Wellness for the motherhood journey</h1>
+          </div>
+          <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="agnes-hero__image">
+              <img src="asset/image/nurtur/v3/hero.png" width="2640" height="1618"
+                alt="nurtur mobile chatbot, chat settings, crisis alert, provider dashboard and color palette">
             </div>
-
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <!-- Feature 2 (reverse on desktop) -->
-        <section class="nh-bh-feature is-reverse" data-aos="fade-up">
-          <figure class="nh-bh-phone">
-            <img src="asset/image/nurtur/Alert2.png" alt="Hotline page" />
-          </figure>
-          <div class="nh-bh-feature-text">
-            <h3>Help Recommendation</h3>
-            <p class="nh-bh-iter-text">
-              Additional hotlines are presented with both call and text options.</p>
-            <p>A Back to Home action allows users to exit when ready. </p>
+    <!-- ===== NURTUR INTRO ===== -->
+    <section class="agnes-intro">
+      <div class="container">
+        <div class="grid-12">
+          <div class="span-12" data-aos="fade-up">
+            <div class="agnes-intro__rail">
+              <!-- TODO: add the nurtur rail image (same format as "Agnes rail intro.png") -->
+              <img src="asset/image/nurtur/nurtur rail intro.png" alt="nurtur health rail introduction">
+            </div>
           </div>
-        </section>
 
-        <!-- Feature 3 (reverse on desktop) -->
-        <section class="nh-bh-feature" data-aos="fade-up">
-          <figure class="nh-bh-phone">
-            <img src="asset/image/nurtur/Alert3.png" alt="Additional Support Page" />
-          </figure>
-          <div class="nh-bh-feature-text">
-            <h3>Support Options</h3>
-            <p class="nh-bh-iter-text">
-              Additional hotlines are presented with both call and text options.</p>
-            <p class="nh-bh-iter-text">A Back to Home action allows users to exit when ready.
+          <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+            <p class="agnes-intro__description">
+              nurtur is a mobile app that helps pregnant women and new moms prevent postpartum depression, through
+              short <span class="highlight">guided chatbot sessions</span>, weekly mood check-ins and fast access to
+              professional help.
             </p>
           </div>
-        </section>
+        </div>
       </div>
+    </section>
+
+    <!-- ===== MY ROLE ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="grid-12">
+          <div class="span-12" data-aos="fade-up">
+            <h2 class="business-goals__title nt-role-heading">My Role<img src="asset/image/Home3.0/bigarrow.svg" alt="" aria-hidden="true" width="71" height="71"></h2>
+          </div>
+          <div class="span-12">
+            <div class="nt-role-cards">
+              <article class="nt-role nt-role--mint" data-aos="fade-up">
+                <div class="nt-role__num">0 → 1</div>
+                <h3 class="nt-role__title">Design system</h3>
+                <p class="nt-role__desc">Built the visual language and components the whole app now runs on.</p>
+                <div class="nt-role__phone"><img src="asset/image/nurtur/v2/phone-settings.png" alt="Chat settings screen"></div>
+              </article>
+              <article class="nt-role nt-role--butter" data-aos="fade-up" data-aos-delay="100">
+                <div class="nt-role__num">5</div>
+                <h3 class="nt-role__title">Chatbot improvements</h3>
+                <p class="nt-role__desc">Shorter scripts, progress, replay, a modern UI and personal settings.</p>
+                <div class="nt-role__phone"><img src="asset/image/nurtur/v2/phone-chat.png" alt="Redesigned chatbot session"></div>
+              </article>
+              <article class="nt-role nt-role--blush" data-aos="fade-up" data-aos-delay="200">
+                <div class="nt-role__num">3</div>
+                <h3 class="nt-role__title">Crisis hotline principles</h3>
+                <p class="nt-role__desc">Immediate response, autonomous choice and error-tolerant design.</p>
+                <div class="nt-role__phone"><img src="asset/image/nurtur/v2/phone-alert1.png" alt="Crisis alert screen"></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 01 HIGHLIGHT: BEFORE / AFTER ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="grid-12">
+          <div class="span-12">
+            <div class="feature-section__header" data-aos="fade-up">
+              <div class="feature-section__subtitle"><span>01</span> Highlight</div>
+              <h2 class="feature-section__title">Before and After the Redesign</h2>
+            </div>
+          </div>
+          <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="nt-ba" style="--pos:100%" data-ba>
+              <img src="asset/image/nurtur/v2/chatbot-after-web.png" alt="Redesigned web chatbot with progress bar, short messages and side navigation">
+              <img class="nt-ba__before" src="asset/image/nurtur/v2/chatbot-before.png" alt="Original chatbot with long text and a Next button after every message">
+              <span class="nt-ba__label nt-ba__label--before">Before</span>
+              <span class="nt-ba__label nt-ba__label--after">After</span>
+              <div class="nt-ba__line"></div>
+              <input type="range" min="0" max="100" value="100" aria-label="Compare before and after">
+              <div class="nt-ba__knob" aria-hidden="true">↔</div>
+            </div>
+            <p class="nt-note"><b>Note:</b> The original screen is shown in grayscale; the product's real colors are under NDA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THE CHALLENGE ===== -->
+    <section class="business-goals">
+      <div class="container">
+        <div class="grid-12" style="align-items: stretch;">
+          <!-- Title: 4 columns -->
+          <div class="span-12 md-span-4 business-goals__title-wrapper" data-aos="fade-up">
+            <h2 class="business-goals__title">The<br>Challenge</h2>
+          </div>
+
+          <!-- Timeline index: 1 column -->
+          <div class="span-12 md-span-1 business-goals__index-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <div class="business-goals__index">
+              <!-- TODO: add the nurtur timeline index image (same format as "business goal index.png") -->
+              <img src="asset/image/nurtur/nurtur challenge index.png" alt="Challenge timeline">
+            </div>
+          </div>
+
+          <!-- Challenge cards: 7 columns -->
+          <div class="span-12 md-span-7 business-goals__cards-wrapper" data-aos="fade-up" data-aos-delay="200">
+            <div class="goals-cards">
+              <div class="goal-card goal-card--mint">
+                <div class="goal-card__title">1. Wordy Chatbot</div>
+                <div class="goal-card__description">Long scripts made users drop off before finishing a module.</div>
+              </div>
+              <div class="goal-card goal-card--mint">
+                <div class="goal-card__title">2. Moments of Distress</div>
+                <div class="goal-card__description">We had to design for panic, not just for ordinary days.</div>
+              </div>
+              <div class="goal-card goal-card--mint">
+                <div class="goal-card__title">3. Data-heavy dashboards</div>
+                <div class="goal-card__description">Raw scores slowed clinicians' decisions.</div>
+              </div>
+              <div class="goal-card goal-card--mint">
+                <div class="goal-card__title">4. A lean team</div>
+                <div class="goal-card__description">Balancing speed with careful design in a sensitive space.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== USERS ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="feature-section__header" data-aos="fade-up">
+          <div class="feature-section__subtitle"><span>02</span> Our Users</div>
+          <h2 class="feature-section__title">Designing for two very different people</h2>
+        </div>
+        <div class="nt-users">
+          <article class="nt-user nt-user--mint" data-aos="fade-up">
+            <div class="nt-user__kicker">PRIMARY · MOBILE</div>
+            <h3 class="nt-user__title">Pregnant women and new moms</h3>
+            <div class="nt-user__kicker">USER NEEDS</div>
+            <div class="nt-user__needs">
+              <div class="nt-need">Short sessions they can finish</div>
+              <div class="nt-need">A warm tone, never clinical</div>
+              <div class="nt-need">Help that is one tap away</div>
+            </div>
+            <p class="nt-body" style="font-size:16px">Busy, tired and sometimes anxious. They use the app in short
+              moments, often on their phone, and some reach it on their hardest days.</p>
+          </article>
+          <article class="nt-user nt-user--butter" data-aos="fade-up" data-aos-delay="100">
+            <div class="nt-user__kicker">SECONDARY · WEB</div>
+            <h3 class="nt-user__title">Clinicians and care teams</h3>
+            <div class="nt-user__kicker">USER NEEDS</div>
+            <div class="nt-user__needs">
+              <div class="nt-need">Status at a glance</div>
+              <div class="nt-need">No dense data to decode</div>
+            </div>
+            <p class="nt-body" style="font-size:16px">They follow many patients and need to know who needs attention, fast.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 MY WORK: DESIGN SYSTEM ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="feature-section__header" data-aos="fade-up">
+          <div class="feature-section__subtitle"><span>03</span> My Design Work</div>
+          <h2 class="feature-section__title">The new design system</h2>
+        </div>
+        <div class="nt-ds">
+          <div class="nt-ds__col">
+            <img src="asset/image/nurtur/v3/ds-web-navigation.png" alt="Web navigation: logo, nav items and floating buttons" data-aos="fade-up" data-aos-delay="0">
+            <img src="asset/image/nurtur/v3/ds-dashboard-kpis.png" alt="Dashboard KPI cards and care plan progress bars" data-aos="fade-up" data-aos-delay="100">
+          </div>
+          <div class="nt-ds__col">
+            <img src="asset/image/nurtur/v3/ds-color.png" alt="Color palette: Brand, Light, Tint, Action, Alert" data-aos="fade-up" data-aos-delay="200">
+            <img src="asset/image/nurtur/v3/ds-typography.png" alt="Poppins type scale" data-aos="fade-up" data-aos-delay="300">
+            <img src="asset/image/nurtur/v3/ds-chatbot.png" alt="Chatbot components: progress bar, messages and answer buttons" data-aos="fade-up" data-aos-delay="400">
+          </div>
+          <div class="nt-ds__col">
+            <img src="asset/image/nurtur/v3/ds-settings-buttons.png" alt="Settings controls and buttons" data-aos="fade-up" data-aos-delay="500">
+            <img src="asset/image/nurtur/v3/ds-crisis-support.png" alt="Crisis support: hotline card, call button and contact buttons" data-aos="fade-up" data-aos-delay="600">
+          </div>
+        </div>
+        <p class="nt-note" style="text-align:center"><b>Note:</b> Colors shown are the portfolio version; the product's real palette is under NDA.</p>
+        <p class="nt-body" style="max-width:970px;margin-top:48px" data-aos="fade-up">I built nurtur's design system with
+          one other designer, so every new screen would feel consistent. We kept the existing brand color for
+          continuity and its calm feel, expanded the palette so every state had a color, and gave primary actions a
+          warm accent so they stand out.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHATBOT DESIGN ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="feature-section__header" data-aos="fade-up">
+          <h2 class="feature-section__title">Chatbot Design</h2>
+        </div>
+        <div class="nt-panel" data-aos="fade-up" data-aos-delay="100">
+          <img src="asset/image/nurtur/v3/chatbot-mobile.png" width="2640" height="1176"
+            alt="Mobile chatbot and chat settings, annotated: progress bar, replay buttons, shortened scripts, modernized UI, personalization settings">
+        </div>
+        <div class="nt-panel" data-aos="fade-up">
+          <img src="asset/image/nurtur/v3/chatbot-web.png" width="2640" height="1234"
+            alt="Web chatbot session with sidebar navigation, progress bar and short messages">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CRISIS HOTLINE ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="nt-crisis-head">
+          <div data-aos="fade-up">
+            <h2 class="feature-section__title">Crisis Hotline</h2>
+            <p class="nt-body" style="margin-top:16px">A mental health product can't only design for ordinary days.
+              When someone feels completely overwhelmed, reaching out is hardest and matters most, so the crisis
+              hotline had to work in a single, obvious step.</p>
+          </div>
+          <div class="nt-quote" data-aos="fade-up" data-aos-delay="100">
+            <i class="ph-bold ph-hand-heart" aria-hidden="true"></i>
+            <span>“During panic, a single obvious action beats many choices.”</span>
+          </div>
+        </div>
+
+        <div class="nt-bento nt-bento--crisis">
+          <article class="nt-tile t-step1" data-aos="fade-up">
+            <div class="nt-tile__text">
+              <div class="nt-label" style="color:#545454">Step 1</div>
+              <h3>Alert screen</h3>
+              <p>The app initiates a personalized well-being check.</p>
+              <p>Users can immediately call the hotline with a tap-and-hold action or dismiss with “I am okay.”</p>
+            </div>
+            <img class="nt-tile__art" src="asset/image/nurtur/v3/crisis-step1.png" width="802" height="1080"
+              alt="Alert screen: I'm here for you, Amanda. Hotline number and a tap-and-hold call button">
+          </article>
+
+          <article class="nt-tile t-step2" data-aos="fade-up" data-aos-delay="100">
+            <div class="nt-label">Step 2</div>
+            <h3>Help recommendation</h3>
+            <p>Based on responses, the app gently recommends professional support.</p>
+            <p class="muted">Users may choose to “Get help now” or “Contact later,” ensuring autonomy.</p>
+            <img class="nt-tile__art" src="asset/image/nurtur/v3/crisis-step2.png" width="1054" height="1478"
+              alt="Help recommendation screen with Get help now and I prefer contacting later, in front of the support options screen">
+          </article>
+
+          <article class="nt-tile t-principles" data-aos="fade-up">
+            <div class="nt-label">Three principles</div>
+            <div class="nt-plist">
+              <div class="nt-prow is-on"><i class="ph-bold ph-hand-heart"></i><div><strong>Immediate response</strong><span>Users can reach help the first moment they need it.</span></div></div>
+              <div class="nt-prow"><i class="ph-bold ph-arrows-split"></i><div><strong>Autonomous choice</strong><span>When users aren't ready, clear paths let them get support later.</span></div></div>
+              <div class="nt-prow"><i class="ph-bold ph-shield-check"></i><div><strong>Error-tolerant design</strong><span>Every step leaves room for correction, so a mis-tap never blocks help.</span></div></div>
+            </div>
+          </article>
+
+          <article class="nt-tile t-step3" data-aos="fade-up" data-aos-delay="100">
+            <div class="nt-label" style="color:#545454">Step 3</div>
+            <h3>Support options</h3>
+            <p>Additional hotlines are presented with both call and text options.</p>
+            <p class="muted">A Back to Home action allows users to exit when ready.</p>
+            <div class="nt-contact"><i class="ph-bold ph-phone-call"></i>Call 1-833-852-6262</div>
+            <div class="nt-contact"><i class="ph-bold ph-chat-text"></i>Text 1-833-852-6262</div>
+            <div class="nt-btn">Back to Home</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROVIDER DASHBOARD ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="feature-section__header" data-aos="fade-up">
+          <h2 class="feature-section__title">Provider Dashboard</h2>
+        </div>
+        <p class="nt-dash-text" data-aos="fade-up" data-aos-delay="50">Clinicians follow their patients' progress, but they aren't trained to
+          parse dense numbers quickly, and raw scores slowed their decisions. My first version leaned on detailed
+          charts; I simplified it to a few key metrics, trends and color cues.</p>
+        <div class="nt-bento nt-bento--dash">
+          <article class="nt-tile t-solution" data-aos="fade-up">
+            <div class="nt-label">Solution</div>
+            <h3 style="font-size:24px">One screen to see who needs attention</h3>
+            <img src="asset/image/nurtur/v3/dashboard.png" width="1520" height="982"
+              alt="Provider dashboard with KPI cards, EPDS score trends, dropout rate and session summary">
+          </article>
+          <article class="nt-tile t-problem" data-aos="fade-up" data-aos-delay="100">
+            <div class="nt-label">Problem</div>
+            <h3>Dense numbers slowed care</h3>
+            <ul>
+              <li>Providers aren’t trained to parse dense quant data fast</li>
+              <li>Raw scores slow decision-making</li>
+            </ul>
+          </article>
+          <article class="nt-tile t-impact" data-aos="fade-up" data-aos-delay="150">
+            <div class="nt-label">Impact</div>
+            <p><b>Faster</b> first-read comprehension</p>
+            <p><b>Fewer</b> clarifying clicks</p>
+            <p><b>Higher</b> confidence in patient status at a glance</p>
+          </article>
+        </div>
+        <div class="nt-rules">
+          <article class="nt-tile t-rule" data-aos="fade-up">
+            <div class="t-rule__top"><span class="t-rule__icon"><i class="ph-bold ph-eye"></i></span><span class="nt-label">Rule 01</span></div>
+            <h3>“At-a-glance” summaries first, drill-down second</h3>
+          </article>
+          <article class="nt-tile t-rule" data-aos="fade-up" data-aos-delay="50">
+            <div class="t-rule__top"><span class="t-rule__icon"><i class="ph-bold ph-table"></i></span><span class="nt-label">Rule 02</span></div>
+            <h3>Avoid heavy tables</h3>
+          </article>
+          <article class="nt-tile t-rule" data-aos="fade-up" data-aos-delay="100">
+            <div class="t-rule__top"><span class="t-rule__icon"><i class="ph-bold ph-trend-up"></i></span><span class="nt-label">Rule 03</span></div>
+            <h3>Trend-based cues for EPDS</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT I LEARNED ===== -->
+    <section class="nt-section">
+      <div class="container">
+        <div class="feature-section__header" data-aos="fade-up">
+          <div class="feature-section__subtitle"><span>04</span> Reflection</div>
+          <h2 class="feature-section__title">What I learned</h2>
+        </div>
+        <div class="nt-bento nt-bento--learn">
+          <article class="nt-tile t-lesson" data-aos="fade-up">
+            <div class="nt-label">Key lesson</div>
+            <span class="t-lesson__icon" aria-hidden="true"><i class="ph-bold ph-hand-heart"></i></span>
+            <blockquote>Designing for vulnerable moments means putting clarity, agency and recoverability first.</blockquote>
+          </article>
+          <article class="nt-tile t-learn t-learn--mint" data-aos="fade-up" data-aos-delay="100">
+            <span class="t-learn__icon"><i class="ph-bold ph-plant"></i></span>
+            <div>
+              <h3>Moving fast without cutting corners on care</h3>
+              <p>Working closely with clinicians and engineers in a lean team.</p>
+            </div>
+          </article>
+          <article class="nt-tile t-learn t-learn--butter" data-aos="fade-up" data-aos-delay="150">
+            <span class="t-learn__icon"><i class="ph-bold ph-flow-arrow"></i></span>
+            <div>
+              <h3>Stronger skills in flows and information design</h3>
+              <p>From the chatbot flow to the crisis hotline and the provider dashboard.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Preview the comparison once, then leave the slider under user control.
+    document.querySelectorAll('[data-ba]').forEach(function (el) {
+      var r = el.querySelector('input[type=range]');
+      var frame = 0;
+      var observer;
+      var started = false;
+      var stopped = false;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function set(position) {
+        r.value = position;
+        el.style.setProperty('--pos', position + '%');
+      }
+
+      function takeControl() {
+        stopped = true;
+        cancelAnimationFrame(frame);
+        if (observer) observer.disconnect();
+        set(Number(r.value));
+      }
+
+      r.addEventListener('pointerdown', takeControl);
+      r.addEventListener('keydown', takeControl);
+      r.addEventListener('input', takeControl);
+      set(reduce ? 50 : 100);
+      if (reduce) return;
+
+      function play() {
+        if (started || stopped) return;
+        started = true;
+        if (observer) observer.disconnect();
+        var start;
+        var delay = 450;
+        var sweep = 1800;
+        var settle = 1100;
+        var ease = function (t) { return (1 - Math.cos(Math.PI * t)) / 2; };
+
+        function tick(now) {
+          if (stopped) return;
+          if (start === undefined) start = now;
+          var elapsed = now - start - delay;
+          if (elapsed < 0) {
+            set(100);
+          } else if (elapsed < sweep) {
+            set(100 * (1 - ease(elapsed / sweep)));
+          } else if (elapsed < sweep + settle) {
+            set(50 * ease((elapsed - sweep) / settle));
+          } else {
+            set(50);
+            return;
+          }
+          frame = requestAnimationFrame(tick);
+        }
+        frame = requestAnimationFrame(tick);
+      }
+
+      if ('IntersectionObserver' in window) {
+        observer = new IntersectionObserver(function (entries) {
+          if (entries.some(function (entry) { return entry.isIntersecting; })) play();
+        }, { threshold: 0.35 });
+        observer.observe(el);
+      } else {
+        play();
+      }
+    });
+  </script>
+
+
+  <!-- ===== NEXT PROJECT ===== -->
+  <a class="np np--link np--ms" id="np" href="Agnes.html" style="--base-img: url('../image/Agnes/Agnes hero.png');">
+
+    <div class="np__base" aria-hidden="true"></div>
+    <div class="np__cover" aria-hidden="true"></div>
+
+    <div class="np__content">
+      <h2 class="np__title" data-text="Next Project">Next Project</h2>
+      <p class="np__sub" data-text="See my Agnes AI design work">See my Agnes AI design work</p>
     </div>
+  </a>
+
+  <!-- ===== FOOTER ===== -->
+  <section class="footer-wrap">
+    <section class="footer-top section no-divider" id="contact">
+      <div class="container">
+        <div class="grid-12" style="row-gap:24px; align-items:start;">
+          <div class="span-12 md-span-5" style="justify-self:start; text-align:left;" data-aos="fade-right">
+            <div class="footer-kicker">Last Stop</div>
+            <div class="bleed-left" style="margin:8px 0 16px;">
+              <img src="asset/image/Home3.0/footer metro.svg">
+            </div>
+            <h2 class="footer-heading">Let's connect!</h2>
+          </div>
+          <div class="span-12 md-span-2 md-col-start-11" style="justify-self:end;" data-aos="fade-left">
+            <ul class="footer-links">
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn"
+                  href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+                  target="_blank" rel="noopener">Resume</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn" href="About.html">About Me</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="https://www.linkedin.com/in/lina-jiayu-wang/" target="_blank"
+                  rel="noopener">LinkedIn</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="mailto:linaw815@uw.edu">Email</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer-bottom">
+      <div class="container">
+        <div class="span-12" style="opacity:.8;">
+          <div class="FooterCopyright">
+            <p>&copy; 2026 Lina Wang</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
-
-  <section class="section">
-    <div class="container">
-      <div data-aos="fade-up">
-        <h2 class="eyebrow" style="color: #20633B;">Design Highlights</h2>
-        <h3 style="font-family: Poppins;">Provider Dashboard</h3>
-        <p>Since the clinicians are actively involved in the process, there needs to be a dashboard that centralize all
-          the resources and allow clinicians to view the stat’s of their patients at a glance.</p>
-      </div>
-      <div data-aos="fade-up">
-        <h4>Problem</h4>
-        <ul style="margin-bottom: 32px;">
-          <li>Providers aren’t trained to parse dense quant data fast</li>
-          <li>Raw scores slow decision-making</li>
-        </ul>
-      </div>
-      <div data-aos="fade-up">
-        <h4>Solution</h4>
-        <img src="asset/image/nurtur/Provider Dashboard.png" style="margin-bottom: 32px;">
-      </div>
-      <div data-aos="fade-up">
-        <h3 style="font-family: Poppins; color:#20633B; font-size: 20px;">Impacts</h3>
-        <ul>
-          <li>Faster “first-read” comprehension</li>
-          <li>Fewer clarifying clicks</li>
-          <li>Higher confidence in patient status at a glance</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" data-aos="fade-up">
-    <div class="container">
-      <h2 class="eyebrow" style="color: #20633B;">Outcomes & Reflection</h2>
-      <h3 style="font-family: Poppins;">What I learned</h3>
-      <ul>
-        <li>Designing for vulnerable states means privileging clarity, agency, and recoverability.
-        <li>Collaborated closely with clinicians/engineers.</li>
-        <li>Strengthened skills in flows, information design.</li>
-      </ul>
-    </div>
-  </section>
-
-
-  <footer class="page FooterSlide" style="background: linear-gradient(to right, #DCEDEF, #D8EBD7, #D5E8C1);">
-    <div class="FooterContent">
-      <div class="FooterLeft">
-        <div class="FooterTitle">Last Stop</div>
-        <div class="FooterMessage">Let’s connect!</div>
-      </div>
-      <div class="FooterRight">
-        <a href="mailto:your@email.com" class="FooterLink">Email me</a>
-        <a href="https://linkedin.com/in/lina-jiayu-wang" target="_blank" class="FooterLink">LinkedIn</a>
-        <!-- <a href="https://instagram.com/yourprofile" class="FooterLink">Instagram</a> -->
-      </div>
-    </div>
-
-    <div class="FooterCopyright">
-      <p>&copy; 2026 Lina Wang</p>
-    </div>
-  </footer>
-<script src="asset/javascript/nav-glass.js"></script>
 </body>
 
+<script src="asset/javascript/javascript.js"></script>
 <script>
   AOS.init();
 </script>

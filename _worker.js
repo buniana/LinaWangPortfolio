@@ -1,6 +1,6 @@
 // _worker.js — password-only gate for /Gifted (and children)
 
-const PROTECTED = [/^\/nurtur(\/.*)?$/i];
+const PROTECTED = [/^\/nurtur(-[\w-]+)?(\.html)?(\/.*)?$/i]; // nurtur, nurtur.html, nurtur-v1-archived, nurtur-v2*
 const COOKIE_NAME = "pwok";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 14; // 14 days
 
