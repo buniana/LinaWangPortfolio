@@ -120,9 +120,15 @@ function passwordForm(currentUrl) {
       );
   }
 
+  .lock-content {
+    width: min(640px, 100%);
+    display: grid;
+    gap: 24px;
+  }
+
   /* Card */
   .lock-card {
-    width: min(640px, 92vw);
+    width: 100%;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -182,6 +188,26 @@ function passwordForm(currentUrl) {
   .lock-btn:hover { transform: translateY(-1px); }
   .lock-btn:active { transform: translateY(0); box-shadow: 0 6px 18px rgba(255, 90, 95, .24); }
 
+  .lock-skip {
+    background: var(--card);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--brand-1);
+    border-radius: 999px;
+    color: #454656;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .12s ease, transform .12s ease;
+  }
+  .lock-skip:hover { background-color: color-mix(in srgb, var(--brand-1) 10%, white); transform: translateY(-1px); }
+  .lock-skip:active { transform: translateY(0); }
+  .lock-skip:focus-visible { outline: 2px solid var(--brand-1); outline-offset: 3px; }
+
   @media (max-width: 520px){
     .lock-card { padding: 18px; gap: 12px; }
   }
@@ -189,26 +215,29 @@ function passwordForm(currentUrl) {
 </head>
 <body>
   <main class="lock-wrap">
-    <section class="lock-card" role="dialog" aria-labelledby="lockTitle" aria-describedby="lockDesc">
-      <div class="lock-head">
-        <div class="lock-icon" aria-hidden="true">
-          <i class="ph-duotone ph-lock-key" style="color:#D6739F; font-size:40px;"></i>
+    <div class="lock-content">
+      <section class="lock-card" role="dialog" aria-labelledby="lockTitle" aria-describedby="lockDesc">
+        <div class="lock-head">
+          <div class="lock-icon" aria-hidden="true">
+            <i class="ph-duotone ph-lock-key" style="color:#D6739F; font-size:40px;"></i>
+          </div>
+          <div>
+            <h1 id="lockTitle" class="lock-title">This page is password-protected</h1>
+          </div>
         </div>
-        <div>
-          <h1 id="lockTitle" class="lock-title">This page is password-protected</h1>
-        </div>
-      </div>
 
-      <p id="lockDesc" class="lock-sub">Enter the password to continue</p>
-      ${bad ? `<p class="lock-err">Incorrect password. Please try again.</p>` : ``}
+        <p id="lockDesc" class="lock-sub">Enter the password to continue</p>
+        ${bad ? `<p class="lock-err">Incorrect password. Please try again.</p>` : ``}
 
-      <form class="lock-form" method="post" action="/__pwcheck">
-        <label class="lock-label" for="pass">Password</label>
-        <input id="pass" class="lock-input" name="pass" type="password" placeholder="Enter password" autocomplete="current-password" required autofocus />
-        <input type="hidden" name="return_to" value="${escapeHtml(returnTo)}" />
-        <button class="lock-btn" type="submit">Unlock</button>
-      </form>
-    </section>
+        <form class="lock-form" method="post" action="/__pwcheck">
+          <label class="lock-label" for="pass">Password</label>
+          <input id="pass" class="lock-input" name="pass" type="password" placeholder="Enter password" autocomplete="current-password" required autofocus />
+          <input type="hidden" name="return_to" value="${escapeHtml(returnTo)}" />
+          <button class="lock-btn" type="submit">Unlock</button>
+        </form>
+      </section>
+      <a class="lock-skip" href="/Agnes.html">Skip to next project <span aria-hidden="true">&rarr;</span></a>
+    </div>
   </main>
 </body></html>`;
 
