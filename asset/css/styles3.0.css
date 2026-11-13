@@ -1873,6 +1873,12 @@ header .content {
   padding: 72px 0 80px;
 }
 
+/* phones only: tighter gap between the hero and the rail intro (desktop unchanged) */
+@media (max-width: 767px) {
+  .agnes-hero { padding-bottom: 24px; }
+  .agnes-intro { padding-top: 24px; }
+}
+
 .agnes-intro__rail {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -1930,6 +1936,12 @@ header .content {
   font-weight: 400;
   color: #000;
   line-height: 1.5;
+}
+
+/* phones only: stack role / duration / skills left-aligned instead of each centered on its own width */
+@media (max-width: 767px) {
+  .meta-item,
+  .ms-meta .meta-item { justify-self: start; max-width: none; gap: 8px; }
 }
 
 /* Business Goals Section */
@@ -2511,6 +2523,13 @@ header .content {
   font-weight: 600;
   color: #000;
   line-height: 1.2;
+}
+
+/* smaller feature headers on phones */
+@media (max-width: 767px) {
+  .feature-section__subtitle { font-size: 22px; }
+  .feature-section__title { font-size: 32px; }
+  .feature-section__header img[src*="bigarrow"] { height: 32px !important; }
 }
 
 .feature-layout {
@@ -3109,6 +3128,15 @@ header .content {
   }
 }
 
+/* phones: 12 columns + 40px gaps are wider than the screen, so stack in one column */
+@media (max-width: 767px) {
+  .takeaways-section { padding: 96px 0; }
+  .takeaways-list { grid-template-columns: 1fr; gap: 24px; }
+  .takeaway-card { grid-column: 1 / -1; padding: 28px 24px; border-radius: 30px; }
+  .takeaway-card__title { font-size: 24px; }
+  .takeaway-card__text { font-size: 16px; }
+}
+
 /* ===== Next Project spotlight (WHITE COVER + reveal hole + text masked) ===== */
 .np {
   --base-img: url("../image/Agnes/HIP Preview.png");
@@ -3559,6 +3587,20 @@ header .content {
   font-weight: 500;
   font-size: 40px;
   margin-bottom: 24px;
+}
+
+/* phones only: big headlines (Summary, Impact, Solution) were too large */
+@media (max-width: 767px) {
+  .solution-headline { font-size: 28px; line-height: 1.35; margin-bottom: 24px; }
+  .ms-summary-headline { font-size: 24px; margin-bottom: 16px; }
+  .ms-meta .challenge-section__title-wrap { margin-bottom: 24px; }
+  .ms-meta .ms-summary-layout { margin-top: 16px; }
+  .ms-impact .challenge-section__title-wrap { margin-bottom: 24px; }
+  .ms-impact .ms-impact-lead { font-size: 18px; margin: 16px 0 12px; }
+  .ms-impact .ms-impact-cards { gap: 16px; }
+  .ms-impact .ms-impact-card { padding: 24px; gap: 12px; }
+  .ms-impact .ms-impact-card__icon { font-size: 28px; }
+  .ms-impact .ms-impact-card__label { font-size: 20px; }
 }
 
 /* NDA notice box */

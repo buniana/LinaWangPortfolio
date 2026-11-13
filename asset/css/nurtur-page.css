@@ -51,8 +51,8 @@
 .nt-role__num { font-size: 40px; font-weight: 600; line-height: 1.2; }
 .nt-role__title { font-size: 20px; font-weight: 600; margin: 6px 0 8px; }
 .nt-role__desc { font-size: 16px; line-height: 1.6; }
-.nt-role__phone { margin: auto auto 0; width: 218px; border-radius: 18px 18px 0 0; overflow: hidden; box-shadow: 0 30px 60px rgba(17,19,24,.14); transform: translateY(24px); transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
-.nt-role:hover .nt-role__phone { transform: translateY(8px); }
+.nt-role__phone { margin: auto auto 0; width: 218px; border-radius: 18px 18px 0 0; overflow: hidden; box-shadow: 0 30px 60px rgba(17,19,24,.14); transform: translateY(24px); transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1); }
+.nt-role:hover .nt-role__phone { transform: translateY(16px); box-shadow: 0 40px 80px rgba(17,19,24,.10); transition-duration: .6s; transition-delay: .15s; } /* underline draws first, phone follows */
 
 /* ---------- Before / after ---------- */
 .nt-ba { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #EFEFF2; background: #fff; aspect-ratio: 1320 / 771; margin-top: 16px; }
@@ -177,3 +177,33 @@
 @media (min-width: 900px) { .nt-ds { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
 .nt-ds__col { display: flex; flex-direction: column; gap: 24px; }
 .nt-ds__col img { width: 100%; border-radius: 24px; }
+
+/* hero -> rail intro on phones only: Agnes has a stats row in between; nurtur doesn't, so close the gap */
+@media (max-width: 767px) {
+  .nt .agnes-hero { padding-bottom: 24px; }
+  .nt .agnes-hero__image { margin-bottom: 0; }
+  .nt .agnes-intro { padding-top: 24px; }
+}
+
+/* desktop: less space between the intro paragraph and "My Role" */
+@media (min-width: 768px) {
+  .nt .agnes-intro { padding-bottom: 24px; }
+}
+
+/* My Role cards: on card hover, key words get an underline that draws in (same motion as the nav links) */
+.nt-hl {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  background-position: right 0 bottom 0;
+  padding-bottom: 1px;
+  transition: background-size .6s cubic-bezier(.65,0,.25,1);
+}
+.nt-role--mint .nt-hl { background-image: linear-gradient(rgba(31,92,73,.6), rgba(31,92,73,.6)); }
+.nt-role--butter .nt-hl { background-image: linear-gradient(rgba(68,72,79,.6), rgba(68,72,79,.6)); }
+.nt-role--blush .nt-hl { background-image: linear-gradient(rgba(68,72,79,.6), rgba(68,72,79,.6)); }
+.nt-role:hover .nt-hl,
+.nt-role:focus-within .nt-hl { background-size: 100% 3px; background-position: left 0 bottom 0; }
+.nt-role:hover .nt-hl:nth-child(2) { transition-delay: .12s; }
+.nt-role:hover .nt-hl:nth-child(3) { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) { .nt-hl { transition: none; } }

@@ -1,0 +1,35 @@
+/* ===== MORE FROM AGNES (matches Figma "Updated 1/6") ===== */
+.more-agnes-section { padding: 160px 0 80px; }
+.more-agnes-section .users-section__header { gap: 33px; margin-bottom: 40px; }
+.more-agnes-rows { display: flex; flex-direction: column; gap: 24px; }
+
+.ma-row { position: relative; border-radius: 30px; overflow: hidden; container-type: inline-size; }
+.ma-row--upgrade { background: #E5DAFB; }
+.ma-row--billing { background: #FEEECE; }
+.ma-row--sharing { background: #F4E8FF; }
+.ma-row__img { display: block; width: 100%; height: auto; }
+.ma-row__img--mobile { display: none; }
+
+/* desktop: text sits on the row exactly where it is in the design (1320 x 520 artboard) */
+.ma-row__text { position: absolute; top: calc(148 / 520 * 100%); left: calc(56 / 1320 * 100%); width: calc(400 / 1320 * 100%); font-family: 'Poppins', sans-serif; color: #000; }
+.ma-row--billing .ma-row__text { left: calc(820 / 1320 * 100%); }
+.ma-row--sharing .ma-row__text { top: calc(175 / 520 * 100%); left: calc(52 / 1320 * 100%); width: calc(318 / 1320 * 100%); }
+.ma-row__title { font-size: calc(32 / 1320 * 100cqw); font-weight: 600; line-height: 1.15; margin: 0 0 calc(4 / 1320 * 100cqw); }
+.ma-row__desc { font-size: calc(18 / 1320 * 100cqw); font-weight: 400; line-height: 1.5; margin: 0; }
+.ma-row--upgrade .ma-row__desc { max-width: calc(302 / 400 * 100%); }
+.ma-row--billing .ma-row__desc { max-width: calc(380 / 400 * 100%); }
+.ma-row--sharing .ma-row__title { max-width: calc(309 / 318 * 100%); }
+
+/* mobile: text first, then the phones */
+@media (max-width: 767px) {
+  .ma-row .ma-row__text { position: static; width: auto; padding: 28px 24px 8px; }
+  .ma-row .ma-row__title { max-width: none; }
+  .more-agnes-section { padding-top: 96px; }
+  .more-agnes-section .users-section__header { gap: 12px; margin-bottom: 24px; }
+  .more-agnes-section .users-section__title { font-size: 36px; line-height: 1.2; }
+  .more-agnes-section .users-section__arrow { width: 36px; height: 36px; margin-top: 4px; }
+  .ma-row__title { font-size: 26px; margin-bottom: 8px; }
+  .ma-row__desc { font-size: 16px; max-width: none !important; }
+  .ma-row__img--desktop { display: none; }
+  .ma-row__img--mobile { display: block; }
+}
