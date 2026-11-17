@@ -17,7 +17,7 @@
 #ride .led .dot:not(.ws-clone *){flex:none;width:6px;height:6px;border-radius:50%;background:var(--pink);box-shadow:0 0 8px var(--pink)}
 #ride .led.arriving .dot:not(.ws-clone *){animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{opacity:.15}}
-#ride .glass:not(.ws-clone *){position:absolute;left:var(--wx);top:var(--wy);width:var(--ww);height:var(--wh);border-radius:var(--wr);overflow:hidden;pointer-events:none;z-index:4;color:#fff6f1;opacity:0!important}
+#ride .glass:not(.ws-clone *){position:absolute;left:var(--wx);top:var(--wy);width:var(--ww);height:var(--wh);border-radius:var(--wr);overflow:hidden;pointer-events:none;z-index:4;color:#fff6f1;opacity:0!important;clip-path:inset(50%)}  /* text-only copy for screen readers; the canvas draws what people see (Safari could still paint this layer) */
 #ride .layer:not(.ws-clone *){position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:clamp(28px,10%,110px) clamp(16px,5%,64px) 0;text-align:center;will-change:transform,opacity;box-sizing:border-box}
 #ride #sw:not(.ws-clone *){justify-content:center;padding:0 clamp(16px,5%,64px)}
 #ride #iw:not(.ws-clone *){isolation:isolate}
@@ -31,8 +31,8 @@
 #ride .show .w:not(.ws-clone *){opacity:1;transform:none}
 #ride .show .cx:not(.ws-clone *){letter-spacing:-.005em;filter:none}
 #ride .show .d1:not(.ws-clone *){transition-delay:.1s}
-#ride .show .d2:not(.ws-clone *){transition-delay:.75s}
-#ride .show .d3:not(.ws-clone *){transition-delay:1.05s}
+#ride .show .d2:not(.ws-clone *){transition-delay:2.7s}
+#ride .show .d3:not(.ws-clone *){transition-delay:2.8s}  /* matches the canvas: into Clarity waits for the Complexity wave */
 #ride .glow:not(.ws-clone *){text-shadow:0 1px 18px rgba(26,12,40,.3)}
 #ride .hello:not(.ws-clone *){margin:0;font-weight:600;font-size:clamp(38px,6.4vw,100px);letter-spacing:-.035em;line-height:1}
 #ride .role:not(.ws-clone *){margin:0;font-family:var(--display);font-style:italic;font-size:clamp(40px,6.8vw,106px);line-height:1;color:#fff6f1}
