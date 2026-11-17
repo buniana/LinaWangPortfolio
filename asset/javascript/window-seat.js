@@ -889,7 +889,7 @@ function updateDOM(p,rawP){
   if(!panel&&!GAL()&&mode==='stopped'&&introVis>.9&&onWall){ho=wallCue;cueMode='down';}
   else if(mode==='stopped'&&slogShown&&t-slogStart>4.8&&(panel?cp<.15:!seatGo)&&!GAL()){ho=1;cueMode='right';}
   else if(GAL()&&galV>.16&&galV<.3){ho=1;cueMode='right';}
-  else if(mode==='stopped'&&stopT>1.2&&galEx<.02&&((GAL()&&galV>=.999)||(layoutMode==='pan'&&!GAL()&&p>.26)||(layoutMode==='ticket'&&peelV>=.95&&p>.26))){ho=GAL()?1-u1:wallCue*(onWall?1:0);cueMode=GAL()?'right':'down';}
+  else if(mode==='stopped'&&stopT>1.2&&galEx<.02&&((GAL()&&galV>=.999)||(layoutMode==='pan'&&!GAL()&&cp>.16)||(layoutMode==='ticket'&&peelV>=.95&&p>.26))){ho=GAL()?1-u1:wallCue*(onWall?1:0);cueMode=GAL()?'right':'down';}
   if(!slogShown&&!introVis&&!panV) ho=0;
   hint.style.opacity=ho;
   if(cueMode&&cueMode!==hintState){ hintState=cueMode; hint.classList.toggle('right',cueMode==='right'); hint.classList.toggle('down',cueMode==='down');
@@ -1173,7 +1173,28 @@ function navTheme(){
   const wr=document.getElementById('projects').getBoundingClientRect(), act=(wr.top<innerHeight*.5&&wr.bottom>innerHeight*.3)?flinkEls[0]:null;
   if(act!==navActive){ navActive=act; placeSel(); } if(navCollapsed&&fsel.style.opacity!=='0') placeSel(); const w=document.getElementById('projects').getBoundingClientRect(); const light=w.top<60||(ride.getBoundingClientRect().bottom>0&&cp>=.83); fnav.classList.toggle('light',light); }
 let rz; addEventListener('resize',()=>{clearTimeout(rz); rz=setTimeout(()=>{layout(); buildSnaps();},150);});
+// ---- coming back to the homepage: don't replay the ride every time ----
+// First visit or a real refresh: the full intro. Browser Back: skip it and return to the spot you left.
+// Arriving from another page of the site (e.g. the logo): skip it and start with the train already in the station.
+let wsResume=null;
+(function(){
+  let saved=null; try{ saved=JSON.parse(sessionStorage.getItem('lw-home')||'null'); }catch(e){}
+  addEventListener('pagehide',()=>{ try{ sessionStorage.setItem('lw-home',JSON.stringify({y:scrollY,t:Date.now()})); }catch(e){} });
+  if(!saved||reduce) return;
+  const nav=performance.getEntriesByType?performance.getEntriesByType('navigation')[0]:null, type=nav?nav.type:'navigate';
+  if(type==='reload') return;
+  let fromSite=false; try{ fromSite=!!document.referrer&&new URL(document.referrer).origin===location.origin; }catch(e){}
+  if(type!=='back_forward'&&!fromSite) return;
+  wsResume={y:type==='back_forward'?saved.y:0};
+  ti=99; introDone=true; mode='stopped'; stopT=9; s=0; cruiseT=9;
+  slogShown=true; slogStart=-99; slogan.classList.add('show');
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+})();
 buildClone(); layout(); requestAnimationFrame(frame);
+if(wsResume){
+  const go=()=>{ const y=wsResume.y; if(y>=endY()-5){ rideReleased=true; cp=1; markProjectsShown(); } scrollTo({top:y,behavior:'instant'}); };
+  go(); addEventListener('load',go,{once:true});
+}
 if(document.fonts&&document.fonts.load){
   const warm=()=>{ const wc=document.createElement('canvas').getContext('2d'); for(const f of ['500 40px Inter','700 40px Inter','300 40px Inter','600 40px Inter',"italic 400 40px 'Instrument Serif'"]){ wc.font=f; wc.fillText('I design Complexity into Clarity',0,40); } };
   Promise.all(['300 20px Inter','900 20px Inter','700 20px Inter','600 20px Inter','500 20px Inter',"13px 'DotGothic16'","italic 400 40px 'Instrument Serif'"].map(f=>document.fonts.load(f).catch(()=>{}))).then(()=>{warm(); buildSign(); buildTicket();});
