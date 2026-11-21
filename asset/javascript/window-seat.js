@@ -1184,8 +1184,10 @@ let wsResume=null;
   const nav=performance.getEntriesByType?performance.getEntriesByType('navigation')[0]:null, type=nav?nav.type:'navigate';
   if(type==='reload') return;
   let fromSite=false; try{ fromSite=!!document.referrer&&new URL(document.referrer).origin===location.origin; }catch(e){}
+  // some setups send no referrer (file://, strict referrer policies): also trust a page of this site that was left a moment ago
+  try{ const left=+sessionStorage.getItem('lw-left'); if(left&&Date.now()-left<15000) fromSite=true; }catch(e){}
   if(type!=='back_forward'&&!fromSite) return;
-  wsResume={y:type==='back_forward'?saved.y:0};
+  wsResume={y:saved.y};   // back button or a link back (e.g. the logo): pick up where they left off
   ti=99; introDone=true; mode='stopped'; stopT=9; s=0; cruiseT=9;
   slogShown=true; slogStart=-99; slogan.classList.add('show');
   if('scrollRestoration' in history) history.scrollRestoration='manual';

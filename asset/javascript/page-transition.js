@@ -6,6 +6,8 @@
      Safari 18.2+. Other browsers just get the opening half.)
    Load this file in <head> (not deferred) on every page. */
 (function () {
+  // remember when a page of the site was left, so the homepage knows a visitor came from inside the site
+  addEventListener('pagehide', function () { try { sessionStorage.setItem('lw-left', String(Date.now())); } catch (e) {} });
   var KEY = 'lw-iris', PAPER = '#FDFCFB', PINK = '#DE7E98', INK = '#111318';
   var LPATH = 'M19.321 32V14.5455H23.5398V28.5739H30.8011V32H19.321Z';
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="asset/javascript/page-transition.js"></script>
+<script src="asset/javascript/dot-cursor.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inspiration&family=Instrument+Serif:ital@1&family=Inter:wght@300;400;500;600;700;800&family=Irish+Grover&family=Istok+Web:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/styles3.0.css">
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <!-- Phosphor icons (bold) -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+  <script src="asset/javascript/javascript.js"></script>
+  <title>Lina Wang | Microsoft Teams Case Study</title>
+  <link rel="icon" type="image/svg+xml" href="/asset/image/Home3.0/favicon.svg">
+
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD4VM5JDWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-RD4VM5JDWE');
+  </script>
+
+
+  <link rel="stylesheet" href="asset/css/nav-glass.css">
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="glass-nav">
+    <div class="content">
+      <a href="index.html" id="logo" class="logo" style="display:flex;align-items:center;gap:5px;">
+        <img src="asset/image/Home3.0/logo.svg" alt="Logo" style="height:35px;">Lina Wang
+      </a>
+
+      <!-- Mobile hamburger button -->
+      <button class="nav-toggle" id="navToggle" aria-controls="primary-nav" aria-expanded="false"
+        aria-label="Open menu">
+        <!-- hamburger -->
+        <svg class="icon icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <!-- close -->
+        <svg class="icon icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav id="primary-nav">
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+              target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="mailto:linaw815@uw.edu">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Off-canvas mobile menu overlay -->
+  <div id="mobileOverlay" class="overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="overlay-backdrop" data-close-overlay></div>
+    <aside class="overlay-panel" tabindex="-1">
+      <button class="overlay-close" id="overlayClose" aria-label="Close menu" data-close-overlay>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <nav class="overlay-nav">
+        <a href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link" target="_blank"
+          rel="noopener">Resume</a>
+        <a href="About.html">About</a>
+        <a href="play.html">Play</a>
+        <a href="mailto:linaw815@uw.edu">Contact</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="agnes-hero ms-hero">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12">
+          <h1 class="agnes-hero__headline" data-aos="fade-up">
+            Improving discoverability and usability for a Teams feature used by 100M+ users
+          </h1>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="agnes-hero__image">
+            <img src="asset/image/Microsoft/Microsoft hero.png" alt="Microsoft Teams feature improvement overview">
+          </div>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="200">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-card__value">100M+</div>
+              <div class="stat-card__label-row">
+                <span class="stat-card__label">Active users the improvement can reach</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">90%+</div>
+              <div class="stat-card__label-row">
+                <span class="stat-card__label">Active users have the potential of adopting the improved
+                  feature</span>
+              </div>
+            </div>
+            <div class="stat-card stat-card--center">
+              <div class="stat-card__value">mild to wild exploration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== META / NDA / SUMMARY ===== -->
+  <section class="agnes-intro ms-meta">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="agnes-intro__rail">
+            <picture>
+              <source media="(max-width: 767px)" srcset="asset/image/Microsoft/Microsoft%20metro%20intro%20mobile.png">
+              <img src="asset/image/Microsoft/Microsoft%20metro%20intro.png" alt="Microsoft Teams Metro Introduction">
+            </picture>
+          </div>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="meta-grid">
+            <div class="meta-item">
+              <div class="meta-item__title">My Role</div>
+              <div class="meta-item__content">Product Design Intern</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-item__title">Duration</div>
+              <div class="meta-item__content">June 2026 – Sep 2026</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-item__title">Skills Applied</div>
+              <div class="meta-item__content">AI-infused product design<br>Hi-fidelity prototyping<br>Cross-functional
+                collaboration<br>Usability research</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="ms-nda">
+            <h3 class="ms-nda__title"><i class="ph-bold ph-lock-simple"></i> This work is under NDA</h3>
+            <p class="ms-nda__sub">For more details, please <a href="mailto:linaw815@uw.edu">email me</a> or DM me on
+              <a href="https://www.linkedin.com/in/lina-jiayu-wang/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+          </div>
+        </div>
+
+        <div class="span-12" data-aos="fade-up">
+          <div class="challenge-section__title-wrap">
+            <h2 class="challenge-section__title">Summary</h2>
+          </div>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="solution-headline ms-summary-headline">Improved a Teams feature and delivered a development-ready design, alongside
+            a 3-step AI-infused future roadmap for 100M+ active users.</h3>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="200">
+          <div class="ms-summary-layout">
+            <img class="ms-summary-layout__image" src="asset/image/Microsoft/Summary image.png" alt="Teams comment resolution summary">
+            <div class="ms-summary-layout__text">
+              <p>As the only design intern on the Teams design team, I worked closely with PM, research, and design
+                leaders to reimagine the experience of an organization feature in Teams.</p>
+              <p>I led early problem space exploration, design exploration, high-fidelity prototyping, and usability
+                testing, translating data into design opportunities and eventually design solutions, including a
+                readily shippable solution and a 3-step AI-infused future design roadmap.</p>
+              <p>I designed high-fidelity prototypes within Teams' enterprise design system, using AI tools to
+                accelerate prototyping and refine detail, and built 4 prototype variants for an A/B study run in
+                collaboration with a researcher.</p>
+              <p>Beyond discoverability, I also improved usability within the existing flow: I added a bulk selection
+                capability so users could act on multiple items at once instead of one at a time, which had been
+                slowing people down.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-12" data-aos="fade-up">
+          <div class="ms-highlights-grid">
+            <div class="ms-highlight-card">
+              <div class="ms-highlight-card__title">Delivered a mild-to-wild solution set</div>
+              <div class="ms-highlight-card__desc">Explored solutions from quick feature improvement to bold,
+                future-facing AI-infused concepts to shape the shippable design and future roadmap.</div>
+            </div>
+            <div class="ms-highlight-card">
+              <div class="ms-highlight-card__title">Designed an interactive high-fidelity prototype</div>
+              <div class="ms-highlight-card__desc">Utilizing Teams and the Fluent design system, I built an
+                interactive prototype and leveraged AI tools to accelerate the prototyping process.</div>
+            </div>
+            <div class="ms-highlight-card">
+              <div class="ms-highlight-card__title">Ran a usability study</div>
+              <div class="ms-highlight-card__desc">Recruited and moderated 6 participants, synthesized findings into
+                a report, and paired telemetry data with qualitative insights to inform design iterations.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW I GOT THERE (NDA-safe, abstract visuals only) ===== -->
+  <style>
+  .msp{--pu:#5B5FC7;--pu2:#7F85F5;--lav:#E8EBFA;--line:#D9DCF2;--g1:#C9CCE4;--g2:#DEE0F0;--ink:#111318;--mut:#5c5f6e;
+    padding:clamp(64px,8vw,140px) 0 clamp(48px,6vw,96px);background:#FDFCFB;font-family:'Poppins',sans-serif;color:var(--ink)}
+  .msp .challenge-section__title-wrap{margin-bottom:32px}
+  .msp-intro{font-size:20px;line-height:1.6;color:var(--mut);max-width:760px;margin:0 0 72px;font-family:Inter,system-ui,sans-serif}
+  .msp-step{display:grid;grid-template-columns:4fr 8fr;gap:56px;align-items:center;margin:0 0 96px}
+  .msp-step:last-child{margin-bottom:0}
+  .msp-num{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pu);margin:0 0 10px}
+  .msp-h{font-size:32px;font-weight:600;line-height:1.25;margin:0 0 16px}
+  .msp-p{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;color:var(--mut);margin:0}
+  .msp-fig{background:var(--lav);border-radius:24px;padding:36px;position:relative;overflow:hidden}
+  .msp-cap{font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#8a8da0;margin-top:14px;text-align:right}
+
+  /* wireframe atoms */
+  .wf{background:#fff;border-radius:12px;box-shadow:0 1px 0 rgba(17,19,24,.04),0 6px 18px rgba(91,95,199,.08);padding:12px;display:flex;flex-direction:column;gap:7px}
+  .wf i{display:block;height:7px;border-radius:4px;background:var(--g2)}
+  .wf i.d{background:var(--g1)} .wf i.p{background:var(--pu2);opacity:.85} .wf i.s{width:55%} .wf i.m{width:75%}
+  .wf .row{display:flex;gap:6px;align-items:center} .wf .row i{flex:1}
+  .wf .blk{height:34px;border-radius:7px;background:var(--g2)}
+  .wf .spark{width:14px;height:14px;flex:0 0 14px;border-radius:4px;background:linear-gradient(135deg,#B6A2F5,#7F85F5)}
+
+  /* 1 · spectrum */
+  .spec{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;padding-bottom:58px}
+  .spec .wf{min-height:132px;transition:transform .3s}
+  .spec .c{position:relative}
+  .spec .c.pick .wf{outline:2.5px solid var(--pu);outline-offset:3px}
+  .spec .tag{position:absolute;top:-11px;left:12px;font:600 11px/1 Inter,sans-serif;padding:5px 8px;border-radius:999px;background:var(--pu);color:#fff;z-index:1}
+  .spec .tag.r{background:#fff;color:var(--pu);box-shadow:inset 0 0 0 1.5px var(--pu)}
+  .spec .lbl{font:600 13px/1.3 Inter,sans-serif;margin-top:12px;color:var(--ink)}
+  .spec .track{position:absolute;left:0;right:0;bottom:12px;height:6px;border-radius:3px;background:linear-gradient(90deg,#C9CCE4,var(--pu) 70%,#B6A2F5)}
+  .spec .ends{position:absolute;left:0;right:0;bottom:-10px;display:flex;justify-content:space-between;font:600 12px/1 Inter,sans-serif;color:var(--mut)}
+
+  /* 2 · bulk select */
+  .bulk{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .bulk .side{background:#fff;border-radius:16px;padding:18px 18px 16px;box-shadow:0 6px 18px rgba(91,95,199,.08)}
+  .bulk .hd{display:flex;justify-content:space-between;align-items:center;font:600 13px/1 Inter,sans-serif;margin-bottom:14px}
+  .bulk .cnt{font:700 12px/1 Inter,sans-serif;padding:6px 9px;border-radius:999px;background:#F3F3F6;color:var(--mut)}
+  .bulk .after .cnt{background:var(--pu);color:#fff}
+  .bulk .it{display:flex;align-items:center;gap:10px;height:30px;border-radius:8px;padding:0 10px;margin-bottom:6px;background:#F7F7FB}
+  .bulk .it i{flex:1;height:7px;border-radius:4px;background:var(--g2)}
+  .bulk .cb{width:14px;height:14px;border-radius:4px;box-shadow:inset 0 0 0 1.5px #B9BCD6;flex:0 0 14px;position:relative}
+  .bulk .act{width:46px;height:18px;border-radius:5px;background:#E3E4F2;flex:0 0 46px}
+  .bulk .before .it{animation:one 5s infinite}
+  .bulk .before .it:nth-child(2){animation-delay:.0s}.bulk .before .it:nth-child(3){animation-delay:.6s}.bulk .before .it:nth-child(4){animation-delay:1.2s}.bulk .before .it:nth-child(5){animation-delay:1.8s}.bulk .before .it:nth-child(6){animation-delay:2.4s}
+  .bulk .before .it .act{animation:clk 5s infinite;animation-delay:inherit}
+  @keyframes one{0%,4%{background:#F7F7FB}6%,16%{background:#ECEDFB}22%,100%{background:#F7F7FB}}
+  @keyframes clk{0%,6%{background:#E3E4F2}8%,14%{background:var(--pu2)}18%,100%{background:#E3E4F2}}
+  .bulk .after .it{animation:sel 5s infinite}
+  .bulk .after .cb{animation:chk 5s infinite}
+  .bulk .after .it:nth-child(3),.bulk .after .it:nth-child(3) .cb{animation-delay:.12s}
+  .bulk .after .it:nth-child(4),.bulk .after .it:nth-child(4) .cb{animation-delay:.24s}
+  .bulk .after .it:nth-child(5),.bulk .after .it:nth-child(5) .cb{animation-delay:.36s}
+  .bulk .after .it:nth-child(6),.bulk .after .it:nth-child(6) .cb{animation-delay:.48s}
+  @keyframes sel{0%,10%{background:#F7F7FB}16%,70%{background:#ECEDFB}80%,100%{background:#F7F7FB}}
+  @keyframes chk{0%,10%{background:transparent;box-shadow:inset 0 0 0 1.5px #B9BCD6}16%,70%{background:var(--pu);box-shadow:none}80%,100%{background:transparent;box-shadow:inset 0 0 0 1.5px #B9BCD6}}
+  .bulk .bar{height:30px;border-radius:8px;background:var(--pu);margin-top:10px;display:flex;align-items:center;justify-content:center;font:600 12px/1 Inter,sans-serif;color:#fff;animation:bar 5s infinite}
+  @keyframes bar{0%,40%{opacity:.25;transform:scale(.97)}48%,70%{opacity:1;transform:none}80%,100%{opacity:.25;transform:scale(.97)}}
+  .bulk .bar.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px #E3E4F2;color:#B0B3C8;animation:none}
+
+  /* 3 · study */
+  .study{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+  .study .v{position:relative}
+  .study .v b{position:absolute;top:10px;right:10px;width:24px;height:24px;border-radius:50%;background:var(--pu);color:#fff;font:700 12px/24px Inter,sans-serif;text-align:center}
+  .study .wf{min-height:112px;padding-right:44px}
+  .study-stats{display:flex;gap:12px;margin-top:20px}
+  .study-stats div{flex:1;background:#fff;border-radius:14px;padding:14px 16px}
+  .study-stats strong{display:block;font-size:26px;font-weight:600;color:var(--pu);line-height:1.1}
+  .study-stats span{font:500 12.5px/1.4 Inter,sans-serif;color:var(--mut)}
+
+  /* 4 · roadmap */
+  .road{position:relative;padding:20px 8px 6px}
+  .road .rail{position:absolute;left:12.5%;right:12.5%;top:47px;height:8px;border-radius:4px;background:repeating-linear-gradient(90deg,#B6A2F5 0 14px,transparent 14px 24px)}
+  .road .rail::before{content:"";position:absolute;left:0;width:33.3%;top:0;bottom:0;border-radius:4px;background:var(--pu)}
+  .road .stops{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+  .road .st{text-align:center}
+  .road .dot{width:34px;height:34px;border-radius:50%;margin:10px auto 16px;background:#fff;box-shadow:inset 0 0 0 7px var(--pu)}
+  .road .st.fut .dot{box-shadow:inset 0 0 0 7px #B6A2F5}
+  .road .t{font-weight:600;font-size:15px;line-height:1.3}
+  .road .s{font:500 12.5px/1.4 Inter,sans-serif;color:var(--mut);margin-top:4px}
+  .road .now{display:inline-block;font:700 10.5px/1 Inter,sans-serif;letter-spacing:.06em;padding:5px 8px;border-radius:999px;background:var(--pu);color:#fff;margin-bottom:6px}
+  .road .st.fut .now{background:#fff;color:#8E7FE0;box-shadow:inset 0 0 0 1.5px #B6A2F5}
+
+
+  /* 1 · three levels of AI */
+  .ai3{padding:40px 40px 30px}
+  .ai3-row{display:flex;align-items:center;gap:36px}
+  .ai3-scr{position:relative;flex:0 0 58%;aspect-ratio:440/232;border-radius:22px;overflow:hidden;
+    background:linear-gradient(120deg,#DCDCE0,#E3E4E7);transition:background .6s ease}
+  .ai3-scr::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#4E50A6 20%,#7B7CA6);opacity:0;transition:opacity .6s ease}
+  .ai3-scr .r1,.ai3-scr .r2{position:absolute;top:0;bottom:0;z-index:1;transition:background .6s ease}
+  .ai3-scr .r1{left:0;width:6%;background:#C8C8CD}.ai3-scr .r2{left:6%;width:17.5%;background:#D2D2D7}
+  .ai3.s3 .ai3-scr::after{opacity:1}
+  .ai3.s3 .r1{background:#8B8DD6}.ai3.s3 .r2{background:#7173C6}
+  .ai3 .card{position:absolute;z-index:2;background:#fff;border-radius:12px;padding:6% 5%;display:flex;flex-direction:column;justify-content:center;gap:8px;
+    transition:opacity .45s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+  .ai3 .card i{display:block;height:6px;border-radius:3px;background:#D9D9DE}
+  .ai3 .card i:first-child{width:45%}
+  .ai3 .c1{left:30%;top:35%;width:44%;height:27%}
+  .ai3 .c2{left:23.5%;top:28%;width:44%;height:27%}.ai3 .c3{left:23.5%;top:62%;width:44%;height:27%}
+  .ai3 .c2,.ai3 .c3,.ai3.s2 .c1,.ai3.s3 .card{opacity:0;transform:translateY(8px)}
+  .ai3.s2 .c2,.ai3.s2 .c3{opacity:1;transform:none}.ai3.s2 .c3{transition-delay:.08s}
+  .ai3 .sp{position:absolute;z-index:3;fill:#4F51C0;stroke:#4F51C0;stroke-width:1.6;stroke-linecap:round;
+    transition:opacity .4s ease,transform .6s cubic-bezier(.34,1.56,.64,1);opacity:0;transform:scale(.4)}
+  .ai3 .sp1{left:45%;top:36%;width:11%}
+  .ai3 .sp2{left:8.5%;top:24%;width:10%}.ai3 .sp3{left:8.5%;top:60%;width:10%}
+  .ai3 .sp4{left:44%;top:38%;width:12%;fill:#fff;stroke:#fff}
+  .ai3.s1 .sp1,.ai3.s2 .sp2,.ai3.s2 .sp3,.ai3.s3 .sp4{opacity:1;transform:none}
+  .ai3.s2 .sp3{transition-delay:.1s}
+  .ai3-side{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:18px;min-width:0}
+  .ai3-face{width:96px;height:96px;border-radius:50%;background:#DCDCE0;position:relative;transition:opacity .4s,transform .5s cubic-bezier(.34,1.56,.64,1)}
+  .ai3.s1 .ai3-face{opacity:0;transform:scale(.8)}
+  .ai3-face svg{position:absolute;inset:0;fill:none;stroke:#5B5FC7;stroke-width:4;stroke-linecap:round;transition:opacity .35s}
+  .ai3-face svg circle,.ai3-face svg .fill{fill:#5B5FC7;stroke:none}
+  .ai3 .f3,.ai3.s3 .f2{opacity:0}.ai3.s3 .f3{opacity:1}
+  .ai3-txt{position:relative;min-height:64px;width:100%}
+  .ai3-txt p{position:absolute;left:0;top:0;margin:0;font:600 19px/1.4 'Poppins',sans-serif;color:#111318;max-width:240px;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .5s}
+  .ai3.s1 .t1,.ai3.s2 .t2,.ai3.s3 .t3{opacity:1;transform:none;transition-delay:.15s}
+  .ai3-ctl{display:flex;align-items:center;gap:14px;margin-top:28px;width:58%}
+  .ai3-ctl button{border:0;background:none;padding:4px 0;font:600 12px/1 Inter,sans-serif;color:#8a8da0;cursor:pointer}
+  .ai3-track{flex:1;height:14px;border-radius:7px;background:#DCDDE3;position:relative;cursor:pointer}
+  .ai3-thumb{position:absolute;top:-6px;left:0;width:48px;height:26px;border-radius:13px;background:#5B5FC7;transition:left .7s cubic-bezier(.65,0,.35,1)}
+  .ai3.s2 .ai3-thumb{left:calc(50% - 24px)}.ai3.s3 .ai3-thumb{left:calc(100% - 48px)}
+  @media (max-width:900px){.ai3{padding:24px}.ai3-row{flex-direction:column;align-items:stretch;gap:20px}.ai3-scr{flex:none}.ai3-side{flex-direction:row;align-items:center}.ai3-face{flex:0 0 72px;width:72px;height:72px}.ai3-ctl{width:100%}}
+  @media (prefers-reduced-motion:reduce){.ai3 *{transition:none!important}}
+  @media (max-width:900px){.msp-step{grid-template-columns:1fr;gap:28px;margin-bottom:72px}.spec{grid-template-columns:1fr 1fr;row-gap:28px}.msp-fig{padding:22px}.road .stops{grid-template-columns:1fr 1fr;row-gap:24px}.road .rail{display:none}}
+  @media (prefers-reduced-motion:reduce){.bulk *{animation:none!important}}
+  </style>
+
+  <section class="msp">
+    <div class="container">
+      <div class="challenge-section__title-wrap"><h2 class="challenge-section__title">How I got there</h2></div>
+      <p class="msp-intro">The screens stay under NDA, so these are simplified sketches of the work: how far I pushed the ideas, what I changed in the flow, and how I tested it.</p>
+
+      <!-- 1 -->
+      <div class="msp-step">
+        <div>
+          <p class="msp-num">01 · Explore</p>
+          <h3 class="msp-h">Mild to wild: three levels of AI</h3>
+          <p class="msp-p">Alongside the development-ready design, I explored how far AI could take the feature, from a light touch that saves time, to an AI-powered pattern that surfaces information quickly, to a fully AI-infused experience. These three levels became the 3-step roadmap.</p>
+        </div>
+        <div>
+          <div class="msp-fig ai3 s1" id="ai3">
+            <div class="ai3-row">
+              <div class="ai3-scr">
+                <span class="r1"></span><span class="r2"></span>
+                <div class="c1 card"><i></i><i></i></div>
+                <div class="c2 card"><i></i><i></i><i></i></div>
+                <div class="c3 card"><i></i><i></i><i></i></div>
+                <svg class="sp sp1" viewBox="0 0 24 24"><use href="#ai3-sp"/></svg>
+                <svg class="sp sp2" viewBox="0 0 24 24"><use href="#ai3-sp"/></svg>
+                <svg class="sp sp3" viewBox="0 0 24 24"><use href="#ai3-sp"/></svg>
+                <svg class="sp sp4" viewBox="0 0 24 24"><use href="#ai3-sp"/></svg>
+              </div>
+              <div class="ai3-side">
+                <div class="ai3-face">
+                  <svg class="f2" viewBox="0 0 108 108"><path d="M30 41l14 5M64 46l14-5" /><circle cx="37" cy="55" r="5.5"/><circle cx="71" cy="51" r="5.5"/><path d="M47 76c4-2 8-2 12 0"/><path d="M50 88c6 2 12-2 17-8" /><ellipse cx="58" cy="94" rx="8" ry="5" class="fill"/></svg>
+                  <svg class="f3" viewBox="0 0 108 108"><path d="M30 41c4-4 10-4 14 0M64 41c4-4 10-4 14 0"/><circle cx="37" cy="54" r="5.5"/><circle cx="71" cy="54" r="5.5"/><ellipse cx="54" cy="77" rx="5" ry="6.5" class="fill"/></svg>
+                </div>
+                <div class="ai3-txt">
+                  <p class="t1">Light addition of AI in the feature to save time</p>
+                  <p class="t2">AI-powered pattern to surface information quickly</p>
+                  <p class="t3">AI-infused, immersive experience</p>
+                </div>
+              </div>
+            </div>
+            <div class="ai3-ctl">
+              <button type="button" data-s="1" aria-label="Level 1: light addition of AI">Mild</button>
+              <div class="ai3-track"><span class="ai3-thumb"></span></div>
+              <button type="button" data-s="3" aria-label="Level 3: AI-infused experience">Wild</button>
+            </div>
+            <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="ai3-sp" d="M10 3c.6 4.4 2.6 6.4 7 7-4.4.6-6.4 2.6-7 7-.6-4.4-2.6-6.4-7-7 4.4-.6 6.4-2.6 7-7zM18.5 1.5v5M16 4h5M21 7.5v3M19.5 9h3"/></defs></svg>
+          </div>
+          <p class="msp-cap">Simplified sketch · details stay under NDA</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="msp-step">
+        <div>
+          <p class="msp-num">02 · Improve the flow</p>
+          <h3 class="msp-h">One action instead of one at a time</h3>
+          <p class="msp-p">People had to act on items one by one, which slowed them down. I added bulk selection so they can pick several items and act on them all at once.</p>
+        </div>
+        <div>
+          <div class="msp-fig">
+            <div class="bulk">
+              <div class="side before">
+                <div class="hd"><span>Before</span><span class="cnt">5 actions</span></div>
+                <div class="it"><i></i><span class="act"></span></div>
+                <div class="it"><i></i><span class="act"></span></div>
+                <div class="it"><i></i><span class="act"></span></div>
+                <div class="it"><i></i><span class="act"></span></div>
+                <div class="it"><i></i><span class="act"></span></div>
+                <div class="bar ghost">one at a time</div>
+              </div>
+              <div class="side after">
+                <div class="hd"><span>After</span><span class="cnt">1 action</span></div>
+                <div class="it"><span class="cb"></span><i></i></div>
+                <div class="it"><span class="cb"></span><i></i></div>
+                <div class="it"><span class="cb"></span><i></i></div>
+                <div class="it"><span class="cb"></span><i></i></div>
+                <div class="it"><span class="cb"></span><i></i></div>
+                <div class="bar">Apply to 5 selected</div>
+              </div>
+            </div>
+          </div>
+          <p class="msp-cap">Simplified sketch · not the actual screens</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="msp-step">
+        <div>
+          <p class="msp-num">03 · Test</p>
+          <h3 class="msp-h">4 prototype variants, tested with users</h3>
+          <p class="msp-p">I built 4 high-fidelity variants in Teams' Fluent design system for an A/B study with a researcher, moderated sessions with 6 participants, and paired what they said with telemetry to decide what to change.</p>
+        </div>
+        <div>
+          <div class="msp-fig">
+            <div class="study">
+              <div class="v"><b>A</b><div class="wf"><i class="d s"></i><i></i><div class="blk"></div><i class="m"></i></div></div>
+              <div class="v"><b>B</b><div class="wf"><div class="row"><i class="p" style="flex:0 0 28%"></i><i></i></div><i class="m"></i><div class="blk"></div></div></div>
+              <div class="v"><b>C</b><div class="wf"><i class="d s"></i><div class="row"><div class="blk" style="flex:1"></div><div class="blk" style="flex:1"></div></div><i class="m"></i></div></div>
+              <div class="v"><b>D</b><div class="wf"><div class="row"><span class="spark"></span><i class="d"></i></div><div class="blk"></div><i></i></div></div>
+            </div>
+            <div class="study-stats">
+              <div><strong>4</strong><span>prototype variants</span></div>
+              <div><strong>6</strong><span>moderated participants</span></div>
+              <div><strong>2</strong><span>lenses: telemetry + interviews</span></div>
+            </div>
+          </div>
+          <p class="msp-cap">Simplified sketch · not the actual screens</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var el=document.getElementById('ai3'); if(!el) return;
+    var s=1, auto=true, tm;
+    function set(n){ s=n; el.classList.remove('s1','s2','s3'); el.classList.add('s'+n); }
+    function tick(){ if(auto) set(s%3+1); tm=setTimeout(tick, s===3?3400:2800); }
+    var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){ es.forEach(function(e){ clearTimeout(tm); if(e.isIntersecting&&auto) tm=setTimeout(tick,2200); }); },{threshold:.4}):null;
+    if(io) io.observe(el); else tm=setTimeout(tick,2200);
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) auto=false;
+    el.querySelectorAll('button[data-s]').forEach(function(b){ b.addEventListener('click',function(){ auto=false; set(+b.dataset.s); }); });
+    el.querySelector('.ai3-track').addEventListener('click',function(e){ var r=this.getBoundingClientRect(), k=(e.clientX-r.left)/r.width; auto=false; set(k<.33?1:k<.67?2:3); });
+  })();
+  </script>
+
+  <!-- ===== IMPACT ===== -->
+  <section class="business-goals ms-impact">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-up">
+          <div class="challenge-section__title-wrap">
+            <h2 class="challenge-section__title">Impact</h2>
+          </div>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="solution-headline" style="margin-bottom:0;">Delivered a shippable solution and a longer-term
+            AI-infused vision</h3>
+          <p class="ms-impact-lead">The improved feature...</p>
+        </div>
+
+        <div class="span-12" data-aos="fade-up" data-aos-delay="200">
+          <div class="ms-impact-cards">
+            <div class="ms-impact-card">
+              <i class="ph-bold ph-infinity ms-impact-card__icon"></i>
+              <div class="ms-impact-card__label">Scales better</div>
+            </div>
+            <div class="ms-impact-card">
+              <i class="ph-bold ph-smiley ms-impact-card__icon"></i>
+              <div class="ms-impact-card__label">Reduces search and navigation effort</div>
+            </div>
+            <div class="ms-impact-card">
+              <i class="ph-bold ph-toggle-left ms-impact-card__icon"></i>
+              <div class="ms-impact-card__label">Reduces context switching</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ask-progress" data-aos="fade-up">
+        <img src="asset/image/Microsoft/rail stop divider Teams.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REFLECTION ===== -->
+  <section class="ms-reflection-section">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-right">
+          <div class="ms-reflection-title">
+            Reflection
+            <img src="asset/image/Home3.0/bigarrow.svg" alt="" style="transform: scaleX(-1);">
+          </div>
+        </div>
+
+        <div class="span-12">
+          <div class="ms-reflection-grid">
+            <div class="ms-reflection-card ms-reflection-card--pink" data-aos="fade-down-right">
+              <h3 class="ms-reflection-card__title">1. Pain points take digging</h3>
+              <p class="ms-reflection-card__text">The real gaps weren't obvious from the surface. I had to dig into
+                telemetry and user insights to spot the discrepancies worth designing for, and since the people who
+                held that context were often busy, I had to be strategic about when to ask for it and proactive
+                about unblocking myself when I couldn't get an answer right away.</p>
+            </div>
+            <div class="ms-reflection-card ms-reflection-card--green" data-aos="fade-down-left">
+              <h3 class="ms-reflection-card__title">2. Explore a lot!</h3>
+              <p class="ms-reflection-card__text">I learned to generate a wide range of options before narrowing in,
+                asking for feedback early and often. Exploring different tools to visualize the interaction process
+                helped me communicate ideas faster and get sharper feedback sooner.</p>
+            </div>
+            <div class="ms-reflection-card ms-reflection-card--blue" data-aos="fade-up-right">
+              <h3 class="ms-reflection-card__title">3. AI changes the pace, not the judgment</h3>
+              <p class="ms-reflection-card__text">AI tools sped up prototyping and detail work, but the harder calls,
+                like what to test and why, still came down to design judgment and research.</p>
+            </div>
+            <div class="ms-reflection-card ms-reflection-card--yellow" data-aos="fade-up-left">
+              <h3 class="ms-reflection-card__title">4. Immediate and long-term aren't in conflict</h3>
+              <p class="ms-reflection-card__text">Delivering a dev-ready solution alongside a 3-step roadmap meant I
+                had to think in two timelines at once, without letting either one slow the other down.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THANK YOU ===== -->
+  <section class="ms-thankyou-section">
+    <div class="container">
+      <div class="grid-12">
+        <div class="span-12" data-aos="fade-right">
+          <p class="ms-thankyou-kicker">Thank you!</p>
+        </div>
+
+        <div class="span-12 md-span-8" data-aos="fade-right" data-aos-delay="50">
+          <h3 class="ms-thankyou-headline">Grateful to the Teams design team for a fruitful summer and the space to
+            grow as a designer.</h3>
+        </div>
+
+        <div class="span-12" data-aos="fade-left" data-aos-delay="100">
+          <div class="ms-thankyou-layout">
+            <img src="asset/image/Microsoft/Microsoft reflection image.png" alt="Lina at Microsoft with the Microsoft logo blocks">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEXT PROJECT ===== -->
+  <a class="np np--link np--ms" id="np" href="Agnes.html" style="--base-img: url('../image/Agnes/Agnes hero.png');">
+
+    <div class="np__base" aria-hidden="true"></div>
+    <div class="np__cover" aria-hidden="true"></div>
+
+    <div class="np__content">
+      <h2 class="np__title" data-text="Next Project">Next Project</h2>
+      <p class="np__sub" data-text="See my Agnes AI design work">See my Agnes AI design work</p>
+    </div>
+  </a>
+
+  <!-- ===== FOOTER ===== -->
+  <section class="footer-wrap">
+    <section class="footer-top section no-divider" id="contact">
+      <div class="container">
+        <div class="grid-12" style="row-gap:24px; align-items:start;">
+          <div class="span-12 md-span-5" style="justify-self:start; text-align:left;" data-aos="fade-right">
+            <div class="footer-kicker">Last Stop</div>
+            <div class="bleed-left" style="margin:8px 0 16px;">
+              <img src="asset/image/Home3.0/footer metro.svg">
+            </div>
+            <h2 class="footer-heading">Let's connect!</h2>
+          </div>
+          <div class="span-12 md-span-2 md-col-start-11" style="justify-self:end;" data-aos="fade-left">
+            <ul class="footer-links">
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn"
+                  href="https://drive.google.com/file/d/1UIXtlPt1DmWpRB3Ble5yDgdkBt3MLWKm/view?usp=drive_link"
+                  target="_blank" rel="noopener">Resume</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowup.svg">
+                <a class="footer-link-btn" href="About.html">About Me</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="https://www.linkedin.com/in/lina-jiayu-wang/" target="_blank"
+                  rel="noopener">LinkedIn</a>
+              </li>
+              <li>
+                <img src="asset/image/Home3.0/smallarrowupright.svg">
+                <a class="footer-link-btn" href="mailto:linaw815@uw.edu">Email</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer-bottom">
+      <div class="container">
+        <div class="span-12" style="opacity:.8;">
+          <div class="FooterCopyright">
+            <p>&copy; 2026 Lina Wang</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</body>
+
+
+<script>
+  AOS.init();
+</script>
+
+</html>
